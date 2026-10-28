@@ -1,0 +1,7 @@
+# Generated data lives on the `data` branch, not main.
+# Deploy copies it in. Hand-edited files in data/curated/ ARE tracked.
+/data/*.json
+!/data/curated/
+
+.DS_Store
+*.bak

@@ -1,0 +1,84 @@
+# ==========================================================================
+# BLOCKLIST
+# Any news headline, social post, or author handle containing one of these
+# terms is dropped silently. The number dropped is logged in data/meta.json.
+#
+# HOW TO ADD A TERM
+#   - One term per line. Phrases are fine ("promo code").
+#   - Matching is case-insensitive and whole-word: "scam" blocks "Scam" and
+#     "SCAM" but not "scamper".
+#   - Lines starting with # are comments. Blank lines are ignored.
+#   - Changes apply on the next scheduled run (within an hour in season),
+#     or right away if you run the "Update data" workflow manually.
+#
+# To hide one specific post instead of a word, use the "Hide a post" issue
+# form (see HOW-TO-ADD-INSTAGRAM.md once it exists).
+#
+# SLURS: rather than typing out a slur list by hand, paste in a maintained
+# list such as "List of Dirty, Naughty, Obscene, and Otherwise Bad Words"
+# (github.com/LDNOOBW), English file, below the PROFANITY section.
+# ==========================================================================
+
+# ----- Spam and promotion -------------------------------------------------
+crypto
+cryptocurrency
+bitcoin
+btc
+nft
+airdrop
+giveaway
+giveaways
+promo code
+discount code
+coupon code
+use my code
+link in bio
+dm me
+dm for
+onlyfans
+only fans
+fansly
+casino
+betting
+sportsbook
+forex
+get rich
+work from home
+make money fast
+free followers
+buy followers
+sugar daddy
+escort
+escorts
+xxx
+porn
+nsfw
+loan offer
+investment opportunity
+
+# ----- Profanity -----------------------------------------------------------
+fuck
+fucking
+fucked
+fucker
+motherfucker
+shit
+shitty
+bullshit
+bitch
+bitches
+asshole
+bastard
+dick
+cock
+cunt
+pussy
+whore
+slut
+twat
+wanker
+prick
+douchebag
+
+# ----- Slurs ----------------------------------------------------------------
+# Paste a maintained list here (see note at the top).

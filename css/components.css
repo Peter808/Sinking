@@ -1,0 +1,481 @@
+/* ==========================================================================
+   components.css
+   Reusable components. Each block says what it is and where it is used.
+   Page-specific layout lives in pages.css, not here.
+
+   TABLE OF CONTENTS
+    1. Buttons (.btn)                  : everywhere
+    2. Glass panel (.glass)            : hero panels, risk tool results
+    3. Sample data badge (.sample-badge): any panel with placeholder numbers
+    4. Risk chip (.risk-chip)          : cards, results, hero
+    5. City chip (.city-chip)          : hero city switcher (mobile), filters
+    6. Stat block (.stat)              : By the Numbers, city pages
+    7. Card (.card)                    : news, resources
+    8. Section header (.section-head)  : top of most sections
+    9. Image placeholder (.img-ph)     : every image slot until real photos exist
+   10. Site header and nav             : every page
+   11. Site footer                     : every page
+   12. Address risk tool (.risk-tool)  : home, later city pages
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. BUTTONS
+   .btn + one modifier: --primary (aqua), --outline, --glass (hero only)
+   ========================================================================== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 15px; font-weight: 600; line-height: 1.2;
+  text-decoration: none; white-space: nowrap;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease),
+              border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.btn:hover { text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+.btn--primary { background: var(--tide-aqua); color: var(--on-aqua); }
+.btn--primary:hover { background: #7FE0F0; }
+
+.btn--outline { border: 1.5px solid rgba(255, 255, 255, 0.4); color: var(--text-primary); }
+.btn--outline:hover { border-color: var(--tide-aqua); color: var(--tide-aqua); }
+
+.btn--glass {
+  background: rgba(5, 11, 26, 0.34);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.btn--glass:hover { background: rgba(5, 11, 26, 0.5); }
+
+.btn--sm { min-height: 40px; padding: 8px 18px; font-size: 14px; }
+
+/* Arrow text link: "Explore Miami Beach ->" */
+.arrow-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 600; color: var(--tide-aqua); text-decoration: none;
+}
+.arrow-link svg { width: 16px; height: 16px; transition: transform var(--dur) var(--ease); }
+.arrow-link:hover svg { transform: translateX(4px); }
+
+
+/* ==========================================================================
+   2. GLASS PANEL
+   Frosted panel. The scrim layer keeps white text at AA contrast on the
+   light hero sky. Solid fallback first, frosted version when supported.
+   ========================================================================== */
+.glass {
+  position: relative;
+  background: var(--glass-fallback);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .glass {
+    background: linear-gradient(var(--glass-scrim), var(--glass-scrim)), var(--glass-bg);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+    backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  }
+}
+
+
+/* ==========================================================================
+   3. SAMPLE DATA BADGE
+   Marks any panel holding placeholder numbers so they never pass as real.
+   TO REMOVE once real data is wired in: delete the <span class="sample-badge">
+   elements (search the HTML for "sample-badge"). Nothing else depends on it.
+   ========================================================================== */
+.sample-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(245, 196, 81, 0.16);
+  border: 1px solid rgba(245, 196, 81, 0.55);
+  color: #FFE2A1;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  line-height: 1.3; white-space: nowrap;
+}
+.sample-badge::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--risk-moderate);
+}
+/* Variant for the light hero: darker fill so the text stays readable */
+.sample-badge--on-light { background: rgba(5, 11, 26, 0.55); }
+
+
+/* ==========================================================================
+   4. RISK CHIP
+   Color dot + text label. Set data-risk="low|moderate|high|severe".
+   Color is never the only signal: the text label is required.
+   ========================================================================== */
+.risk-chip {
+  --risk-color: var(--risk-moderate);
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 12px 5px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(5, 11, 26, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-primary); white-space: nowrap;
+}
+.risk-chip::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--risk-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--risk-color) 25%, transparent);
+}
+[data-risk="low"]      { --risk-color: var(--risk-low); }
+[data-risk="moderate"] { --risk-color: var(--risk-moderate); }
+[data-risk="high"]     { --risk-color: var(--risk-high); }
+[data-risk="severe"]   { --risk-color: var(--risk-severe); }
+
+
+/* ==========================================================================
+   5. CITY CHIP
+   Pill button with city name and risk dot. aria-pressed="true" = active (filled).
+   ========================================================================== */
+.city-chip {
+  --risk-color: var(--risk-moderate);
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border);
+  background: rgba(5, 11, 26, 0.32);
+  color: var(--text-primary);
+  font-size: 14px; font-weight: 600; white-space: nowrap;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.city-chip::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--risk-color);
+}
+.city-chip[aria-pressed="true"] { background: var(--text-primary); color: var(--navy-900); border-color: var(--text-primary); }
+
+
+/* ==========================================================================
+   6. STAT BLOCK
+   Big light number, uppercase label, source line. Add .stat--line and set
+   data-risk to show a colored underline from the risk scale.
+   ========================================================================== */
+.stat { display: flex; flex-direction: column; gap: var(--space-1); }
+.stat__value {
+  font-weight: 300; font-size: var(--fs-number-lg); line-height: 1;
+  letter-spacing: -0.02em; color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.stat__unit { font-size: 0.42em; font-weight: 400; margin-left: 6px; letter-spacing: 0; color: var(--text-secondary); }
+.stat__label { font-size: var(--fs-small); font-weight: 500; color: var(--text-secondary); max-width: 28ch; line-height: 1.45; }
+.stat__source { font-size: 12px; color: var(--text-secondary); opacity: 0.85; }
+.stat__source a { color: inherit; }
+.stat--line::after {
+  content: ""; order: 5; width: 64px; height: 3px; border-radius: 2px; margin-top: var(--space-1);
+  background: var(--risk-color, var(--tide-aqua));
+}
+
+
+/* ==========================================================================
+   7. CARD
+   Dark card with image, meta row, title, text. The title link is stretched
+   so the whole card is clickable while keeping one tab stop.
+   ========================================================================== */
+.card {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: var(--navy-700);
+  border: 1px solid var(--navy-600);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.card:hover { border-color: rgba(79, 209, 232, 0.5); transform: translateY(-2px); }
+.card:focus-within { border-color: var(--tide-aqua); }
+.card__media { aspect-ratio: 16 / 10; }
+.card__body { display: flex; flex-direction: column; gap: 12px; padding: var(--space-3); flex: 1; }
+.card__meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: 13px; }
+.card__title { font-size: var(--fs-h3); font-weight: 600; line-height: 1.25; }
+.card__title a { color: var(--text-primary); text-decoration: none; }
+.card__title a::after { content: ""; position: absolute; inset: 0; } /* stretched link */
+.card__title a:focus-visible { outline: none; }
+.card__text { color: var(--text-secondary); font-size: 15px; }
+
+.tag {
+  display: inline-flex; padding: 3px 10px; border-radius: var(--radius-pill);
+  background: rgba(79, 209, 232, 0.12); color: var(--tide-aqua);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   8. SECTION HEADER
+   Optional eyebrow + huge condensed headline + optional "View all" pill.
+   ========================================================================== */
+.section-head {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+  gap: var(--space-3); margin-bottom: clamp(32px, 5vw, 64px);
+}
+.section-head__text { display: flex; flex-direction: column; gap: var(--space-2); max-width: 900px; }
+.section-head__eyebrow { color: var(--tide-aqua); }
+.section-head__row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.section-head--center { justify-content: center; text-align: center; }
+.section-head--center .section-head__text { align-items: center; }
+
+
+/* ==========================================================================
+   9. IMAGE PLACEHOLDER
+   Stand-in for real photos. Set aspect-ratio inline or via a modifier.
+   Replace the whole <div class="img-ph"> with an <img> when the photo exists.
+   ========================================================================== */
+.img-ph {
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+  background:
+    radial-gradient(120% 80% at 20% 10%, rgba(143, 180, 227, 0.45), transparent 60%),
+    radial-gradient(90% 70% at 90% 100%, rgba(79, 209, 232, 0.25), transparent 60%),
+    linear-gradient(160deg, #2A4C8C, #0E1D42);
+}
+.img-ph__label {
+  margin: 12px; padding: 4px 10px; border-radius: var(--radius-pill);
+  background: rgba(5, 11, 26, 0.7); color: var(--text-primary);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   10. SITE HEADER AND NAV
+   .site-header--hero = transparent over the hero. main.js adds .is-scrolled
+   (solid navy) once you scroll. Without JS the header simply sits at the top.
+   Mobile (<960px): hamburger opens a full-screen menu (JS). Without JS the
+   links show as a wrapped row so they still work.
+   ========================================================================== */
+.site-header {
+  position: absolute; inset: 0 0 auto 0; z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+html.js .site-header { position: fixed; }
+.site-header.is-scrolled { background: rgba(5, 11, 26, 0.94); border-bottom-color: var(--navy-600); }
+@supports (backdrop-filter: blur(1px)) {
+  .site-header.is-scrolled { background: rgba(5, 11, 26, 0.82); backdrop-filter: blur(14px); }
+}
+
+.site-header__inner {
+  display: flex; align-items: center; gap: var(--space-3);
+  min-height: var(--header-h);
+  flex-wrap: wrap;                  /* no-JS mobile: nav wraps to a second row */
+}
+html.js .site-header__inner { flex-wrap: nowrap; }
+
+/* Logo + wordmark */
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--text-primary); text-decoration: none;
+  font-weight: 600; font-size: 16px; letter-spacing: -0.01em; white-space: nowrap;
+  position: relative; z-index: 2;
+}
+.brand__mark { width: 34px; height: 34px; flex: none; }
+
+/* Primary nav */
+.site-nav { margin-inline: auto; }
+.site-nav__list { display: flex; align-items: center; gap: 4px; }
+.site-nav__link {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 44px; padding: 8px 14px; border-radius: var(--radius-pill);
+  color: var(--text-primary); text-decoration: none; font-size: 15px; font-weight: 500;
+}
+.site-nav__link:hover { background: rgba(255, 255, 255, 0.12); }
+.site-nav__link svg { width: 14px; height: 14px; transition: transform var(--dur) var(--ease); }
+.site-nav__toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.site-nav__cta { display: none; }
+
+/* Cities dropdown. Without JS it opens on hover and keyboard focus. */
+.has-dropdown { position: relative; }
+.dropdown {
+  position: absolute; top: calc(100% + 8px); left: 0; min-width: 240px;
+  padding: 8px; border-radius: var(--radius-md);
+  background: rgba(10, 22, 48, 0.97); border: 1px solid var(--navy-600);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  display: none;
+}
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown { display: block; }
+/* With JS, the button controls it (click, Enter, Escape) */
+html.js .has-dropdown:hover .dropdown,
+html.js .has-dropdown:focus-within .dropdown { display: none; }
+html.js .has-dropdown.is-open .dropdown { display: block; }
+.dropdown a {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 10px 12px; border-radius: var(--radius-sm);
+  color: var(--text-primary); text-decoration: none; font-size: 15px;
+}
+.dropdown a:hover, .dropdown a:focus-visible { background: var(--navy-700); }
+
+/* Right side: clock, date, tide pill, CTA */
+.site-header__meta { display: none; align-items: center; gap: var(--space-3); white-space: nowrap; }
+.clock { display: flex; align-items: baseline; gap: 6px; }
+.clock__time { font-size: 22px; font-weight: 300; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.clock__sub { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.2; }
+.tide-pill {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px;
+  border-radius: var(--radius-pill); background: rgba(5, 11, 26, 0.4); border: 1px solid var(--glass-border);
+  font-size: 12px; font-weight: 600;
+}
+.tide-pill svg { width: 14px; height: 14px; color: var(--tide-aqua); }
+.site-header__cta { display: none; }
+
+/* Hamburger */
+.menu-toggle {
+  margin-left: auto; position: relative; z-index: 2;
+  width: 48px; height: 48px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255, 255, 255, 0.14); border: 1px solid var(--glass-border);
+}
+.menu-toggle__bars, .menu-toggle__bars::before, .menu-toggle__bars::after {
+  display: block; width: 20px; height: 2px; border-radius: 2px; background: currentColor;
+  transition: transform var(--dur) var(--ease), opacity var(--dur);
+}
+.menu-toggle__bars { position: relative; }
+.menu-toggle__bars::before, .menu-toggle__bars::after { content: ""; position: absolute; left: 0; }
+.menu-toggle__bars::before { top: -6px; }
+.menu-toggle__bars::after { top: 6px; }
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars { background: transparent; }
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars::before { transform: translateY(6px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-toggle__bars::after { transform: translateY(-6px) rotate(-45deg); }
+
+/* --- Mobile nav (below 960px) --- */
+@media (max-width: 959.98px) {
+  /* No JS: links wrap onto their own row under the logo */
+  .site-nav { order: 3; width: 100%; margin: 0 0 8px; }
+  .site-nav__list { flex-wrap: wrap; }
+
+  /* With JS: full-screen overlay menu */
+  html.js .site-nav {
+    position: fixed; inset: 0; z-index: 1; margin: 0; width: auto;
+    padding: calc(var(--header-h) + 24px) var(--gutter) 32px;
+    background: var(--navy-900);
+    overflow-y: auto;
+    visibility: hidden; opacity: 0;
+    transition: opacity var(--dur) var(--ease), visibility 0s linear var(--dur);
+  }
+  html.js .site-nav.is-open { visibility: visible; opacity: 1; transition: opacity var(--dur) var(--ease); }
+  html.js .site-nav__list { flex-direction: column; align-items: stretch; gap: 4px; }
+  html.js .site-nav__link { font-family: var(--font-display); font-weight: 400; font-size: 40px; text-transform: uppercase; padding: 8px 0; justify-content: space-between; width: 100%; }
+  html.js .site-nav__link:hover { background: none; color: var(--tide-aqua); }
+  html.js .site-nav__link svg { width: 24px; height: 24px; }
+  html.js .dropdown { position: static; min-width: 0; background: none; border: 0; box-shadow: none; padding: 0 0 12px; }
+  html.js .dropdown a { font-size: 18px; padding: 10px 0; }
+  html.js .site-nav__cta { display: block; margin-top: var(--space-3); }
+  html.js .site-nav__cta .btn { width: 100%; }
+  body.menu-open { overflow: hidden; }
+}
+
+@media (min-width: 960px) {
+  .menu-toggle { display: none !important; }
+  .site-header__cta { display: inline-flex; }
+  .site-header__inner { flex-wrap: nowrap; }
+}
+@media (min-width: 1180px) {
+  html.js .site-header__meta { display: flex; }
+}
+
+
+/* ==========================================================================
+   11. SITE FOOTER
+   ========================================================================== */
+.site-footer {
+  border-top: 1px solid var(--navy-600);
+  background: var(--navy-900);
+  padding-block: var(--space-10) var(--space-4);
+  font-size: 15px;
+}
+.site-footer__grid { display: grid; gap: var(--space-5); grid-template-columns: 1fr 1fr; }
+.site-footer__about { grid-column: 1 / -1; display: flex; flex-direction: column; gap: var(--space-2); max-width: 36ch; }
+.site-footer__about p { color: var(--text-secondary); }
+.site-footer h2 { font-size: 12px; font-weight: 600; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--text-secondary); margin-bottom: var(--space-2); }
+.site-footer ul { display: grid; gap: 10px; }
+.site-footer ul a { color: var(--text-primary); text-decoration: none; }
+.site-footer ul a:hover { color: var(--tide-aqua); }
+.site-footer__bottom {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2);
+  margin-top: var(--space-8); padding-top: var(--space-3); border-top: 1px solid var(--navy-600);
+  color: var(--text-secondary); font-size: 13px;
+}
+@media (min-width: 960px) {
+  .site-footer__grid { grid-template-columns: 1.6fr repeat(3, 1fr); }
+  .site-footer__about { grid-column: auto; }
+}
+
+
+/* ==========================================================================
+   12. ADDRESS RISK TOOL
+   Self-contained so it can be dropped onto city pages later.
+   State lives in data-state on .risk-tool__result:
+   "example" (no JS) | "loading" | "result" | "outside" | "error"
+   Validation messages use .risk-tool__error on the form.
+   ========================================================================== */
+.risk-tool { display: flex; flex-direction: column; gap: var(--space-4); max-width: 920px; margin-inline: auto; }
+.risk-tool__head { text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+.risk-tool__head .lede { margin-inline: auto; }
+
+.risk-tool__form { display: flex; flex-direction: column; gap: 10px; }
+.risk-tool__label { color: var(--text-secondary); }
+.risk-tool__field {
+  display: flex; flex-direction: column; gap: 8px; padding: 8px;
+  border-radius: 28px; background: var(--navy-700); border: 1.5px solid var(--navy-600);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.risk-tool__field:focus-within { border-color: var(--tide-aqua); box-shadow: 0 0 0 6px var(--tide-aqua-glow); }
+.risk-tool__field.is-invalid { border-color: var(--risk-severe); }
+.risk-tool__input-wrap { display: flex; align-items: center; gap: 12px; padding-left: 14px; flex: 1; }
+.risk-tool__input-wrap svg { width: 22px; height: 22px; flex: none; color: var(--tide-aqua); }
+.risk-tool__input {
+  flex: 1; min-width: 0; min-height: 52px; border: 0; background: transparent;
+  font-size: 18px; color: var(--text-primary);
+}
+.risk-tool__input::placeholder { color: rgba(255, 255, 255, 0.6); }
+.risk-tool__input:focus { outline: none; } /* focus shown on the whole field instead */
+.risk-tool__submit { min-height: 56px; padding-inline: 32px; font-size: 16px; }
+.risk-tool__error { color: #FF9AAE; font-size: 14px; font-weight: 500; display: flex; gap: 8px; align-items: center; }
+.risk-tool__error[hidden] { display: none; }
+.risk-tool__note { color: var(--text-secondary); font-size: 13px; text-align: center; }
+
+@media (min-width: 640px) {
+  .risk-tool__field { flex-direction: row; align-items: center; border-radius: var(--radius-pill); }
+}
+
+/* Results panel */
+.risk-tool__result { padding: clamp(20px, 3.5vw, 40px); display: flex; flex-direction: column; gap: var(--space-3); }
+.risk-tool__result[hidden] { display: none; }
+html.js .risk-tool__result { animation: slideIn 420ms var(--ease) both; }
+@keyframes slideIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+.risk-tool__result-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.risk-tool__address { font-size: var(--fs-h3); font-weight: 500; line-height: 1.3; }
+.risk-tool__grid { display: grid; gap: var(--space-2); }
+@media (min-width: 760px) { .risk-tool__grid { grid-template-columns: 1fr 1.5fr 1fr; } }
+.risk-tool__cell {
+  padding: var(--space-3); border-radius: var(--radius-md);
+  background: rgba(5, 11, 26, 0.45); border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.risk-tool__big { font-size: var(--fs-number-md); font-weight: 300; line-height: 1; }
+
+/* Elevation vs 2050 water level bars */
+.elev-bars { display: grid; gap: 10px; }
+.elev-bar { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 13px; color: var(--text-secondary); }
+.elev-bar strong { color: var(--text-primary); font-weight: 600; }
+.elev-bar__track { grid-column: 1 / -1; height: 8px; border-radius: 4px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
+.elev-bar__fill { height: 100%; border-radius: 4px; background: var(--text-primary); }
+.elev-bar__fill--water { background: var(--tide-aqua); }
+
+.risk-tool__meaning { color: var(--text-secondary); }
+.risk-tool__meaning strong { color: var(--text-primary); }
+.risk-tool__links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.risk-tool__disclaimer { font-size: 13px; color: var(--text-secondary); border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: var(--space-2); }
+
+/* Loading, outside, error messages share one layout */
+.risk-tool__status { display: flex; gap: 16px; align-items: flex-start; }
+.risk-tool__status h3 { font-size: 20px; margin-bottom: 4px; }
+.risk-tool__status p { color: var(--text-secondary); }
+.risk-tool__status-icon { width: 44px; height: 44px; flex: none; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, 0.08); }
+.risk-tool__status-icon svg { width: 22px; height: 22px; }
+.spinner { width: 24px; height: 24px; border-radius: 50%; border: 3px solid rgba(79, 209, 232, 0.25); border-top-color: var(--tide-aqua); animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation: none; border-top-color: var(--tide-aqua); border-right-color: var(--tide-aqua); } }

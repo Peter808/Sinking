@@ -1,0 +1,104 @@
+/* ==========================================================================
+   tokens.css
+   Design tokens for Sinking South Florida. Edit values HERE first.
+   Every other stylesheet reads from these variables, so changing a color
+   or spacing value here updates the whole site.
+
+   TABLE OF CONTENTS
+   1. Hero colors (light, atmospheric)
+   2. Body colors (dark navy)
+   3. Accents
+   4. Risk scale
+   5. Text colors
+   6. Typography
+   7. Spacing scale (8px base)
+   8. Radius, layout, motion, elevation
+   ========================================================================== */
+
+:root {
+  /* ----- 1. Hero colors ----------------------------------------------- */
+  --hero-sky-top:     #8FB4E3;
+  --hero-sky-bottom:  #5B86C9;
+  --glass-bg:         rgba(255, 255, 255, 0.14);
+  --glass-border:     rgba(255, 255, 255, 0.28);
+  --glass-blur:       18px;
+  /* Dark tint layered under glass so white text passes WCAG AA on the light sky.
+     Raise the alpha if a panel ever sits on a brighter image. */
+  --glass-scrim:      rgba(5, 11, 26, 0.34);
+  /* Solid fallback for browsers without backdrop-filter */
+  --glass-fallback:   rgba(18, 34, 74, 0.86);
+
+  /* ----- 2. Body colors ----------------------------------------------- */
+  --navy-900:         #050B1A;   /* page background */
+  --navy-800:         #0A1630;   /* section alt background */
+  --navy-700:         #12224A;   /* cards */
+  --navy-600:         #1C3266;   /* borders, dividers */
+
+  /* ----- 3. Accents --------------------------------------------------- */
+  --tide-aqua:        #4FD1E8;   /* primary accent, links, CTAs */
+  --tide-aqua-glow:   rgba(79, 209, 232, 0.35);
+  --on-aqua:          #04121F;   /* text color on aqua buttons */
+
+  /* ----- 4. Risk scale (chips, lines, sliders). Always pair with a text label. */
+  --risk-low:         #5EE3A1;
+  --risk-moderate:    #F5C451;
+  --risk-high:        #F58A4B;
+  --risk-severe:      #F0506E;
+
+  /* ----- 5. Text ------------------------------------------------------ */
+  --text-primary:     #FFFFFF;
+  --text-secondary:   rgba(255, 255, 255, 0.72);
+  --text-muted:       rgba(255, 255, 255, 0.48); /* decorative only on dark bg; not for body copy */
+
+  /* ----- 6. Typography ------------------------------------------------ */
+  --font-display: "Anton", "Archivo Black", Impact, "Arial Narrow", sans-serif;
+  --font-sans:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Fluid sizes: clamp(min, preferred, max) */
+  --fs-display:   clamp(48px, 8vw, 120px);   /* section headlines */
+  --fs-display-sm:clamp(40px, 6vw, 88px);
+  --fs-hero:      clamp(52px, 7vw, 104px); /* hero h1 line 1 */
+  --fs-hero-sub:  clamp(28px, 3.2vw, 46px);  /* hero h1 line 2 */
+  --fs-number-xl: clamp(64px, 7.4vw, 112px);   /* big data numbers */
+  --fs-number-lg: clamp(40px, 4.6vw, 72px);
+  --fs-number-md: clamp(28px, 2.6vw, 40px);
+  --fs-h3:        clamp(20px, 1.8vw, 26px);
+  --fs-body-lg:   clamp(17px, 1.3vw, 19px);
+  --fs-body:      16px;
+  --fs-small:     14px;
+  --fs-label:     12px;                      /* uppercase captions */
+
+  --ls-label:     0.08em;
+  --ls-display:   0.005em;
+
+  /* ----- 7. Spacing (8px scale) -------------------------------------- */
+  --space-half: 4px;
+  --space-1:  8px;
+  --space-2:  16px;
+  --space-3:  24px;
+  --space-4:  32px;
+  --space-5:  40px;
+  --space-6:  48px;
+  --space-7:  56px;
+  --space-8:  64px;
+  --space-9:  72px;
+  --space-10: 80px;
+  --space-11: 88px;
+  --space-12: 96px;
+
+  /* ----- 8. Radius, layout, motion ----------------------------------- */
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --radius-pill: 999px;
+
+  --max-width:   1280px;
+  --gutter:      16px;   /* mobile; becomes 24px at 640px (see base.css) */
+  --header-h:    72px;
+  --section-pad: clamp(72px, 10vw, 140px);
+
+  --ease:        cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur:         220ms;
+
+  --focus-ring:  0 0 0 3px var(--navy-900), 0 0 0 5px var(--tide-aqua);
+}

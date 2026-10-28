@@ -1,0 +1,75 @@
+{
+  "_comment": [
+    "HOW OFTEN DATA UPDATES, plus the RULES that turn data into risk levels and headlines.",
+    "The GitHub workflow wakes up every hour. Each script checks data/meta.json for its last run",
+    "and exits early if it isn't due yet, based on the numbers below."
+  ],
+
+  "_comment_season": [
+    "South Florida king tides peak in fall (roughly mid-August to mid-December), when the",
+    "seasonal high water lines up with the year's biggest astronomical tides.",
+    "Format is MM-DD. NOAA's monthly high tide flooding outlook can be used to refine this window later."
+  ],
+  "kingTideSeason": { "start": "08-15", "end": "12-15" },
+  "inSeasonEveryMinutes": 60,
+  "offSeasonEveryMinutes": 360,
+
+  "_comment_alertOverride": "If true, any active NWS coastal flood or flood alert for any city forces hourly updates, even off-season.",
+  "alertOverride": true,
+
+  "newsEveryMinutes": 180,
+  "socialEveryMinutes": 120,
+
+  "_comment_stale": "A panel shows 'Data delayed' when its data is older than this many times its expected interval.",
+  "staleMultiplier": 3,
+
+  "rules": {
+    "risk": {
+      "_comment": [
+        "Risk level per city. Checked from Severe down to Low; the first match wins.",
+        "Water levels are feet above MHHW (normal high tide). Thresholds come from NOAA's",
+        "NWS minor / moderate / major flood levels for each gauge (station metadata).",
+        "Alert names must match the NWS 'event' field exactly."
+      ],
+      "severe": {
+        "atOrAbove": "moderateFlood",
+        "alertSeverities": ["Extreme"],
+        "alerts": []
+      },
+      "high": {
+        "atOrAbove": "minorFlood",
+        "alerts": ["Coastal Flood Warning", "Flood Warning", "Flash Flood Warning"]
+      },
+      "moderate": {
+        "withinFtOfMinor": 0.25,
+        "alerts": ["Coastal Flood Statement", "Coastal Flood Advisory", "Coastal Flood Watch", "Flood Advisory", "Flood Watch", "Flash Flood Watch"]
+      },
+      "low": { "_comment": "Everything else: below minor flood threshold and no matching alerts." }
+    },
+
+    "headline": {
+      "_comment": [
+        "The hero headline (h1) is generated from data, never hardcoded.",
+        "Conditions are checked top to bottom; the first match wins. Edit wording freely.",
+        "The home page h1 uses Miami's result (decided 2026-10-28)."
+      ],
+      "elevatedMinFt": 0.5,
+      "_comment_elevatedMinFt": "'Higher than normal' means water now, or today's predicted high, is at least this many ft above MHHW but still under the minor flood threshold.",
+      "heavyRainAlerts": ["Flood Watch", "Flood Advisory", "Flash Flood Watch", "Flash Flood Warning", "Flood Warning"],
+      "order": [
+        { "when": "coastalFloodWarning", "line1": "Coastal Flood Warning",   "line2": "Flooding Expected Today" },
+        { "when": "kingTideFloodingLikely", "line1": "King Tide",           "line2": "with Street Flooding Likely" },
+        { "when": "heavyRainAlert",      "line1": "Heavy Rain",              "line2": "Flooding Possible in Low Areas" },
+        { "when": "waterElevated",       "line1": "Higher Than Normal Tides", "line2": "Minor Flooding Possible" },
+        { "when": "default",             "line1": "Normal Tides",            "line2": "No Flooding Expected" }
+      ],
+      "_comment_conditions": {
+        "coastalFloodWarning": "An NWS 'Coastal Flood Warning' is active for the city.",
+        "kingTideFloodingLikely": "NOAA's high tide flooding outlook flags today, OR today's predicted high tide reaches the minor flood threshold.",
+        "heavyRainAlert": "Any alert listed in heavyRainAlerts is active for the city.",
+        "waterElevated": "Water now, or today's predicted high, is at least elevatedMinFt above MHHW.",
+        "default": "None of the above."
+      }
+    }
+  }
+}

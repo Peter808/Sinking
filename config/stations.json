@@ -1,0 +1,27 @@
+{
+  "_comment": [
+    "Which NOAA tide gauge and which NWS weather station each city uses.",
+    "gauge.id = NOAA CO-OPS station id (tidesandcurrents.noaa.gov/stationhome.html?id=XXXXXXX).",
+    "weather.id = NWS observation station (api.weather.gov/stations/XXXX).",
+    "lat/lon = a point inside the city, used for NWS active alerts (api.weather.gov/alerts/active?point=lat,lon).",
+    "gauge.label is what the UI shows: 'Nearest gauge: Virginia Key'.",
+    "Endpoints are verified in pipeline step 1 before scripts rely on them."
+  ],
+  "userAgent": "SinkingSouthFlorida/1.0 (petersargalski@gmail.com)",
+  "gauges": {
+    "8723214": { "name": "Virginia Key, Biscayne Bay, FL", "label": "Virginia Key" },
+    "8722956": { "name": "South Port Everglades, FL", "label": "South Port Everglades" }
+  },
+  "weatherStations": {
+    "KMIA": { "name": "Miami International Airport" },
+    "KHWO": { "name": "North Perry Airport" },
+    "KFLL": { "name": "Fort Lauderdale/Hollywood International Airport" }
+  },
+  "cities": [
+    { "id": "miami",            "name": "Miami",            "gauge": "8723214", "weather": "KMIA", "lat": 25.7617, "lon": -80.1918 },
+    { "id": "miami-beach",      "name": "Miami Beach",      "gauge": "8723214", "weather": "KMIA", "lat": 25.7907, "lon": -80.1300 },
+    { "id": "hallandale-beach", "name": "Hallandale Beach", "gauge": "8722956", "weather": "KHWO", "lat": 25.9812, "lon": -80.1484 },
+    { "id": "hollywood",        "name": "Hollywood",        "gauge": "8722956", "weather": "KHWO", "lat": 26.0112, "lon": -80.1495 },
+    { "id": "fort-lauderdale",  "name": "Fort Lauderdale",  "gauge": "8722956", "weather": "KFLL", "lat": 26.1224, "lon": -80.1373 }
+  ]
+}

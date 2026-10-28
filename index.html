@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  PAGE: Home (index.html)
+  PURPOSE: Front door for Sinking South Florida. Shows today's (sample) tide
+           conditions, the address flood-risk tool, key numbers, city links,
+           the "why", latest news, and next steps.
+  TARGET KEYWORDS: south florida flooding, miami flooding, flood risk by address
+  LAST EDITED: 2026-10-28, first build (all numbers are placeholders)
+  NOTES: Links are relative (miami/, news/) so the site works when opened
+         straight from disk and on GitHub Pages.
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>South Florida Flooding &amp; Sea Level Rise | Sinking South Florida</title>
+  <meta name="description" content="Track flooding and sea level rise in Miami, Miami Beach, Hallandale Beach, Hollywood, and Fort Lauderdale. Check your address for flood risk.">
+  <link rel="canonical" href="https://miamiflooding.com/">
+  <meta name="theme-color" content="#050B1A">
+
+  <!-- Open Graph / Twitter. PLACEHOLDER: create images/og-home.jpg at 1200x630 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sinking South Florida">
+  <meta property="og:title" content="South Florida Flooding &amp; Sea Level Rise">
+  <meta property="og:description" content="Track flooding and sea level rise in Miami, Miami Beach, Hallandale Beach, Hollywood, and Fort Lauderdale. Check your address for flood risk.">
+  <meta property="og:url" content="https://miamiflooding.com/">
+  <meta property="og:image" content="https://miamiflooding.com/images/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="South Florida Flooding &amp; Sea Level Rise">
+  <meta name="twitter:description" content="Track flooding and sea level rise across South Florida and check your address for flood risk.">
+  <meta name="twitter:image" content="https://miamiflooding.com/images/og-home.jpg">
+
+  <!-- Fonts: Anton (section headlines) + Inter (everything else) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap">
+
+  <!-- Hero photo loads first (it's above the fold) -->
+  <link rel="preload" as="image" href="images/hero-miami.webp" type="image/webp">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- Structured data: WebSite + Organization.
+       FUTURE: once site search exists, add this inside the WebSite object:
+       "potentialAction": {
+         "@type": "SearchAction",
+         "target": "https://miamiflooding.com/search/?q={search_term_string}",
+         "query-input": "required name=search_term_string"
+       }
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://miamiflooding.com/#website",
+        "url": "https://miamiflooding.com/",
+        "name": "Sinking South Florida",
+        "description": "Flooding and sea level rise tracking for Miami, Miami Beach, Hallandale Beach, Hollywood, and Fort Lauderdale.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://miamiflooding.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://miamiflooding.com/#organization",
+        "name": "Sinking South Florida",
+        "url": "https://miamiflooding.com/",
+        "logo": "https://miamiflooding.com/images/logo.png",
+        "areaServed": ["Miami", "Miami Beach", "Hallandale Beach", "Hollywood", "Fort Lauderdale"]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Adds .js to <html> before paint so JS-only UI doesn't flash -->
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/config.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/hero.js" defer></script>
+  <script src="js/risk-tool.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== SECTION: Header (global) ===== -->
+<header class="site-header site-header--hero" data-header>
+  <div class="site-header__inner container">
+
+    <a class="brand" href="./" aria-label="Sinking South Florida, home">
+      <!-- Logo mark: placeholder wave in a circle. Swap for the final logo SVG. -->
+      <svg class="brand__mark" viewBox="0 0 34 34" aria-hidden="true">
+        <circle cx="17" cy="17" r="16" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.5)"/>
+        <path d="M7 15c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M7 21c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#4FD1E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>Sinking South Florida</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary" data-nav>
+      <ul class="site-nav__list" role="list">
+        <li class="has-dropdown" data-dropdown>
+          <!-- JS version: a button that opens the menu -->
+          <button class="site-nav__link site-nav__toggle js-only" type="button" aria-expanded="false" aria-controls="cities-menu" data-dropdown-toggle>
+            Cities
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <!-- No-JS version: a link; the menu still opens on hover and focus -->
+          <a class="site-nav__link no-js-only" href="#your-city">Cities</a>
+          <ul class="dropdown" id="cities-menu" role="list">
+            <li><a href="miami/">Miami</a></li>
+            <li><a href="miami-beach/">Miami Beach <span class="label" style="color:var(--text-secondary)">South Beach</span></a></li>
+            <li><a href="hallandale-beach/">Hallandale Beach</a></li>
+            <li><a href="hollywood/">Hollywood</a></li>
+            <li><a href="fort-lauderdale/">Fort Lauderdale</a></li>
+          </ul>
+        </li>
+        <li><a class="site-nav__link" href="news/">News</a></li>
+        <li><a class="site-nav__link" href="resources/">Resources</a></li>
+        <li class="site-nav__cta"><a class="btn btn--primary" href="#check-your-address" data-close-menu>Check Your Address</a></li>
+      </ul>
+    </nav>
+
+    <!-- Live time and date (Miami time), plus tide status. Filled by main.js; hidden without JS. -->
+    <div class="site-header__meta js-only">
+      <p class="clock"><span class="clock__time" data-clock-time>--:--</span><span class="clock__sub"><span data-clock-ampm>AM</span><br>Time</span></p>
+      <p class="clock"><span class="clock__time" data-clock-date>-- ---</span><span class="clock__sub"><span data-clock-year>2026</span><br>Date</span></p>
+      <!-- PLACEHOLDER: tide direction from NOAA predictions for the active city -->
+      <p class="tide-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        Tide: <span data-field="tide-status">Rising</span>
+      </p>
+    </div>
+
+    <a class="btn btn--glass btn--sm site-header__cta" href="#check-your-address">Check Your Address</a>
+
+    <button class="menu-toggle js-only" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu" data-menu-toggle>
+      <span class="menu-toggle__bars"></span>
+    </button>
+  </div>
+</header>
+<!-- ===== END: Header ===== -->
+
+<main id="main">
+
+<!-- ===== SECTION: Hero ===== -->
+<!-- data-city = active city. hero.js swaps every [data-field] value on switch. -->
+<section class="hero" id="hero" data-hero data-city="miami" aria-labelledby="hero-title">
+
+  <!-- Background: sky gradient (CSS) + center photo + fade to navy -->
+  <div class="hero__bg" aria-hidden="true">
+    <!-- IMAGE: storm over the Miami skyline and Biscayne Bay. The PNG already has soft, transparent
+         edges, so it blends into the sky without a CSS mask. images/hero.png is the original;
+         hero-miami.webp is the compressed copy browsers load (about 460KB vs 2.9MB).
+         To swap the photo: replace both files, keeping the names, or update the paths here. -->
+    <picture>
+      <source srcset="images/hero-miami.webp" type="image/webp">
+      <img class="hero__image" src="images/hero.png" width="1672" height="941" alt="" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+
+  <div class="hero__inner container">
+
+    <!-- Left column: eyebrow, h1, summary -->
+    <div class="hero__head">
+      <div class="hero__eyebrow-row">
+        <p class="label hero__eyebrow">Live conditions · <span data-field="city-name">Miami</span></p>
+        <!-- SAMPLE DATA: remove this badge once real data is wired in -->
+        <span class="sample-badge sample-badge--on-light">Sample data</span>
+      </div>
+      <!-- h1 stays the same for every city (SEO). Hidden suffix adds the region. -->
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__title-1">King Tide</span>
+        <span class="hero__title-2">with Street Flooding Likely<span class="visually-hidden"> in South Florida</span></span>
+      </h1>
+      <!-- PLACEHOLDER: daily conditions text, later generated from NOAA tide + NWS rain data -->
+      <p class="hero__summary" data-field="summary">Seasonal king tides peak this evening. Expect shallow water on low streets in Brickell and Shorecrest around high tide.</p>
+    </div>
+
+    <!-- Left column: three mini stats (water level in other cities) -->
+    <!-- PLACEHOLDER: water levels from NOAA tide gauges (Virginia Key, Port Everglades) -->
+    <ul class="hero__mini" role="list" aria-label="Water level in other cities">
+      <li class="mini" data-mini data-risk="high">
+        <p class="mini__value"><span data-mini-level>+1.9</span><span class="mini__unit">ft</span></p>
+        <p class="mini__city"><span data-mini-city>Miami Beach</span></p>
+        <p class="mini__risk"><span data-mini-risk>High</span> risk</p>
+      </li>
+      <li class="mini" data-mini data-risk="moderate">
+        <p class="mini__value"><span data-mini-level>+1.2</span><span class="mini__unit">ft</span></p>
+        <p class="mini__city"><span data-mini-city>Hollywood</span></p>
+        <p class="mini__risk"><span data-mini-risk>Moderate</span> risk</p>
+      </li>
+      <li class="mini" data-mini data-risk="high">
+        <p class="mini__value"><span data-mini-level>+1.6</span><span class="mini__unit">ft</span></p>
+        <p class="mini__city"><span data-mini-city>Fort Lauderdale</span></p>
+        <p class="mini__risk"><span data-mini-risk>High</span> risk</p>
+      </li>
+    </ul>
+
+    <!-- Left column bottom: radial chart + risk slider -->
+    <div class="hero__gauges">
+      <!-- Radial chart: outer ring = this year, inner ring = last year.
+           Ring length = days / 60 (RADIAL_MAX_DAYS in hero.js).
+           PLACEHOLDER: flood day counts from NOAA high tide flooding outlook -->
+      <figure class="radial">
+        <svg class="radial__svg" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" class="radial__track"/>
+          <circle cx="60" cy="60" r="40" class="radial__track"/>
+          <circle cx="60" cy="60" r="52" class="radial__ring radial__ring--this" data-ring="this" stroke-dasharray="206.9 326.7"/>
+          <circle cx="60" cy="60" r="40" class="radial__ring radial__ring--last" data-ring="last" stroke-dasharray="113.1 251.3"/>
+        </svg>
+        <div class="radial__center"><span class="radial__num" data-field="flood-days">38</span><span class="radial__unit">days</span></div>
+        <figcaption class="radial__legend">
+          <span class="label">Flood days</span>
+          <span class="radial__key radial__key--this">2026: <strong data-field="flood-days">38</strong></span>
+          <span class="radial__key radial__key--last">2025: <strong data-field="flood-days-last">27</strong></span>
+        </figcaption>
+      </figure>
+
+      <!-- Risk slider: display only. --pos sets the marker (hero.js RISK_POS). -->
+      <div class="risk-meter" data-risk-meter data-risk="moderate" style="--pos: 38%">
+        <div class="risk-meter__top">
+          <span class="label">Flood risk today</span>
+          <span class="risk-meter__value" data-field="risk-label">Moderate</span>
+        </div>
+        <div class="risk-meter__track" aria-hidden="true"><span class="risk-meter__marker"></span></div>
+        <div class="risk-meter__scale" aria-hidden="true"><span>Low</span><span>Moderate</span><span>High</span><span>Severe</span></div>
+      </div>
+    </div>
+
+    <!-- Right column: king tide season calendar.
+         Each row's data-start / data-end (YYYY-MM-DD) drive the highlight.
+         hero.js marks the cycle that includes today as "Now" (or the next one
+         as "Next" between cycles) and dims past cycles. Without JS, the
+         is-current / is-past classes below show the state as of this edit.
+         To add a new season: copy a row, change the dates and the text.
+         PLACEHOLDER: verify dates against NOAA tide predictions or the
+         Miami-Dade County king tide calendar before launch. -->
+    <section class="hero__readout kingtides glass" aria-labelledby="kt-title">
+      <div class="kingtides__head">
+        <h2 class="label kingtides__title" id="kt-title">King tide season <span class="kingtides__year">2026</span></h2>
+        <p class="kingtides__count" data-kt-count>Cycle 5 of 9</p>
+      </div>
+      <!-- Scroll box: shows the most recent past cycle plus what's ahead.
+           Scroll up for earlier cycles. tabindex lets keyboard users scroll it. -->
+      <div class="kingtides__scroll" tabindex="0" role="region" aria-label="King tide cycles, scroll up for earlier dates" data-kt-scroll>
+      <ol class="kingtides__list" role="list" data-kt-list>
+        <li class="kt is-past" data-start="2026-08-11" data-end="2026-08-14"><span class="kt__month">Aug</span><span class="kt__days">11 – 14</span><span class="kt__status">Past</span></li>
+        <li class="kt is-past" data-start="2026-09-09" data-end="2026-09-13"><span class="kt__month">Sep</span><span class="kt__days">9 – 13</span><span class="kt__status">Past</span></li>
+        <li class="kt is-past" data-start="2026-09-26" data-end="2026-10-01"><span class="kt__month">Sep</span><span class="kt__days">26 – Oct 1</span><span class="kt__status">Past</span></li>
+        <li class="kt is-past" data-start="2026-10-07" data-end="2026-10-13"><span class="kt__month">Oct</span><span class="kt__days">7 – 13</span><span class="kt__status">Past</span></li>
+        <li class="kt is-current" data-start="2026-10-24" data-end="2026-10-31" aria-current="date"><span class="kt__month">Oct</span><span class="kt__days">24 – 31</span><span class="kt__status">Now</span></li>
+        <li class="kt" data-start="2026-11-05" data-end="2026-11-11"><span class="kt__month">Nov</span><span class="kt__days">5 – 11</span><span class="kt__status"></span></li>
+        <li class="kt" data-start="2026-11-22" data-end="2026-11-28"><span class="kt__month">Nov</span><span class="kt__days">22 – 28</span><span class="kt__status"></span></li>
+        <li class="kt" data-start="2026-12-05" data-end="2026-12-08"><span class="kt__month">Dec</span><span class="kt__days">5 – 8</span><span class="kt__status"></span></li>
+        <li class="kt" data-start="2026-12-23" data-end="2026-12-27"><span class="kt__month">Dec</span><span class="kt__days">23 – 27</span><span class="kt__status"></span></li>
+      </ol>
+      </div>
+    </section>
+
+    <!-- Right column: city selector. Becomes horizontal chips on mobile. -->
+    <div class="hero__cities glass">
+      <p class="label hero__cities-title" id="city-picker-label">Choose a city</p>
+      <ul class="city-list" role="list" aria-labelledby="city-picker-label">
+        <li><button class="city-row" type="button" data-city-btn="miami" aria-pressed="true" data-risk="moderate">
+          <span class="city-row__name">Miami</span><span class="city-row__value">+1.4 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </button></li>
+        <li><button class="city-row" type="button" data-city-btn="miami-beach" aria-pressed="false" data-risk="high">
+          <span class="city-row__name">Miami Beach</span><span class="city-row__value">+1.9 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </button></li>
+        <li><button class="city-row" type="button" data-city-btn="hallandale-beach" aria-pressed="false" data-risk="moderate">
+          <span class="city-row__name">Hallandale Beach</span><span class="city-row__value">+1.1 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </button></li>
+        <li><button class="city-row" type="button" data-city-btn="hollywood" aria-pressed="false" data-risk="moderate">
+          <span class="city-row__name">Hollywood</span><span class="city-row__value">+1.2 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </button></li>
+        <li><button class="city-row" type="button" data-city-btn="fort-lauderdale" aria-pressed="false" data-risk="high">
+          <span class="city-row__name">Fort Lauderdale</span><span class="city-row__value">+1.6 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </button></li>
+      </ul>
+      <p class="visually-hidden" aria-live="polite" data-hero-live></p>
+    </div>
+  </div>
+
+  <!-- Tide wave: 24h tide curve for the active city.
+       The static path below is Miami's sample curve (generated by hero.js).
+       PLACEHOLDER: tide predictions from NOAA CO-OPS API -->
+  <div class="tide" role="img" aria-label="Today's sample tide curve: high 7:42 AM at 2.1 feet, low 1:58 PM at 0.3 feet, high 7:42 PM at 2.3 feet.">
+    <!-- Decorative drifting swells (animation off under reduced motion) -->
+    <svg class="tide__ghost tide__ghost--1" viewBox="0 0 2000 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 Q125 40 250 60 T500 60 T750 60 T1000 60 T1250 60 T1500 60 T1750 60 T2000 60"/></svg>
+    <svg class="tide__ghost tide__ghost--2" viewBox="0 0 2000 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 Q160 54 333 70 T667 70 T1000 70 T1333 70 T1667 70 T2000 70"/></svg>
+
+    <svg class="tide__svg" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+      <path class="tide__path" data-tide-path d="M0.0 62.7 L10.4 64.1 L20.8 65.3 L31.3 66.2 L41.7 66.9 L52.1 67.3 L62.5 67.5 L72.9 67.3 L83.3 66.9 L93.8 66.2 L104.2 65.3 L114.6 64.1 L125.0 62.7 L135.4 61.0 L145.8 59.2 L156.3 57.3 L166.7 55.2 L177.1 53.1 L187.5 50.9 L197.9 48.7 L208.3 46.5 L218.8 44.3 L229.2 42.3 L239.6 40.4 L250.0 38.6 L260.4 37.0 L270.8 35.6 L281.3 34.5 L291.7 33.6 L302.1 33.0 L312.5 32.6 L322.9 32.5 L333.3 32.7 L343.8 33.2 L354.2 34.0 L364.6 35.0 L375.0 36.3 L385.4 37.8 L395.8 39.6 L406.3 41.5 L416.7 43.5 L427.1 45.7 L437.5 47.9 L447.9 50.3 L458.3 52.6 L468.8 54.9 L479.2 57.1 L489.6 59.2 L500.0 61.3 L510.4 63.1 L520.8 64.8 L531.3 66.2 L541.7 67.4 L552.1 68.4 L562.5 69.0 L572.9 69.4 L583.3 69.5 L593.8 69.3 L604.2 68.7 L614.6 67.7 L625.0 66.3 L635.4 64.7 L645.8 62.7 L656.3 60.5 L666.7 58.0 L677.1 55.4 L687.5 52.7 L697.9 49.9 L708.3 47.1 L718.8 44.3 L729.2 41.6 L739.6 39.1 L750.0 36.7 L760.4 34.6 L770.8 32.7 L781.3 31.1 L791.7 29.9 L802.1 29.0 L812.5 28.5 L822.9 28.4 L833.3 28.6 L843.8 29.2 L854.2 30.1 L864.6 31.2 L875.0 32.7 L885.4 34.4 L895.8 36.4 L906.3 38.5 L916.7 40.8 L927.1 43.3 L937.5 45.8 L947.9 48.4 L958.3 51.0 L968.8 53.6 L979.2 56.1 L989.6 58.4 L1000.0 60.7"/>
+    </svg>
+
+    <ul class="tide__labels" role="list" aria-hidden="true" data-tide-labels>
+      <li class="tide__label tide__label--low is-start" style="left:6.25%;top:67.49%"><span>LOW 1:30 AM</span><span>0.4 FT</span></li>
+      <li class="tide__label tide__label--high" style="left:32.08%;top:32.51%"><span>HIGH 7:42 AM</span><span>+2.1 FT</span></li>
+      <li class="tide__label tide__label--low" style="left:58.19%;top:69.54%"><span>LOW 1:58 PM</span><span>0.3 FT</span></li>
+      <li class="tide__label tide__label--high" style="left:82.08%;top:28.40%"><span>HIGH 7:42 PM</span><span>+2.3 FT</span></li>
+    </ul>
+    <!-- "Now" marker. Static at 10:30 AM without JS; hero.js moves it to the current Miami time. -->
+    <span class="tide__now" data-tide-now style="left:43.75%;top:47.95%" aria-hidden="true"><span class="tide__now-label">Now</span></span>
+  </div>
+</section>
+<!-- ===== END: Hero ===== -->
+
+
+<!-- ===== SECTION: Address risk tool ===== -->
+<!-- Self-contained component (styles in components.css section 12, logic in risk-tool.js).
+     Starts the dark navy part of the page. -->
+<section class="section risk-section" id="check-your-address" aria-labelledby="risk-title">
+  <div class="container">
+    <div class="risk-tool" data-risk-tool>
+      <div class="risk-tool__head">
+        <h2 class="display" id="risk-title">Is your address at risk?</h2>
+        <p class="lede">Enter any address in Miami-Dade or Broward to see its flood zone, elevation, and projected 2050 risk.</p>
+      </div>
+
+      <!-- Real form: Enter submits. Without JS it reloads the page and the example result below stays visible. -->
+      <form class="risk-tool__form" action="#check-your-address" method="get" novalidate data-risk-form>
+        <label class="label risk-tool__label" for="risk-address">Street address</label>
+        <div class="risk-tool__field" data-risk-field>
+          <div class="risk-tool__input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <input class="risk-tool__input" id="risk-address" name="address" type="text" autocomplete="street-address"
+                   placeholder="e.g. 1700 Convention Center Dr, Miami Beach" aria-describedby="risk-coverage" data-risk-input>
+          </div>
+          <button class="btn btn--primary risk-tool__submit" type="submit">Check Risk</button>
+        </div>
+        <p class="risk-tool__error" id="risk-error" role="alert" hidden data-risk-error>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg>
+          <span>Enter a street address to check its flood risk.</span>
+        </p>
+        <p class="risk-tool__note" id="risk-coverage">Covers Miami-Dade and Broward counties only.</p>
+      </form>
+
+      <!-- Results panel. Without JS this shows an EXAMPLE result.
+           risk-tool.js hides it on load and fills it after a search. -->
+      <div class="risk-tool__result glass" data-risk-result data-state="example" aria-live="polite">
+        <div class="risk-tool__result-top">
+          <div>
+            <p class="label" style="color:var(--text-secondary)" data-risk-kicker>Example result</p>
+            <h3 class="risk-tool__address" data-risk-address>1700 Convention Center Dr, Miami Beach</h3>
+          </div>
+          <!-- SAMPLE DATA: remove this badge once real data is wired in -->
+          <span class="sample-badge">Sample data</span>
+        </div>
+
+        <div class="risk-tool__grid">
+          <!-- PLACEHOLDER: FEMA National Flood Hazard Layer (NFHL) zone for the parcel -->
+          <div class="risk-tool__cell">
+            <p class="label" style="color:var(--text-secondary)">FEMA flood zone</p>
+            <p class="risk-tool__big" data-result="zone">AE</p>
+            <p style="font-size:14px;color:var(--text-secondary)">High-risk zone. Flood insurance usually required with a federally backed mortgage.</p>
+          </div>
+          <!-- PLACEHOLDER: ground elevation (USGS 3DEP) vs. 2050 projected high water (NOAA / SE FL Compact) -->
+          <div class="risk-tool__cell">
+            <p class="label" style="color:var(--text-secondary)">Elevation vs. 2050 water level</p>
+            <div class="elev-bars">
+              <div class="elev-bar"><span>Ground elevation</span><strong data-result="elevation">4.2 ft</strong>
+                <span class="elev-bar__track"><span class="elev-bar__fill" style="width:62%"></span></span></div>
+              <div class="elev-bar"><span>Projected 2050 high tide</span><strong data-result="water2050">4.6 ft</strong>
+                <span class="elev-bar__track"><span class="elev-bar__fill elev-bar__fill--water" style="width:68%"></span></span></div>
+            </div>
+            <p style="font-size:14px;color:var(--text-secondary)">Water is projected to reach <strong style="color:var(--text-primary)">0.4 ft above</strong> ground level at peak tides.</p>
+          </div>
+          <div class="risk-tool__cell">
+            <p class="label" style="color:var(--text-secondary)">Risk level</p>
+            <p><span class="risk-chip" data-risk="high" data-result="risk">High</span></p>
+            <p style="font-size:14px;color:var(--text-secondary)">Step 3 of 4 on our scale: Low, Moderate, High, Severe.</p>
+          </div>
+        </div>
+
+        <p class="risk-tool__meaning"><strong>What this means:</strong> this property already sits in a high-risk zone, and by 2050 the highest tides could reach street level. Look into flood insurance and an elevation certificate.</p>
+        <div class="risk-tool__links">
+          <a class="arrow-link" href="resources/#flood-insurance">Flood insurance basics <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="arrow-link" href="resources/#flood-zones">Read your flood zone <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <p class="risk-tool__disclaimer">Not an official flood determination. Confirm your zone on the FEMA Flood Map Service Center or with your insurer.</p>
+      </div>
+
+      <!-- Status panel for loading / outside coverage / error. Filled by risk-tool.js. -->
+      <div class="risk-tool__result glass" data-risk-status hidden aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+<!-- ===== END: Address risk tool ===== -->
+
+
+<!-- ===== SECTION: By the numbers ===== -->
+<section class="section section--alt numbers" aria-labelledby="numbers-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <div class="section-head__row">
+          <p class="label section-head__eyebrow">South Florida at a glance</p>
+          <!-- SAMPLE DATA: remove once every number below is verified -->
+          <span class="sample-badge">Sample data</span>
+        </div>
+        <h2 class="display" id="numbers-title">By the numbers</h2>
+      </div>
+    </div>
+
+    <ul class="numbers__grid" role="list">
+      <li class="stat stat--line" style="--risk-color: var(--risk-high)">
+        <!-- PLACEHOLDER: 2019 Unified Sea Level Rise Projection, Southeast Florida Regional Climate Change Compact. Verify range and baseline year. -->
+        <p class="stat__value">+10–17<span class="stat__unit">in</span></p>
+        <p class="stat__label">Sea level rise expected in South Florida by 2040</p>
+        <p class="stat__source">Source: Southeast Florida Regional Climate Change Compact (to verify)</p>
+      </li>
+      <li class="stat stat--line" style="--risk-color: var(--risk-moderate)">
+        <!-- PLACEHOLDER: sunny-day (high tide) flood days at Virginia Key, NOAA annual High Tide Flooding Outlook -->
+        <p class="stat__value">X<span class="stat__unit">days</span></p>
+        <p class="stat__label">Sunny-day flood days in Miami last year</p>
+        <p class="stat__source">Source: NOAA High Tide Flooding Outlook (placeholder)</p>
+      </li>
+      <li class="stat stat--line" style="--risk-color: var(--risk-severe)">
+        <!-- PLACEHOLDER: count of parcels in Special Flood Hazard Areas, FEMA NFHL x Miami-Dade property appraiser -->
+        <p class="stat__value">X<span class="stat__unit">properties</span></p>
+        <p class="stat__label">In high-risk flood zones in Miami-Dade</p>
+        <p class="stat__source">Source: FEMA flood maps (placeholder)</p>
+      </li>
+      <li class="stat stat--line" style="--risk-color: var(--tide-aqua)">
+        <!-- PLACEHOLDER: property value at risk by 2050; candidate sources: First Street, Miami-Dade Sea Level Rise Strategy. Source to verify. -->
+        <p class="stat__value">$X<span class="stat__unit">billion</span></p>
+        <p class="stat__label">Property value at risk by 2050</p>
+        <p class="stat__source">Source: to verify (placeholder)</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- ===== END: By the numbers ===== -->
+
+
+<!-- ===== SECTION: Your city ===== -->
+<!-- Bento grid: Miami spans 2 rows on the left, 2x2 on the right. Single column on mobile. -->
+<section class="section cities" id="your-city" aria-labelledby="cities-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <p class="label section-head__eyebrow">Five cities, one coastline</p>
+        <h2 class="display" id="cities-title">Your city</h2>
+      </div>
+      <span class="sample-badge">Sample data</span>
+    </div>
+
+    <ul class="bento" role="list">
+      <!-- Miami (large) -->
+      <li class="city-card city-card--lg">
+        <!-- IMAGE PROMPT: Brickell Avenue in Miami during a king tide, shallow water at the curb, glass towers, overcast sky, reflections, documentary photo style, no text. FILE: images/city-miami.webp SIZE: 1200x1400 -->
+        <div class="city-card__media img-ph" role="img" aria-label="Placeholder: Brickell street with king tide water at the curb"><span class="img-ph__label">IMAGE: Brickell king tide</span></div>
+        <div class="city-card__body">
+          <span class="risk-chip" data-risk="moderate">Moderate</span>
+          <h3 class="city-card__name"><a href="miami/">Miami</a></h3>
+          <p class="city-card__sub">Brickell, Shorecrest, Little River</p>
+          <!-- PLACEHOLDER: today's water level above MHHW, NOAA Virginia Key gauge -->
+          <p class="city-card__stat"><strong>+1.4 ft</strong> today</p>
+          <span class="arrow-link city-card__cta" aria-hidden="true">Explore Miami <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <!-- Miami Beach -->
+      <li class="city-card">
+        <!-- IMAGE PROMPT: Collins Avenue in Miami Beach after a king tide, shallow water in the street, palm trees, overcast, no text. FILE: images/city-miami-beach.webp SIZE: 1200x800 -->
+        <div class="city-card__media img-ph" role="img" aria-label="Placeholder: Collins Avenue with tidal water in the street"><span class="img-ph__label">IMAGE: Collins Ave flooding</span></div>
+        <div class="city-card__body">
+          <span class="risk-chip" data-risk="high">High</span>
+          <h3 class="city-card__name"><a href="miami-beach/">Miami Beach</a></h3>
+          <p class="city-card__sub">Including South Beach and West Avenue</p>
+          <!-- PLACEHOLDER: today's water level, NOAA Virginia Key gauge -->
+          <p class="city-card__stat"><strong>+1.9 ft</strong> today</p>
+          <span class="arrow-link city-card__cta" aria-hidden="true">Explore Miami Beach <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <!-- Hallandale Beach -->
+      <li class="city-card">
+        <!-- IMAGE PROMPT: Quiet street near the Intracoastal in Hallandale Beach with a thin sheet of tidal water, low-rise condos, palms, soft gray sky, no text. FILE: images/city-hallandale-beach.webp SIZE: 1200x800 -->
+        <div class="city-card__media img-ph" role="img" aria-label="Placeholder: Hallandale Beach street near the Intracoastal with tidal water"><span class="img-ph__label">IMAGE: Hallandale Intracoastal</span></div>
+        <div class="city-card__body">
+          <span class="risk-chip" data-risk="moderate">Moderate</span>
+          <h3 class="city-card__name"><a href="hallandale-beach/">Hallandale Beach</a></h3>
+          <!-- PLACEHOLDER: today's water level -->
+          <p class="city-card__stat"><strong>+1.1 ft</strong> today</p>
+          <span class="arrow-link city-card__cta" aria-hidden="true">Explore Hallandale Beach <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <!-- Hollywood -->
+      <li class="city-card">
+        <!-- IMAGE PROMPT: Hollywood Florida Broadwalk area after heavy rain, puddled pavement, beach and palms, overcast, no text. FILE: images/city-hollywood.webp SIZE: 1200x800 -->
+        <div class="city-card__media img-ph" role="img" aria-label="Placeholder: Hollywood Broadwalk area with standing water after rain"><span class="img-ph__label">IMAGE: Hollywood after rain</span></div>
+        <div class="city-card__body">
+          <span class="risk-chip" data-risk="moderate">Moderate</span>
+          <h3 class="city-card__name"><a href="hollywood/">Hollywood</a></h3>
+          <!-- PLACEHOLDER: today's water level -->
+          <p class="city-card__stat"><strong>+1.2 ft</strong> today</p>
+          <span class="arrow-link city-card__cta" aria-hidden="true">Explore Hollywood <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+      <!-- Fort Lauderdale -->
+      <li class="city-card">
+        <!-- IMAGE PROMPT: Residential canal street in Fort Lauderdale (Las Olas Isles style) with tidal water over the seawall edge, boats, palms, overcast, no text. FILE: images/city-fort-lauderdale.webp SIZE: 1200x800 -->
+        <div class="city-card__media img-ph" role="img" aria-label="Placeholder: Fort Lauderdale canal street with tidal water over the seawall"><span class="img-ph__label">IMAGE: Las Olas Isles tide</span></div>
+        <div class="city-card__body">
+          <span class="risk-chip" data-risk="high">High</span>
+          <h3 class="city-card__name"><a href="fort-lauderdale/">Fort Lauderdale</a></h3>
+          <!-- PLACEHOLDER: today's water level, NOAA Port Everglades gauge -->
+          <p class="city-card__stat"><strong>+1.6 ft</strong> today</p>
+          <span class="arrow-link city-card__cta" aria-hidden="true">Explore Fort Lauderdale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- ===== END: Your city ===== -->
+
+
+<!-- ===== SECTION: Why it's happening ===== -->
+<section class="section section--alt why" aria-labelledby="why-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <div class="section-head__text">
+        <p class="label section-head__eyebrow">Why it's happening</p>
+        <h2 class="display" id="why-title">Why the water keeps coming</h2>
+      </div>
+    </div>
+
+    <div class="why__layout">
+      <!-- Center illustration -->
+      <!-- IMAGE PROMPT: Clean cutaway illustration of South Florida ground, porous limestone layer with seawater seeping upward under a street and houses, blue and navy palette, minimal, no text. FILE: images/limestone-cutaway.webp SIZE: 1200x1200 -->
+      <figure class="why__art">
+        <!-- Placeholder illustration (inline SVG). Replace with the final image when ready. -->
+        <svg viewBox="0 0 400 400" role="img" aria-labelledby="why-art-title">
+          <title id="why-art-title">Cutaway of South Florida ground: seawater rises through porous limestone under a street and houses</title>
+          <defs>
+            <clipPath id="why-clip"><circle cx="200" cy="200" r="190"/></clipPath>
+            <linearGradient id="why-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FB4E3"/><stop offset="1" stop-color="#5B86C9"/></linearGradient>
+            <linearGradient id="why-rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1C3266"/><stop offset="1" stop-color="#12224A"/></linearGradient>
+            <linearGradient id="why-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FD1E8" stop-opacity=".85"/><stop offset="1" stop-color="#1B6FA8" stop-opacity=".9"/></linearGradient>
+          </defs>
+          <g clip-path="url(#why-clip)">
+            <rect width="400" height="400" fill="url(#why-sky)"/>
+            <!-- houses -->
+            <g fill="#EAF2FC">
+              <path d="M70 150h56v-30l-28-22-28 22z"/><path d="M270 150h64v-34l-32-24-32 24z"/>
+            </g>
+            <g fill="#5B86C9"><rect x="92" y="130" width="12" height="20"/><rect x="295" y="126" width="14" height="24"/></g>
+            <!-- street -->
+            <rect y="150" width="400" height="16" fill="#0A1630"/>
+            <path d="M20 158h30M80 158h30M140 158h30M200 158h30M260 158h30M320 158h30" stroke="#F5C451" stroke-width="2"/>
+            <!-- puddle on the street -->
+            <ellipse cx="200" cy="151" rx="44" ry="4" fill="#4FD1E8" opacity=".9"/>
+            <!-- limestone layer with pores -->
+            <rect y="166" width="400" height="234" fill="url(#why-rock)"/>
+            <g fill="#050B1A" opacity=".55">
+              <circle cx="40" cy="200" r="9"/><circle cx="90" cy="186" r="6"/><circle cx="150" cy="210" r="11"/><circle cx="215" cy="192" r="7"/><circle cx="270" cy="214" r="10"/><circle cx="330" cy="190" r="8"/><circle cx="375" cy="215" r="6"/>
+              <circle cx="60" cy="245" r="7"/><circle cx="120" cy="238" r="5"/><circle cx="185" cy="250" r="8"/><circle cx="245" cy="240" r="6"/><circle cx="305" cy="252" r="9"/><circle cx="360" cy="240" r="5"/>
+            </g>
+            <!-- seawater rising from below, filling pores -->
+            <path d="M0 265 Q50 255 100 265 T200 265 T300 265 T400 265 V400 H0z" fill="url(#why-water)"/>
+            <g fill="#4FD1E8" opacity=".8">
+              <circle cx="60" cy="245" r="5"/><circle cx="185" cy="250" r="6"/><circle cx="305" cy="252" r="7"/><circle cx="150" cy="210" r="6"/><circle cx="270" cy="214" r="5"/>
+            </g>
+            <!-- upward arrows -->
+            <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity=".9">
+              <path d="M110 330v-50M100 292l10-12 10 12"/><path d="M200 340v-60M190 292l10-12 10 12"/><path d="M290 330v-50M280 292l10-12 10 12"/>
+              <path d="M200 236v-56M192 190l8-10 8 10" stroke-dasharray="4 6"/>
+            </g>
+            <!-- seawall on the right edge (water goes under it) -->
+            <rect x="372" y="120" width="12" height="150" fill="#C9D6EA"/>
+          </g>
+          <circle cx="200" cy="200" r="190" fill="none" stroke="#1C3266" stroke-width="2"/>
+        </svg>
+        <figcaption class="visually-hidden">Placeholder illustration until the final cutaway image is added.</figcaption>
+      </figure>
+
+      <div class="why__item why__item--1">
+        <h3>Rising seas</h3>
+        <p>Sea level along the Southeast U.S. coast has risen faster over the last decade than the global average. Every inch raises the starting point for every tide.</p>
+        <!-- PLACEHOLDER: link to NOAA sea level trends for Virginia Key -->
+        <a class="why__source" href="#">Source: NOAA Sea Level Trends</a>
+      </div>
+      <div class="why__item why__item--2">
+        <h3>King tides</h3>
+        <p>The highest tides of the year arrive in early fall, when the moon, sun, and warm water line up. They push seawater up storm drains and into low streets on sunny days.</p>
+        <!-- PLACEHOLDER: link to NOAA high tide flooding explainer -->
+        <a class="why__source" href="#">Source: NOAA Tides &amp; Currents</a>
+      </div>
+      <div class="why__item why__item--3">
+        <h3>Porous limestone</h3>
+        <p>South Florida sits on limestone full of holes, like a hard sponge. Seawater moves through it and comes up from below, so seawalls alone can't keep it out.</p>
+        <!-- PLACEHOLDER: link to USGS Biscayne Aquifer overview -->
+        <a class="why__source" href="#">Source: USGS Biscayne Aquifer</a>
+      </div>
+      <div class="why__item why__item--4">
+        <h3>Heavier rain</h3>
+        <p>Stronger downpours dump more water at once. Drains that empty into the bay can't keep up when the bay itself is already near street level.</p>
+        <!-- PLACEHOLDER: link to NWS Miami rainfall records or Compact climate report -->
+        <a class="why__source" href="#">Source: National Weather Service</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== END: Why it's happening ===== -->
+
+
+<!-- ===== SECTION: Latest news ===== -->
+<!-- FUTURE: articles will load from /data/news.json, populated by a scheduled GitHub Action -->
+<section class="section news" aria-labelledby="news-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <div class="section-head__row">
+          <p class="label section-head__eyebrow">Updated weekly</p>
+          <!-- SAMPLE DATA: these headlines are placeholders, not real stories -->
+          <span class="sample-badge">Sample headlines</span>
+        </div>
+        <h2 class="display" id="news-title">Latest news</h2>
+      </div>
+      <a class="btn btn--outline btn--sm" href="news/">View All News</a>
+    </div>
+
+    <ul class="news__row" role="list">
+      <li class="card">
+        <!-- IMAGE PROMPT: Road construction crew raising a section of Alton Road in Miami Beach, new higher curb next to older sidewalk, daytime, documentary style, no text. FILE: images/news-alton-road.webp SIZE: 1200x750 -->
+        <div class="card__media img-ph" role="img" aria-label="Placeholder: crews raising Alton Road"><span class="img-ph__label">IMAGE: Raising Alton Road</span></div>
+        <div class="card__body">
+          <!-- PLACEHOLDER: article date and content -->
+          <p class="card__meta"><time datetime="2026-10-24">Oct 24, 2026</time><span class="tag">Miami Beach</span></p>
+          <h3 class="card__title"><a href="news/">Miami Beach raises another stretch of Alton Road</a></h3>
+          <p class="card__text">The city adds pumps and lifts the roadway up to two feet ahead of next year's king tides.</p>
+        </div>
+      </li>
+      <li class="card">
+        <!-- IMAGE PROMPT: Close-up of a one-way tidal valve on a storm drain outfall at a Fort Lauderdale seawall, calm canal water, no text. FILE: images/news-tidal-valves.webp SIZE: 1200x750 -->
+        <div class="card__media img-ph" role="img" aria-label="Placeholder: tidal valve on a canal seawall"><span class="img-ph__label">IMAGE: Tidal valve</span></div>
+        <div class="card__body">
+          <p class="card__meta"><time datetime="2026-10-17">Oct 17, 2026</time><span class="tag">Fort Lauderdale</span></p>
+          <h3 class="card__title"><a href="news/">Fort Lauderdale adds tidal valves in Las Olas Isles</a></h3>
+          <p class="card__text">One-way valves aim to stop bay water from backing up through storm drains at high tide.</p>
+        </div>
+      </li>
+      <li class="card">
+        <!-- IMAGE PROMPT: Sunny day in Miami with seawater pooled at a street corner in Shorecrest, clear sky, reflections, no text. FILE: images/news-sunny-day.webp SIZE: 1200x750 -->
+        <div class="card__media img-ph" role="img" aria-label="Placeholder: sunny-day flooding at a Miami street corner"><span class="img-ph__label">IMAGE: Sunny-day flooding</span></div>
+        <div class="card__body">
+          <p class="card__meta"><time datetime="2026-10-09">Oct 9, 2026</time><span class="tag">Miami</span></p>
+          <h3 class="card__title"><a href="news/">King tide season brings sunny-day flooding to Shorecrest</a></h3>
+          <p class="card__text">Residents report ankle-deep water at peak tide for the third month in a row.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- ===== END: Latest news ===== -->
+
+
+<!-- ===== SECTION: What you can do ===== -->
+<section class="section section--alt actions" aria-labelledby="actions-title">
+  <div class="container">
+    <h2 class="label actions__title" id="actions-title">What you can do</h2>
+    <ul class="actions__grid" role="list">
+      <li class="action">
+        <svg class="action__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
+        <h3>Know your flood zone</h3>
+        <p>Check FEMA maps and your elevation certificate.</p>
+        <a class="arrow-link" href="resources/#flood-zones">Learn how <span class="visually-hidden">to check your flood zone</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </li>
+      <li class="action">
+        <svg class="action__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3>Get covered</h3>
+        <p>Standard homeowners insurance doesn't cover floods.</p>
+        <a class="arrow-link" href="resources/#flood-insurance">Insurance basics <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </li>
+      <li class="action">
+        <svg class="action__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M3 21c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1"/></svg>
+        <h3>Protect your property</h3>
+        <p>Flood vents, barriers, and elevation.</p>
+        <a class="arrow-link" href="resources/#protect-your-property">See options <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </li>
+      <li class="action">
+        <svg class="action__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>
+        <h3>Stay alerted</h3>
+        <p>Sign up for county flood alerts.</p>
+        <a class="arrow-link" href="resources/#flood-alerts">Get alerts <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- ===== END: What you can do ===== -->
+
+
+<!-- ===== SECTION: Final CTA ===== -->
+<section class="section final-cta" aria-labelledby="cta-title">
+  <div class="container final-cta__inner">
+    <h2 class="display" id="cta-title">Know before the water does</h2>
+    <p class="lede">Look up any address in Miami-Dade or Broward in seconds. Free, no sign-up.</p>
+    <div class="final-cta__buttons">
+      <a class="btn btn--primary" href="#check-your-address">Check Your Address</a>
+      <a class="btn btn--outline" href="news/">Read the Latest</a>
+    </div>
+  </div>
+</section>
+<!-- ===== END: Final CTA ===== -->
+
+</main>
+
+<!-- ===== SECTION: Footer (global) ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__about">
+        <a class="brand" href="./">
+          <svg class="brand__mark" viewBox="0 0 34 34" aria-hidden="true">
+            <circle cx="17" cy="17" r="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.4)"/>
+            <path d="M7 15c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 21c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#4FD1E8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>Sinking South Florida</span>
+        </a>
+        <p>Plain, sourced information on flooding and sea level rise for the people who live with it.</p>
+      </div>
+      <nav aria-label="Cities">
+        <h2>Cities</h2>
+        <ul role="list">
+          <li><a href="miami/">Miami</a></li>
+          <li><a href="miami-beach/">Miami Beach</a></li>
+          <li><a href="hallandale-beach/">Hallandale Beach</a></li>
+          <li><a href="hollywood/">Hollywood</a></li>
+          <li><a href="fort-lauderdale/">Fort Lauderdale</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Explore">
+        <h2>Explore</h2>
+        <ul role="list">
+          <li><a href="#check-your-address">Risk Tool</a></li>
+          <li><a href="news/">News</a></li>
+          <li><a href="resources/">Resources</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Data sources</h2>
+        <ul role="list">
+          <li><a href="https://tidesandcurrents.noaa.gov/" rel="noopener">NOAA Tides &amp; Currents</a></li>
+          <li><a href="https://msc.fema.gov/portal/home" rel="noopener">FEMA Flood Map Service Center</a></li>
+          <li><a href="https://www.usgs.gov/" rel="noopener">USGS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>&copy; 2026 Sinking South Florida</p>
+      <p>Not a substitute for official flood zone determinations.</p>
+    </div>
+  </div>
+</footer>
+<!-- ===== END: Footer ===== -->
+
+</body>
+</html>

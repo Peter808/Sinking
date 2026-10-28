@@ -1,0 +1,44 @@
+{
+  "_comment": [
+    "News and social sources. Every entry starts as status 'unverified'; pipeline step 5 tests each",
+    "one and sets status to 'ok', 'no-feed' (no RSS exists), or 'broken'. Only 'ok' sources are fetched.",
+    "url: null means the feed address still has to be found. Nothing here is invented: these are either",
+    "addresses you suggested or standard public URL patterns (Google News, Reddit, Bluesky).",
+    "cityHint: tags every item from that source with a city, even if the headline doesn't name it.",
+    "To add a source: copy an entry, change name/url, set status to 'unverified', and it gets checked next run."
+  ],
+
+  "news": [
+    { "name": "City of Miami Beach",      "url": "https://www.miamibeachfl.gov/feed/", "cityHint": "miami-beach",      "status": "unverified", "note": "WordPress site, /feed/ suggested" },
+    { "name": "City of Miami",            "url": null, "cityHint": "miami",            "status": "unverified", "note": "Find newsroom RSS" },
+    { "name": "Miami-Dade County",        "url": null, "cityHint": null,               "status": "unverified", "note": "Find newsroom RSS" },
+    { "name": "City of Hollywood",        "url": null, "cityHint": "hollywood",        "status": "unverified", "note": "Find newsroom RSS" },
+    { "name": "City of Fort Lauderdale",  "url": null, "cityHint": "fort-lauderdale",  "status": "unverified", "note": "Find newsroom RSS" },
+    { "name": "City of Hallandale Beach", "url": null, "cityHint": "hallandale-beach", "status": "unverified", "note": "Find newsroom RSS" },
+    { "name": "WLRN",                     "url": null, "cityHint": null,               "status": "unverified", "note": "Find public RSS" },
+    { "name": "Local10",                  "url": null, "cityHint": null,               "status": "unverified", "note": "Find public RSS" },
+
+    { "name": "Google News: Miami flooding",          "url": "https://news.google.com/rss/search?q=%22Miami+flooding%22&hl=en-US&gl=US&ceid=US:en",          "cityHint": null, "status": "unverified" },
+    { "name": "Google News: Miami Beach flooding",    "url": "https://news.google.com/rss/search?q=%22Miami+Beach+flooding%22&hl=en-US&gl=US&ceid=US:en",    "cityHint": null, "status": "unverified" },
+    { "name": "Google News: king tide Florida",       "url": "https://news.google.com/rss/search?q=%22king+tide%22+Florida&hl=en-US&gl=US&ceid=US:en",       "cityHint": null, "status": "unverified" },
+    { "name": "Google News: Fort Lauderdale flooding","url": "https://news.google.com/rss/search?q=%22Fort+Lauderdale+flooding%22&hl=en-US&gl=US&ceid=US:en","cityHint": null, "status": "unverified" },
+    { "name": "Google News: Hollywood FL flooding",   "url": "https://news.google.com/rss/search?q=%22Hollywood+FL+flooding%22&hl=en-US&gl=US&ceid=US:en",   "cityHint": null, "status": "unverified" }
+  ],
+
+  "social": {
+    "bluesky": {
+      "_comment": "Public post search. Each hashtag is searched; posts must ALSO contain a location term from keywords.json. Bluesky may require auth for search; verified in step 5.",
+      "endpoint": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts",
+      "hashtags": ["#KingTide", "#MiamiFlooding", "#SunnyDayFlooding", "#SeaLevelRise"],
+      "status": "unverified"
+    },
+    "reddit": {
+      "_comment": "Subreddit search RSS. Shows title, subreddit, link only. Reddit sometimes blocks automated requests from cloud servers; verified in step 5.",
+      "subreddits": ["Miami", "MiamiBeach", "fortlauderdale", "SouthFlorida"],
+      "urlPattern": "https://www.reddit.com/r/{subreddit}/search.rss?q=flood+OR+flooding+OR+%22king+tide%22&restrict_sr=on&sort=new",
+      "status": "unverified"
+    }
+  },
+
+  "limits": { "newsMax": 60, "socialMax": 40 }
+}

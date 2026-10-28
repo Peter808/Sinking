@@ -1,0 +1,480 @@
+/* ==========================================================================
+   pages.css
+   Page-specific layout only. Reusable pieces live in components.css.
+
+   TABLE OF CONTENTS
+   HOME PAGE
+   1. Hero: background, scrims, fade to navy
+   2. Hero: grid layout (desktop / mobile order)
+   3. Hero: headline and summary
+   4. Hero: mini stats
+   5. Hero: radial chart and risk slider
+   6. Hero: readout panel (big number)
+   7. Hero: city selector (list on desktop, chips on mobile)
+   8. Hero: tide wave
+   9. Address risk tool section background
+  10. By the numbers
+  11. Your city (bento)
+  12. Why it's happening
+  13. Latest news
+  14. What you can do
+  15. Final CTA
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. HERO: BACKGROUND
+   Layers (bottom to top): sky gradient > photo > text scrims > navy fade > content
+   ========================================================================== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--hero-sky-top) 0%, var(--hero-sky-bottom) 70%);
+  padding-top: calc(var(--header-h) + var(--space-1));
+  padding-bottom: 150px;                 /* room for the tide wave */
+}
+
+.hero__bg { position: absolute; inset: 0; z-index: -2; }
+
+/* Center photo. hero.png already has soft transparent edges, so no mask is
+   needed on desktop. "contain" keeps those edges from being cropped.
+   Change width to make the photo bigger or smaller. */
+.hero__image {
+  position: absolute; left: 50%; top: 4%;
+  width: min(1240px, 74%); height: 84%;
+  transform: translateX(-50%);
+  object-fit: contain;
+  opacity: 27%;         /* photo strength: raise toward 100% for a bolder image */
+}
+
+/* Text scrims: darken the left, right, and top edges just enough for
+   AA contrast on white text, while the center photo stays bright. */
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5, 11, 26, 0.42) 0, rgba(5, 11, 26, 0) 150px),
+    linear-gradient(90deg, rgba(5, 11, 26, 0.54) 0%, rgba(5, 11, 26, 0.42) 40%, rgba(5, 11, 26, 0.12) 55%, rgba(5, 11, 26, 0.24) 66%, rgba(5, 11, 26, 0.42) 100%);
+}
+
+/* Bottom fade into navy (about 240px). The tide wave sits on top of it. */
+.hero::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 240px;
+  z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 11, 26, 0) 0%, rgba(5, 11, 26, 0.6) 55%, var(--navy-900) 100%);
+}
+
+
+/* ==========================================================================
+   2. HERO: GRID LAYOUT
+   Mobile order: headline, big number, city chips, mini stats, gauges, wave.
+   Desktop: left column (head, mini, gauges), empty center (photo), right
+   column (readout, cities).
+   ========================================================================== */
+.hero__inner {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "head"
+    "readout"
+    "cities"
+    "mini"
+    "gauges";
+}
+.hero__inner > * { min-width: 0; }
+.hero__head    { grid-area: head; }
+.hero__mini    { grid-area: mini; }
+.hero__gauges  { grid-area: gauges; }
+.hero__readout { grid-area: readout; }
+.hero__cities  { grid-area: cities; }
+
+@media (min-width: 960px) {
+  .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; }
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.5fr) minmax(300px, 0.85fr);
+    grid-template-areas:
+      "head   .  readout"
+      "mini   .  cities"
+      "gauges .  cities";
+    column-gap: var(--space-4);
+    row-gap: 20px;
+    align-items: start;
+  }
+  .hero__readout { align-self: start; }
+  .hero__gauges  { align-self: end; }
+}
+
+/* Mobile: photo sits behind the headline with a dark scrim */
+@media (max-width: 959.98px) {
+  /* Fill the top of the screen behind the headline; fade out at the bottom */
+  .hero__image { top: 0; width: 100%; height: 560px; object-fit: cover; object-position: 50% 40%; -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 60%, transparent 100%); }
+  .hero__head { position: relative; padding-block: var(--space-4) var(--space-2); }
+  .hero__head::before {
+    content: ""; position: absolute; inset: -16px -16px; z-index: -1; border-radius: var(--radius-lg);
+    background: radial-gradient(130% 100% at 30% 50%, rgba(5, 11, 26, 0.55), rgba(5, 11, 26, 0.2) 80%);
+  }
+  /* Even scrim on small screens: text sits over the photo here */
+  .hero::before { background: linear-gradient(180deg, rgba(5, 11, 26, 0.5) 0, rgba(5, 11, 26, 0.4) 120px, rgba(5, 11, 26, 0.4) 100%); }
+}
+
+
+/* ==========================================================================
+   3. HERO: HEADLINE AND SUMMARY
+   ========================================================================== */
+.hero__eyebrow-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: var(--space-2); }
+.hero__eyebrow { color: var(--text-primary); }
+.hero__title { font-weight: 300; letter-spacing: -0.035em; line-height: 0.98; }
+.hero__title-1 { display: block; font-size: var(--fs-hero); }
+.hero__title-2 { display: block; font-size: var(--fs-hero-sub); letter-spacing: -0.02em; margin-top: 0.15em; }
+.hero__summary { margin-top: var(--space-2); max-width: 36ch; font-size: var(--fs-body-lg); line-height: 1.55; color: var(--text-primary); }
+
+
+/* ==========================================================================
+   4. HERO: MINI STATS (three cities, like the weather reference's temps)
+   Underline color comes from data-risk on each <li>.
+   ========================================================================== */
+.hero__mini { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
+.mini { --risk-color: var(--risk-moderate); display: flex; flex-direction: column; }
+.mini__value { font-weight: 300; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.mini__unit { font-size: 0.4em; margin-left: 4px; letter-spacing: 0; }
+.mini__city { margin-top: 10px; font-size: 13px; font-weight: 600; line-height: 1.3; }
+.mini__risk { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.mini::after { content: ""; width: min(72px, 100%); height: 3px; border-radius: 2px; margin-top: 10px; background: var(--risk-color); }
+
+
+/* ==========================================================================
+   5. HERO: RADIAL CHART AND RISK SLIDER
+   ========================================================================== */
+.hero__gauges { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-4); }
+
+.radial { display: grid; grid-template-columns: 112px auto; align-items: center; column-gap: var(--space-2); }
+.radial__svg {
+  grid-area: 1 / 1; width: 112px; height: 112px;
+  transform: rotate(-90deg);            /* rings start at 12 o'clock */
+  border-radius: 50%; background: rgba(5, 11, 26, 0.42);
+}
+.radial__track { fill: none; stroke: rgba(255, 255, 255, 0.16); stroke-width: 8; }
+.radial__ring { fill: none; stroke-width: 8; stroke-linecap: round; transition: stroke-dasharray 600ms var(--ease); }
+.radial__ring--this { stroke: var(--tide-aqua); }
+.radial__ring--last { stroke: rgba(255, 255, 255, 0.8); }
+.radial__center { grid-area: 1 / 1; place-self: center; display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.radial__num { font-size: 28px; font-weight: 300; }
+.radial__unit { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
+.radial__legend { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.radial__key { display: inline-flex; align-items: center; gap: 8px; }
+.radial__key::before { content: ""; width: 10px; height: 10px; border-radius: 50%; }
+.radial__key--this::before { background: var(--tide-aqua); }
+.radial__key--last::before { background: rgba(255, 255, 255, 0.8); }
+.radial__key strong { font-weight: 600; }
+
+.risk-meter { --risk-color: var(--risk-moderate); flex: 1 1 220px; max-width: 320px; display: grid; gap: 10px; }
+.risk-meter__top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.risk-meter__value { font-size: 22px; font-weight: 300; }
+.risk-meter__track { position: relative; height: 8px; border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--risk-low), var(--risk-moderate), var(--risk-high), var(--risk-severe)); }
+.risk-meter__marker {
+  position: absolute; top: 50%; left: var(--pos, 38%);
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #fff; border: 4px solid var(--risk-color);
+  box-shadow: 0 2px 10px rgba(5, 11, 26, 0.4);
+  transform: translate(-50%, -50%);
+  transition: left 500ms var(--ease), border-color 300ms;
+}
+.risk-meter__scale { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+
+
+/* ==========================================================================
+   6. HERO: KING TIDE SEASON PANEL (top right)
+   Rows: month | days | status. States set by hero.js (or hard-coded classes
+   in the HTML without JS): .is-past (dimmed), .is-current (filled, "Now"),
+   .is-next ("Next", shown only between cycles).
+   ========================================================================== */
+.kingtides { padding: 16px 12px 12px 16px; }
+.kingtides__head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 0 16px 8px 12px; }
+.kingtides__year { font-weight: 400; }
+.kingtides__count { font-size: 12px; font-weight: 500; }
+.kingtides__list { display: grid; gap: 2px; position: relative; } /* relative: hero.js measures row offsets from here */
+
+/* Scroll box. Height fits --kt-visible rows (1 past + current + upcoming).
+   Change --kt-visible to show more or fewer rows. Without JS the full list shows. */
+.kingtides__scroll { --kt-row: 32px; --kt-visible: 6; padding-right: 4px; border-radius: var(--radius-md); }
+html.js .kingtides__scroll {
+  max-height: calc(var(--kt-visible) * (var(--kt-row) + 2px) - 2px);
+  overflow-y: auto; overscroll-behavior: contain;
+}
+/* Always-visible slim scrollbar so people know they can go back */
+.kingtides__scroll::-webkit-scrollbar { width: 6px; }
+.kingtides__scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.1); border-radius: 3px; }
+.kingtides__scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.5); border-radius: 3px; }
+.kingtides__scroll::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.75); }
+@supports not selector(::-webkit-scrollbar) {
+  .kingtides__scroll { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.1); }
+}
+
+.kt {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 8px;
+  min-height: var(--kt-row, 32px); padding: 3px 6px 3px 12px; border-radius: var(--radius-pill);
+  font-size: 14px; font-variant-numeric: tabular-nums;
+}
+.kt__month { font-size: 11px; font-weight: 600; letter-spacing: var(--ls-label); text-transform: uppercase; }
+.kt__days { font-weight: 400; }
+.kt__status { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Past cycles: dimmed but still readable (AA on the glass panel) */
+.kt.is-past { color: rgba(255, 255, 255, 0.86); }
+.kt.is-past .kt__days { text-decoration: line-through; text-decoration-color: rgba(255, 255, 255, 0.4); }
+
+/* Current cycle: filled row + aqua "Now" pill */
+.kt.is-current { background: #fff; color: var(--navy-900); }
+.kt.is-current .kt__days { font-weight: 600; }
+.kt.is-current .kt__status {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px; border-radius: var(--radius-pill); background: var(--navy-900); color: var(--tide-aqua);
+}
+.kt.is-current .kt__status::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--tide-aqua);
+  animation: ktPulse 1.8s ease-in-out infinite;
+}
+@keyframes ktPulse { 50% { opacity: 0.25; } }
+
+/* Next cycle (only used when today falls between cycles) */
+.kt.is-next { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5); }
+.kt.is-next .kt__status { color: var(--tide-aqua); }
+
+
+/* ==========================================================================
+   7. HERO: CITY SELECTOR
+   Desktop: stacked rows with a round glass icon button (filled when active).
+   Mobile: the same buttons become horizontally scrolling chips.
+   ========================================================================== */
+.hero__cities { padding: 12px 12px 12px; }
+.hero__cities-title { padding: 4px 12px 6px; }
+.city-list { display: grid; gap: 2px; }
+
+.city-row {
+  --risk-color: var(--risk-moderate);
+  width: 100%;
+  display: grid; grid-template-columns: 10px minmax(0, 1fr) auto 36px; align-items: center; gap: 12px;
+  min-height: 44px; padding: 3px 4px 3px 14px;
+  border-radius: var(--radius-pill); text-align: left;
+  transition: background var(--dur) var(--ease);
+}
+.city-row::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--risk-color); }
+.city-row:hover { background: rgba(255, 255, 255, 0.08); }
+.city-row[aria-pressed="true"] { background: rgba(255, 255, 255, 0.12); }
+.city-row__name { font-size: 14px; font-weight: 600; }
+.city-row__value { font-size: 18px; font-weight: 300; font-variant-numeric: tabular-nums; }
+.city-row__icon {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.1);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.city-row__icon svg { width: 20px; height: 20px; }
+.city-row[aria-pressed="true"] .city-row__icon { background: #fff; color: var(--navy-900); border-color: #fff; }
+
+@media (max-width: 959.98px) {
+  /* Panel styling off; chips scroll sideways inside their own track */
+  .hero__cities { padding: 0; background: none; border: 0; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .hero__cities-title { padding: 0 0 8px; }
+  .city-list {
+    display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity;
+    margin-inline: calc(var(--gutter) * -1); padding: 2px var(--gutter) 8px;
+    scrollbar-width: none;
+  }
+  .city-list::-webkit-scrollbar { display: none; }
+  .city-list li { flex: none; scroll-snap-align: start; }
+  .city-row {
+    width: auto; grid-template-columns: 8px auto auto; gap: 8px;
+    min-height: 44px; padding: 8px 16px;
+    border: 1px solid var(--glass-border); background: rgba(5, 11, 26, 0.45);
+    white-space: nowrap;
+  }
+  .city-row__icon { display: none; }
+  .city-row__value { font-size: 14px; font-weight: 500; }
+  .city-row[aria-pressed="true"] { background: #fff; color: var(--navy-900); border-color: #fff; }
+}
+
+
+/* ==========================================================================
+   8. HERO: TIDE WAVE
+   Curve is an SVG stretched to full width. Labels and the "Now" dot are
+   HTML positioned in % so they don't distort.
+   ========================================================================== */
+.tide { position: absolute; left: 0; right: 0; bottom: 12px; height: 130px; z-index: 1; overflow: hidden; }
+.tide__svg, .tide__ghost { position: absolute; left: 0; top: 0; height: 100%; }
+.tide__svg { width: 100%; overflow: visible; }
+.tide__path { fill: none; stroke: #fff; stroke-width: 2; vector-effect: non-scaling-stroke; }
+
+/* Decorative drifting swells */
+.tide__ghost { width: 200%; animation: tideDrift 48s linear infinite; }
+.tide__ghost path { fill: none; stroke: rgba(255, 255, 255, 0.22); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.tide__ghost--2 { animation-duration: 70s; animation-direction: reverse; }
+.tide__ghost--2 path { stroke: rgba(79, 209, 232, 0.28); }
+@keyframes tideDrift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .tide__ghost { animation: none !important; } }
+
+.tide__labels { position: absolute; inset: 0; list-style: none; padding: 0; }
+.tide__label {
+  position: absolute; display: flex; flex-direction: column; align-items: center;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em; line-height: 1.35; white-space: nowrap;
+  transform: translate(-50%, calc(-100% - 10px));
+}
+.tide__label--low { transform: translate(-50%, 10px); }
+.tide__label.is-start { align-items: flex-start; transform: translate(-14px, calc(-100% - 10px)); }
+.tide__label--low.is-start { transform: translate(-14px, 10px); }
+.tide__label.is-end { align-items: flex-end; transform: translate(calc(-100% + 14px), calc(-100% - 10px)); }
+.tide__label--low.is-end { transform: translate(calc(-100% + 14px), 10px); }
+
+.tide__now {
+  position: absolute; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--tide-aqua); border: 2px solid #fff;
+  box-shadow: 0 0 0 6px var(--tide-aqua-glow);
+  transform: translate(-50%, -50%);
+  transition: left 600ms var(--ease), top 600ms var(--ease);
+}
+.tide__now-label {
+  position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translateX(-50%);
+  padding: 2px 8px; border-radius: var(--radius-pill); background: var(--tide-aqua); color: var(--on-aqua);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+@media (max-width: 639.98px) {
+  .hero { padding-bottom: 180px; }
+  .tide { height: 130px; bottom: 12px; }
+  .tide__label { font-size: 9px; }
+  .tide__label span + span { display: none; }   /* time only on small screens */
+}
+
+
+/* ==========================================================================
+   9. ADDRESS RISK TOOL SECTION
+   ========================================================================== */
+.risk-section {
+  background: radial-gradient(60% 50% at 50% 0%, rgba(79, 209, 232, 0.12), transparent 70%), var(--navy-900);
+  padding-top: clamp(48px, 7vw, 96px);
+}
+.risk-section .display { font-size: var(--fs-display-sm); }
+
+
+/* ==========================================================================
+   10. BY THE NUMBERS
+   ========================================================================== */
+.numbers__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-3); }
+.numbers .stat__value { font-size: clamp(32px, 4.2vw, 60px); white-space: nowrap; }
+@media (min-width: 960px) {
+  .numbers__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+  .numbers__grid .stat { padding: 0 var(--space-4); border-left: 1px solid var(--navy-600); }
+  .numbers__grid .stat:first-child { padding-left: 0; border-left: 0; }
+}
+
+
+/* ==========================================================================
+   11. YOUR CITY (BENTO)
+   Whole card is clickable (stretched link on the city name).
+   ========================================================================== */
+.bento { display: grid; gap: var(--space-2); }
+@media (min-width: 640px) { .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); } .city-card--lg { grid-column: 1 / -1; } }
+@media (min-width: 960px) {
+  .bento { grid-template-columns: 1.25fr 1fr 1fr; grid-template-rows: repeat(2, minmax(320px, auto)); }
+  .city-card--lg { grid-column: auto; grid-row: span 2; }
+}
+
+.city-card {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; align-items: flex-end;
+  min-height: 300px; border-radius: var(--radius-lg); border: 1px solid var(--navy-600);
+  transition: border-color var(--dur) var(--ease);
+}
+.city-card--lg { min-height: 420px; }
+.city-card:hover, .city-card:focus-within { border-color: var(--tide-aqua); }
+.city-card__media { position: absolute; inset: 0; z-index: -1; align-items: flex-start; transition: transform 600ms var(--ease); }
+.city-card__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 11, 26, 0) 25%, rgba(5, 11, 26, 0.92) 100%); }
+.city-card:hover .city-card__media { transform: scale(1.03); }
+.city-card__body { width: 100%; padding: var(--space-3); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.city-card__name { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; line-height: 0.95; font-size: clamp(34px, 3.4vw, 52px); letter-spacing: 0.005em; margin-top: 8px; }
+.city-card--lg .city-card__name { font-size: clamp(56px, 7vw, 112px); }
+.city-card__name a { color: var(--text-primary); text-decoration: none; }
+.city-card__name a::after { content: ""; position: absolute; inset: 0; z-index: 1; } /* stretched link */
+.city-card__name a:focus-visible { outline: none; }
+.city-card:has(a:focus-visible) { outline: 2px solid var(--tide-aqua); outline-offset: 3px; }
+.city-card__sub { color: var(--text-secondary); font-size: 14px; }
+.city-card__stat { color: var(--text-secondary); font-size: 14px; }
+.city-card__stat strong { color: var(--text-primary); font-weight: 300; font-size: 26px; margin-right: 4px; }
+.city-card__cta { margin-top: 4px; }
+
+
+/* ==========================================================================
+   12. WHY IT'S HAPPENING
+   Center illustration with four blocks around it (2 left, 2 right).
+   ========================================================================== */
+.why__layout { display: grid; gap: var(--space-5); }
+.why__art { width: 100%; max-width: 380px; margin: 0 auto; }
+.why__art svg { width: 100%; height: auto; filter: drop-shadow(0 0 60px rgba(79, 209, 232, 0.25)); }
+.why__item h3 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: clamp(30px, 2.8vw, 44px); line-height: 1; margin-bottom: var(--space-2); }
+.why__item p { color: var(--text-secondary); max-width: 40ch; }
+.why__source { display: inline-block; margin-top: 12px; font-size: 13px; }
+
+@media (min-width: 640px) and (max-width: 959.98px) {
+  .why__layout { grid-template-columns: 1fr 1fr; }
+  .why__art { grid-column: 1 / -1; }
+}
+@media (min-width: 960px) {
+  .why__layout {
+    grid-template-columns: 1fr minmax(320px, 420px) 1fr;
+    grid-template-areas: "a art b" "c art d";
+    align-items: center; column-gap: var(--space-6); row-gap: var(--space-8);
+  }
+  .why__art { grid-area: art; max-width: none; }
+  .why__item--1 { grid-area: a; } .why__item--2 { grid-area: b; }
+  .why__item--3 { grid-area: c; } .why__item--4 { grid-area: d; }
+  .why__item--1, .why__item--3 { text-align: right; }
+  .why__item--1 p, .why__item--3 p { margin-left: auto; }
+}
+
+
+/* ==========================================================================
+   13. LATEST NEWS
+   3 across on desktop; horizontal swipe row on mobile.
+   ========================================================================== */
+.news__row {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 84%; gap: var(--space-2);
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  margin-inline: calc(var(--gutter) * -1); padding: 4px var(--gutter) var(--space-2);
+  scroll-padding-inline: var(--gutter);
+}
+.news__row > li { scroll-snap-align: start; }
+@media (min-width: 640px) { .news__row { grid-auto-columns: 46%; } }
+@media (min-width: 960px) {
+  .news__row { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; margin-inline: 0; padding-inline: 0; }
+}
+
+
+/* ==========================================================================
+   14. WHAT YOU CAN DO (icon strip)
+   ========================================================================== */
+.actions { padding-block: clamp(56px, 7vw, 96px); }
+.actions__title { color: var(--tide-aqua); margin-bottom: var(--space-4); }
+.actions__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-3); }
+@media (min-width: 960px) { .actions__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.action { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.action__icon { width: 32px; height: 32px; color: var(--tide-aqua); margin-bottom: 4px; }
+.action h3 { font-size: 18px; font-weight: 600; }
+.action p { color: var(--text-secondary); font-size: 15px; }
+.action .arrow-link { margin-top: auto; padding-top: 4px; font-size: 15px; }
+
+
+/* ==========================================================================
+   15. FINAL CTA
+   ========================================================================== */
+.final-cta { overflow: hidden; }
+.final-cta__inner { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-3); }
+.final-cta__inner::before {
+  content: ""; position: absolute; z-index: -1; left: 50%; top: 40%;
+  width: min(900px, 120%); aspect-ratio: 2 / 1; transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, var(--tide-aqua-glow), transparent);
+  filter: blur(20px);
+}
+.final-cta { isolation: isolate; }
+.final-cta .display { max-width: 12ch; }
+.final-cta__buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: var(--space-1); }
