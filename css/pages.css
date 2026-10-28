@@ -389,6 +389,9 @@ html.js .kingtides__scroll {
 .city-card--lg { min-height: 420px; }
 .city-card:hover, .city-card:focus-within { border-color: var(--tide-aqua); }
 .city-card__media { position: absolute; inset: 0; z-index: -1; align-items: flex-start; transition: transform 600ms var(--ease); }
+/* Card photo fills the whole card. object-fit: cover crops to fit any card
+   shape without stretching. Change object-position to shift the focal point. */
+.city-card__media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .city-card__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 11, 26, 0) 25%, rgba(5, 11, 26, 0.92) 100%); }
 .city-card:hover .city-card__media { transform: scale(1.03); }
 .city-card__body { width: 100%; padding: var(--space-3); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
