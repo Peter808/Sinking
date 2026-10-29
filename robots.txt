@@ -1,0 +1,5 @@
+# Allow everything. The sitemap lists every public page.
+User-agent: *
+Allow: /
+
+Sitemap: https://miamiflooding.com/sitemap.xml

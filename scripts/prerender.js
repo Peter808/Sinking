@@ -365,20 +365,64 @@ ${cards}
   return html;
 }
 
+/* ========================================================================
+   NEWS PAGE (news/index.html)
+   Every story in news.json as a text card (no photos, so 60 stories don't
+   repeat the same 10 images), plus city filter chips with counts.
+   js/news.js does the filtering and "Load more" in the browser.
+   ======================================================================== */
+function renderNewsPage(html, page) {
+  if (page.type !== 'news') return html;
+  const news = readJSON('news.json');
+  const items = news && news.items || [];
+  if (!items.length) { console.log('  news page: no data, keeping sample'); return html; }
+  const cards = items.map((it) => {
+    const tags = it.cities.map((c) => CITY[c] && `<span class="tag">${esc(CITY[c].name)}</span>`).filter(Boolean).join('') || '<span class="tag">Regional</span>';
+    return `      <li class="card" data-cities="${esc(it.cities.join(' '))}">
+        <div class="card__body">
+          <p class="card__meta">${it.date ? `<time datetime="${esc(it.date)}">${esc(fmtDate(it.date))}</time>` : ''}${tags}</p>
+          <h3 class="card__title"><a href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.headline)}<span class="visually-hidden"> (opens ${esc(it.source)} in a new tab)</span></a></h3>
+          <p class="card__text">${esc(it.source)}</p>
+        </div>
+      </li>`;
+  });
+  const n = (id) => items.filter((it) => it.cities.includes(id)).length;
+  const chip = (id, name, k) => `      <button class="city-chip city-chip--plain" type="button" aria-pressed="${id === 'all'}" data-filter="${id}">${esc(name)} <span class="count">${k}</span></button>`;
+  const chips = [chip('all', 'All', items.length)].concat(Object.keys(CITY).filter((id) => n(id)).map((id) => chip(id, CITY[id].name, n(id))));
+  html = replaceBlock(html, 'news-chips', `    <div class="news-filter js-only" role="group" aria-label="Filter stories by city" data-news-filter>\n${chips.join('\n')}\n    </div>`);
+  html = replaceBlock(html, 'news-feed', `    <ol class="news-list" role="list" data-news-list>\n${cards.join('\n')}\n    </ol>`);
+  html = replaceBlock(html, 'news-status', `        <p class="label section-head__eyebrow">${items.length} stories · Updated ${esc(fmtTime(new Date()))} ET</p>`);
+  console.log(`  news page: ${items.length} stories`);
+  return html;
+}
+
+/* sitemap.xml: sets every <lastmod> to today's date, since pages are
+   re-rendered with fresh data on every deploy. */
+function updateSitemap() {
+  const f = path.join(SITE, 'sitemap.xml');
+  if (!fs.existsSync(f)) return;
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(new Date());   // YYYY-MM-DD
+  fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace(/<lastmod>[^<]*<\/lastmod>/g, `<lastmod>${today}</lastmod>`));
+  console.log(`sitemap: lastmod ${today}`);
+}
+
 /* ----- Main ------------------------------------------------------------- */
 /* Every page that exists: the home page plus each city folder */
 const PAGES = [{ file: 'index.html', city: null, base: '' }]
   .concat(Object.keys(CITY).map((id) => ({ file: `${id}/index.html`, city: id, base: '../' })))
+  .concat([{ file: 'news/index.html', city: null, base: '../', type: 'news' }])
   .filter((p) => fs.existsSync(path.join(SITE, p.file)));
 
 PAGES.forEach((page) => {
   const file = path.join(SITE, page.file);
   let html = fs.readFileSync(file, 'utf8');
   console.log(`prerender: ${page.file}`);
+  if (page.type === 'news') { fs.writeFileSync(file, renderNewsPage(html, page)); return; }
   html = renderNews(html, page);
   html = renderHero(html, page);
   html = renderNumbers(html);
   html = renderFixes(html, page);
   fs.writeFileSync(file, html);
 });
+updateSitemap();
 console.log('prerender: done');

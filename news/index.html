@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  PAGE: News (news/index.html)
+  PURPOSE: Every flooding and sea level rise headline the pipeline has
+           collected, newest first, with city filter chips.
+  TARGET KEYWORDS: miami sea level rise news
+  LAST EDITED: 2026-10-29, first build
+  DATA: chips, story list and the "Updated" line are written in at deploy
+        by scripts/prerender.js from data/news.json. js/news.js adds the
+        filters and "Load more"; without JS every story shows.
+  NOTES: Headlines link to the original outlet. We store only headline,
+         outlet, link, date and city tags (no article text or images).
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miami Sea Level Rise News | Sinking South Florida</title>
+  <meta name="description" content="The latest Miami sea level rise and flooding news from South Florida outlets. Filter by city, from Miami Beach to Fort Lauderdale.">
+  <link rel="canonical" href="https://miamiflooding.com/news/">
+  <meta name="theme-color" content="#050B1A">
+
+  <!-- Open Graph / Twitter. PLACEHOLDER: create images/og-home.jpg at 1200x630 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sinking South Florida">
+  <meta property="og:title" content="Miami Sea Level Rise &amp; Flooding News">
+  <meta property="og:description" content="The latest Miami sea level rise and flooding news from South Florida outlets. Filter by city, from Miami Beach to Fort Lauderdale.">
+  <meta property="og:url" content="https://miamiflooding.com/news/">
+  <meta property="og:image" content="https://miamiflooding.com/images/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Miami Sea Level Rise &amp; Flooding News">
+  <meta name="twitter:description" content="The latest Miami sea level rise and flooding news from South Florida outlets. Filter by city, from Miami Beach to Fort Lauderdale.">
+  <meta name="twitter:image" content="https://miamiflooding.com/images/og-home.jpg">
+
+  <!-- Fonts: Anton (section headlines) + Inter (everything else) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://miamiflooding.com/news/#webpage",
+      "url": "https://miamiflooding.com/news/",
+      "name": "Miami Sea Level Rise News | Sinking South Florida",
+      "description": "The latest Miami sea level rise and flooding news from South Florida outlets. Filter by city, from Miami Beach to Fort Lauderdale.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://miamiflooding.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://miamiflooding.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "News",
+          "item": "https://miamiflooding.com/news/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <!-- Adds .js to <html> before paint so JS-only UI doesn't flash -->
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/news.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== SECTION: Header (global) ===== -->
+<header class="site-header site-header--hero" data-header>
+  <div class="site-header__inner container">
+
+    <a class="brand" href="../" aria-label="Sinking South Florida, home">
+      <!-- Logo mark: placeholder wave in a circle. Swap for the final logo SVG. -->
+      <svg class="brand__mark" viewBox="0 0 34 34" aria-hidden="true">
+        <circle cx="17" cy="17" r="16" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.5)"/>
+        <path d="M7 15c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M7 21c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#4FD1E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>Sinking South Florida</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary" data-nav>
+      <ul class="site-nav__list" role="list">
+        <li class="has-dropdown" data-dropdown>
+          <!-- JS version: a button that opens the menu -->
+          <button class="site-nav__link site-nav__toggle js-only" type="button" aria-expanded="false" aria-controls="cities-menu" data-dropdown-toggle>
+            Cities
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <!-- No-JS version: a link; the menu still opens on hover and focus -->
+          <a class="site-nav__link no-js-only" href="../#your-city">Cities</a>
+          <ul class="dropdown" id="cities-menu" role="list">
+            <li><a href="../miami/">Miami</a></li>
+            <li><a href="../miami-beach/">Miami Beach <span class="label" style="color:var(--text-secondary)">South Beach</span></a></li>
+            <li><a href="../hallandale-beach/">Hallandale Beach</a></li>
+            <li><a href="../hollywood/">Hollywood</a></li>
+            <li><a href="../fort-lauderdale/">Fort Lauderdale</a></li>
+          </ul>
+        </li>
+        <li><a class="site-nav__link" href="../news/" aria-current="page">News</a></li>
+        <li><a class="site-nav__link" href="../resources/">Resources</a></li>
+        <li class="site-nav__cta"><a class="btn btn--primary" href="../#check-your-address" data-close-menu>Check Your Address</a></li>
+      </ul>
+    </nav>
+
+    <!-- Live time and date (Miami time), plus tide status. Filled by main.js; hidden without JS. -->
+    <div class="site-header__meta js-only">
+      <p class="clock"><span class="clock__time" data-clock-time>--:--</span><span class="clock__sub"><span data-clock-ampm>AM</span><br>Time</span></p>
+      <p class="clock"><span class="clock__time" data-clock-date>-- ---</span><span class="clock__sub"><span data-clock-year>2026</span><br>Date</span></p>
+    </div>
+
+    <a class="btn btn--glass btn--sm site-header__cta" href="../#check-your-address">Check Your Address</a>
+
+    <button class="menu-toggle js-only" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu" data-menu-toggle>
+      <span class="menu-toggle__bars"></span>
+    </button>
+  </div>
+</header>
+<!-- ===== END: Header ===== -->
+
+<main id="main">
+
+<!-- ===== SECTION: Page hero ===== -->
+<!-- Short version of the home hero: same sky and photo, no data. Used on
+     News, Resources, and 404. Styles: pages.css section 18. -->
+<section class="hero hero--page" aria-labelledby="page-title">
+
+  <!-- Background: sky gradient (CSS) + center photo + fade to navy -->
+  <div class="hero__bg" aria-hidden="true">
+    <!-- IMAGE: storm over the Miami skyline and Biscayne Bay. The PNG already has soft, transparent
+         edges, so it blends into the sky without a CSS mask. images/hero.png is the original;
+         hero-miami.webp is the compressed copy browsers load (about 460KB vs 2.9MB).
+         To swap the photo: replace both files, keeping the names, or update the paths here. -->
+    <picture>
+      <source srcset="../images/hero-miami.webp" type="image/webp">
+      <img class="hero__image" src="../images/hero.png" width="1672" height="941" alt="" decoding="async">
+    </picture>
+  </div>
+
+  <div class="hero__inner container hero-page">
+    <nav class="crumbs label" aria-label="Breadcrumb"><a href="../">Home</a><span aria-hidden="true">/</span><span aria-current="page">News</span></nav>
+    <h1 class="hero-page__title" id="page-title">Miami Sea Level Rise News</h1>
+    <p class="hero-page__lede">Flooding, king tide, and sea level rise headlines from South Florida newsrooms, sorted by city. Updated through the day.</p>
+  </div>
+</section>
+<!-- ===== END: Page hero ===== -->
+
+
+<!-- ===== SECTION: News feed ===== -->
+<section class="section news-feed" id="news" aria-labelledby="feed-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <!-- PRERENDER:news-status START -->
+        <p class="label section-head__eyebrow">Latest headlines</p>
+        <!-- PRERENDER:news-status END -->
+        <h2 class="display" id="feed-title">All the headlines</h2>
+      </div>
+    </div>
+
+    <!-- City filter chips. Hidden without JS (every story shows instead).
+         Counts and the city list come from news.json at deploy. -->
+    <!-- PRERENDER:news-chips START -->
+    <div class="news-filter js-only" role="group" aria-label="Filter stories by city" data-news-filter>
+      <button class="city-chip city-chip--plain" type="button" aria-pressed="true" data-filter="all">All</button>
+    </div>
+    <!-- PRERENDER:news-chips END -->
+
+    <p class="news-feed__count js-only" aria-live="polite" data-news-count></p>
+
+    <!-- Story list. Each item carries data-cities="miami fort-lauderdale" so
+         news.js can filter it. -->
+    <!-- PRERENDER:news-feed START -->
+    <p class="lede">The latest South Florida flooding headlines appear here when the site is built.</p>
+    <!-- PRERENDER:news-feed END -->
+
+    <div class="news-feed__more js-only">
+      <button class="btn btn--outline" type="button" data-news-more hidden>Load more stories</button>
+    </div>
+
+    <p class="news-feed__note">Headlines link to the original outlet and belong to their publishers. Stories are found through Google News and outlet RSS feeds, then filtered for South Florida flooding topics.</p>
+  </div>
+</section>
+<!-- ===== END: News feed ===== -->
+
+<!-- FUTURE: "From the community" strip (Bluesky posts, plus Reddit posts approved
+     in the daily review issue) goes here. Data: data/social.json. -->
+
+
+<!-- ===== SECTION: Final CTA ===== -->
+<section class="section final-cta" aria-labelledby="cta-title">
+  <div class="container final-cta__inner">
+    <h2 class="display" id="cta-title">Is your address at risk?</h2>
+    <p class="lede">See your flood zone, ground elevation, and projected 2050 high tide in seconds. Free, no sign-up.</p>
+    <div class="final-cta__buttons">
+      <a class="btn btn--primary" href="../#check-your-address">Check Your Address</a>
+      <a class="btn btn--outline" href="../resources/">Flood resources</a>
+    </div>
+  </div>
+</section>
+<!-- ===== END: Final CTA ===== -->
+
+</main>
+
+<!-- ===== SECTION: Footer (global) ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__about">
+        <a class="brand" href="../">
+          <svg class="brand__mark" viewBox="0 0 34 34" aria-hidden="true">
+            <circle cx="17" cy="17" r="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.4)"/>
+            <path d="M7 15c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 21c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#4FD1E8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>Sinking South Florida</span>
+        </a>
+        <p>Plain, sourced information on flooding and sea level rise for the people who live with it.</p>
+      </div>
+      <nav aria-label="Cities">
+        <h2>Cities</h2>
+        <ul role="list">
+          <li><a href="../miami/">Miami</a></li>
+          <li><a href="../miami-beach/">Miami Beach</a></li>
+          <li><a href="../hallandale-beach/">Hallandale Beach</a></li>
+          <li><a href="../hollywood/">Hollywood</a></li>
+          <li><a href="../fort-lauderdale/">Fort Lauderdale</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Explore">
+        <h2>Explore</h2>
+        <ul role="list">
+          <li><a href="../#check-your-address">Risk Tool</a></li>
+          <li><a href="../news/">News</a></li>
+          <li><a href="../resources/">Resources</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Data sources</h2>
+        <ul role="list">
+          <li><a href="https://tidesandcurrents.noaa.gov/" rel="noopener">NOAA Tides &amp; Currents</a></li>
+          <li><a href="https://msc.fema.gov/portal/home" rel="noopener">FEMA Flood Map Service Center</a></li>
+          <li><a href="https://www.usgs.gov/" rel="noopener">USGS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>&copy; 2026 Sinking South Florida</p>
+      <p>Not a substitute for official flood zone determinations.</p>
+    </div>
+  </div>
+</footer>
+<!-- ===== END: Footer ===== -->
+
+</body>
+</html>

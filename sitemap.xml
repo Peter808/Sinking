@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Every public page. scripts/prerender.js updates the lastmod dates at each deploy.
+     Add new pages (for example news articles) here. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://miamiflooding.com/</loc><lastmod>2026-10-29</lastmod><changefreq>hourly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://miamiflooding.com/miami/</loc><lastmod>2026-10-29</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://miamiflooding.com/miami-beach/</loc><lastmod>2026-10-29</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://miamiflooding.com/hallandale-beach/</loc><lastmod>2026-10-29</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://miamiflooding.com/hollywood/</loc><lastmod>2026-10-29</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://miamiflooding.com/fort-lauderdale/</loc><lastmod>2026-10-29</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://miamiflooding.com/news/</loc><lastmod>2026-10-29</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://miamiflooding.com/resources/</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>
