@@ -13,9 +13,9 @@ const { loadMeta, saveMeta, writeData, checkDue } = require('./store');
 const { loadCities } = require('./cities');
 const { deriveAll } = require('./derive');
 
-async function runConditionsScript(runKey, work) {
+async function runConditionsScript(runKey, work, type = 'conditions') {
   const meta = loadMeta();
-  const due = checkDue(meta, runKey, 'conditions');
+  const due = checkDue(meta, runKey, type);
   if (!due.due) {
     console.log(`${runKey}: not due yet (every ${due.intervalMinutes} min, ${due.reason}). Exiting.`);
     return;

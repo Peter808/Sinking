@@ -56,27 +56,32 @@ Read this entire file before writing any code. These rules apply to every page a
 ├── js/
 │   ├── main.js                 Nav, dropdown, mobile menu
 │   ├── hero.js                 Hero city switcher, tide wave
-│   ├── risk-tool.js            Address lookup UI (placeholder logic for now)
+│   ├── risk-tool.js            Address lookup (real lookups in the browser)
+│   ├── alerts.js               Live NWS weather alert cards + hides expired pinned cards
+│   ├── news.js                 News page city filter + "Load more"
 │   └── config.js               Future API endpoints (empty for now)
 ├── js/data-loader.js           Loads /data JSON in the browser, fills data-field elements
 ├── data/                       Generated JSON (lives on the `data` branch, copied in at deploy)
 │   ├── cities.json, news.json, social.json, meta.json
 │   └── curated/                Hand-edited, lives on main
-│       ├── instagram.json, hidden.json
+│       ├── meetings.json, hidden.json, instagram.json
 │       └── timeline/{city}.json
 ├── scripts/                    Node scripts run by GitHub Actions only
 │   ├── fetch-tides.js, fetch-weather.js, fetch-floods.js
-│   ├── fetch-news.js, fetch-social.js, prerender.js
+│   ├── fetch-news.js, fetch-social.js, fetch-meetings.js, prerender.js
+│   ├── intake.js               Turns owner Issue Form submissions into data/curated changes
 │   └── lib/                    Shared helpers (fetch with retry, meta.json, blocklist)
 ├── config/                     Editable settings, no code knowledge needed
 │   ├── stations.json           Tide gauges, weather stations, city coordinates
 │   ├── schedule.json           Update timing + risk and headline rules
 │   ├── sources.json            News and social feeds
 │   ├── keywords.json           Relevance keywords, location terms, city tags
+│   ├── alerts.json             Which NWS alerts get a weather alert card, and their level
+│   ├── meetings.json           Meeting calendars to read + flood keywords for agendas
 │   └── blocklist.txt           Terms that drop a news or social item
 ├── .github/
 │   ├── workflows/              update-data.yml, deploy.yml, issue-intake.yml
-│   └── ISSUE_TEMPLATE/         Add Instagram post, Hide a post, Add history entry
+│   └── ISSUE_TEMPLATE/         Add a public meeting, Hide a post (Instagram + history: future)
 ├── images/                     Photos (hero.png + hero-miami.webp) and placeholders
 ├── CNAME                       Contains: miamiflooding.com
 ├── robots.txt
@@ -355,3 +360,10 @@ Deploy workflow: checkout main + copy /data from the data branch
 - City pages (decided 2026-10-29): same hero as home, locked to that city, with the city list as links to the other city pages. Then 3 news stories for that city (regional stories fill gaps, tagged "Regional"), then the "Proposed fixes" infographic timeline from `data/curated/timeline/{city}.json` (cost, status, outcome, sources; hand-edited, reviewed quarterly). Miami is the template for the other four.
 - News auto-publishes after keyword, location, and blocklist filters. Reddit posts are vetted: they go to a daily GitHub review issue and only ticked posts publish (decided 2026-10-29). Bluesky auto-publishes after filters.
 
+
+### Pinned cards: weather alerts and public meetings (decided 2026-10-29)
+
+- **Weather alert cards** (config/alerts.json lists which NWS events count and their level: warning red, watch orange, advisory amber). NWS alerts are fetched hourly all year (`fetch-floods.js` writes `weatherAlerts` per city), and `js/alerts.js` re-checks NWS live in the browser every 5 minutes. Coastal Flood Statements are left out on purpose.
+- **Public meeting cards** (civic purple). `fetch-meetings.js` reads Legistar (Hollywood, Fort Lauderdale, Hallandale Beach, Broward County) and City of Miami's calendar every 6 hours and auto-publishes meetings with flood-related agenda items (no approval step). Everything else (Miami Beach, Miami-Dade, SFWMD, HOA town halls) comes from the owner-only "Add a public meeting" Issue Form into `data/curated/meetings.json`.
+- Placement: alerts and meetings within 7 days pin above the news on home (all cities) and on each covered city page. The News page lists active alerts and every upcoming meeting. Meetings disappear the day after; deploy runs daily so they drop off even without data changes.
+- "Hide a post" Issue Form adds a link to `data/curated/hidden.json`; prerender leaves it out of news, meetings, and alerts.

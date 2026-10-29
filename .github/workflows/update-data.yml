@@ -1,8 +1,9 @@
 # ==========================================================================
 # Update data
 # Wakes up every hour. Each script decides for itself whether it's due
-# (config/schedule.json): tides/weather/alerts hourly in king tide season or
-# during flood alerts, every 6h otherwise; news every 3h; FEMA claims weekly.
+# (config/schedule.json): NWS alerts hourly all year; tides and rain hourly in
+# king tide season or during alerts, every 6h otherwise; news every 3h;
+# public meetings every 6h; FEMA claims weekly.
 #
 # Generated JSON lives on the `data` branch (never main). The branch is
 # checked out into ./_data, the scripts write there, and we commit only if
@@ -25,7 +26,7 @@ on:
         default: false
   push:
     branches: [main]
-    paths: ["scripts/**", "config/**", ".github/workflows/update-data.yml"]
+    paths: ["scripts/fetch-*.js", "scripts/lib/**", "config/**", ".github/workflows/update-data.yml"]
 
 permissions:
   contents: write                # push to the data branch
@@ -60,7 +61,7 @@ jobs:
           fi
 
       # Each fetch is independent: one failing never stops the others
-      - name: Flood alerts (NWS)
+      - name: Flood + weather alerts (NWS, hourly all year)
         run: node scripts/fetch-floods.js
         continue-on-error: true
       - name: Tides (NOAA)
@@ -71,6 +72,9 @@ jobs:
         continue-on-error: true
       - name: News (RSS)
         run: node scripts/fetch-news.js
+        continue-on-error: true
+      - name: Public meetings (city and county calendars)
+        run: node scripts/fetch-meetings.js
         continue-on-error: true
       - name: Flood insurance claims (FEMA, weekly)
         run: node scripts/fetch-stats.js

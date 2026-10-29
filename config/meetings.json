@@ -1,0 +1,39 @@
+{
+  "_comment": [
+    "PUBLIC MEETING CARDS: where scripts/fetch-meetings.js looks for meetings, and which",
+    "words make a meeting count as flood-related. Runs every 6 hours (schedule.json).",
+    "A meeting is kept if its name matches bodyKeywords, or any agenda item matches",
+    "agendaKeywords (and doesn't match agendaExclude).",
+    "Meetings show on the News page, and pin to the top of the news on the home page and",
+    "the matching city pages 7 days ahead (pinDays). They disappear the day after.",
+    "Sources the robot can't read (Miami Beach, Miami-Dade County, South Florida Water",
+    "Management District, HOA and neighborhood town halls) are added by hand with the",
+    "'Add a public meeting' GitHub form. Those live in data/curated/meetings.json."
+  ],
+  "lookAheadDays": 45,
+  "pinDays": 7,
+  "sources": [
+    { "type": "legistar", "client": "hollywoodfl", "org": "City of Hollywood", "level": "city", "cities": ["hollywood"] },
+    { "type": "legistar", "client": "fortlauderdale", "org": "City of Fort Lauderdale", "level": "city", "cities": ["fort-lauderdale"] },
+    { "type": "legistar", "client": "hallandalebeach", "org": "City of Hallandale Beach", "level": "city", "cities": ["hallandale-beach"] },
+    { "type": "legistar", "client": "broward", "org": "Broward County", "level": "county", "cities": ["hallandale-beach", "hollywood", "fort-lauderdale"] },
+    { "type": "iqm2", "url": "https://miamifl.iqm2.com/Services/RSS.aspx?Feed=Calendar", "org": "City of Miami", "level": "city", "cities": ["miami"],
+      "_comment": "City of Miami agendas are PDFs, so only the meeting name is checked (bodyKeywords)." }
+  ],
+  "bodyKeywords": [
+    "resilience", "resiliency", "sea level", "sea level rise", "climate", "stormwater",
+    "flood", "flooding", "waterways"
+  ],
+  "agendaKeywords": [
+    "flood", "flooding", "floodplain", "flood zone", "stormwater", "storm water", "drainage",
+    "seawall", "seawalls", "sea wall", "sea level", "sea-level", "king tide", "tidal",
+    "pump station", "pump stations", "injection well", "injection wells", "outfall", "backflow",
+    "swale", "swales", "resilience", "resiliency", "resilient", "living shoreline",
+    "beach renourishment", "erosion", "groundwater", "saltwater intrusion", "subsidence",
+    "sinkhole", "road raising", "raised road", "elevation of roads", "FEMA", "Resilient Florida"
+  ],
+  "agendaExclude": [
+    "energy resilience", "cyber", "net zero", "financial resilience", "economic resilience",
+    "community resilience grant for mental"
+  ]
+}

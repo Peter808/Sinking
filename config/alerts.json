@@ -1,0 +1,35 @@
+{
+  "_comment": [
+    "WEATHER ALERT CARDS: which National Weather Service alerts get a card.",
+    "Cards pin to the top of the news on the home page (any city) and on the",
+    "city page for each city the alert covers, for as long as the alert is active.",
+    "Names must match the NWS 'event' name exactly (see https://www.weather.gov/help-map).",
+    "level sets the card color and label: warning = red, watch = orange, advisory = amber.",
+    "To stop a type of alert from showing, delete its line. Coastal Flood Statement is left",
+    "out on purpose: it runs most days in king tide season and is already in the hero summary."
+  ],
+  "events": {
+    "Tornado Warning": "warning",
+    "Extreme Wind Warning": "warning",
+    "Hurricane Warning": "warning",
+    "Storm Surge Warning": "warning",
+    "Tropical Storm Warning": "warning",
+    "Severe Thunderstorm Warning": "warning",
+    "Flash Flood Warning": "warning",
+    "Flood Warning": "warning",
+    "Coastal Flood Warning": "warning",
+
+    "Tornado Watch": "watch",
+    "Hurricane Watch": "watch",
+    "Storm Surge Watch": "watch",
+    "Tropical Storm Watch": "watch",
+    "Severe Thunderstorm Watch": "watch",
+    "Flash Flood Watch": "watch",
+    "Flood Watch": "watch",
+    "Coastal Flood Watch": "watch",
+
+    "Hurricane Local Statement": "advisory",
+    "Coastal Flood Advisory": "advisory",
+    "Flood Advisory": "advisory"
+  }
+}

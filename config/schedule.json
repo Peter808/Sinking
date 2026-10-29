@@ -21,6 +21,10 @@
   "socialEveryMinutes": 120,
   "_comment_stats": "FEMA flood insurance claims totals (By the Numbers). Weekly is plenty; FEMA updates the dataset monthly.",
   "statsEveryMinutes": 10080,
+  "_comment_alerts": "NWS alerts (flood risk + weather alert cards) are checked hourly all year. Pages also refresh them live in the browser.",
+  "alertsEveryMinutes": 60,
+  "_comment_meetings": "Public meeting calendars (config/meetings.json).",
+  "meetingsEveryMinutes": 360,
   "_comment_stale": "A panel shows 'Data delayed' when its data is older than this many times its expected interval.",
   "staleMultiplier": 3,
   "rules": {

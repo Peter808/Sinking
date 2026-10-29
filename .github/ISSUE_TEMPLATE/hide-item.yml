@@ -1,0 +1,19 @@
+# Owner-only form: hides a news story, meeting, or alert card from the site.
+# The issue-intake workflow adds the link to data/curated/hidden.json.
+name: Hide a post
+description: Remove a news story, meeting card, or alert card from the site (owner only)
+title: "Hide: "
+labels: ["hide-item"]
+body:
+  - type: input
+    id: link
+    attributes:
+      label: Link of the item to hide
+      description: The exact link the card points to (right-click the card title, Copy link).
+      placeholder: "https://"
+    validations:
+      required: true
+  - type: input
+    id: reason
+    attributes:
+      label: Why (just for your records)

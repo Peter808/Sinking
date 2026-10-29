@@ -85,6 +85,7 @@
   <script>document.documentElement.classList.add('js');</script>
   <script src="../js/main.js" defer></script>
   <script src="../js/news.js" defer></script>
+  <script src="../js/alerts.js" defer></script>
 </head>
 <body>
 
@@ -171,8 +172,36 @@
 <!-- ===== END: Page hero ===== -->
 
 
+<!-- ===== SECTION: Alerts and meetings ===== -->
+<!-- Active weather alerts (hidden when there are none; js/alerts.js keeps
+     them live) and every upcoming flood-related public meeting. Written at
+     deploy by scripts/prerender.js. Settings: config/alerts.json and
+     config/meetings.json. Meetings added by hand: data/curated/meetings.json -->
+<section class="section meetings" id="meetings" aria-labelledby="meetings-title">
+  <div class="container">
+    <div class="alerts-wrap">
+      <h2 class="label section-head__eyebrow">Weather alerts now</h2>
+      <!-- PRERENDER:news-alerts START -->
+      <ul class="pins pins--grid" role="list" data-pins></ul>
+      <!-- PRERENDER:news-alerts END -->
+    </div>
+    <div class="section-head">
+      <div class="section-head__text">
+        <p class="label section-head__eyebrow">City, county, and regional</p>
+        <h2 class="display display--sm" id="meetings-title">Upcoming public meetings</h2>
+      </div>
+    </div>
+    <p class="lede meetings__lede">Meetings where flooding, stormwater, seawalls, or sea level rise are on the agenda. Show up, or send a comment before the meeting.</p>
+    <!-- PRERENDER:news-meetings START -->
+    <p class="pins__empty">Upcoming meetings appear here when the site is built.</p>
+    <!-- PRERENDER:news-meetings END -->
+  </div>
+</section>
+<!-- ===== END: Alerts and meetings ===== -->
+
+
 <!-- ===== SECTION: News feed ===== -->
-<section class="section news-feed" id="news" aria-labelledby="feed-title">
+<section class="section section--alt news-feed" id="news" aria-labelledby="feed-title">
   <div class="container">
     <div class="section-head">
       <div class="section-head__text">

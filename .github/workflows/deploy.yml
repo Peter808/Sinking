@@ -5,7 +5,7 @@
 #   2. Copy the latest JSON from the `data` branch into _site/data
 #   3. scripts/prerender.js writes current values into the HTML
 #   4. Publish
-# Runs on every push to main, and after each data update.
+# Runs on every push to main, after each data update, and once a day.
 # Repo setting required: Settings > Pages > Source: "GitHub Actions".
 # ==========================================================================
 name: Deploy site
@@ -14,6 +14,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Once a day (4:23 AM Eastern) even if no data changed, so yesterday's
+  # meetings and expired alerts drop off and dates stay current.
+  schedule:
+    - cron: "23 8 * * *"
 
 permissions:
   contents: read

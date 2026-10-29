@@ -1,0 +1,70 @@
+# ==========================================================================
+# Issue intake
+# Turns the owner's GitHub Issue Forms into site changes:
+#   "Add a public meeting" (label add-meeting) -> data/curated/meetings.json
+#   "Hide a post"          (label hide-item)   -> data/curated/hidden.json
+# Only issues opened by the repo owner are processed; anyone else's are
+# ignored. The form answers are passed to scripts/intake.js as environment
+# variables (never pasted into shell commands), it saves the file, this
+# workflow commits it to main, comments, closes the issue, and redeploys.
+# ==========================================================================
+name: Issue intake
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write       # commit the curated file to main
+  issues: write         # comment and close
+  actions: write        # start the deploy workflow
+
+concurrency:
+  group: issue-intake
+  cancel-in-progress: false
+
+jobs:
+  intake:
+    if: >-
+      github.event.issue.user.login == github.repository_owner &&
+      (contains(github.event.issue.labels.*.name, 'add-meeting') || contains(github.event.issue.labels.*.name, 'hide-item'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Read the form
+        id: read
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          if node scripts/intake.js; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Commit
+        if: steps.read.outputs.ok == 'true'
+        run: |
+          git add data/curated
+          if git diff --cached --quiet; then echo "No change."; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Curated: issue #${{ github.event.issue.number }}"
+          git push -q origin HEAD:main
+
+      - name: Redeploy
+        if: steps.read.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
+
+      - name: Reply on the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          N: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$N" --repo "$GITHUB_REPOSITORY" --body-file intake-result.md
+          if [ "${{ steps.read.outputs.ok }}" = "true" ]; then gh issue close "$N" --repo "$GITHUB_REPOSITORY"; fi

@@ -27,6 +27,8 @@
   19. News feed (filters, story list, load more)
   20. Resources (zones, insurance, checklists, FAQ)
   21. 404 link grid and article template
+   SHARED
+  22. Pinned cards: weather alerts + public meetings (home, city, News)
    ========================================================================== */
 
 
@@ -760,3 +762,53 @@ a.city-chip:hover { border-color: var(--tide-aqua); }
 .article__inner h2 { font-size: var(--fs-h3); }
 .article__img { aspect-ratio: 16 / 9; }
 .article__meta { color: var(--text-secondary); }
+
+
+
+/* ==========================================================================
+   22. PINNED CARDS: WEATHER ALERTS + PUBLIC MEETINGS
+   Sit above the news on home and city pages (.pins) and in a grid on the
+   News page (.pins--grid). Written by prerender.js, refreshed by alerts.js.
+   Alert color follows the risk scale by level (warning red, watch orange,
+   advisory amber) and always has a text label. Meetings are civic purple.
+   ========================================================================== */
+.pins { display: grid; gap: 12px; margin-bottom: var(--space-4); }
+.pins:not(:has(.pin)) { display: none; }                  /* nothing pinned: no gap */
+.alerts-wrap:not(:has(.pin)) { display: none; }
+.alerts-wrap { margin-bottom: var(--space-6); }
+.alerts-wrap > .label { margin-bottom: var(--space-2); }
+@media (min-width: 960px) { .pins--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.pins__empty { color: var(--text-secondary); }
+
+.pin {
+  --pin: var(--civic);
+  position: relative; display: flex; gap: var(--space-3); align-items: flex-start;
+  padding: var(--space-3); border-radius: var(--radius-md);
+  background: var(--navy-700); border: 1px solid var(--navy-600); border-left: 4px solid var(--pin);
+}
+.pin:hover { border-color: var(--pin); }
+.pin__body { display: grid; gap: 8px; min-width: 0; }
+.pin__kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; color: var(--pin); }
+.pin__title { font-size: clamp(18px, 1.5vw, 22px); font-weight: 600; line-height: 1.25; }
+.pin__title a { color: var(--text-primary); text-decoration: none; }
+.pin__title a::after { content: ""; position: absolute; inset: 0; }   /* whole card is the link */
+.pin__text { color: var(--text-secondary); font-size: 15px; }
+.pin__meta { color: var(--text-muted); font-size: 13px; }
+.pin__meta a { position: relative; z-index: 1; color: var(--pin); }    /* agenda link sits above the card link */
+
+/* Weather alert: one line of kicker, title, cities */
+.pin--alert { flex-direction: column; gap: 8px; }
+.pin--alert[data-level="warning"]  { --pin: var(--risk-severe);   background: color-mix(in srgb, var(--risk-severe) 12%, var(--navy-700)); }
+.pin--alert[data-level="watch"]    { --pin: var(--risk-high);     background: color-mix(in srgb, var(--risk-high) 10%, var(--navy-700)); }
+.pin--alert[data-level="advisory"] { --pin: var(--risk-moderate); }
+.pin--alert .pin__kicker .label { color: var(--text-primary); }
+
+/* Public meeting: date block on the left */
+.pin--meeting { background: linear-gradient(90deg, var(--civic-bg), transparent 60%), var(--navy-700); }
+.pin__date {
+  flex: none; display: grid; justify-items: center; width: 64px; padding: 8px 0;
+  border-radius: var(--radius-sm); background: var(--civic-bg); border: 1px solid rgba(167, 139, 250, 0.35);
+  text-transform: uppercase; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--civic);
+}
+.pin__date strong { font-size: 30px; font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; color: var(--text-primary); }
+.meetings__lede { margin-bottom: var(--space-4); }

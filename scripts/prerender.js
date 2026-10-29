@@ -92,7 +92,7 @@ function newsCard(it, used, base = '', regional = false) {
    other South Florida stories fill in, tagged "Regional". */
 function renderNews(html, page) {
   const news = readJSON('news.json');
-  const items = news && news.items || [];
+  const items = (news && news.items || []).filter((it) => !HIDDEN.has(it.link));
   if (!items.length) { console.log('  news: no data, keeping sample cards'); return html; }
   let pick, regional = new Set();
   if (page.city) {
@@ -366,6 +366,121 @@ ${cards}
 }
 
 /* ========================================================================
+   PINNED CARDS: weather alerts + public meetings
+   Weather alerts come from cities.json (weatherAlerts, from fetch-floods.js);
+   meetings from data/meetings.json (the robot) plus
+   data/curated/meetings.json (added by hand with the GitHub form).
+   - Alerts show while active. js/alerts.js refreshes them live from NWS.
+   - Meetings show on the News page until the day after they happen, and
+     pin to the top of the news on home + city pages within pinDays (7).
+   Anything listed in data/curated/hidden.json is left out.
+   ======================================================================== */
+const ROOT_DIR = path.join(__dirname, '..');
+const readRepo = (f, fb) => { try { return JSON.parse(fs.readFileSync(path.join(ROOT_DIR, f), 'utf8')); } catch (e) { return fb; } };
+const MEET_CFG = readRepo('config/meetings.json', { pinDays: 7 });
+const ALERT_EVENTS = readRepo('config/alerts.json', { events: {} }).events;
+const HIDDEN = new Set((readRepo('data/curated/hidden.json', { items: [] }).items || []).map((x) => typeof x === 'string' ? x : x.url));
+const LEVEL_RISK = { warning: 'severe', watch: 'high', advisory: 'moderate' };
+const LEVEL_LABEL = { warning: 'Warning', watch: 'Watch', advisory: 'Advisory' };
+const todayET = () => new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(new Date());
+const cityNames = (ids) => ids.map((c) => CITY[c] && CITY[c].name).filter(Boolean).join(', ');
+
+/* Active alerts, merged across cities (one card per alert, listing every
+   city it covers). cityId limits it to one city. */
+function activeAlerts(cityId) {
+  const doc = readJSON('cities.json');
+  if (!doc) return [];
+  const now = Date.now(), byId = new Map();
+  Object.values(doc.cities).forEach((c) => {
+    if (cityId && c.id !== cityId) return;
+    ((c.weatherAlerts && c.weatherAlerts.items) || []).forEach((a) => {
+      if (a.expires && Date.parse(a.expires) < now) return;
+      if (HIDDEN.has(a.url)) return;
+      if (!byId.has(a.id)) byId.set(a.id, Object.assign({}, a, { cities: [] }));
+      byId.get(a.id).cities.push(c.id);
+    });
+  });
+  const order = { warning: 0, watch: 1, advisory: 2 };
+  return [...byId.values()].sort((a, b) => order[a.level] - order[b.level]);
+}
+
+/* Upcoming meetings (today or later), robot + hand-added, newest last */
+function upcomingMeetings(cityId) {
+  const today = todayET();
+  const robot = (readJSON('meetings.json') || { items: [] }).items || [];
+  const manual = (readRepo('data/curated/meetings.json', { items: [] }).items || []);
+  const seen = new Set();
+  return robot.concat(manual)
+    .filter((m) => m.date >= today && !HIDDEN.has(m.link) && (!cityId || (m.cities || []).includes(cityId)))
+    .filter((m) => { const k = m.id || m.link; if (seen.has(k)) return false; seen.add(k); return true; })
+    .sort((a, b) => (a.start || a.date).localeCompare(b.start || b.date));
+}
+
+/* One weather alert card. Same markup as js/alerts.js builds in the browser. */
+function alertCard(a) {
+  const until = a.expires ? ` · Until ${fmtTime(new Date(a.expires))}${fmtDate(a.expires) !== fmtDate(new Date().toISOString()) ? ', ' + fmtDate(a.expires).replace(/, \d{4}$/, '') : ''}` : '';
+  return `      <li class="pin pin--alert" data-level="${esc(a.level)}" data-expires="${esc(a.expires || '')}" data-alert-id="${esc(a.id)}">
+        <p class="pin__kicker"><span class="risk-chip" data-risk="${LEVEL_RISK[a.level]}">${LEVEL_LABEL[a.level]}</span><span class="label">Weather alert${esc(until)}</span></p>
+        <h3 class="pin__title"><a href="${esc(a.url)}" rel="noopener">${esc(a.event)}<span class="visually-hidden"> (National Weather Service)</span></a></h3>
+        <p class="pin__text">${esc(cityNames(a.cities))}</p>
+      </li>`;
+}
+
+/* One public meeting card */
+function meetingCard(m) {
+  const d = new Date(`${m.date}T12:00:00Z`);
+  const part = (o) => new Intl.DateTimeFormat('en-US', Object.assign({ timeZone: 'UTC' }, o)).format(d);
+  const dayAfter = new Date(Date.parse(`${m.date}T00:00:00${(m.start || '').slice(-6) || '-05:00'}`) + 864e5).toISOString();
+  const topics = (m.topics || []).length ? `<p class="pin__text"><strong>On the agenda:</strong> ${esc(m.topics.join(' · '))}</p>` : (m.summary ? `<p class="pin__text">${esc(m.summary)}</p>` : '');
+  const metaBits = [m.org, m.location].filter(Boolean).map(esc);
+  if (m.agenda) metaBits.push(`<a href="${esc(m.agenda)}" rel="noopener">Agenda</a>`);
+  return `      <li class="pin pin--meeting" data-expires="${dayAfter}" data-cities="${esc((m.cities || []).join(' '))}">
+        <p class="pin__date" aria-hidden="true"><span>${part({ month: 'short' })}</span><strong>${part({ day: 'numeric' })}</strong><span>${part({ weekday: 'short' })}</span></p>
+        <div class="pin__body">
+          <p class="pin__kicker"><span class="label">Public meeting · <time datetime="${esc(m.start || m.date)}">${esc(part({ weekday: 'long', month: 'long', day: 'numeric' }))}${m.time ? ', ' + esc(m.time) : ''}</time></span></p>
+          <h3 class="pin__title"><a href="${esc(m.link)}" rel="noopener">${esc(m.title)}</a></h3>
+          ${topics}
+          <p class="pin__meta">${metaBits.join(' · ')}</p>
+        </div>
+      </li>`;
+}
+
+/* Attributes js/alerts.js needs for its live NWS check: which points to
+   ask about, and which alert types get a card */
+function liveAttrs(cityId) {
+  const doc = readJSON('cities.json');
+  const pts = doc ? Object.values(doc.cities).filter((c) => !cityId || c.id === cityId).map((c) => [c.point ? c.point.lat : c.lat, c.point ? c.point.lon : c.lon, c.id]) : [];
+  return ` data-alert-points='${esc(JSON.stringify(pts))}' data-alert-events='${esc(JSON.stringify(ALERT_EVENTS))}' data-city-names='${esc(JSON.stringify(Object.fromEntries(Object.entries(CITY).map(([k, v]) => [k, v.name]))))}'`;
+}
+
+/* Home + city pages: alerts, then meetings within pinDays */
+function renderPins(html, page) {
+  if (!html.includes('PRERENDER:pins')) return html;
+  const alerts = activeAlerts(page.city);
+  const limit = new Date(Date.now() + MEET_CFG.pinDays * 864e5);
+  const soonDay = new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(limit);
+  const meetings = upcomingMeetings(page.city).filter((m) => m.date <= soonDay).slice(0, 3);
+  html = replaceBlock(html, 'pins', `    <ul class="pins" role="list" aria-label="Weather alerts and upcoming public meetings" data-pins${liveAttrs(page.city)}>
+${alerts.map(alertCard).concat(meetings.map(meetingCard)).join('\n')}
+    </ul>`);
+  console.log(`  pins: ${alerts.length} alert(s), ${meetings.length} meeting(s)`);
+  return html;
+}
+
+/* News page: every active alert and every upcoming meeting */
+function renderNewsPins(html) {
+  const alerts = activeAlerts(null), meetings = upcomingMeetings(null);
+  html = replaceBlock(html, 'news-alerts', `    <ul class="pins pins--grid" role="list" aria-label="Active weather alerts" data-pins${liveAttrs(null)}>
+${alerts.map(alertCard).join('\n')}
+    </ul>`);
+  html = replaceBlock(html, 'news-meetings', meetings.length
+    ? `    <ul class="pins pins--grid" role="list">\n${meetings.map(meetingCard).join('\n')}\n    </ul>`
+    : `    <p class="pins__empty">No flood-related public meetings are on the calendars we track right now.</p>`);
+  console.log(`  news page: ${alerts.length} alert(s), ${meetings.length} meeting(s)`);
+  return html;
+}
+
+/* ========================================================================
    NEWS PAGE (news/index.html)
    Every story in news.json as a text card (no photos, so 60 stories don't
    repeat the same 10 images), plus city filter chips with counts.
@@ -374,7 +489,7 @@ ${cards}
 function renderNewsPage(html, page) {
   if (page.type !== 'news') return html;
   const news = readJSON('news.json');
-  const items = news && news.items || [];
+  const items = (news && news.items || []).filter((it) => !HIDDEN.has(it.link));
   if (!items.length) { console.log('  news page: no data, keeping sample'); return html; }
   const cards = items.map((it) => {
     const tags = it.cities.map((c) => CITY[c] && `<span class="tag">${esc(CITY[c].name)}</span>`).filter(Boolean).join('') || '<span class="tag">Regional</span>';
@@ -417,8 +532,9 @@ PAGES.forEach((page) => {
   const file = path.join(SITE, page.file);
   let html = fs.readFileSync(file, 'utf8');
   console.log(`prerender: ${page.file}`);
-  if (page.type === 'news') { fs.writeFileSync(file, renderNewsPage(html, page)); return; }
+  if (page.type === 'news') { fs.writeFileSync(file, renderNewsPins(renderNewsPage(html, page))); return; }
   html = renderNews(html, page);
+  html = renderPins(html, page);
   html = renderHero(html, page);
   html = renderNumbers(html);
   html = renderFixes(html, page);

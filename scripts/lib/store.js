@@ -54,7 +54,8 @@ function recordError(meta, key, err) {
    Decides whether a script should run now.
    runKey: which script ('tides', 'weather', 'floods', 'news', 'social');
            each keeps its own last-run time in meta.runs
-   type:   'conditions' (tides, weather, alerts), 'news', 'social', or 'stats'
+   type:   'conditions' (tides, rain), 'alerts' (NWS alerts, hourly all year),
+           'news', 'social', 'meetings', or 'stats'
    - conditions: hourly in king tide season, every 6h off-season, and hourly
      whenever any flood alert is active (alertOverride in schedule.json)
    - FORCE=1 skips the check (manual runs, tests)
@@ -65,6 +66,8 @@ function checkDue(meta, runKey, type, now = new Date()) {
   if (type === 'news') { interval = schedule.newsEveryMinutes; reason = 'news interval'; }
   else if (type === 'social') { interval = schedule.socialEveryMinutes; reason = 'social interval'; }
   else if (type === 'stats') { interval = schedule.statsEveryMinutes; reason = 'weekly stats'; }
+  else if (type === 'meetings') { interval = schedule.meetingsEveryMinutes; reason = 'meetings interval'; }
+  else if (type === 'alerts') { interval = schedule.alertsEveryMinutes; reason = 'weather alerts (hourly, all year)'; }
   else {
     const season = inSeason(schedule.kingTideSeason, now);
     const alerts = schedule.alertOverride && anyFloodAlert();
@@ -77,11 +80,11 @@ function checkDue(meta, runKey, type, now = new Date()) {
   return { due, intervalMinutes: interval, reason };
 }
 
-/* True if the last saved cities.json has any active flood alert for any city */
+/* True if the last saved cities.json has any active flood or weather alert card for any city */
 function anyFloodAlert() {
   const cities = readData('cities.json', null);
   if (!cities) return false;
-  return Object.values(cities.cities || {}).some((c) => (c.alerts && c.alerts.items || []).length > 0);
+  return Object.values(cities.cities || {}).some((c) => (c.alerts && c.alerts.items || []).length > 0 || (c.weatherAlerts && c.weatherAlerts.items || []).length > 0);
 }
 
 module.exports = { readData, writeData, loadMeta, saveMeta, recordSuccess, recordError, checkDue };

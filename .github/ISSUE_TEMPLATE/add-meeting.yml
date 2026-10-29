@@ -1,0 +1,80 @@
+# Owner-only form: adds a public meeting card to the site.
+# The issue-intake workflow reads it, saves it to data/curated/meetings.json,
+# closes the issue, and redeploys. Issues from anyone else are ignored.
+name: Add a public meeting
+description: Add a city, county, regional, or neighborhood meeting about flooding (owner only)
+title: "Meeting: "
+labels: ["add-meeting"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for meetings the robot can't find on its own: Miami Beach, Miami-Dade County, South Florida Water Management District, Army Corps hearings, HOA and neighborhood town halls.
+        The card shows on the News page right away and pins to the home page and the city pages 7 days before the meeting. It disappears the day after.
+  - type: input
+    id: title
+    attributes:
+      label: Meeting name
+      placeholder: "Flatiron Park neighborhood stormwater town hall"
+    validations:
+      required: true
+  - type: input
+    id: org
+    attributes:
+      label: Who is holding it
+      placeholder: "City of Miami Beach"
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: "Format: YYYY-MM-DD"
+      placeholder: "2026-11-12"
+    validations:
+      required: true
+  - type: input
+    id: time
+    attributes:
+      label: Start time
+      placeholder: "6:00 PM"
+  - type: dropdown
+    id: level
+    attributes:
+      label: Type of meeting
+      options:
+        - City
+        - County
+        - Regional or state
+        - Neighborhood or HOA
+    validations:
+      required: true
+  - type: checkboxes
+    id: cities
+    attributes:
+      label: Which city pages should show it
+      options:
+        - label: Miami
+        - label: Miami Beach
+        - label: Hallandale Beach
+        - label: Hollywood
+        - label: Fort Lauderdale
+  - type: input
+    id: location
+    attributes:
+      label: Where
+      placeholder: "City Hall, 1700 Convention Center Dr, or Zoom"
+  - type: textarea
+    id: summary
+    attributes:
+      label: What's being discussed
+      description: One or two plain sentences. Shown on the card.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link to the meeting notice or agenda
+      placeholder: "https://"
+    validations:
+      required: true
