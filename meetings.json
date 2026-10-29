@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "id": "miami-iqm2-5360",
+      "org": "City of Miami",
+      "title": "Climate Resilience Committee",
+      "level": "city",
+      "cities": [
+        "miami"
+      ],
+      "date": "2026-11-02",
+      "time": "6:00 PM",
+      "start": "2026-11-02T18:00:00-05:00",
+      "location": "",
+      "topics": [],
+      "link": "https://MiamiFL.IQM2.com/Citizens/Detail_Meeting.aspx?ID=5360",
+      "agenda": null,
+      "source": "City of Miami"
+    },
+    {
+      "id": "hollywoodfl-2745",
+      "org": "City of Hollywood",
+      "title": "Regular City Commission Meeting",
+      "level": "city",
+      "cities": [
+        "hollywood"
+      ],
+      "date": "2026-11-05",
+      "time": "1:00 PM",
+      "start": "2026-11-05T13:00:00-05:00",
+      "location": "Commission Chambers Room 219",
+      "topics": [
+        "Establishing The Hollywood Beach Public Benefit And Resilience Trust Fund"
+      ],
+      "link": "https://hollywoodfl.legistar.com/MeetingDetail.aspx?LEGID=2745&GID=353&G=7678503F-1AF8-4553-B6C1-FBE4E5357BA8",
+      "agenda": "https://legistar.granicus.com/hollywoodfl/meetings/2026/11/2745_A_Regular_City_Commission_Meeting_26-11-05_Meeting_Agenda.pdf",
+      "source": "Legistar"
+    }
+  ]
+}
