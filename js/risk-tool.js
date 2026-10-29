@@ -20,7 +20,7 @@
 
   /* Quick text check before calling any service (saves a lookup).
      Matched only after a comma, so street suffixes like "Ct" don't trigger it. */
-  var OUTSIDE_PLACES = ['tampa', 'orlando', 'jacksonville', 'tallahassee', 'naples', 'key west'];
+  var OUTSIDE_PLACES = ['tampa', 'orlando', 'jacksonville', 'tallahassee', 'naples', 'key west', 'key largo', 'tavernier', 'islamorada', 'marathon', 'big pine', 'boca raton', 'west palm', 'palm beach'];
   var OTHER_STATES = 'AL AK AZ AR CA CO CT DE DC GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split(' ');
 
   var ZONE_NOTES = {
@@ -84,7 +84,8 @@
 
 
   /* ----- 1. Address -> location (OpenStreetMap Nominatim) ---------------
-     Covers all of Miami-Dade, including unincorporated areas, and Broward.
+     Covers everywhere from northern Broward to Homestead (coverageBox in
+     config.js): searches locally first, nationwide only if nothing is found.
 
      normalizeAddress(): people often write "Unincorporated Dade" or
      "Dade County", which OpenStreetMap doesn't recognize. We remove
@@ -112,15 +113,19 @@
     return parts[0] + ', Miami, FL' + (zip ? ' ' + zip : '');
   }
 
-  function searchOnce(q) {
+  /* One OpenStreetMap lookup. local = true searches ONLY inside searchBox;
+     false searches the whole US (used to detect out-of-area addresses). */
+  function searchOnce(q, local) {
     var wait = Math.max(0, 1100 - (Date.now() - lastGeocode));
     return sleep(wait).then(function () {
       lastGeocode = Date.now();
       var b = CFG.searchBox;
-      return getOnce(CFG.endpoints.geocode + '?' + qs({
+      var params = {
         q: q, format: 'jsonv2', addressdetails: 1, limit: 1, countrycodes: 'us',
         viewbox: [b.west, b.north, b.east, b.south].join(',')
-      }));
+      };
+      if (local) params.bounded = 1;
+      return getOnce(CFG.endpoints.geocode + '?' + qs(params));
     }).then(function (list) {
       if (!list || !list.length) return null;
       var r = list[0], a = r.address || {};
@@ -138,16 +143,35 @@
     var hasNumber = /^\s*\d+/.test(q);
     var place = q.split(',')[1] ? q.split(',')[1].trim().toLowerCase() : '';
     var retryable = hasNumber && place && place !== 'miami' && place !== 'fl';
-    return searchOnce(q).then(function (first) {
-      if ((first && first.exact) || !retryable) return first;
-      /* Only retry for Miami-Dade (or no match yet). A street-level Broward
-         match stays as is, so it can't jump to a same-named street in Miami. */
-      if (first && first.county !== 'Miami-Dade County') return first;
-      return searchOnce(asMiamiMailing(q)).then(function (second) {
-        if (second && second.exact && second.county === 'Miami-Dade County') return second;
-        return first || second;
-      }, function () { return first; });
+    /* 1. Local search (Broward to Homestead only) */
+    return searchOnce(q, true).then(function (first) {
+      if (first && first.exact) return first;
+      /* 2. Street-level or no match in Miami-Dade: retry with "Miami" mailing city */
+      /* Only for Miami-Dade: a street-level Miami-Dade match, or the text says
+         Miami-Dade. Never for Broward, so it can't jump to a Miami street. */
+      var tryMiami = retryable && ((first && first.county === 'Miami-Dade County') || /miami-dade county/i.test(q));
+      var next = tryMiami ? searchOnce(asMiamiMailing(q), true).then(function (second) {
+        return second && second.exact ? second : (first || second);
+      }, function () { return first; }) : Promise.resolve(first);
+      return next.then(function (best) {
+        if (best) return best;
+        /* 3. Nothing locally: search nationwide only to say where it is */
+        return searchOnce(q, false);
+      });
     });
+  }
+
+  /* Is a matched point inside our coverage area? (see config.js coverageBox) */
+  function inCoverage(place) {
+    var b = CFG.coverageBox;
+    if (CFG.excludedCounties.indexOf(place.county) > -1) return false;
+    return place.lat >= b.south && place.lat <= b.north && place.lon >= b.west && place.lon <= b.east;
+  }
+
+  /* Tide gauge for a point: by county name, else by latitude */
+  function gaugeFor(place) {
+    if (CFG.gauges[place.county]) return CFG.gauges[place.county];
+    return CFG.gauges[place.lat >= CFG.gaugeSplitLat ? 'Broward County' : 'Miami-Dade County'];
   }
 
   /* ----- 2. FEMA flood zone at the point -------------------------------- */
@@ -324,7 +348,7 @@
       geocode(address).then(function (place) {
         if (my !== runId) return;
         if (!place) { showStatus('notfound', address); return; }
-        if (CFG.counties.indexOf(place.county) === -1) { showStatus('outside', place.label || address); return; }
+        if (!inCoverage(place)) { showStatus('outside', place.label || address); return; }
 
         /* FEMA and USGS in parallel; either may fail on its own */
         return Promise.all([
@@ -333,7 +357,7 @@
         ]).then(function (res) {
           if (my !== runId) return;
           if (res[0].fail && res[1].fail) { showStatus('error', address); return; }
-          var gauge = CFG.gauges[place.county];
+          var gauge = gaugeFor(place);
           var elev = res[1].fail ? null : res[1].ok;
           var ht2050 = gauge.highTide + CFG.slr2050Ft;
           var zone = res[0].fail ? null : res[0].ok;

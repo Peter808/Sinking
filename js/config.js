@@ -19,18 +19,24 @@ window.SSF_CONFIG = {
     },
     timeoutMs: 15000,
 
-    /* Only addresses in these counties are checked (as OpenStreetMap names them) */
-    counties: ['Miami-Dade County', 'Broward County'],
-
-    /* Rough box around both counties, so the search prefers local matches */
+    /* COVERAGE: everywhere from northern Broward down through Homestead and
+       Florida City (decided 2026-10-29). An address is covered if its point
+       falls inside coverageBox and OpenStreetMap doesn't name it as one of
+       the excludedCounties. This works even when OSM leaves the county blank.
+       searchBox (slightly larger) is where the first, local search looks. */
+    coverageBox: { west: -80.9, south: 25.2, east: -80.0, north: 26.35 },
+    excludedCounties: ['Monroe County', 'Palm Beach County', 'Collier County', 'Hendry County'],
     searchBox: { west: -80.95, south: 25.1, east: -80.0, north: 26.4 },
+    counties: ['Miami-Dade County', 'Broward County'],   // used to pick the tide gauge
 
     /* Tide gauge reference levels, in feet NAVD88 (the same reference USGS
        uses for ground elevation). From NOAA station datums (epoch 1983-2001)
        and NWS flood levels:
          highTide   = MHHW, the average daily high tide today
          minorFlood = NWS minor flood level (king tides start flooding streets)
-       Miami-Dade uses Virginia Key, Broward uses South Port Everglades. */
+       Miami-Dade uses Virginia Key, Broward uses South Port Everglades.
+       If OSM gives no county, points north of gaugeSplitLat use Port Everglades. */
+    gaugeSplitLat: 25.97,
     gauges: {
       'Miami-Dade County': { name: 'Virginia Key', highTide: 0.23, minorFlood: 1.51 },
       'Broward County': { name: 'South Port Everglades', highTide: 0.57, minorFlood: 1.84 }
