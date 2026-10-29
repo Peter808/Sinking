@@ -20,9 +20,11 @@ permissions:
   pages: write
   id-token: write
 
+# Queue deploys instead of cancelling a running one. Cancelling mid-deploy
+# made GitHub Pages reject the next deploy ("Deployment cancelled").
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
