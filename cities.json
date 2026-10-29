@@ -32,7 +32,7 @@
           "detail": "Point 25.7617, -80.1918",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-10-29T16:31:04.437Z"
+        "updatedAt": "2026-10-29T16:39:54.031Z"
       },
       "flooding": {
         "likely": true,
@@ -58,17 +58,17 @@
         "updatedAt": "2026-10-29T13:39:53.624Z"
       },
       "water": {
-        "levelFt": 2.18,
+        "levelFt": 2.16,
         "status": "steady",
-        "observedAt": "2026-10-29T12:24:00-04:00",
-        "rawTime": "2026-10-29 12:24",
+        "observedAt": "2026-10-29T12:30:00-04:00",
+        "rawTime": "2026-10-29 12:30",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-10-29T16:31:05.507Z"
+        "updatedAt": "2026-10-29T16:39:55.918Z"
       },
       "tides": {
         "date": "2026-10-29",
@@ -355,7 +355,7 @@
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-10-29T16:31:05.570Z"
+        "updatedAt": "2026-10-29T16:39:55.967Z"
       },
       "floodDays": {
         "thisYear": {
@@ -391,7 +391,7 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-10-29T16:31:06.079Z"
+        "updatedAt": "2026-10-29T16:39:56.740Z"
       }
     },
     "miami-beach": {
@@ -426,7 +426,7 @@
           "detail": "Point 25.7907, -80.13",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-10-29T16:31:04.748Z"
+        "updatedAt": "2026-10-29T16:39:54.601Z"
       },
       "flooding": {
         "likely": true,
@@ -452,17 +452,17 @@
         "updatedAt": "2026-10-29T13:39:53.624Z"
       },
       "water": {
-        "levelFt": 2.18,
+        "levelFt": 2.16,
         "status": "steady",
-        "observedAt": "2026-10-29T12:24:00-04:00",
-        "rawTime": "2026-10-29 12:24",
+        "observedAt": "2026-10-29T12:30:00-04:00",
+        "rawTime": "2026-10-29 12:30",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-10-29T16:31:05.507Z"
+        "updatedAt": "2026-10-29T16:39:55.918Z"
       },
       "tides": {
         "date": "2026-10-29",
@@ -749,7 +749,7 @@
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-10-29T16:31:05.570Z"
+        "updatedAt": "2026-10-29T16:39:55.967Z"
       },
       "floodDays": {
         "thisYear": {
@@ -785,7 +785,7 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-10-29T16:31:06.079Z"
+        "updatedAt": "2026-10-29T16:39:56.740Z"
       }
     },
     "hallandale-beach": {
@@ -820,7 +820,7 @@
           "detail": "Point 25.9812, -80.1484",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-10-29T16:31:05.035Z"
+        "updatedAt": "2026-10-29T16:39:54.897Z"
       },
       "flooding": {
         "likely": true,
@@ -846,17 +846,17 @@
         "updatedAt": "2026-10-29T13:39:52.700Z"
       },
       "water": {
-        "levelFt": 2.01,
+        "levelFt": 1.97,
         "status": "falling",
-        "observedAt": "2026-10-29T12:24:00-04:00",
-        "rawTime": "2026-10-29 12:24",
+        "observedAt": "2026-10-29T12:30:00-04:00",
+        "rawTime": "2026-10-29 12:30",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-10-29T16:31:05.435Z"
+        "updatedAt": "2026-10-29T16:39:55.770Z"
       },
       "tides": {
         "date": "2026-10-29",
@@ -1150,7 +1150,7 @@
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-10-29T16:31:05.488Z"
+        "updatedAt": "2026-10-29T16:39:55.880Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1186,7 +1186,7 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-10-29T16:31:06.452Z"
+        "updatedAt": "2026-10-29T16:39:57.143Z"
       }
     },
     "hollywood": {
@@ -1221,7 +1221,7 @@
           "detail": "Point 26.0112, -80.1495",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-10-29T16:31:05.140Z"
+        "updatedAt": "2026-10-29T16:39:54.988Z"
       },
       "flooding": {
         "likely": true,
@@ -1247,17 +1247,17 @@
         "updatedAt": "2026-10-29T13:39:52.700Z"
       },
       "water": {
-        "levelFt": 2.01,
+        "levelFt": 1.97,
         "status": "falling",
-        "observedAt": "2026-10-29T12:24:00-04:00",
-        "rawTime": "2026-10-29 12:24",
+        "observedAt": "2026-10-29T12:30:00-04:00",
+        "rawTime": "2026-10-29 12:30",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-10-29T16:31:05.435Z"
+        "updatedAt": "2026-10-29T16:39:55.770Z"
       },
       "tides": {
         "date": "2026-10-29",
@@ -1551,7 +1551,7 @@
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-10-29T16:31:05.488Z"
+        "updatedAt": "2026-10-29T16:39:55.880Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1587,7 +1587,7 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-10-29T16:31:06.452Z"
+        "updatedAt": "2026-10-29T16:39:57.143Z"
       }
     },
     "fort-lauderdale": {
@@ -1622,7 +1622,7 @@
           "detail": "Point 26.1224, -80.1373",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-10-29T16:31:05.210Z"
+        "updatedAt": "2026-10-29T16:39:55.363Z"
       },
       "flooding": {
         "likely": true,
@@ -1648,17 +1648,17 @@
         "updatedAt": "2026-10-29T13:39:52.700Z"
       },
       "water": {
-        "levelFt": 2.01,
+        "levelFt": 1.97,
         "status": "falling",
-        "observedAt": "2026-10-29T12:24:00-04:00",
-        "rawTime": "2026-10-29 12:24",
+        "observedAt": "2026-10-29T12:30:00-04:00",
+        "rawTime": "2026-10-29 12:30",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-10-29T16:31:05.435Z"
+        "updatedAt": "2026-10-29T16:39:55.770Z"
       },
       "tides": {
         "date": "2026-10-29",
@@ -1952,7 +1952,7 @@
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-10-29T16:31:05.488Z"
+        "updatedAt": "2026-10-29T16:39:55.880Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1988,7 +1988,7 @@
           "detail": "Fort Lauderdale/Hollywood International Airport (KFLL)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KFLL"
         },
-        "updatedAt": "2026-10-29T16:31:06.884Z"
+        "updatedAt": "2026-10-29T16:39:57.711Z"
       }
     }
   },
