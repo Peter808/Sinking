@@ -25,12 +25,13 @@
   const timeET = (iso) => new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(new Date(iso));
   const parse = (s, fb) => { try { return JSON.parse(s); } catch (e) { return fb; } };
 
-  /* Hides cards whose data-expires is in the past */
+  /* Hides cards whose data-expires is in the past: expired alerts and
+     yesterday's meeting cards (news.js also skips them in its counts) */
   function hideExpired() {
     const now = Date.now();
-    document.querySelectorAll('.pin[data-expires]').forEach((li) => {
+    document.querySelectorAll('[data-expires]').forEach((li) => {
       const t = Date.parse(li.dataset.expires);
-      if (t && t < now) li.remove();
+      if (t && t < now) { li.hidden = true; li.classList.add('is-expired'); }
     });
   }
 

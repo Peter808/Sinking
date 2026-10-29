@@ -172,36 +172,8 @@
 <!-- ===== END: Page hero ===== -->
 
 
-<!-- ===== SECTION: Alerts and meetings ===== -->
-<!-- Active weather alerts (hidden when there are none; js/alerts.js keeps
-     them live) and every upcoming flood-related public meeting. Written at
-     deploy by scripts/prerender.js. Settings: config/alerts.json and
-     config/meetings.json. Meetings added by hand: data/curated/meetings.json -->
-<section class="section meetings" id="meetings" aria-labelledby="meetings-title">
-  <div class="container">
-    <div class="alerts-wrap">
-      <h2 class="label section-head__eyebrow">Weather alerts now</h2>
-      <!-- PRERENDER:news-alerts START -->
-      <ul class="pins pins--grid" role="list" data-pins></ul>
-      <!-- PRERENDER:news-alerts END -->
-    </div>
-    <div class="section-head">
-      <div class="section-head__text">
-        <p class="label section-head__eyebrow">City, county, and regional</p>
-        <h2 class="display display--sm" id="meetings-title">Upcoming public meetings</h2>
-      </div>
-    </div>
-    <p class="lede meetings__lede">Meetings where flooding, stormwater, seawalls, or sea level rise are on the agenda. Show up, or send a comment before the meeting.</p>
-    <!-- PRERENDER:news-meetings START -->
-    <p class="pins__empty">Upcoming meetings appear here when the site is built.</p>
-    <!-- PRERENDER:news-meetings END -->
-  </div>
-</section>
-<!-- ===== END: Alerts and meetings ===== -->
-
-
 <!-- ===== SECTION: News feed ===== -->
-<section class="section section--alt news-feed" id="news" aria-labelledby="feed-title">
+<section class="section news-feed" id="news" aria-labelledby="feed-title">
   <div class="container">
     <div class="section-head">
       <div class="section-head__text">
@@ -210,6 +182,16 @@
         <!-- PRERENDER:news-status END -->
         <h2 class="display display--sm" id="feed-title">All the headlines</h2>
       </div>
+    </div>
+
+    <!-- Active weather alerts (hidden when there are none). Written at deploy
+         by scripts/prerender.js; js/alerts.js keeps them live from NWS.
+         Which alerts count: config/alerts.json -->
+    <div class="alerts-wrap">
+      <h3 class="label section-head__eyebrow">Weather alerts now</h3>
+      <!-- PRERENDER:news-alerts START -->
+      <ul class="pins pins--grid" role="list" data-pins></ul>
+      <!-- PRERENDER:news-alerts END -->
     </div>
 
     <!-- City filter chips. Hidden without JS (every story shows instead).
@@ -222,8 +204,10 @@
 
     <p class="news-feed__count js-only" aria-live="polite" data-news-count></p>
 
-    <!-- Story list. Each item carries data-cities="miami fort-lauderdale" so
-         news.js can filter it. -->
+    <!-- Story list. Upcoming public meetings come first (yellow cards, from
+         data/meetings.json + data/curated/meetings.json), then headlines.
+         Each item carries data-cities="miami fort-lauderdale" so news.js can
+         filter it. -->
     <!-- PRERENDER:news-feed START -->
     <p class="lede">The latest South Florida flooding headlines appear here when the site is built.</p>
     <!-- PRERENDER:news-feed END -->

@@ -101,10 +101,14 @@ function renderNews(html, page) {
   } else {
     pick = pickVaried(items, 3);
   }
+  /* Public meetings in the next 7 days go first (yellow cards, max 2),
+     then the newest stories fill the row of 3 */
+  const meet = soonMeetings(page.city).slice(0, 2);
+  pick = pick.slice(0, 3 - meet.length);
   const used = new Set();
-  html = replaceBlock(html, 'news-cards', `    <ul class="news__row" role="list">\n${pick.map((it) => newsCard(it, used, page.base, regional.has(it))).join('\n')}\n    </ul>`);
+  html = replaceBlock(html, 'news-cards', `    <ul class="news__row" role="list">\n${meet.map((m) => meetingCard(m, true)).concat(pick.map((it) => newsCard(it, used, page.base, regional.has(it)))).join('\n')}\n    </ul>`);
   html = replaceBlock(html, 'news-status', `          <p class="label section-head__eyebrow">Updated ${esc(fmtTime(new Date()))} ET</p>`);
-  console.log(`  news: rendered ${pick.length} cards`);
+  console.log(`  news: ${meet.length} meeting(s) + ${pick.length} stories`);
   return html;
 }
 
@@ -426,21 +430,23 @@ function alertCard(a) {
       </li>`;
 }
 
-/* One public meeting card */
-function meetingCard(m) {
+/* One public meeting card, styled like a news card with a yellow accent.
+   withDate = true adds the big date block in place of the photo (home and
+   city news rows, where the other cards have photos). */
+function meetingCard(m, withDate) {
   const d = new Date(`${m.date}T12:00:00Z`);
   const part = (o) => new Intl.DateTimeFormat('en-US', Object.assign({ timeZone: 'UTC' }, o)).format(d);
   const dayAfter = new Date(Date.parse(`${m.date}T00:00:00${(m.start || '').slice(-6) || '-05:00'}`) + 864e5).toISOString();
-  const topics = (m.topics || []).length ? `<p class="pin__text"><strong>On the agenda:</strong> ${esc(m.topics.join(' · '))}</p>` : (m.summary ? `<p class="pin__text">${esc(m.summary)}</p>` : '');
-  const metaBits = [m.org, m.location].filter(Boolean).map(esc);
-  if (m.agenda) metaBits.push(`<a href="${esc(m.agenda)}" rel="noopener">Agenda</a>`);
-  return `      <li class="pin pin--meeting" data-expires="${dayAfter}" data-cities="${esc((m.cities || []).join(' '))}">
-        <p class="pin__date" aria-hidden="true"><span>${part({ month: 'short' })}</span><strong>${part({ day: 'numeric' })}</strong><span>${part({ weekday: 'short' })}</span></p>
-        <div class="pin__body">
-          <p class="pin__kicker"><span class="label">Public meeting · <time datetime="${esc(m.start || m.date)}">${esc(part({ weekday: 'long', month: 'long', day: 'numeric' }))}${m.time ? ', ' + esc(m.time) : ''}</time></span></p>
-          <h3 class="pin__title"><a href="${esc(m.link)}" rel="noopener">${esc(m.title)}</a></h3>
-          ${topics}
-          <p class="pin__meta">${metaBits.join(' · ')}</p>
+  const about = (m.topics || []).length ? `<strong>On the agenda:</strong> ${esc(m.topics.join(' · '))}` : esc(m.summary || '');
+  const where = [m.org, m.location].filter(Boolean).map(esc).join(' · ');
+  const date = withDate ? `
+        <div class="card__media card__date" aria-hidden="true"><span>${part({ weekday: 'long' })}</span><strong>${part({ month: 'short' })} ${part({ day: 'numeric' })}</strong><span>${esc(m.time || '')}</span></div>` : '';
+  return `      <li class="card card--meeting" data-expires="${dayAfter}" data-cities="${esc((m.cities || []).join(' '))}">${date}
+        <div class="card__body">
+          <p class="card__meta"><span class="tag tag--meeting">Public meeting</span>${withDate ? '' : `<time datetime="${esc(m.start || m.date)}">${esc(part({ weekday: 'short', month: 'short', day: 'numeric' }))}${m.time ? ', ' + esc(m.time) : ''}</time>`}</p>
+          <h3 class="card__title"><a href="${esc(m.link)}" rel="noopener">${esc(m.title)}</a></h3>
+          ${about ? `<p class="card__text">${about}</p>` : ''}
+          <p class="card__text card__where">${where}${m.agenda ? ` · <a class="card__sub" href="${esc(m.agenda)}" rel="noopener">Agenda</a>` : ''}</p>
         </div>
       </li>`;
 }
@@ -453,31 +459,31 @@ function liveAttrs(cityId) {
   return ` data-alert-points='${esc(JSON.stringify(pts))}' data-alert-events='${esc(JSON.stringify(ALERT_EVENTS))}' data-city-names='${esc(JSON.stringify(Object.fromEntries(Object.entries(CITY).map(([k, v]) => [k, v.name]))))}'`;
 }
 
-/* Home + city pages: alerts, then meetings within pinDays */
+/* Home + city pages: active weather alerts above the news */
 function renderPins(html, page) {
   if (!html.includes('PRERENDER:pins')) return html;
   const alerts = activeAlerts(page.city);
-  const limit = new Date(Date.now() + MEET_CFG.pinDays * 864e5);
-  const soonDay = new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(limit);
-  const meetings = upcomingMeetings(page.city).filter((m) => m.date <= soonDay).slice(0, 3);
-  html = replaceBlock(html, 'pins', `    <ul class="pins" role="list" aria-label="Weather alerts and upcoming public meetings" data-pins${liveAttrs(page.city)}>
-${alerts.map(alertCard).concat(meetings.map(meetingCard)).join('\n')}
+  html = replaceBlock(html, 'pins', `    <ul class="pins" role="list" aria-label="Active weather alerts" data-pins${liveAttrs(page.city)}>
+${alerts.map(alertCard).join('\n')}
     </ul>`);
-  console.log(`  pins: ${alerts.length} alert(s), ${meetings.length} meeting(s)`);
+  console.log(`  pins: ${alerts.length} alert(s)`);
   return html;
 }
 
-/* News page: every active alert and every upcoming meeting */
+/* News page: every active weather alert (meetings go in the story list) */
 function renderNewsPins(html) {
-  const alerts = activeAlerts(null), meetings = upcomingMeetings(null);
-  html = replaceBlock(html, 'news-alerts', `    <ul class="pins pins--grid" role="list" aria-label="Active weather alerts" data-pins${liveAttrs(null)}>
+  const alerts = activeAlerts(null);
+  html = replaceBlock(html, 'news-alerts', `      <ul class="pins pins--grid" role="list" aria-label="Active weather alerts" data-pins${liveAttrs(null)}>
 ${alerts.map(alertCard).join('\n')}
-    </ul>`);
-  html = replaceBlock(html, 'news-meetings', meetings.length
-    ? `    <ul class="pins pins--grid" role="list">\n${meetings.map(meetingCard).join('\n')}\n    </ul>`
-    : `    <p class="pins__empty">No flood-related public meetings are on the calendars we track right now.</p>`);
-  console.log(`  news page: ${alerts.length} alert(s), ${meetings.length} meeting(s)`);
+      </ul>`);
+  console.log(`  news page: ${alerts.length} alert(s)`);
   return html;
+}
+
+/* Meetings within pinDays (7), for the home and city news rows */
+function soonMeetings(cityId) {
+  const soonDay = new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(new Date(Date.now() + MEET_CFG.pinDays * 864e5));
+  return upcomingMeetings(cityId).filter((m) => m.date <= soonDay);
 }
 
 /* ========================================================================
@@ -501,13 +507,15 @@ function renderNewsPage(html, page) {
         </div>
       </li>`;
   });
-  const n = (id) => items.filter((it) => it.cities.includes(id)).length;
+  const meetCities = upcomingMeetings(null).map((m) => m.cities || []);
+  const n = (id) => items.filter((it) => it.cities.includes(id)).length + meetCities.filter((c) => c.includes(id)).length;
   const chip = (id, name, k) => `      <button class="city-chip city-chip--plain" type="button" aria-pressed="${id === 'all'}" data-filter="${id}">${esc(name)} <span class="count">${k}</span></button>`;
-  const chips = [chip('all', 'All', items.length)].concat(Object.keys(CITY).filter((id) => n(id)).map((id) => chip(id, CITY[id].name, n(id))));
+  const chips = [chip('all', 'All', items.length + meetCities.length)].concat(Object.keys(CITY).filter((id) => n(id)).map((id) => chip(id, CITY[id].name, n(id))));
   html = replaceBlock(html, 'news-chips', `    <div class="news-filter js-only" role="group" aria-label="Filter stories by city" data-news-filter>\n${chips.join('\n')}\n    </div>`);
-  html = replaceBlock(html, 'news-feed', `    <ol class="news-list" role="list" data-news-list>\n${cards.join('\n')}\n    </ol>`);
+  const meetings = upcomingMeetings(null).map((m) => meetingCard(m, false));
+  html = replaceBlock(html, 'news-feed', `    <ol class="news-list" role="list" data-news-list>\n${meetings.concat(cards).join('\n')}\n    </ol>`);
   html = replaceBlock(html, 'news-status', `        <p class="label section-head__eyebrow">${items.length} stories · Updated ${esc(fmtTime(new Date()))} ET</p>`);
-  console.log(`  news page: ${items.length} stories`);
+  console.log(`  news page: ${meetings.length} meeting(s) + ${items.length} stories`);
   return html;
 }
 

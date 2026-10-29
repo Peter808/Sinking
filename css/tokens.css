@@ -45,9 +45,9 @@
   --risk-high:        #F58A4B;
   --risk-severe:      #F0506E;
 
-  /* Public meeting cards (civic purple, distinct from the risk scale) */
-  --civic:            #A78BFA;
-  --civic-bg:         rgba(167, 139, 250, 0.12);
+  /* Public meeting cards: yellow accent stroke */
+  --civic:            #FFD54A;
+  --civic-bg:         rgba(255, 213, 74, 0.10);
 
   /* ----- 5. Text ------------------------------------------------------ */
   --text-primary:     #FFFFFF;

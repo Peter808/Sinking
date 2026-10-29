@@ -16,7 +16,12 @@
   const more = document.querySelector('[data-news-more]');
   const count = document.querySelector('[data-news-count]');
   if (!list || !chips.length) return;
-  const items = Array.from(list.children);
+  /* Skip meeting cards whose date has passed (data-expires) */
+  const items = Array.from(list.children).filter((li) => {
+    const t = Date.parse(li.dataset.expires || '');
+    if (t && t < Date.now()) { li.hidden = true; return false; }
+    return true;
+  });
 
   let filter = 'all';
   let shown = PAGE_SIZE;
