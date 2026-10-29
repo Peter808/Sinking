@@ -150,7 +150,18 @@
   }
 
 
+  /* Footer "Email" link: turns the reversed address in data-mail into a
+     mailto: link, so the real address never sits in the HTML for bots.
+     To change the address, edit data-mail in each page's footer. */
+  function initMailLinks() {
+    document.querySelectorAll('[data-mail]').forEach(function (a) {
+      var addr = a.getAttribute('data-mail').split('').reverse().join('');
+      a.href = 'mailto:' + addr + '?subject=' + encodeURIComponent('Sinking South Florida website');
+    });
+  }
+
   function init() {
+    initMailLinks();
     updateClock();
     setInterval(updateClock, 15000);
     initHeaderScroll();
