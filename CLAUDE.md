@@ -304,7 +304,7 @@ Planned future features (do not build now, just leave hooks):
 
 ## 12. Performance
 
-- No JS libraries. Total JS under 45KB unminified (raised from 30KB on 2026-10-29 when the address tool went live).
+- No JS libraries. Total JS per page under 55KB unminified (raised from 30KB to 45KB on 2026-10-29 for the address tool, then to 55KB the same day for live weather alerts; room left for the social strip).
 - Preconnect to Google Fonts, use `font-display: swap`
 - Hero image preloaded; everything else lazy
 - Target Lighthouse 90+ in all categories
