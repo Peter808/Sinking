@@ -345,49 +345,58 @@
         <p class="risk-tool__note" id="risk-coverage">Covers Miami-Dade and Broward counties only.</p>
       </form>
 
-      <!-- Results panel. Without JS this shows an EXAMPLE result.
-           risk-tool.js hides it on load and fills it after a search. -->
-      <div class="risk-tool__result glass" data-risk-result data-state="example" aria-live="polite">
+      <!-- Results panel. Without JS this shows a REAL worked example (values
+           looked up 2026-10-29 for 1700 Convention Center Dr). risk-tool.js
+           hides it on load and fills every [data-result] after a search. -->
+      <div class="risk-tool__result glass" data-risk-result aria-live="polite">
         <div class="risk-tool__result-top">
           <div>
-            <p class="label" style="color:var(--text-secondary)" data-risk-kicker>Example result</p>
-            <h3 class="risk-tool__address" data-risk-address>1700 Convention Center Dr, Miami Beach</h3>
+            <p class="label risk-tool__muted" data-result="kicker">Example result for</p>
+            <h3 class="risk-tool__address" data-result="address">1700 Convention Center Drive, Miami Beach, 33139</h3>
+            <p class="risk-tool__street-note" data-result="street-note" hidden>We couldn't match the exact house number, so these values are for the nearest point on the street.</p>
           </div>
-          <!-- SAMPLE DATA: remove this badge once real data is wired in -->
-          <span class="sample-badge">Sample data</span>
+          <p class="risk-tool__risk-top"><span class="risk-chip" data-risk="high" data-result="risk">High</span></p>
         </div>
 
         <div class="risk-tool__grid">
-          <!-- PLACEHOLDER: FEMA National Flood Hazard Layer (NFHL) zone for the parcel -->
+          <!-- FEMA National Flood Hazard Layer zone at the point -->
           <div class="risk-tool__cell">
-            <p class="label" style="color:var(--text-secondary)">FEMA flood zone</p>
+            <p class="label risk-tool__muted">FEMA flood zone</p>
             <p class="risk-tool__big" data-result="zone">AE</p>
-            <p style="font-size:14px;color:var(--text-secondary)">High-risk zone. Flood insurance usually required with a federally backed mortgage.</p>
+            <p class="risk-tool__small" data-result="zone-note">High-risk zone (1% yearly flood chance). Flood insurance is usually required with a federally backed mortgage. 100-year flood level: 8.0 ft, 3.3 ft above the ground here.</p>
           </div>
-          <!-- PLACEHOLDER: ground elevation (USGS 3DEP) vs. 2050 projected high water (NOAA / SE FL Compact) -->
+
+          <!-- Ground elevation (USGS) vs projected 2050 high tide (NOAA) vs today's king tide flood level (NWS) -->
           <div class="risk-tool__cell">
-            <p class="label" style="color:var(--text-secondary)">Elevation vs. 2050 water level</p>
-            <div class="elev-bars">
-              <div class="elev-bar"><span>Ground elevation</span><strong data-result="elevation">4.2 ft</strong>
-                <span class="elev-bar__track"><span class="elev-bar__fill" style="width:62%"></span></span></div>
-              <div class="elev-bar"><span>Projected 2050 high tide</span><strong data-result="water2050">4.6 ft</strong>
-                <span class="elev-bar__track"><span class="elev-bar__fill elev-bar__fill--water" style="width:68%"></span></span></div>
+            <p class="label risk-tool__muted">Ground vs. water <span class="risk-tool__unit">(ft, NAVD88)</span></p>
+            <div class="elev-bars" data-result="bars">
+              <div class="elev-bar"><span>Ground elevation</span><strong data-result="elevation">4.7 ft</strong>
+                <span class="elev-bar__track"><span class="elev-bar__fill" data-result="bar-ground" style="width:82%"></span></span></div>
+              <div class="elev-bar"><span>Today's king tide flood level</span><strong data-result="kingtide">1.5 ft</strong>
+                <span class="elev-bar__track"><span class="elev-bar__fill elev-bar__fill--king" data-result="bar-king" style="width:26%"></span></span></div>
+              <div class="elev-bar"><span>Projected 2050 high tide</span><strong data-result="water2050">1.3 ft</strong>
+                <span class="elev-bar__track"><span class="elev-bar__fill elev-bar__fill--water" data-result="bar-2050" style="width:22%"></span></span></div>
             </div>
-            <p style="font-size:14px;color:var(--text-secondary)">Water is projected to reach <strong style="color:var(--text-primary)">0.4 ft above</strong> ground level at peak tides.</p>
+            <p class="risk-tool__small" data-result="elev-note">Ground is 3.4 ft above projected 2050 high tide.</p>
           </div>
-          <div class="risk-tool__cell">
-            <p class="label" style="color:var(--text-secondary)">Risk level</p>
-            <p><span class="risk-chip" data-risk="high" data-result="risk">High</span></p>
-            <p style="font-size:14px;color:var(--text-secondary)">Step 3 of 4 on our scale: Low, Moderate, High, Severe.</p>
+
+          <!-- Static map (filled by risk-tool.js; hidden without JS) -->
+          <div class="risk-tool__cell risk-tool__cell--map">
+            <div class="risk-map" data-risk-map hidden>
+              <div class="risk-map__tiles" data-map-tiles></div>
+              <span class="risk-map__pin" aria-hidden="true"></span>
+              <p class="risk-map__credit">&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> contributors</p>
+            </div>
+            <p class="risk-tool__small" data-result="risk-step">Step 3 of 4 on our scale: Low, Moderate, High, Severe.</p>
           </div>
         </div>
 
-        <p class="risk-tool__meaning"><strong>What this means:</strong> this property already sits in a high-risk zone, and by 2050 the highest tides could reach street level. Look into flood insurance and an elevation certificate.</p>
+        <p class="risk-tool__meaning"><strong>What this means:</strong> <span data-result="meaning">This location already sits in, or close to, flood-prone ground. Flood insurance and an elevation certificate are worth getting now.</span></p>
         <div class="risk-tool__links">
           <a class="arrow-link" href="resources/#flood-insurance">Flood insurance basics <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="arrow-link" href="resources/#flood-zones">Read your flood zone <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <p class="risk-tool__disclaimer">Not an official flood determination. Confirm your zone on the FEMA Flood Map Service Center or with your insurer.</p>
+        <p class="risk-tool__disclaimer">Sources: FEMA National Flood Hazard Layer, USGS 3DEP elevation, NOAA 2022 sea level rise projections (Intermediate), <span data-result="gauge">Virginia Key</span> tide gauge, address search by OpenStreetMap. Your address is sent to these public services to look it up; we don't store it. Not an official flood determination. Confirm your zone on the <a href="https://msc.fema.gov/portal/home" rel="noopener">FEMA Flood Map Service Center</a> or with your insurer.</p>
       </div>
 
       <!-- Status panel for loading / outside coverage / error. Filled by risk-tool.js. -->

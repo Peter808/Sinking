@@ -234,7 +234,7 @@ The most important feature on the site. Section `id="check-your-address"`.
 - Empty, loading, error, and "address outside coverage area" states, all styled
 - Coverage note: Miami-Dade and Broward only
 - Disclaimer under results: not an official flood determination
-- For now, `risk-tool.js` returns hardcoded sample results for any address, with the Sample Data badge visible
+- `risk-tool.js` does real lookups in the browser (decided 2026-10-29): OpenStreetMap geocoding, FEMA NFHL zone, USGS 3DEP elevation, NOAA 2022 Intermediate 2050 rise. Settings and risk rules live in `js/config.js` (`riskTool`). Without JS, a real worked example (1700 Convention Center Dr) shows.
 - Built as a self-contained component so it can also be dropped onto city pages later
 
 ### Glass panel
@@ -299,7 +299,7 @@ Planned future features (do not build now, just leave hooks):
 
 ## 12. Performance
 
-- No JS libraries. Total JS under 30KB unminified. (Currently ~30KB before `data-loader.js`. Budget to be revisited in pipeline step 4.)
+- No JS libraries. Total JS under 45KB unminified (raised from 30KB on 2026-10-29 when the address tool went live).
 - Preconnect to Google Fonts, use `font-display: swap`
 - Hero image preloaded; everything else lazy
 - Target Lighthouse 90+ in all categories

@@ -450,7 +450,7 @@ html.js .risk-tool__result { animation: slideIn 420ms var(--ease) both; }
 .risk-tool__result-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: flex-start; }
 .risk-tool__address { font-size: var(--fs-h3); font-weight: 500; line-height: 1.3; }
 .risk-tool__grid { display: grid; gap: var(--space-2); }
-@media (min-width: 760px) { .risk-tool__grid { grid-template-columns: 1fr 1.5fr 1fr; } }
+@media (min-width: 760px) { .risk-tool__grid { grid-template-columns: 1fr 1.3fr 1.1fr; } }
 .risk-tool__cell {
   padding: var(--space-3); border-radius: var(--radius-md);
   background: rgba(5, 11, 26, 0.45); border: 1px solid rgba(255, 255, 255, 0.1);
@@ -462,9 +462,34 @@ html.js .risk-tool__result { animation: slideIn 420ms var(--ease) both; }
 .elev-bars { display: grid; gap: 10px; }
 .elev-bar { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 13px; color: var(--text-secondary); }
 .elev-bar strong { color: var(--text-primary); font-weight: 600; }
-.elev-bar__track { grid-column: 1 / -1; height: 8px; border-radius: 4px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
-.elev-bar__fill { height: 100%; border-radius: 4px; background: var(--text-primary); }
+.elev-bar__track { display: block; grid-column: 1 / -1; height: 8px; border-radius: 4px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
+.elev-bar__fill { display: block; height: 100%; border-radius: 4px; background: var(--text-primary); transition: width 600ms var(--ease); }
 .elev-bar__fill--water { background: var(--tide-aqua); }
+.elev-bar__fill--king { background: var(--risk-moderate); }
+
+/* Result header: address left, risk chip right */
+.risk-tool__risk-top .risk-chip { font-size: 14px; padding: 8px 16px 8px 14px; }
+.risk-tool__muted { color: var(--text-secondary); }
+.risk-tool__small { font-size: 14px; color: var(--text-secondary); }
+.risk-tool__unit { text-transform: none; letter-spacing: 0; font-weight: 500; }
+.risk-tool__street-note { margin-top: 6px; font-size: 13px; color: #FFE2A1; }
+.risk-tool__street-note[hidden], [data-result][hidden] { display: none; }
+
+/* Static map: 3x3 OpenStreetMap tiles; risk-tool.js shifts them so the
+   address sits under the pin in the center */
+.risk-map { position: relative; height: 180px; border-radius: var(--radius-sm); overflow: hidden; background: #1a2a4a; }
+.risk-map[hidden] { display: none; }
+.risk-map__tiles { position: absolute; left: 50%; top: 50%; width: 768px; height: 768px; }
+.risk-map__tiles img { position: absolute; max-width: none; filter: saturate(0.6) brightness(0.9); }
+.risk-map__pin {
+  position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; margin: -9px 0 0 -9px;
+  border-radius: 50%; background: var(--tide-aqua); border: 3px solid #fff; box-shadow: 0 0 0 6px var(--tide-aqua-glow);
+}
+.risk-map__credit {
+  position: absolute; right: 0; bottom: 0; margin: 0; padding: 2px 6px;
+  font-size: 10px; background: rgba(255, 255, 255, 0.85); color: #111; border-top-left-radius: 4px;
+}
+.risk-map__credit a { color: #0645ad; }
 
 .risk-tool__meaning { color: var(--text-secondary); }
 .risk-tool__meaning strong { color: var(--text-primary); }
