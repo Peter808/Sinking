@@ -1,0 +1,116 @@
+{
+  "_comment": [
+    "Proposed fixes for Hollywood: shown as the infographic timeline on hollywood/index.html.",
+    "Hand-curated. Review about once a quarter: update status, cost, and outcome, add new projects.",
+    "Fields per entry:",
+    "  date      YYYY-MM-DD (or YYYY-MM-01 / YYYY-01-01 when only month or year is known)",
+    "  title     short project name",
+    "  summary   one or two plain sentences: what it is",
+    "  type      plan | project | funding | study",
+    "  status    Planned | In design | In progress | Completed | Revised | On hold",
+    "  cost      { usd: number, label: text shown on the page }",
+    "  outcome   what it does or has done, in plain words",
+    "  sources   at least one { name, url }. Entries without a source are skipped.",
+    "  inTotal   optional. false = cost is part of a bigger item, so it is left out of the total",
+    "Entries show newest first."
+  ],
+  "city": "hollywood",
+  "lastReviewed": "2026-10-29",
+  "items": [
+    {
+      "date": "2026-09-30",
+      "title": "Lake Drive seawall with removable panels",
+      "summary": "A new seawall along North and South Lake Drive with 20 openings that are closed with panels before king tides.",
+      "type": "project",
+      "status": "Completed",
+      "outcome": "With all panels in, Intracoastal water stayed off the street during the September 2026 king tide. Water can still bubble up through storm drains; one-way valves are being added.",
+      "inTotal": false,
+      "sources": [
+        {
+          "name": "CBS Miami",
+          "url": "https://www.cbsnews.com/miami/news/hollywood-seawall-panels-block-king-tide-flooding-2026/"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-01",
+      "title": "Stormwater Master Plan",
+      "summary": "A 20 to 30 year plan with 81 projects: pump stations, injection wells, backflow valves, higher seawalls, and raised roads.",
+      "type": "plan",
+      "status": "Planned",
+      "cost": {
+        "usd": 1000000000,
+        "label": "About $1B"
+      },
+      "outcome": "Adopted June 2025. Small fixes under $4M come first from current fees; $25M to $40M projects wait for bonds and grants.",
+      "sources": [
+        {
+          "name": "SE Florida Climate Compact",
+          "url": "https://southeastfloridaclimatecompact.org/news-post/city-of-hollywood-adopts-comprehensive-stormwater-master-plan-1-billion-investment-30-year-strategy/"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-01",
+      "title": "A1A drainage, pump stations, and seawall",
+      "summary": "FDOT project on A1A by Hollywood Beach: four stormwater pump stations near Azalea Terrace, Van Buren, Sherman, and Franklin Streets, plus a seawall.",
+      "type": "project",
+      "status": "In progress",
+      "cost": {
+        "usd": 34300000,
+        "label": "$34.3M"
+      },
+      "outcome": "Under construction since June 2025, due summer 2028. Meant to stop A1A from flooding at high tide.",
+      "sources": [
+        {
+          "name": "FDOT District 4",
+          "url": "https://d4fdot.com/projects/state-road-s-r-a1a-south-ocean-boulevard-drainage-improvements-project"
+        },
+        {
+          "name": "South Florida Tribune",
+          "url": "https://southfloridatribune.com/hollywood-receives-16-2-million-in-matching-grant-funding/"
+        }
+      ]
+    },
+    {
+      "date": "2022-02-11",
+      "title": "Tidal flooding barriers and seawalls",
+      "summary": "Raised seawalls and tidal flood barriers on public land, paid for with state grants and the city's 2019 voter-approved bond.",
+      "type": "project",
+      "status": "In progress",
+      "cost": {
+        "usd": 28000000,
+        "label": "$28M"
+      },
+      "outcome": "Includes the Lake Drive panels. In 2025 the city asked the state for $10.2M more for this work.",
+      "sources": [
+        {
+          "name": "South Florida Tribune",
+          "url": "https://southfloridatribune.com/hollywood-receives-16-2-million-in-matching-grant-funding/"
+        },
+        {
+          "name": "Florida DEP, Resilient Florida 2025-26 plan",
+          "url": "https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2022-02-11",
+      "title": "Swale restoration pilot",
+      "summary": "Pilot and feasibility study for restoring grassy swales citywide so rain soaks in instead of pooling on streets.",
+      "type": "study",
+      "status": "Planned",
+      "cost": {
+        "usd": 695000,
+        "label": "$695K"
+      },
+      "outcome": "Half funded by a Resilient Florida grant.",
+      "sources": [
+        {
+          "name": "South Florida Tribune",
+          "url": "https://southfloridatribune.com/hollywood-receives-16-2-million-in-matching-grant-funding/"
+        }
+      ]
+    }
+  ]
+}

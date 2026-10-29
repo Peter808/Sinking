@@ -1,0 +1,154 @@
+{
+  "_comment": [
+    "Proposed fixes for Fort Lauderdale: shown as the infographic timeline on fort-lauderdale/index.html.",
+    "Hand-curated. Review about once a quarter: update status, cost, and outcome, add new projects.",
+    "Fields per entry:",
+    "  date      YYYY-MM-DD (or YYYY-MM-01 / YYYY-01-01 when only month or year is known)",
+    "  title     short project name",
+    "  summary   one or two plain sentences: what it is",
+    "  type      plan | project | funding | study",
+    "  status    Planned | In design | In progress | Completed | Revised | On hold",
+    "  cost      { usd: number, label: text shown on the page }",
+    "  outcome   what it does or has done, in plain words",
+    "  sources   at least one { name, url }. Entries without a source are skipped.",
+    "  inTotal   optional. false = cost is part of a bigger item, so it is left out of the total",
+    "Entries show newest first."
+  ],
+  "city": "fort-lauderdale",
+  "lastReviewed": "2026-10-29",
+  "items": [
+    {
+      "date": "2025-09-27",
+      "title": "Fortify Lauderdale, expanded",
+      "summary": "The city's stormwater overhaul grows to a citywide program: tidal valves, new pipes and outfalls, raised seawalls, rebuilt swales, and storage.",
+      "type": "plan",
+      "status": "In progress",
+      "cost": {
+        "usd": 1600000000,
+        "label": "$1.6B"
+      },
+      "outcome": "Mayor says the program is moving ahead neighborhood by neighborhood.",
+      "sources": [
+        {
+          "name": "Local 10",
+          "url": "https://www.local10.com/news/local/2025/09/27/fort-lauderdale-mayor-says-stormwater-management-system-project-is-moving-ahead"
+        }
+      ]
+    },
+    {
+      "date": "2025-01-01",
+      "title": "Southeast Isles stormwater and tidal fixes",
+      "summary": "New drainage, tidal valves, and flood improvements for the Southeast Isles neighborhood off Las Olas.",
+      "type": "project",
+      "status": "In design",
+      "cost": {
+        "usd": 46945242,
+        "label": "$46.9M"
+      },
+      "outcome": "Recommended for a 50% state cost share in Florida's 2025-26 Resilient Florida plan. Part of Fortify Lauderdale.",
+      "inTotal": false,
+      "sources": [
+        {
+          "name": "Florida DEP, Resilient Florida 2025-26 plan",
+          "url": "https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2025-01-01",
+      "title": "Victoria Park stormwater project",
+      "summary": "New pipes, drains, and storage across Victoria Park, one of the seven neighborhoods in the 2018 master plan.",
+      "type": "project",
+      "status": "In progress",
+      "cost": {
+        "usd": 40136642,
+        "label": "$40.1M"
+      },
+      "outcome": "Drainage work is underway. Recommended for state cost share in 2025. Part of Fortify Lauderdale.",
+      "inTotal": false,
+      "sources": [
+        {
+          "name": "City of Fort Lauderdale",
+          "url": "https://www.fortlauderdale.gov/Government/Departments/Strategic-Communications/King-Tides-and-High-Tides"
+        },
+        {
+          "name": "Florida DEP, Resilient Florida 2025-26 plan",
+          "url": "https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2025-01-01",
+      "title": "Sebastian and Seville Street seawalls",
+      "summary": "Replacing and raising city-owned seawalls on two streets near the beach. New seawalls must reach at least 5 feet.",
+      "type": "project",
+      "status": "In design",
+      "cost": {
+        "usd": 3027354,
+        "label": "$3.0M"
+      },
+      "outcome": "Construction is next. Part of $1.5M a year the city spends raising its own seawalls.",
+      "sources": [
+        {
+          "name": "City of Fort Lauderdale",
+          "url": "https://www.fortlauderdale.gov/Government/Departments/Strategic-Communications/King-Tides-and-High-Tides"
+        },
+        {
+          "name": "Florida DEP, Resilient Florida 2025-26 plan",
+          "url": "https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2023-10-04",
+      "title": "Fortify Lauderdale, first version",
+      "summary": "Announced after the April 2023 storm dropped more than 20 inches of rain: stormwater fixes for 17 coastal neighborhoods within a decade.",
+      "type": "plan",
+      "status": "Revised",
+      "cost": {
+        "usd": 500000000,
+        "label": "$500M"
+      },
+      "outcome": "Replaced by the $1.6B citywide program in 2025.",
+      "sources": [
+        {
+          "name": "WLRN",
+          "url": "https://www.wlrn.org/government-politics/2023-10-05/floods-fort-lauderdale-mayor-plan-prevention"
+        }
+      ]
+    },
+    {
+      "date": "2018-01-01",
+      "title": "Stormwater Master Plan, seven neighborhoods",
+      "summary": "The first master plan: $200M of drainage work in seven low-lying neighborhoods, starting with Victoria Park.",
+      "type": "plan",
+      "status": "In progress",
+      "cost": {
+        "usd": 200000000,
+        "label": "$200M"
+      },
+      "outcome": "Phase 2 neighborhoods such as Middle River Terrace are in design and permitting. Now folded into Fortify Lauderdale.",
+      "inTotal": false,
+      "sources": [
+        {
+          "name": "City of Fort Lauderdale",
+          "url": "https://www.fortlauderdale.gov/Government/Departments/Strategic-Communications/King-Tides-and-High-Tides"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Tidal valves on storm drains",
+      "summary": "One-way valves on storm drain outfalls that let rain out but keep high tide from backing up into streets.",
+      "type": "project",
+      "status": "Completed",
+      "outcome": "Nearly 200 installed citywide so far, the main defense against king tide water rising through drains.",
+      "sources": [
+        {
+          "name": "City of Fort Lauderdale",
+          "url": "https://www.fortlauderdale.gov/Government/Departments/Strategic-Communications/King-Tides-and-High-Tides"
+        }
+      ]
+    }
+  ]
+}

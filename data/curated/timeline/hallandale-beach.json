@@ -1,0 +1,111 @@
+{
+  "_comment": [
+    "Proposed fixes for Hallandale Beach: shown as the infographic timeline on hallandale-beach/index.html.",
+    "Hand-curated. Review about once a quarter: update status, cost, and outcome, add new projects.",
+    "Fields per entry:",
+    "  date      YYYY-MM-DD (or YYYY-MM-01 / YYYY-01-01 when only month or year is known)",
+    "  title     short project name",
+    "  summary   one or two plain sentences: what it is",
+    "  type      plan | project | funding | study",
+    "  status    Planned | In design | In progress | Completed | Revised | On hold",
+    "  cost      { usd: number, label: text shown on the page }",
+    "  outcome   what it does or has done, in plain words",
+    "  sources   at least one { name, url }. Entries without a source are skipped.",
+    "  inTotal   optional. false = cost is part of a bigger item, so it is left out of the total",
+    "Entries show newest first."
+  ],
+  "city": "hallandale-beach",
+  "lastReviewed": "2026-10-29",
+  "items": [
+    {
+      "date": "2026-05-20",
+      "title": "CDBG drainage improvements, design",
+      "summary": "Design and construction inspection contract for a neighborhood drainage project paid for with federal Community Development Block Grant money.",
+      "type": "project",
+      "status": "In design",
+      "cost": {
+        "usd": 131345,
+        "label": "$131K (design)"
+      },
+      "outcome": "Design phase only. The construction budget has not been published.",
+      "sources": [
+        {
+          "name": "City Briefs FL",
+          "url": "https://citybriefsfl.com/items/hallandale-beach-2026-05-20-item-26-151/"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-01",
+      "title": "Vulnerability assessment and adaptation plan",
+      "summary": "State-funded study modeling high tides, sea level rise, and combined rain and tide flooding through 2050 and 2080.",
+      "type": "study",
+      "status": "Completed",
+      "outcome": "Ranks Hallandale Beach among Broward's most flood-vulnerable areas. Recommends engineered swales, a coordinated seawall plan for Golden Isles, and flood barriers.",
+      "sources": [
+        {
+          "name": "Citizen Portal",
+          "url": "https://citizenportal.ai/articles/6786964/Florida/Broward-County/Hallandale-Beach/Hallandale-Beach-unveils-vulnerability-assessment-urges-immediate-swale-and-seawall-planning"
+        }
+      ]
+    },
+    {
+      "date": "2025-01-01",
+      "title": "Northeast quadrant injection wells",
+      "summary": "Injection wells that push stormwater deep underground so streets in the city's northeast quadrant drain faster.",
+      "type": "project",
+      "status": "Planned",
+      "cost": {
+        "usd": 21457171,
+        "label": "$21.5M"
+      },
+      "outcome": "Recommended for a 50% state cost share in Florida's 2025-26 Resilient Florida plan.",
+      "sources": [
+        {
+          "name": "Florida DEP, Resilient Florida 2025-26 plan",
+          "url": "https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2025-01-01",
+      "title": "NW, SW, and NE stormwater drainage",
+      "summary": "New and upgraded drainage pipes and structures across three quadrants of the city.",
+      "type": "project",
+      "status": "Planned",
+      "cost": {
+        "usd": 14791960,
+        "label": "$14.8M"
+      },
+      "outcome": "Recommended for a 50% state cost share in Florida's 2025-26 Resilient Florida plan.",
+      "sources": [
+        {
+          "name": "Florida DEP, Resilient Florida 2025-26 plan",
+          "url": "https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2022-08-30",
+      "title": "NE 14th Avenue pump station",
+      "summary": "A new stormwater pumping station for one of the city's most flood-prone corridors, funded mainly by a federal grant.",
+      "type": "project",
+      "status": "Completed",
+      "cost": {
+        "usd": 15000000,
+        "label": "$15M"
+      },
+      "outcome": "Finished in 2022. Heavy rain and a king tide still flooded parts of the city in September 2026, and residents asked for more.",
+      "sources": [
+        {
+          "name": "City of Hallandale Beach",
+          "url": "https://hallandalebeachfl.gov/DocumentCenter/View/30014/2022-0830-NEWS-RELEASE-HB-Infrastructure?bidId="
+        },
+        {
+          "name": "CBS Miami",
+          "url": "https://www.cbsnews.com/miami/news/hallandale-beach-flooding-heavy-rain-king-tide/"
+        }
+      ]
+    }
+  ]
+}

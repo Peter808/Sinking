@@ -1,0 +1,137 @@
+{
+  "_comment": [
+    "Proposed fixes for Miami Beach and South Beach: shown as the infographic timeline on miami-beach/index.html.",
+    "Hand-curated. Review about once a quarter: update status, cost, and outcome, add new projects.",
+    "Fields per entry:",
+    "  date      YYYY-MM-DD (or YYYY-MM-01 / YYYY-01-01 when only month or year is known)",
+    "  title     short project name",
+    "  summary   one or two plain sentences: what it is",
+    "  type      plan | project | funding | study",
+    "  status    Planned | In design | In progress | Completed | Revised | On hold",
+    "  cost      { usd: number, label: text shown on the page }",
+    "  outcome   what it does or has done, in plain words",
+    "  sources   at least one { name, url }. Entries without a source are skipped.",
+    "  inTotal   optional. false = cost is part of a bigger item, so it is left out of the total",
+    "Entries show newest first."
+  ],
+  "city": "miami-beach",
+  "lastReviewed": "2026-10-29",
+  "items": [
+    {
+      "date": "2025-01-01",
+      "title": "North Beach seawalls and living shorelines",
+      "summary": "New and raised seawalls plus living shoreline (plants and rock) along North Beach waterways.",
+      "type": "project",
+      "status": "Planned",
+      "cost": {
+        "usd": 17962000,
+        "label": "$18.0M"
+      },
+      "outcome": "Recommended for a 50% state cost share in Florida's 2025-26 Resilient Florida plan.",
+      "sources": [
+        {
+          "name": "Florida DEP, Resilient Florida 2025-26 plan",
+          "url": "https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2023-09-01",
+      "title": "Indian Creek Drive seawall, 29th to 41st St",
+      "summary": "A new, higher public seawall along Indian Creek Drive, part of the city's program to raise and replace seawalls.",
+      "type": "project",
+      "status": "Completed",
+      "cost": {
+        "usd": 4344291,
+        "label": "$4.3M"
+      },
+      "outcome": "Blocks tidal water from spilling over the bank onto Indian Creek Drive. The city's last update set completion for summer 2023.",
+      "sources": [
+        {
+          "name": "City of Miami Beach",
+          "url": "https://www.miamibeachfl.gov/projects/indian-creek-drive-seawall-project/"
+        }
+      ]
+    },
+    {
+      "date": "2020-06-01",
+      "title": "West Avenue Phase II, South Beach",
+      "summary": "Raises West Avenue and Bay Road from 14th Street to Lincoln Road about 24 inches, with a new pump station at 1671 West Ave, new drains, water and sewer lines.",
+      "type": "project",
+      "status": "In progress",
+      "cost": {
+        "usd": 100229771,
+        "label": "$100.2M"
+      },
+      "outcome": "Built to cut rain and high-tide flooding in South Beach's lowest streets. Segments 2 and 3 due spring 2027; the city asked the state for $16.7M more in 2025.",
+      "sources": [
+        {
+          "name": "City of Miami Beach",
+          "url": "https://www.miamibeachfl.gov/projects/west-avenue-neighborhood-improvements-project-phase-ii/"
+        },
+        {
+          "name": "Florida DEP, Resilient Florida 2025-26 plan",
+          "url": "https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf"
+        }
+      ]
+    },
+    {
+      "date": "2018-11-06",
+      "title": "G.O. Bond: neighborhoods and infrastructure",
+      "summary": "Voters approved a $439M general obligation bond. $198M of it goes to neighborhoods and infrastructure, including flood work.",
+      "type": "funding",
+      "status": "In progress",
+      "cost": {
+        "usd": 198000000,
+        "label": "$198M of $439M"
+      },
+      "outcome": "Issued in parts since 2019. The rest of the bond pays for parks ($169M) and public safety ($72M).",
+      "sources": [
+        {
+          "name": "Florida Politics",
+          "url": "https://floridapolitics.com/archives/290900-miami-beach-issuing-bonds-infrastructure"
+        }
+      ]
+    },
+    {
+      "date": "2016-11-14",
+      "title": "Indian Creek Drive raised road and pumps",
+      "summary": "A new seawall, permanent pump, and plans to raise Indian Creek Drive, one of the city's worst king tide spots.",
+      "type": "project",
+      "status": "Completed",
+      "cost": {
+        "usd": 25000000,
+        "label": "About $25M"
+      },
+      "outcome": "During the November 2016 king tide the street stayed dry at high tide, the first big test of the new system.",
+      "sources": [
+        {
+          "name": "CBS Miami",
+          "url": "https://www.cbsnews.com/miami/news/miami-beach-pumped-millions-into-beating-king-tides-its-working"
+        }
+      ]
+    },
+    {
+      "date": "2014-09-22",
+      "title": "Citywide stormwater pumps and raised streets",
+      "summary": "About 60 new stormwater pumps, higher seawalls, and raised roads, starting in South Beach around Alton Road and 10th Street.",
+      "type": "plan",
+      "status": "Completed",
+      "cost": {
+        "usd": 400000000,
+        "label": "Up to $400M"
+      },
+      "outcome": "First phase largely done by 2016, when the new system kept streets dry during king tides. The city then committed $400M to $500M more to raise low streets.",
+      "sources": [
+        {
+          "name": "Insurance Journal",
+          "url": "https://www.insurancejournal.com/news/southeast/2014/09/22/341140.htm"
+        },
+        {
+          "name": "CBS Miami",
+          "url": "https://www.cbsnews.com/miami/news/miami-beach-pumped-millions-into-beating-king-tides-its-working"
+        }
+      ]
+    }
+  ]
+}

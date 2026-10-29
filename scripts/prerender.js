@@ -322,9 +322,10 @@ function renderFixes(html, page) {
   const items = (tl.items || []).filter((i) => i.sources && i.sources.length).sort((a, b) => b.date.localeCompare(a.date));
   if (!items.length) return html;
 
-  /* Summary strip. "Proposed or under way" leaves out revised and on-hold
-     items so a replaced plan isn't counted twice. */
-  const live = items.filter((i) => !/revised|on hold/i.test(i.status));
+  /* Summary strip. "Proposed or under way" leaves out completed, revised and
+     on-hold items, and any item marked inTotal:false (its cost is already
+     inside a bigger plan), so nothing is counted twice. */
+  const live = items.filter((i) => !/revised|on hold|completed/i.test(i.status) && i.inTotal !== false);   // inTotal:false = part of another item's budget
   const total = live.reduce((a, i) => a + (i.cost && i.cost.usd || 0), 0);
   const count = (re) => items.filter((i) => re.test(i.status)).length;
   const maxCost = Math.max(...items.map((i) => (i.cost && i.cost.usd) || 0));
@@ -340,8 +341,8 @@ function renderFixes(html, page) {
           <div class="tl__top"><time class="tl__when" datetime="${esc(i.date)}">${esc(fmtMonth(i.date))}</time><span class="tl__status">${esc(i.status)}</span></div>
           <h3 class="tl__title">${esc(i.title)}</h3>
           <div class="tl__cost">
-            <p class="tl__cost-num">${esc((i.cost && i.cost.label) || fmtUsd(usd))}</p>
-            <div class="tl__bar" aria-hidden="true"><span style="width:${pct.toFixed(1)}%"></span></div>
+            <p class="tl__cost-num${usd ? '' : ' tl__cost-num--none'}">${esc((i.cost && i.cost.label) || (usd ? fmtUsd(usd) : 'Cost not published'))}</p>
+            ${usd ? `<div class="tl__bar" aria-hidden="true"><span style="width:${pct.toFixed(1)}%"></span></div>` : ''}
           </div>
           <p class="tl__summary">${esc(i.summary)}</p>
           <p class="tl__outcome"><strong>Outcome</strong>${esc(i.outcome)}</p>

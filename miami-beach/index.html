@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  PAGE: Miami Beach city page (miami-beach/index.html)
+  PURPOSE: Today's flood conditions for Miami Beach only, the latest Miami Beach
+           flooding news, and an infographic timeline of proposed fixes with
+           cost and outcomes.
+  TARGET KEYWORDS: miami beach flooding, south beach flooding
+  LAST EDITED: 2026-10-29, first build (template for the other city pages)
+  DATA: hero values, news, and the timeline are written in at deploy by
+        scripts/prerender.js. Fixes live in data/curated/timeline/miami-beach.json
+        (hand-edited, review quarterly).
+  NOTES: This page sits one folder down, so every local link starts with ../
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miami Beach &amp; South Beach Flooding | Sinking South Florida</title>
+  <meta name="description" content="Live king tide and flood risk for Miami Beach and South Beach, the latest flooding news, and every pump, seawall, and raised road project with its cost.">
+  <link rel="canonical" href="https://miamiflooding.com/miami-beach/">
+  <meta name="theme-color" content="#050B1A">
+
+  <!-- Open Graph / Twitter. PLACEHOLDER: create images/og-home.jpg at 1200x630 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sinking South Florida">
+  <meta property="og:title" content="Miami Beach Flooding &amp; King Tides Today">
+  <meta property="og:description" content="Live king tide and flood risk for Miami Beach and South Beach, the latest flooding news, and every pump, seawall, and raised road project with its cost.">
+  <meta property="og:url" content="https://miamiflooding.com/miami-beach/">
+  <meta property="og:image" content="https://miamiflooding.com/images/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Miami Beach Flooding &amp; King Tides Today">
+  <meta name="twitter:description" content="Live king tide and flood risk for Miami Beach and South Beach, the latest flooding news, and every pump, seawall, and raised road project with its cost.">
+  <meta name="twitter:image" content="https://miamiflooding.com/images/og-home.jpg">
+
+  <!-- Fonts: Anton (section headlines) + Inter (everything else) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap">
+
+  <!-- Hero photo loads first (it's above the fold) -->
+  <link rel="preload" as="image" href="../images/hero-miami.webp" type="image/webp">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+
+  <!-- Structured data: WebPage + Place (city, with coordinates) + BreadcrumbList -->
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://miamiflooding.com/miami-beach/#webpage",
+        "url": "https://miamiflooding.com/miami-beach/",
+        "name": "Miami Beach & South Beach Flooding | Sinking South Florida",
+        "description": "Live king tide and flood risk for Miami Beach and South Beach, the latest flooding news, and every pump, seawall, and raised road project with its cost.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://miamiflooding.com/#website"
+        },
+        "about": {
+          "@id": "https://miamiflooding.com/miami-beach/#place"
+        }
+      },
+      {
+        "@type": "Place",
+        "@id": "https://miamiflooding.com/miami-beach/#place",
+        "name": "Miami Beach, Florida",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.7907,
+          "longitude": -80.13
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://miamiflooding.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Miami Beach",
+            "item": "https://miamiflooding.com/miami-beach/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Adds .js to <html> before paint so JS-only UI doesn't flash -->
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/hero.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== SECTION: Header (global) ===== -->
+<header class="site-header site-header--hero" data-header>
+  <div class="site-header__inner container">
+
+    <a class="brand" href="../" aria-label="Sinking South Florida, home">
+      <!-- Logo mark: placeholder wave in a circle. Swap for the final logo SVG. -->
+      <svg class="brand__mark" viewBox="0 0 34 34" aria-hidden="true">
+        <circle cx="17" cy="17" r="16" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.5)"/>
+        <path d="M7 15c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M7 21c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#4FD1E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>Sinking South Florida</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary" data-nav>
+      <ul class="site-nav__list" role="list">
+        <li class="has-dropdown" data-dropdown>
+          <!-- JS version: a button that opens the menu -->
+          <button class="site-nav__link site-nav__toggle js-only" type="button" aria-expanded="false" aria-controls="cities-menu" data-dropdown-toggle>
+            Cities
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <!-- No-JS version: a link; the menu still opens on hover and focus -->
+          <a class="site-nav__link no-js-only" href="../#your-city">Cities</a>
+          <ul class="dropdown" id="cities-menu" role="list">
+            <li><a href="../miami/">Miami</a></li>
+            <li><a href="../miami-beach/">Miami Beach <span class="label" style="color:var(--text-secondary)">South Beach</span></a></li>
+            <li><a href="../hallandale-beach/">Hallandale Beach</a></li>
+            <li><a href="../hollywood/">Hollywood</a></li>
+            <li><a href="../fort-lauderdale/">Fort Lauderdale</a></li>
+          </ul>
+        </li>
+        <li><a class="site-nav__link" href="../news/">News</a></li>
+        <li><a class="site-nav__link" href="../resources/">Resources</a></li>
+        <li class="site-nav__cta"><a class="btn btn--primary" href="../#check-your-address" data-close-menu>Check Your Address</a></li>
+      </ul>
+    </nav>
+
+    <!-- Live time and date (Miami time), plus tide status. Filled by main.js; hidden without JS. -->
+    <div class="site-header__meta js-only">
+      <p class="clock"><span class="clock__time" data-clock-time>--:--</span><span class="clock__sub"><span data-clock-ampm>AM</span><br>Time</span></p>
+      <p class="clock"><span class="clock__time" data-clock-date>-- ---</span><span class="clock__sub"><span data-clock-year>2026</span><br>Date</span></p>
+      <!-- PLACEHOLDER: tide direction from NOAA predictions for the active city -->
+      <p class="tide-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        Tide: <span data-field="tide-status">Rising</span>
+      </p>
+    </div>
+
+    <a class="btn btn--glass btn--sm site-header__cta" href="../#check-your-address">Check Your Address</a>
+
+    <button class="menu-toggle js-only" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu" data-menu-toggle>
+      <span class="menu-toggle__bars"></span>
+    </button>
+  </div>
+</header>
+<!-- ===== END: Header ===== -->
+
+<main id="main">
+
+<!-- ===== SECTION: Hero ===== -->
+<!-- City page hero: compact, Miami Beach only. Values are written in at deploy
+     by scripts/prerender.js (data-field elements); hero.js keeps the tide
+     wave's "Now" dot live and shows "Data delayed" if the data goes stale.
+     Sample values below only show if the site was built without data. -->
+<section class="hero hero--city" id="hero" data-hero data-city="miami-beach" aria-labelledby="hero-title">
+
+  <!-- Background: sky gradient (CSS) + center photo + fade to navy -->
+  <div class="hero__bg" aria-hidden="true">
+    <!-- IMAGE: storm over the Miami skyline and Biscayne Bay. The PNG already has soft, transparent
+         edges, so it blends into the sky without a CSS mask. images/hero.png is the original;
+         hero-miami.webp is the compressed copy browsers load (about 460KB vs 2.9MB).
+         To swap the photo: replace both files, keeping the names, or update the paths here. -->
+    <picture>
+      <source srcset="../images/hero-miami.webp" type="image/webp">
+      <img class="hero__image" src="../images/hero.png" width="1672" height="941" alt="" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+
+  <div class="hero__inner hero-city container">
+    <div class="hero-city__head">
+      <p class="label hero__eyebrow">Live conditions · <span data-field="city-name">Miami Beach</span>, including South Beach</p>
+      <!-- PRERENDER:hero-h1 START (city keyword + today's condition) -->
+      <h1 class="hero__title hero__title--city" id="hero-title">
+        <span class="hero__title-1">Miami Beach Flooding</span>
+        <span class="hero__title-2">King Tide with Street Flooding Likely<span class="visually-hidden"> today</span></span>
+      </h1>
+      <!-- PRERENDER:hero-h1 END -->
+      <p class="hero__summary" data-field="summary">Seasonal king tides peak this evening. Expect shallow water on low streets around high tide.</p>
+    </div>
+
+    <!-- Today's numbers for Miami Beach -->
+    <div class="hero-city__panel glass">
+      <div class="hero-city__peak">
+        <p class="label">Peak water today</p>
+        <p class="hero-city__num"><span data-field="water-level">+2.2</span><span class="hero-city__unit">ft</span></p>
+        <p class="hero-city__cap">above normal high tide</p>
+      </div>
+      <div class="risk-meter" data-risk-meter data-risk="severe" style="--pos: 88%">
+        <div class="risk-meter__top">
+          <span class="label">Flood risk today</span>
+          <span class="risk-meter__value" data-field="risk-label">Severe</span>
+        </div>
+        <div class="risk-meter__track" aria-hidden="true"><span class="risk-meter__marker"></span></div>
+        <div class="risk-meter__scale" aria-hidden="true"><span>Low</span><span>Moderate</span><span>High</span><span>Severe</span></div>
+      </div>
+      <dl class="hero-city__facts">
+        <div><dt>Next high tide</dt><dd data-field="next-high">7:42 PM</dd></div>
+        <div><dt>Tide now</dt><dd data-field="tide-status">Rising</dd></div>
+        <div><dt>Rain, 24 hours</dt><dd><span data-field="rainfall">0.4</span> in</dd></div>
+        <div><dt>Flood days, May to Apr</dt><dd><span data-field="flood-days">19</span> <span class="hero-city__vs">vs <span data-field="flood-days-last">24</span> last year</span></dd></div>
+      </dl>
+      <p class="hero__source">Source: NOAA Tides &amp; Currents, <span data-field="gauge">Virginia Key</span> gauge; NWS. Updated <span data-field="updated">11:20 AM</span> ET<span class="hero__delayed" data-delayed hidden> · Data delayed</span></p>
+    </div>
+  </div>
+
+  <!-- Tide wave: 24h tide curve for the active city.
+       The static path below is Miami's sample curve (generated by hero.js).
+       PLACEHOLDER: tide predictions from NOAA CO-OPS API -->
+  <div class="tide" role="img" data-tide-aria aria-label="Today's sample tide curve: high 7:42 AM at 2.1 feet, low 1:58 PM at 0.3 feet, high 7:42 PM at 2.3 feet.">
+    <!-- Decorative drifting swells (animation off under reduced motion) -->
+    <svg class="tide__ghost tide__ghost--1" viewBox="0 0 2000 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 Q125 40 250 60 T500 60 T750 60 T1000 60 T1250 60 T1500 60 T1750 60 T2000 60"/></svg>
+    <svg class="tide__ghost tide__ghost--2" viewBox="0 0 2000 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 Q160 54 333 70 T667 70 T1000 70 T1333 70 T1667 70 T2000 70"/></svg>
+
+    <!-- PRERENDER:hero-tide START -->
+    <svg class="tide__svg" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+      <path class="tide__path" data-tide-path d="M0.0 62.7 L10.4 64.1 L20.8 65.3 L31.3 66.2 L41.7 66.9 L52.1 67.3 L62.5 67.5 L72.9 67.3 L83.3 66.9 L93.8 66.2 L104.2 65.3 L114.6 64.1 L125.0 62.7 L135.4 61.0 L145.8 59.2 L156.3 57.3 L166.7 55.2 L177.1 53.1 L187.5 50.9 L197.9 48.7 L208.3 46.5 L218.8 44.3 L229.2 42.3 L239.6 40.4 L250.0 38.6 L260.4 37.0 L270.8 35.6 L281.3 34.5 L291.7 33.6 L302.1 33.0 L312.5 32.6 L322.9 32.5 L333.3 32.7 L343.8 33.2 L354.2 34.0 L364.6 35.0 L375.0 36.3 L385.4 37.8 L395.8 39.6 L406.3 41.5 L416.7 43.5 L427.1 45.7 L437.5 47.9 L447.9 50.3 L458.3 52.6 L468.8 54.9 L479.2 57.1 L489.6 59.2 L500.0 61.3 L510.4 63.1 L520.8 64.8 L531.3 66.2 L541.7 67.4 L552.1 68.4 L562.5 69.0 L572.9 69.4 L583.3 69.5 L593.8 69.3 L604.2 68.7 L614.6 67.7 L625.0 66.3 L635.4 64.7 L645.8 62.7 L656.3 60.5 L666.7 58.0 L677.1 55.4 L687.5 52.7 L697.9 49.9 L708.3 47.1 L718.8 44.3 L729.2 41.6 L739.6 39.1 L750.0 36.7 L760.4 34.6 L770.8 32.7 L781.3 31.1 L791.7 29.9 L802.1 29.0 L812.5 28.5 L822.9 28.4 L833.3 28.6 L843.8 29.2 L854.2 30.1 L864.6 31.2 L875.0 32.7 L885.4 34.4 L895.8 36.4 L906.3 38.5 L916.7 40.8 L927.1 43.3 L937.5 45.8 L947.9 48.4 L958.3 51.0 L968.8 53.6 L979.2 56.1 L989.6 58.4 L1000.0 60.7"/>
+    </svg>
+
+    <ul class="tide__labels" role="list" aria-hidden="true" data-tide-labels>
+      <li class="tide__label tide__label--low is-start" style="left:6.25%;top:67.49%"><span>LOW 1:30 AM</span><span>0.4 FT</span></li>
+      <li class="tide__label tide__label--high" style="left:32.08%;top:32.51%"><span>HIGH 7:42 AM</span><span>+2.1 FT</span></li>
+      <li class="tide__label tide__label--low" style="left:58.19%;top:69.54%"><span>LOW 1:58 PM</span><span>0.3 FT</span></li>
+      <li class="tide__label tide__label--high" style="left:82.08%;top:28.40%"><span>HIGH 7:42 PM</span><span>+2.3 FT</span></li>
+    </ul>
+    <!-- "Now" marker. Static at 10:30 AM without JS; hero.js moves it to the current Miami time. -->
+    <span class="tide__now" data-tide-now style="left:43.75%;top:47.95%" aria-hidden="true"><span class="tide__now-label">Now</span></span>
+    <!-- PRERENDER:hero-tide END -->
+  </div>
+
+  <!-- PRERENDER:hero-data START (this city's data as JSON for hero.js; empty = sample) -->
+  <!-- PRERENDER:hero-data END -->
+</section>
+<!-- ===== END: Hero ===== -->
+
+<!-- ===== SECTION: City news ===== -->
+<!-- 3 newest stories that mention Miami Beach. If there aren't 3, regional South
+     Florida flooding stories fill in, tagged "Regional". Rendered at deploy. -->
+<section class="section news" id="news" aria-labelledby="news-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <div class="section-head__row">
+          <!-- PRERENDER:news-status START -->
+          <p class="label section-head__eyebrow">Latest news</p>
+          <!-- PRERENDER:news-status END -->
+        </div>
+        <h2 class="display" id="news-title">Miami Beach and South Beach flooding news</h2>
+      </div>
+      <a class="btn btn--outline btn--sm" href="../news/">View All News</a>
+    </div>
+    <!-- PRERENDER:news-cards START (city-filtered headlines from data/news.json) -->
+    <p class="lede">The latest Miami Beach flooding headlines appear here when the site is built.</p>
+    <!-- PRERENDER:news-cards END -->
+  </div>
+</section>
+<!-- ===== END: City news ===== -->
+
+
+<!-- ===== SECTION: Proposed fixes ===== -->
+<!-- Infographic timeline of plans and projects, newest first. Data:
+     data/curated/timeline/miami-beach.json (hand-edited, review quarterly).
+     Rendered by scripts/prerender.js (also run once when the page was built,
+     so the timeline shows even without the deploy step). -->
+<section class="section section--alt fixes" id="fixes" aria-labelledby="fixes-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <p class="label section-head__eyebrow">Plans, costs, and results</p>
+        <h2 class="display" id="fixes-title">Proposed fixes</h2>
+      </div>
+    </div>
+    <!-- PRERENDER:fixes START -->
+    <div class="fixes__summary">
+      <div class="fixes__sum"><p class="fixes__sum-num">$316M</p><p class="fixes__sum-label">proposed or under way</p></div>
+      <div class="fixes__sum"><p class="fixes__sum-num">6</p><p class="fixes__sum-label">plans, projects, and funding</p></div>
+      <div class="fixes__sum"><p class="fixes__sum-num">2</p><p class="fixes__sum-label">in design or under construction</p></div>
+      <div class="fixes__sum"><p class="fixes__sum-num">3</p><p class="fixes__sum-label">completed</p></div>
+    </div>
+    <ol class="timeline" role="list">
+      <li class="tl" data-status="planned">
+        <span class="tl__year" aria-hidden="true">2025</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2025-01-01">Jan 2025</time><span class="tl__status">Planned</span></div>
+          <h3 class="tl__title">North Beach seawalls and living shorelines</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$18.0M</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:21.2%"></span></div>
+          </div>
+          <p class="tl__summary">New and raised seawalls plus living shoreline (plants and rock) along North Beach waterways.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>Recommended for a 50% state cost share in Florida's 2025-26 Resilient Florida plan.</p>
+          <p class="tl__sources">Source: <a href="https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf" rel="noopener">Florida DEP, Resilient Florida 2025-26 plan</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="completed">
+        <span class="tl__year" aria-hidden="true">2023</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2023-09-01">Sep 2023</time><span class="tl__status">Completed</span></div>
+          <h3 class="tl__title">Indian Creek Drive seawall, 29th to 41st St</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$4.3M</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:10.4%"></span></div>
+          </div>
+          <p class="tl__summary">A new, higher public seawall along Indian Creek Drive, part of the city's program to raise and replace seawalls.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>Blocks tidal water from spilling over the bank onto Indian Creek Drive. The city's last update set completion for summer 2023.</p>
+          <p class="tl__sources">Source: <a href="https://www.miamibeachfl.gov/projects/indian-creek-drive-seawall-project/" rel="noopener">City of Miami Beach</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="in-progress">
+        <span class="tl__year" aria-hidden="true">2020</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2020-06-01">Jun 2020</time><span class="tl__status">In progress</span></div>
+          <h3 class="tl__title">West Avenue Phase II, South Beach</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$100.2M</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:50.1%"></span></div>
+          </div>
+          <p class="tl__summary">Raises West Avenue and Bay Road from 14th Street to Lincoln Road about 24 inches, with a new pump station at 1671 West Ave, new drains, water and sewer lines.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>Built to cut rain and high-tide flooding in South Beach's lowest streets. Segments 2 and 3 due spring 2027; the city asked the state for $16.7M more in 2025.</p>
+          <p class="tl__sources">Source: <a href="https://www.miamibeachfl.gov/projects/west-avenue-neighborhood-improvements-project-phase-ii/" rel="noopener">City of Miami Beach</a>, <a href="https://floridadep.gov/sites/default/files/25-26%20Resilient%20Florida%20Annual%20Plan_1.pdf" rel="noopener">Florida DEP, Resilient Florida 2025-26 plan</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="in-progress">
+        <span class="tl__year" aria-hidden="true">2018</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2018-11-06">Nov 2018</time><span class="tl__status">In progress</span></div>
+          <h3 class="tl__title">G.O. Bond: neighborhoods and infrastructure</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$198M of $439M</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:70.4%"></span></div>
+          </div>
+          <p class="tl__summary">Voters approved a $439M general obligation bond. $198M of it goes to neighborhoods and infrastructure, including flood work.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>Issued in parts since 2019. The rest of the bond pays for parks ($169M) and public safety ($72M).</p>
+          <p class="tl__sources">Source: <a href="https://floridapolitics.com/archives/290900-miami-beach-issuing-bonds-infrastructure" rel="noopener">Florida Politics</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="completed">
+        <span class="tl__year" aria-hidden="true">2016</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2016-11-14">Nov 2016</time><span class="tl__status">Completed</span></div>
+          <h3 class="tl__title">Indian Creek Drive raised road and pumps</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">About $25M</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:25.0%"></span></div>
+          </div>
+          <p class="tl__summary">A new seawall, permanent pump, and plans to raise Indian Creek Drive, one of the city's worst king tide spots.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>During the November 2016 king tide the street stayed dry at high tide, the first big test of the new system.</p>
+          <p class="tl__sources">Source: <a href="https://www.cbsnews.com/miami/news/miami-beach-pumped-millions-into-beating-king-tides-its-working" rel="noopener">CBS Miami</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="completed">
+        <span class="tl__year" aria-hidden="true">2014</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2014-09-22">Sep 2014</time><span class="tl__status">Completed</span></div>
+          <h3 class="tl__title">Citywide stormwater pumps and raised streets</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">Up to $400M</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:100.0%"></span></div>
+          </div>
+          <p class="tl__summary">About 60 new stormwater pumps, higher seawalls, and raised roads, starting in South Beach around Alton Road and 10th Street.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>First phase largely done by 2016, when the new system kept streets dry during king tides. The city then committed $400M to $500M more to raise low streets.</p>
+          <p class="tl__sources">Source: <a href="https://www.insurancejournal.com/news/southeast/2014/09/22/341140.htm" rel="noopener">Insurance Journal</a>, <a href="https://www.cbsnews.com/miami/news/miami-beach-pumped-millions-into-beating-king-tides-its-working" rel="noopener">CBS Miami</a></p>
+        </article>
+      </li>
+    </ol>
+    <p class="fixes__note">Bars compare each cost with the largest item (square-root scale, so smaller projects stay visible). Last reviewed Oct 2026. Costs are as published; final costs may change.</p>
+<!-- PRERENDER:fixes END -->
+  </div>
+</section>
+<!-- ===== END: Proposed fixes ===== -->
+
+
+<!-- ===== SECTION: Final CTA ===== -->
+<section class="section final-cta" aria-labelledby="cta-title">
+  <div class="container final-cta__inner">
+    <h2 class="display" id="cta-title">Is your Miami Beach address at risk?</h2>
+    <p class="lede">See your flood zone, ground elevation, and projected 2050 high tide in seconds. Free, no sign-up.</p>
+    <div class="final-cta__buttons">
+      <a class="btn btn--primary" href="../#check-your-address">Check Your Address</a>
+      <a class="btn btn--outline" href="../">Back to all cities</a>
+    </div>
+  </div>
+</section>
+<!-- ===== END: Final CTA ===== -->
+
+</main>
+
+<!-- ===== SECTION: Footer (global) ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__about">
+        <a class="brand" href="../">
+          <svg class="brand__mark" viewBox="0 0 34 34" aria-hidden="true">
+            <circle cx="17" cy="17" r="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.4)"/>
+            <path d="M7 15c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 21c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#4FD1E8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>Sinking South Florida</span>
+        </a>
+        <p>Plain, sourced information on flooding and sea level rise for the people who live with it.</p>
+      </div>
+      <nav aria-label="Cities">
+        <h2>Cities</h2>
+        <ul role="list">
+          <li><a href="../miami/">Miami</a></li>
+          <li><a href="../miami-beach/">Miami Beach</a></li>
+          <li><a href="../hallandale-beach/">Hallandale Beach</a></li>
+          <li><a href="../hollywood/">Hollywood</a></li>
+          <li><a href="../fort-lauderdale/">Fort Lauderdale</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Explore">
+        <h2>Explore</h2>
+        <ul role="list">
+          <li><a href="../#check-your-address">Risk Tool</a></li>
+          <li><a href="../news/">News</a></li>
+          <li><a href="../resources/">Resources</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Data sources</h2>
+        <ul role="list">
+          <li><a href="https://tidesandcurrents.noaa.gov/" rel="noopener">NOAA Tides &amp; Currents</a></li>
+          <li><a href="https://msc.fema.gov/portal/home" rel="noopener">FEMA Flood Map Service Center</a></li>
+          <li><a href="https://www.usgs.gov/" rel="noopener">USGS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>&copy; 2026 Sinking South Florida</p>
+      <p>Not a substitute for official flood zone determinations.</p>
+    </div>
+  </div>
+</footer>
+<!-- ===== END: Footer ===== -->
+
+</body>
+</html>
