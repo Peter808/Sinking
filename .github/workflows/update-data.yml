@@ -1,0 +1,96 @@
+# ==========================================================================
+# Update data
+# Wakes up every hour. Each script decides for itself whether it's due
+# (config/schedule.json): tides/weather/alerts hourly in king tide season or
+# during flood alerts, every 6h otherwise; news every 3h.
+#
+# Generated JSON lives on the `data` branch (never main). The branch is
+# checked out into ./_data, the scripts write there, and we commit only if
+# something other than meta.json changed. After a data commit, the deploy
+# workflow is started so the site shows the new values.
+#
+# Run it by hand: Actions tab > Update data > Run workflow (tick "force" to
+# ignore the schedule).
+# ==========================================================================
+name: Update data
+
+on:
+  schedule:
+    - cron: "7 * * * *"          # every hour at :07 (off the busy :00 slot)
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Run every script now, ignoring the schedule"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ["scripts/**", "config/**", ".github/workflows/update-data.yml"]
+
+permissions:
+  contents: write                # push to the data branch
+  actions: write                 # start the deploy workflow
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DATA_DIR: _data
+      FORCE: ${{ (github.event_name == 'push' || inputs.force) && '1' || '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Check out the data branch into ./_data (creates it on the very first run)
+      - name: Check out data branch
+        run: |
+          if git fetch --depth 1 origin data; then
+            git worktree add _data FETCH_HEAD
+            git -C _data checkout -B data
+          else
+            git worktree add --orphan -b data _data
+          fi
+
+      # Each fetch is independent: one failing never stops the others
+      - name: Flood alerts (NWS)
+        run: node scripts/fetch-floods.js
+        continue-on-error: true
+      - name: Tides (NOAA)
+        run: node scripts/fetch-tides.js
+        continue-on-error: true
+      - name: Rainfall (NWS)
+        run: node scripts/fetch-weather.js
+        continue-on-error: true
+      - name: News (RSS)
+        run: node scripts/fetch-news.js
+        continue-on-error: true
+
+      - name: Commit if data changed
+        id: commit
+        working-directory: _data
+        run: |
+          git add -A
+          # Ignore meta.json on its own (it changes every run)
+          if git diff --cached --quiet -- . ':(exclude)meta.json'; then
+            echo "No data changes. Nothing to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Data update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push -q origin data
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy site with new data
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

@@ -4,39 +4,134 @@
     "Matching is case-insensitive and whole-word (so 'tide' does not match 'tidewater').",
     "Multi-word phrases are fine ('king tide')."
   ],
-
   "_comment_relevance": "A news headline must contain at least one of these to be kept.",
   "relevance": [
-    "flood", "floods", "flooded", "flooding",
-    "king tide", "king tides", "high tide", "tide", "tides", "tidal",
-    "sea level", "sea-level", "sea level rise",
-    "stormwater", "storm drain", "drainage",
-    "seawall", "seawalls", "pump", "pumps", "pump station",
-    "resilience", "resilient", "storm surge", "sunny-day flooding", "nuisance flooding",
-    "coastal flood", "flood zone", "flood insurance", "FEMA"
+    "flood",
+    "floods",
+    "flooded",
+    "flooding",
+    "king tide",
+    "king tides",
+    "high tide",
+    "tide",
+    "tides",
+    "tidal",
+    "sea level",
+    "sea-level",
+    "sea level rise",
+    "stormwater",
+    "storm drain",
+    "drainage",
+    "seawall",
+    "seawalls",
+    "pump",
+    "pumps",
+    "pump station",
+    "resilience",
+    "resilient",
+    "storm surge",
+    "sunny-day flooding",
+    "nuisance flooding",
+    "coastal flood",
+    "flood zone",
+    "flood insurance",
+    "FEMA"
   ],
-
+  "_comment_exclude": "Headlines containing any of these phrases are dropped even if they match a flood word (figures of speech, unrelated uses).",
+  "exclude": [
+    "flooding the market",
+    "flooding the music",
+    "flooding the zone",
+    "flooded with calls",
+    "flooded with requests",
+    "flooding social media",
+    "flood of",
+    "floodgates",
+    "floodlight",
+    "music scene",
+    "flyers are flooding"
+  ],
   "_comment_socialFlood": "Social posts must match one of these AND one location term below.",
   "socialFlood": [
-    "flood", "flooding", "flooded", "king tide", "kingtide", "high tide", "sunny day flooding",
-    "sunnydayflooding", "sea level", "sealevelrise", "underwater", "standing water"
+    "flood",
+    "flooding",
+    "flooded",
+    "king tide",
+    "kingtide",
+    "high tide",
+    "sunny day flooding",
+    "sunnydayflooding",
+    "sea level",
+    "sealevelrise",
+    "underwater",
+    "standing water"
   ],
-
   "locationTerms": [
-    "Miami", "Miami Beach", "South Beach", "Brickell", "Hallandale", "Hallandale Beach",
-    "Hollywood FL", "Hollywood, FL", "Hollywood Florida", "Fort Lauderdale", "Ft Lauderdale", "Broward", "Miami-Dade"
+    "Miami",
+    "Miami Beach",
+    "South Beach",
+    "Brickell",
+    "Hallandale",
+    "Hallandale Beach",
+    "Hollywood FL",
+    "Hollywood, FL",
+    "Hollywood Florida",
+    "Fort Lauderdale",
+    "Ft Lauderdale",
+    "Broward",
+    "Miami-Dade"
   ],
-
   "_comment_cityTags": [
     "Which words tag an item with a city. Longer names are checked first, so 'Miami Beach'",
     "tags miami-beach, not miami. 'Hollywood' alone is ambiguous (California), so it only",
     "counts when the text also mentions Florida, FL, Fla, or Broward (requiresContext)."
   ],
   "cityTags": {
-    "miami-beach":      { "terms": ["Miami Beach", "South Beach", "SoBe", "North Beach", "Alton Road", "West Avenue", "Sunset Harbour"] },
-    "hallandale-beach": { "terms": ["Hallandale Beach", "Hallandale"] },
-    "fort-lauderdale":  { "terms": ["Fort Lauderdale", "Ft. Lauderdale", "Ft Lauderdale", "Las Olas"] },
-    "hollywood":        { "terms": ["Hollywood"], "requiresContext": ["Florida", "FL", "Fla", "Broward"] },
-    "miami":            { "terms": ["Miami", "Brickell", "Shorecrest", "Little River", "Coconut Grove", "Miami-Dade"] }
+    "miami-beach": {
+      "terms": [
+        "Miami Beach",
+        "South Beach",
+        "SoBe",
+        "North Beach",
+        "Alton Road",
+        "West Avenue",
+        "Sunset Harbour"
+      ]
+    },
+    "hallandale-beach": {
+      "terms": [
+        "Hallandale Beach",
+        "Hallandale"
+      ]
+    },
+    "fort-lauderdale": {
+      "terms": [
+        "Fort Lauderdale",
+        "Ft. Lauderdale",
+        "Ft Lauderdale",
+        "Las Olas"
+      ]
+    },
+    "hollywood": {
+      "terms": [
+        "Hollywood"
+      ],
+      "requiresContext": [
+        "Florida",
+        "FL",
+        "Fla",
+        "Broward"
+      ]
+    },
+    "miami": {
+      "terms": [
+        "Miami",
+        "Brickell",
+        "Shorecrest",
+        "Little River",
+        "Coconut Grove",
+        "Miami-Dade"
+      ]
+    }
   }
 }

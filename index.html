@@ -624,21 +624,27 @@
 
 
 <!-- ===== SECTION: Latest news ===== -->
-<!-- FUTURE: articles will load from /data/news.json, populated by a scheduled GitHub Action -->
+<!-- Headlines come from data/news.json (scripts/fetch-news.js, every 3 hours) and are written in at deploy by scripts/prerender.js -->
 <section class="section news" aria-labelledby="news-title">
   <div class="container">
     <div class="section-head">
       <div class="section-head__text">
         <div class="section-head__row">
+          <!-- PRERENDER:news-status START (replaced at deploy by scripts/prerender.js) -->
           <p class="label section-head__eyebrow">Updated weekly</p>
           <!-- SAMPLE DATA: these headlines are placeholders, not real stories -->
           <span class="sample-badge">Sample headlines</span>
+          <!-- PRERENDER:news-status END -->
         </div>
         <h2 class="display" id="news-title">Latest news</h2>
       </div>
       <a class="btn btn--outline btn--sm" href="news/">View All News</a>
     </div>
 
+    <!-- PRERENDER:news-cards START
+         Everything between START and END is replaced at deploy with the 3 newest
+         headlines from data/news.json (one per city where possible). The sample
+         cards below only show if the pipeline has no news yet. -->
     <ul class="news__row" role="list">
       <li class="card">
         <!-- IMAGE PROMPT: Road construction crew raising a section of Alton Road in Miami Beach, new higher curb next to older sidewalk, daytime, documentary style, no text. FILE: images/news-alton-road.webp SIZE: 1200x750 -->
@@ -669,6 +675,7 @@
         </div>
       </li>
     </ul>
+    <!-- PRERENDER:news-cards END -->
   </div>
 </section>
 <!-- ===== END: Latest news ===== -->

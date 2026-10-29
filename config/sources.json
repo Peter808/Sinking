@@ -1,44 +1,168 @@
 {
   "_comment": [
-    "News and social sources. Every entry starts as status 'unverified'; pipeline step 5 tests each",
-    "one and sets status to 'ok', 'no-feed' (no RSS exists), or 'broken'. Only 'ok' sources are fetched.",
-    "url: null means the feed address still has to be found. Nothing here is invented: these are either",
-    "addresses you suggested or standard public URL patterns (Google News, Reddit, Bluesky).",
-    "cityHint: tags every item from that source with a city, even if the headline doesn't name it.",
-    "To add a source: copy an entry, change name/url, set status to 'unverified', and it gets checked next run."
+    "News and social sources. Tested 2026-10-28; status shows the result.",
+    "Only sources with status 'ok' are fetched. 'no-feed' = no RSS exists; 'broken' = blocked or 404.",
+    "cityHint: tags every item from that source with a city, even if the headline doesn't name it,",
+    "and skips the location check (the source is already local to that city).",
+    "userAgent 'browser': this site rejects bot-style requests, so we send a normal browser name.",
+    "To add a source: copy an entry, change name/url, set status 'ok'. It's used on the next run."
   ],
-
   "news": [
-    { "name": "City of Miami Beach",      "url": "https://www.miamibeachfl.gov/feed/", "cityHint": "miami-beach",      "status": "unverified", "note": "WordPress site, /feed/ suggested" },
-    { "name": "City of Miami",            "url": null, "cityHint": "miami",            "status": "unverified", "note": "Find newsroom RSS" },
-    { "name": "Miami-Dade County",        "url": null, "cityHint": null,               "status": "unverified", "note": "Find newsroom RSS" },
-    { "name": "City of Hollywood",        "url": null, "cityHint": "hollywood",        "status": "unverified", "note": "Find newsroom RSS" },
-    { "name": "City of Fort Lauderdale",  "url": null, "cityHint": "fort-lauderdale",  "status": "unverified", "note": "Find newsroom RSS" },
-    { "name": "City of Hallandale Beach", "url": null, "cityHint": "hallandale-beach", "status": "unverified", "note": "Find newsroom RSS" },
-    { "name": "WLRN",                     "url": null, "cityHint": null,               "status": "unverified", "note": "Find public RSS" },
-    { "name": "Local10",                  "url": null, "cityHint": null,               "status": "unverified", "note": "Find public RSS" },
-
-    { "name": "Google News: Miami flooding",          "url": "https://news.google.com/rss/search?q=%22Miami+flooding%22&hl=en-US&gl=US&ceid=US:en",          "cityHint": null, "status": "unverified" },
-    { "name": "Google News: Miami Beach flooding",    "url": "https://news.google.com/rss/search?q=%22Miami+Beach+flooding%22&hl=en-US&gl=US&ceid=US:en",    "cityHint": null, "status": "unverified" },
-    { "name": "Google News: king tide Florida",       "url": "https://news.google.com/rss/search?q=%22king+tide%22+Florida&hl=en-US&gl=US&ceid=US:en",       "cityHint": null, "status": "unverified" },
-    { "name": "Google News: Fort Lauderdale flooding","url": "https://news.google.com/rss/search?q=%22Fort+Lauderdale+flooding%22&hl=en-US&gl=US&ceid=US:en","cityHint": null, "status": "unverified" },
-    { "name": "Google News: Hollywood FL flooding",   "url": "https://news.google.com/rss/search?q=%22Hollywood+FL+flooding%22&hl=en-US&gl=US&ceid=US:en",   "cityHint": null, "status": "unverified" }
+    {
+      "name": "Google News",
+      "query": "Miami flooding",
+      "url": "https://news.google.com/rss/search?q=%22Miami+flooding%22&hl=en-US&gl=US&ceid=US:en",
+      "cityHint": null,
+      "status": "ok"
+    },
+    {
+      "name": "Google News",
+      "query": "Miami Beach flooding",
+      "url": "https://news.google.com/rss/search?q=%22Miami+Beach+flooding%22&hl=en-US&gl=US&ceid=US:en",
+      "cityHint": null,
+      "status": "ok"
+    },
+    {
+      "name": "Google News",
+      "query": "king tide Florida",
+      "url": "https://news.google.com/rss/search?q=%22king+tide%22+Florida&hl=en-US&gl=US&ceid=US:en",
+      "cityHint": null,
+      "status": "ok"
+    },
+    {
+      "name": "Google News",
+      "query": "Fort Lauderdale flooding",
+      "url": "https://news.google.com/rss/search?q=%22Fort+Lauderdale+flooding%22&hl=en-US&gl=US&ceid=US:en",
+      "cityHint": null,
+      "status": "ok"
+    },
+    {
+      "name": "Google News",
+      "query": "Hollywood Broward flooding",
+      "url": "https://news.google.com/rss/search?q=Hollywood+Broward+flooding&hl=en-US&gl=US&ceid=US:en",
+      "cityHint": null,
+      "status": "ok",
+      "note": "\"Hollywood FL flooding\" returned only 1 result"
+    },
+    {
+      "name": "Google News",
+      "query": "Hallandale Beach flooding",
+      "url": "https://news.google.com/rss/search?q=Hallandale+Beach+flooding&hl=en-US&gl=US&ceid=US:en",
+      "cityHint": null,
+      "status": "ok"
+    },
+    {
+      "name": "NBC6 Miami",
+      "url": "https://www.nbcmiami.com/?rss=y",
+      "cityHint": null,
+      "status": "ok"
+    },
+    {
+      "name": "WLRN",
+      "url": "https://www.wlrn.org/environment.rss",
+      "cityHint": null,
+      "status": "ok",
+      "note": "Environment section; main /index.rss is empty"
+    },
+    {
+      "name": "Local10",
+      "url": "https://www.local10.com/arc/outboundfeeds/rss/?outputType=xml",
+      "cityHint": null,
+      "status": "ok"
+    },
+    {
+      "name": "City of Hallandale Beach",
+      "url": "https://www.cohb.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "cityHint": "hallandale-beach",
+      "status": "ok"
+    },
+    {
+      "name": "City of Hollywood",
+      "url": "https://www.hollywoodfl.org/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "cityHint": "hollywood",
+      "status": "ok",
+      "userAgent": "browser"
+    },
+    {
+      "name": "Florida Phoenix",
+      "url": "https://floridaphoenix.com/feed/",
+      "cityHint": null,
+      "status": "ok",
+      "note": "Statewide; location check filters it"
+    },
+    {
+      "name": "Miami New Times",
+      "url": "https://www.miaminewtimes.com/miami/Rss.xml",
+      "cityHint": null,
+      "status": "ok"
+    },
+    {
+      "name": "City of Miami Beach",
+      "url": null,
+      "cityHint": "miami-beach",
+      "status": "no-feed",
+      "note": "/feed/ redirects to the homepage"
+    },
+    {
+      "name": "City of Miami",
+      "url": null,
+      "cityHint": "miami",
+      "status": "no-feed"
+    },
+    {
+      "name": "Miami-Dade County",
+      "url": null,
+      "cityHint": null,
+      "status": "no-feed"
+    },
+    {
+      "name": "City of Fort Lauderdale",
+      "url": null,
+      "cityHint": "fort-lauderdale",
+      "status": "no-feed",
+      "note": "CivicPlus RSS path returns 404"
+    },
+    {
+      "name": "Sun Sentinel",
+      "url": "https://www.sun-sentinel.com/feed/",
+      "cityHint": null,
+      "status": "broken",
+      "note": "403 Forbidden; its stories still arrive via Google News"
+    },
+    {
+      "name": "Axios Miami",
+      "url": null,
+      "cityHint": null,
+      "status": "no-feed"
+    }
   ],
-
   "social": {
     "bluesky": {
-      "_comment": "Public post search. Each hashtag is searched; posts must ALSO contain a location term from keywords.json. Bluesky may require auth for search; verified in step 5.",
-      "endpoint": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts",
-      "hashtags": ["#KingTide", "#MiamiFlooding", "#SunnyDayFlooding", "#SeaLevelRise"],
+      "_comment": "Public post search (api.bsky.app works; public.api.bsky.app returns 403). Posts must ALSO contain a location term from keywords.json. Auto-published after filters.",
+      "endpoint": "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts",
+      "hashtags": [
+        "#KingTide",
+        "#MiamiFlooding",
+        "#SunnyDayFlooding",
+        "#SeaLevelRise"
+      ],
       "status": "unverified"
     },
     "reddit": {
-      "_comment": "Subreddit search RSS. Shows title, subreddit, link only. Reddit sometimes blocks automated requests from cloud servers; verified in step 5.",
-      "subreddits": ["Miami", "MiamiBeach", "fortlauderdale", "SouthFlorida"],
+      "_comment": "Subreddit search RSS. Title, subreddit, link only. VETTED: new posts go to a daily GitHub review issue; only ticked posts publish. Reddit sometimes rate-limits cloud servers.",
+      "subreddits": [
+        "Miami",
+        "MiamiBeach",
+        "fortlauderdale",
+        "SouthFlorida"
+      ],
       "urlPattern": "https://www.reddit.com/r/{subreddit}/search.rss?q=flood+OR+flooding+OR+%22king+tide%22&restrict_sr=on&sort=new",
-      "status": "unverified"
+      "status": "unverified",
+      "review": true
     }
   },
-
-  "limits": { "newsMax": 60, "socialMax": 40 }
+  "limits": {
+    "newsMax": 60,
+    "socialMax": 40
+  }
 }

@@ -351,4 +351,6 @@ Deploy workflow: checkout main + copy /data from the data branch
 - The hero `<h1>` is generated from **Miami's** data at deploy time (headline rules in `config/schedule.json`). The city switcher changes data values only, never the h1.
 - The King Tide Season panel in the hero is hand-edited in `index.html` (dates per season), not pipeline data.
 - Curated content (Instagram, hidden posts, history timeline) is added through owner-only GitHub Issue Forms.
+- Pre-render works through marker comments: `<!-- PRERENDER:name START -->` ... `<!-- PRERENDER:name END -->`. Content between a pair is replaced at deploy; sample markup inside only shows if data is missing. Don't delete the markers.
+- News auto-publishes after keyword, location, and blocklist filters. Reddit posts are vetted: they go to a daily GitHub review issue and only ticked posts publish (decided 2026-10-29). Bluesky auto-publishes after filters.
 
