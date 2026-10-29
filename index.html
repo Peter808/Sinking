@@ -398,49 +398,62 @@
 <!-- ===== END: Address risk tool ===== -->
 
 
-<!-- ===== SECTION: By the numbers ===== -->
-<section class="section section--alt numbers" aria-labelledby="numbers-title">
+<!-- ===== SECTION: Latest news ===== -->
+<!-- Headlines come from data/news.json (scripts/fetch-news.js, every 3 hours) and are written in at deploy by scripts/prerender.js -->
+<section class="section section--alt news" aria-labelledby="news-title">
   <div class="container">
     <div class="section-head">
       <div class="section-head__text">
         <div class="section-head__row">
-          <p class="label section-head__eyebrow">South Florida at a glance</p>
-          <!-- SAMPLE DATA: remove once every number below is verified -->
-          <span class="sample-badge">Sample data</span>
+          <!-- PRERENDER:news-status START (replaced at deploy by scripts/prerender.js) -->
+          <p class="label section-head__eyebrow">Updated weekly</p>
+          <!-- SAMPLE DATA: these headlines are placeholders, not real stories -->
+          <span class="sample-badge">Sample headlines</span>
+          <!-- PRERENDER:news-status END -->
         </div>
-        <h2 class="display" id="numbers-title">By the numbers</h2>
+        <h2 class="display" id="news-title">Latest news</h2>
       </div>
+      <a class="btn btn--outline btn--sm" href="news/">View All News</a>
     </div>
 
-    <ul class="numbers__grid" role="list">
-      <li class="stat stat--line" style="--risk-color: var(--risk-high)">
-        <!-- PLACEHOLDER: 2019 Unified Sea Level Rise Projection, Southeast Florida Regional Climate Change Compact. Verify range and baseline year. -->
-        <p class="stat__value">+10–17<span class="stat__unit">in</span></p>
-        <p class="stat__label">Sea level rise expected in South Florida by 2040</p>
-        <p class="stat__source">Source: Southeast Florida Regional Climate Change Compact (to verify)</p>
+    <!-- PRERENDER:news-cards START
+         Everything between START and END is replaced at deploy with the 3 newest
+         headlines from data/news.json (one per city where possible). The sample
+         cards below only show if the pipeline has no news yet. -->
+    <ul class="news__row" role="list">
+      <li class="card">
+        <!-- IMAGE PROMPT: Road construction crew raising a section of Alton Road in Miami Beach, new higher curb next to older sidewalk, daytime, documentary style, no text. FILE: images/news-alton-road.webp SIZE: 1200x750 -->
+        <div class="card__media img-ph" role="img" aria-label="Placeholder: crews raising Alton Road"><span class="img-ph__label">IMAGE: Raising Alton Road</span></div>
+        <div class="card__body">
+          <!-- PLACEHOLDER: article date and content -->
+          <p class="card__meta"><time datetime="2026-10-24">Oct 24, 2026</time><span class="tag">Miami Beach</span></p>
+          <h3 class="card__title"><a href="news/">Miami Beach raises another stretch of Alton Road</a></h3>
+          <p class="card__text">The city adds pumps and lifts the roadway up to two feet ahead of next year's king tides.</p>
+        </div>
       </li>
-      <li class="stat stat--line" style="--risk-color: var(--risk-moderate)">
-        <!-- PLACEHOLDER: sunny-day (high tide) flood days at Virginia Key, NOAA annual High Tide Flooding Outlook -->
-        <p class="stat__value">X<span class="stat__unit">days</span></p>
-        <p class="stat__label">Sunny-day flood days in Miami last year</p>
-        <p class="stat__source">Source: NOAA High Tide Flooding Outlook (placeholder)</p>
+      <li class="card">
+        <!-- IMAGE PROMPT: Close-up of a one-way tidal valve on a storm drain outfall at a Fort Lauderdale seawall, calm canal water, no text. FILE: images/news-tidal-valves.webp SIZE: 1200x750 -->
+        <div class="card__media img-ph" role="img" aria-label="Placeholder: tidal valve on a canal seawall"><span class="img-ph__label">IMAGE: Tidal valve</span></div>
+        <div class="card__body">
+          <p class="card__meta"><time datetime="2026-10-17">Oct 17, 2026</time><span class="tag">Fort Lauderdale</span></p>
+          <h3 class="card__title"><a href="news/">Fort Lauderdale adds tidal valves in Las Olas Isles</a></h3>
+          <p class="card__text">One-way valves aim to stop bay water from backing up through storm drains at high tide.</p>
+        </div>
       </li>
-      <li class="stat stat--line" style="--risk-color: var(--risk-severe)">
-        <!-- PLACEHOLDER: count of parcels in Special Flood Hazard Areas, FEMA NFHL x Miami-Dade property appraiser -->
-        <p class="stat__value">X<span class="stat__unit">properties</span></p>
-        <p class="stat__label">In high-risk flood zones in Miami-Dade</p>
-        <p class="stat__source">Source: FEMA flood maps (placeholder)</p>
-      </li>
-      <li class="stat stat--line" style="--risk-color: var(--tide-aqua)">
-        <!-- PLACEHOLDER: property value at risk by 2050; candidate sources: First Street, Miami-Dade Sea Level Rise Strategy. Source to verify. -->
-        <p class="stat__value">$X<span class="stat__unit">billion</span></p>
-        <p class="stat__label">Property value at risk by 2050</p>
-        <p class="stat__source">Source: to verify (placeholder)</p>
+      <li class="card">
+        <!-- IMAGE PROMPT: Sunny day in Miami with seawater pooled at a street corner in Shorecrest, clear sky, reflections, no text. FILE: images/news-sunny-day.webp SIZE: 1200x750 -->
+        <div class="card__media img-ph" role="img" aria-label="Placeholder: sunny-day flooding at a Miami street corner"><span class="img-ph__label">IMAGE: Sunny-day flooding</span></div>
+        <div class="card__body">
+          <p class="card__meta"><time datetime="2026-10-09">Oct 9, 2026</time><span class="tag">Miami</span></p>
+          <h3 class="card__title"><a href="news/">King tide season brings sunny-day flooding to Shorecrest</a></h3>
+          <p class="card__text">Residents report ankle-deep water at peak tide for the third month in a row.</p>
+        </div>
       </li>
     </ul>
+    <!-- PRERENDER:news-cards END -->
   </div>
 </section>
-<!-- ===== END: By the numbers ===== -->
+<!-- ===== END: Latest news ===== -->
 
 
 <!-- ===== SECTION: Your city ===== -->
@@ -534,8 +547,53 @@
 <!-- ===== END: Your city ===== -->
 
 
+<!-- ===== SECTION: By the numbers ===== -->
+<section class="section section--alt numbers" aria-labelledby="numbers-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <div class="section-head__row">
+          <p class="label section-head__eyebrow">South Florida at a glance</p>
+          <!-- SAMPLE DATA: remove once every number below is verified -->
+          <span class="sample-badge">Sample data</span>
+        </div>
+        <h2 class="display" id="numbers-title">By the numbers</h2>
+      </div>
+    </div>
+
+    <ul class="numbers__grid" role="list">
+      <li class="stat stat--line" style="--risk-color: var(--risk-high)">
+        <!-- PLACEHOLDER: 2019 Unified Sea Level Rise Projection, Southeast Florida Regional Climate Change Compact. Verify range and baseline year. -->
+        <p class="stat__value">+10–17<span class="stat__unit">in</span></p>
+        <p class="stat__label">Sea level rise expected in South Florida by 2040</p>
+        <p class="stat__source">Source: Southeast Florida Regional Climate Change Compact (to verify)</p>
+      </li>
+      <li class="stat stat--line" style="--risk-color: var(--risk-moderate)">
+        <!-- PLACEHOLDER: sunny-day (high tide) flood days at Virginia Key, NOAA annual High Tide Flooding Outlook -->
+        <p class="stat__value">X<span class="stat__unit">days</span></p>
+        <p class="stat__label">Sunny-day flood days in Miami last year</p>
+        <p class="stat__source">Source: NOAA High Tide Flooding Outlook (placeholder)</p>
+      </li>
+      <li class="stat stat--line" style="--risk-color: var(--risk-severe)">
+        <!-- PLACEHOLDER: count of parcels in Special Flood Hazard Areas, FEMA NFHL x Miami-Dade property appraiser -->
+        <p class="stat__value">X<span class="stat__unit">properties</span></p>
+        <p class="stat__label">In high-risk flood zones in Miami-Dade</p>
+        <p class="stat__source">Source: FEMA flood maps (placeholder)</p>
+      </li>
+      <li class="stat stat--line" style="--risk-color: var(--tide-aqua)">
+        <!-- PLACEHOLDER: property value at risk by 2050; candidate sources: First Street, Miami-Dade Sea Level Rise Strategy. Source to verify. -->
+        <p class="stat__value">$X<span class="stat__unit">billion</span></p>
+        <p class="stat__label">Property value at risk by 2050</p>
+        <p class="stat__source">Source: to verify (placeholder)</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- ===== END: By the numbers ===== -->
+
+
 <!-- ===== SECTION: Why it's happening ===== -->
-<section class="section section--alt why" aria-labelledby="why-title">
+<section class="section why" aria-labelledby="why-title">
   <div class="container">
     <div class="section-head section-head--center">
       <div class="section-head__text">
@@ -621,64 +679,6 @@
   </div>
 </section>
 <!-- ===== END: Why it's happening ===== -->
-
-
-<!-- ===== SECTION: Latest news ===== -->
-<!-- Headlines come from data/news.json (scripts/fetch-news.js, every 3 hours) and are written in at deploy by scripts/prerender.js -->
-<section class="section news" aria-labelledby="news-title">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-head__text">
-        <div class="section-head__row">
-          <!-- PRERENDER:news-status START (replaced at deploy by scripts/prerender.js) -->
-          <p class="label section-head__eyebrow">Updated weekly</p>
-          <!-- SAMPLE DATA: these headlines are placeholders, not real stories -->
-          <span class="sample-badge">Sample headlines</span>
-          <!-- PRERENDER:news-status END -->
-        </div>
-        <h2 class="display" id="news-title">Latest news</h2>
-      </div>
-      <a class="btn btn--outline btn--sm" href="news/">View All News</a>
-    </div>
-
-    <!-- PRERENDER:news-cards START
-         Everything between START and END is replaced at deploy with the 3 newest
-         headlines from data/news.json (one per city where possible). The sample
-         cards below only show if the pipeline has no news yet. -->
-    <ul class="news__row" role="list">
-      <li class="card">
-        <!-- IMAGE PROMPT: Road construction crew raising a section of Alton Road in Miami Beach, new higher curb next to older sidewalk, daytime, documentary style, no text. FILE: images/news-alton-road.webp SIZE: 1200x750 -->
-        <div class="card__media img-ph" role="img" aria-label="Placeholder: crews raising Alton Road"><span class="img-ph__label">IMAGE: Raising Alton Road</span></div>
-        <div class="card__body">
-          <!-- PLACEHOLDER: article date and content -->
-          <p class="card__meta"><time datetime="2026-10-24">Oct 24, 2026</time><span class="tag">Miami Beach</span></p>
-          <h3 class="card__title"><a href="news/">Miami Beach raises another stretch of Alton Road</a></h3>
-          <p class="card__text">The city adds pumps and lifts the roadway up to two feet ahead of next year's king tides.</p>
-        </div>
-      </li>
-      <li class="card">
-        <!-- IMAGE PROMPT: Close-up of a one-way tidal valve on a storm drain outfall at a Fort Lauderdale seawall, calm canal water, no text. FILE: images/news-tidal-valves.webp SIZE: 1200x750 -->
-        <div class="card__media img-ph" role="img" aria-label="Placeholder: tidal valve on a canal seawall"><span class="img-ph__label">IMAGE: Tidal valve</span></div>
-        <div class="card__body">
-          <p class="card__meta"><time datetime="2026-10-17">Oct 17, 2026</time><span class="tag">Fort Lauderdale</span></p>
-          <h3 class="card__title"><a href="news/">Fort Lauderdale adds tidal valves in Las Olas Isles</a></h3>
-          <p class="card__text">One-way valves aim to stop bay water from backing up through storm drains at high tide.</p>
-        </div>
-      </li>
-      <li class="card">
-        <!-- IMAGE PROMPT: Sunny day in Miami with seawater pooled at a street corner in Shorecrest, clear sky, reflections, no text. FILE: images/news-sunny-day.webp SIZE: 1200x750 -->
-        <div class="card__media img-ph" role="img" aria-label="Placeholder: sunny-day flooding at a Miami street corner"><span class="img-ph__label">IMAGE: Sunny-day flooding</span></div>
-        <div class="card__body">
-          <p class="card__meta"><time datetime="2026-10-09">Oct 9, 2026</time><span class="tag">Miami</span></p>
-          <h3 class="card__title"><a href="news/">King tide season brings sunny-day flooding to Shorecrest</a></h3>
-          <p class="card__text">Residents report ankle-deep water at peak tide for the third month in a row.</p>
-        </div>
-      </li>
-    </ul>
-    <!-- PRERENDER:news-cards END -->
-  </div>
-</section>
-<!-- ===== END: Latest news ===== -->
 
 
 <!-- ===== SECTION: What you can do ===== -->
