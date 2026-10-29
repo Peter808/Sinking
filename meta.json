@@ -1,23 +1,23 @@
 {
   "sources": {
     "nws-alerts:miami": {
-      "lastSuccess": "2026-10-29T18:23:13.647Z",
+      "lastSuccess": "2026-10-29T19:33:10.717Z",
       "lastError": null
     },
     "nws-alerts:miami-beach": {
-      "lastSuccess": "2026-10-29T18:23:13.968Z",
+      "lastSuccess": "2026-10-29T19:33:11.063Z",
       "lastError": null
     },
     "nws-alerts:hallandale-beach": {
-      "lastSuccess": "2026-10-29T18:23:14.573Z",
+      "lastSuccess": "2026-10-29T19:33:11.471Z",
       "lastError": null
     },
     "nws-alerts:hollywood": {
-      "lastSuccess": "2026-10-29T18:23:14.686Z",
+      "lastSuccess": "2026-10-29T19:33:11.790Z",
       "lastError": null
     },
     "nws-alerts:fort-lauderdale": {
-      "lastSuccess": "2026-10-29T18:23:14.786Z",
+      "lastSuccess": "2026-10-29T19:33:11.925Z",
       "lastError": null
     },
     "noaa-thresholds:8722956": {
@@ -25,11 +25,11 @@
       "lastError": null
     },
     "noaa-water:8722956": {
-      "lastSuccess": "2026-10-29T18:23:15.191Z",
+      "lastSuccess": "2026-10-29T19:33:12.445Z",
       "lastError": null
     },
     "noaa-predictions:8722956": {
-      "lastSuccess": "2026-10-29T18:23:15.353Z",
+      "lastSuccess": "2026-10-29T19:33:12.719Z",
       "lastError": null
     },
     "noaa-flooddays:8722956": {
@@ -41,11 +41,11 @@
       "lastError": null
     },
     "noaa-water:8723214": {
-      "lastSuccess": "2026-10-29T18:23:15.405Z",
+      "lastSuccess": "2026-10-29T19:33:12.822Z",
       "lastError": null
     },
     "noaa-predictions:8723214": {
-      "lastSuccess": "2026-10-29T18:23:15.484Z",
+      "lastSuccess": "2026-10-29T19:33:12.920Z",
       "lastError": null
     },
     "noaa-flooddays:8723214": {
@@ -53,15 +53,15 @@
       "lastError": null
     },
     "nws-rain:KMIA": {
-      "lastSuccess": "2026-10-29T18:23:16.164Z",
+      "lastSuccess": "2026-10-29T19:33:13.501Z",
       "lastError": null
     },
     "nws-rain:KHWO": {
-      "lastSuccess": "2026-10-29T18:23:16.567Z",
+      "lastSuccess": "2026-10-29T19:33:13.940Z",
       "lastError": null
     },
     "nws-rain:KFLL": {
-      "lastSuccess": "2026-10-29T18:23:16.993Z",
+      "lastSuccess": "2026-10-29T19:33:14.389Z",
       "lastError": null
     },
     "news:Google News / Miami flooding": {
@@ -122,9 +122,9 @@
     }
   },
   "runs": {
-    "floods": "2026-10-29T18:23:14.787Z",
-    "tides": "2026-10-29T18:23:15.485Z",
-    "weather": "2026-10-29T18:23:16.993Z",
+    "floods": "2026-10-29T19:33:11.926Z",
+    "tides": "2026-10-29T19:33:12.921Z",
+    "weather": "2026-10-29T19:33:14.390Z",
     "news": "2026-10-29T18:23:33.242Z",
     "stats": "2026-10-29T18:23:56.897Z"
   },
