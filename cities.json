@@ -1,0 +1,1996 @@
+{
+  "cities": {
+    "miami": {
+      "id": "miami",
+      "name": "Miami",
+      "gauge": {
+        "id": "8723214",
+        "label": "Virginia Key",
+        "name": "Virginia Key, Biscayne Bay, FL"
+      },
+      "weatherStation": {
+        "id": "KMIA",
+        "name": "Miami International Airport"
+      },
+      "point": {
+        "lat": 25.7617,
+        "lon": -80.1918
+      },
+      "alerts": {
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued October 28 at 7:54PM EDT until October 29 at 8:00PM EDT by NWS Miami FL",
+            "onset": "2026-10-28T20:00:00-04:00",
+            "expires": "2026-10-29T20:00:00-04:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f704c2c75b669ec03cfaec2c0028be3801b0af86.002.3"
+          }
+        ],
+        "source": {
+          "name": "National Weather Service alerts",
+          "detail": "Point 25.7617, -80.1918",
+          "url": "https://alerts.weather.gov/"
+        },
+        "updatedAt": "2026-10-29T13:39:51.245Z"
+      },
+      "flooding": {
+        "likely": true,
+        "forecastPeakFt": 2.11,
+        "minorFloodFt": 1.28,
+        "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
+      },
+      "risk": {
+        "level": "moderate",
+        "why": "Active: Coastal Flood Advisory."
+      },
+      "headline": {
+        "line1": "King Tide",
+        "line2": "with Street Flooding Likely",
+        "condition": "kingTideFloodingLikely"
+      },
+      "thresholds": {
+        "minorFlood": 1.28,
+        "moderateFlood": 1.68,
+        "majorFlood": 2.48,
+        "datum": "MHHW",
+        "basis": "NWS flood categories",
+        "updatedAt": "2026-10-29T13:39:53.624Z"
+      },
+      "water": {
+        "levelFt": 1.17,
+        "status": "rising",
+        "observedAt": "2026-10-29T09:30:00-04:00",
+        "rawTime": "2026-10-29 09:30",
+        "unit": "ft above MHHW",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "Virginia Key gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
+        },
+        "updatedAt": "2026-10-29T13:39:53.703Z"
+      },
+      "tides": {
+        "date": "2026-10-29",
+        "nextHigh": {
+          "type": "high",
+          "at": "2026-10-29T12:11:00-04:00",
+          "localTime": "12:11",
+          "date": "2026-10-29",
+          "heightFt": 0.62
+        },
+        "today": [
+          {
+            "type": "low",
+            "at": "2026-10-29T05:36:00-04:00",
+            "localTime": "05:36",
+            "date": "2026-10-29",
+            "heightFt": -2
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T12:11:00-04:00",
+            "localTime": "12:11",
+            "date": "2026-10-29",
+            "heightFt": 0.62
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T18:08:00-04:00",
+            "localTime": "18:08",
+            "date": "2026-10-29",
+            "heightFt": -1.53
+          }
+        ],
+        "next48h": [
+          {
+            "type": "low",
+            "at": "2026-10-29T05:36:00-04:00",
+            "localTime": "05:36",
+            "date": "2026-10-29",
+            "heightFt": -2
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T12:11:00-04:00",
+            "localTime": "12:11",
+            "date": "2026-10-29",
+            "heightFt": 0.62
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T18:08:00-04:00",
+            "localTime": "18:08",
+            "date": "2026-10-29",
+            "heightFt": -1.53
+          },
+          {
+            "type": "high",
+            "at": "2026-10-30T00:16:00-04:00",
+            "localTime": "00:16",
+            "date": "2026-10-30",
+            "heightFt": 0.46
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T06:34:00-04:00",
+            "localTime": "06:34",
+            "date": "2026-10-30",
+            "heightFt": -1.9
+          },
+          {
+            "type": "high",
+            "at": "2026-10-30T13:07:00-04:00",
+            "localTime": "13:07",
+            "date": "2026-10-30",
+            "heightFt": 0.53
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T19:09:00-04:00",
+            "localTime": "19:09",
+            "date": "2026-10-30",
+            "heightFt": -1.47
+          }
+        ],
+        "curve": [
+          {
+            "t": "00:00",
+            "h": 0.46
+          },
+          {
+            "t": "00:30",
+            "h": 0.29
+          },
+          {
+            "t": "01:00",
+            "h": 0.04
+          },
+          {
+            "t": "01:30",
+            "h": -0.26
+          },
+          {
+            "t": "02:00",
+            "h": -0.59
+          },
+          {
+            "t": "02:30",
+            "h": -0.92
+          },
+          {
+            "t": "03:00",
+            "h": -1.21
+          },
+          {
+            "t": "03:30",
+            "h": -1.46
+          },
+          {
+            "t": "04:00",
+            "h": -1.67
+          },
+          {
+            "t": "04:30",
+            "h": -1.84
+          },
+          {
+            "t": "05:00",
+            "h": -1.95
+          },
+          {
+            "t": "05:30",
+            "h": -2
+          },
+          {
+            "t": "06:00",
+            "h": -1.98
+          },
+          {
+            "t": "06:30",
+            "h": -1.88
+          },
+          {
+            "t": "07:00",
+            "h": -1.72
+          },
+          {
+            "t": "07:30",
+            "h": -1.49
+          },
+          {
+            "t": "08:00",
+            "h": -1.22
+          },
+          {
+            "t": "08:30",
+            "h": -0.92
+          },
+          {
+            "t": "09:00",
+            "h": -0.61
+          },
+          {
+            "t": "09:30",
+            "h": -0.32
+          },
+          {
+            "t": "10:00",
+            "h": -0.04
+          },
+          {
+            "t": "10:30",
+            "h": 0.19
+          },
+          {
+            "t": "11:00",
+            "h": 0.39
+          },
+          {
+            "t": "11:30",
+            "h": 0.54
+          },
+          {
+            "t": "12:00",
+            "h": 0.62
+          },
+          {
+            "t": "12:30",
+            "h": 0.61
+          },
+          {
+            "t": "13:00",
+            "h": 0.5
+          },
+          {
+            "t": "13:30",
+            "h": 0.3
+          },
+          {
+            "t": "14:00",
+            "h": 0.04
+          },
+          {
+            "t": "14:30",
+            "h": -0.25
+          },
+          {
+            "t": "15:00",
+            "h": -0.53
+          },
+          {
+            "t": "15:30",
+            "h": -0.79
+          },
+          {
+            "t": "16:00",
+            "h": -1.02
+          },
+          {
+            "t": "16:30",
+            "h": -1.22
+          },
+          {
+            "t": "17:00",
+            "h": -1.37
+          },
+          {
+            "t": "17:30",
+            "h": -1.48
+          },
+          {
+            "t": "18:00",
+            "h": -1.53
+          },
+          {
+            "t": "18:30",
+            "h": -1.51
+          },
+          {
+            "t": "19:00",
+            "h": -1.43
+          },
+          {
+            "t": "19:30",
+            "h": -1.29
+          },
+          {
+            "t": "20:00",
+            "h": -1.1
+          },
+          {
+            "t": "20:30",
+            "h": -0.86
+          },
+          {
+            "t": "21:00",
+            "h": -0.6
+          },
+          {
+            "t": "21:30",
+            "h": -0.35
+          },
+          {
+            "t": "22:00",
+            "h": -0.11
+          },
+          {
+            "t": "22:30",
+            "h": 0.09
+          },
+          {
+            "t": "23:00",
+            "h": 0.25
+          },
+          {
+            "t": "23:30",
+            "h": 0.38
+          }
+        ],
+        "anomalyFt": 1.49,
+        "todayPredictedPeakFt": 0.62,
+        "todayForecastPeakFt": 2.11,
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "Virginia Key gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
+        },
+        "updatedAt": "2026-10-29T13:39:53.772Z"
+      },
+      "floodDays": {
+        "thisYear": {
+          "year": 2026,
+          "label": "May 2026 to Apr 2027",
+          "count": 19,
+          "lastFloodDay": "2026-10-29",
+          "thresholdFt": 1.28
+        },
+        "lastYear": {
+          "year": 2025,
+          "label": "May 2025 to Apr 2026",
+          "count": 24,
+          "thresholdFt": 1.28
+        },
+        "definition": "Days when water reached the NWS minor flood level at this gauge. Meteorological year, May to April.",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "Virginia Key gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
+        },
+        "updatedAt": "2026-10-29T13:39:54.383Z"
+      },
+      "weather": {
+        "rain24hIn": 0.13,
+        "reportsCounted": 18,
+        "station": {
+          "id": "KMIA",
+          "name": "Miami International Airport"
+        },
+        "source": {
+          "name": "National Weather Service",
+          "detail": "Miami International Airport (KMIA)",
+          "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
+        },
+        "updatedAt": "2026-10-29T13:39:54.973Z"
+      }
+    },
+    "miami-beach": {
+      "id": "miami-beach",
+      "name": "Miami Beach",
+      "gauge": {
+        "id": "8723214",
+        "label": "Virginia Key",
+        "name": "Virginia Key, Biscayne Bay, FL"
+      },
+      "weatherStation": {
+        "id": "KMIA",
+        "name": "Miami International Airport"
+      },
+      "point": {
+        "lat": 25.7907,
+        "lon": -80.13
+      },
+      "alerts": {
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued October 28 at 7:54PM EDT until October 29 at 8:00PM EDT by NWS Miami FL",
+            "onset": "2026-10-28T20:00:00-04:00",
+            "expires": "2026-10-29T20:00:00-04:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f704c2c75b669ec03cfaec2c0028be3801b0af86.002.3"
+          }
+        ],
+        "source": {
+          "name": "National Weather Service alerts",
+          "detail": "Point 25.7907, -80.13",
+          "url": "https://alerts.weather.gov/"
+        },
+        "updatedAt": "2026-10-29T13:39:51.344Z"
+      },
+      "flooding": {
+        "likely": true,
+        "forecastPeakFt": 2.11,
+        "minorFloodFt": 1.28,
+        "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
+      },
+      "risk": {
+        "level": "moderate",
+        "why": "Active: Coastal Flood Advisory."
+      },
+      "headline": {
+        "line1": "King Tide",
+        "line2": "with Street Flooding Likely",
+        "condition": "kingTideFloodingLikely"
+      },
+      "thresholds": {
+        "minorFlood": 1.28,
+        "moderateFlood": 1.68,
+        "majorFlood": 2.48,
+        "datum": "MHHW",
+        "basis": "NWS flood categories",
+        "updatedAt": "2026-10-29T13:39:53.624Z"
+      },
+      "water": {
+        "levelFt": 1.17,
+        "status": "rising",
+        "observedAt": "2026-10-29T09:30:00-04:00",
+        "rawTime": "2026-10-29 09:30",
+        "unit": "ft above MHHW",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "Virginia Key gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
+        },
+        "updatedAt": "2026-10-29T13:39:53.703Z"
+      },
+      "tides": {
+        "date": "2026-10-29",
+        "nextHigh": {
+          "type": "high",
+          "at": "2026-10-29T12:11:00-04:00",
+          "localTime": "12:11",
+          "date": "2026-10-29",
+          "heightFt": 0.62
+        },
+        "today": [
+          {
+            "type": "low",
+            "at": "2026-10-29T05:36:00-04:00",
+            "localTime": "05:36",
+            "date": "2026-10-29",
+            "heightFt": -2
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T12:11:00-04:00",
+            "localTime": "12:11",
+            "date": "2026-10-29",
+            "heightFt": 0.62
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T18:08:00-04:00",
+            "localTime": "18:08",
+            "date": "2026-10-29",
+            "heightFt": -1.53
+          }
+        ],
+        "next48h": [
+          {
+            "type": "low",
+            "at": "2026-10-29T05:36:00-04:00",
+            "localTime": "05:36",
+            "date": "2026-10-29",
+            "heightFt": -2
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T12:11:00-04:00",
+            "localTime": "12:11",
+            "date": "2026-10-29",
+            "heightFt": 0.62
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T18:08:00-04:00",
+            "localTime": "18:08",
+            "date": "2026-10-29",
+            "heightFt": -1.53
+          },
+          {
+            "type": "high",
+            "at": "2026-10-30T00:16:00-04:00",
+            "localTime": "00:16",
+            "date": "2026-10-30",
+            "heightFt": 0.46
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T06:34:00-04:00",
+            "localTime": "06:34",
+            "date": "2026-10-30",
+            "heightFt": -1.9
+          },
+          {
+            "type": "high",
+            "at": "2026-10-30T13:07:00-04:00",
+            "localTime": "13:07",
+            "date": "2026-10-30",
+            "heightFt": 0.53
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T19:09:00-04:00",
+            "localTime": "19:09",
+            "date": "2026-10-30",
+            "heightFt": -1.47
+          }
+        ],
+        "curve": [
+          {
+            "t": "00:00",
+            "h": 0.46
+          },
+          {
+            "t": "00:30",
+            "h": 0.29
+          },
+          {
+            "t": "01:00",
+            "h": 0.04
+          },
+          {
+            "t": "01:30",
+            "h": -0.26
+          },
+          {
+            "t": "02:00",
+            "h": -0.59
+          },
+          {
+            "t": "02:30",
+            "h": -0.92
+          },
+          {
+            "t": "03:00",
+            "h": -1.21
+          },
+          {
+            "t": "03:30",
+            "h": -1.46
+          },
+          {
+            "t": "04:00",
+            "h": -1.67
+          },
+          {
+            "t": "04:30",
+            "h": -1.84
+          },
+          {
+            "t": "05:00",
+            "h": -1.95
+          },
+          {
+            "t": "05:30",
+            "h": -2
+          },
+          {
+            "t": "06:00",
+            "h": -1.98
+          },
+          {
+            "t": "06:30",
+            "h": -1.88
+          },
+          {
+            "t": "07:00",
+            "h": -1.72
+          },
+          {
+            "t": "07:30",
+            "h": -1.49
+          },
+          {
+            "t": "08:00",
+            "h": -1.22
+          },
+          {
+            "t": "08:30",
+            "h": -0.92
+          },
+          {
+            "t": "09:00",
+            "h": -0.61
+          },
+          {
+            "t": "09:30",
+            "h": -0.32
+          },
+          {
+            "t": "10:00",
+            "h": -0.04
+          },
+          {
+            "t": "10:30",
+            "h": 0.19
+          },
+          {
+            "t": "11:00",
+            "h": 0.39
+          },
+          {
+            "t": "11:30",
+            "h": 0.54
+          },
+          {
+            "t": "12:00",
+            "h": 0.62
+          },
+          {
+            "t": "12:30",
+            "h": 0.61
+          },
+          {
+            "t": "13:00",
+            "h": 0.5
+          },
+          {
+            "t": "13:30",
+            "h": 0.3
+          },
+          {
+            "t": "14:00",
+            "h": 0.04
+          },
+          {
+            "t": "14:30",
+            "h": -0.25
+          },
+          {
+            "t": "15:00",
+            "h": -0.53
+          },
+          {
+            "t": "15:30",
+            "h": -0.79
+          },
+          {
+            "t": "16:00",
+            "h": -1.02
+          },
+          {
+            "t": "16:30",
+            "h": -1.22
+          },
+          {
+            "t": "17:00",
+            "h": -1.37
+          },
+          {
+            "t": "17:30",
+            "h": -1.48
+          },
+          {
+            "t": "18:00",
+            "h": -1.53
+          },
+          {
+            "t": "18:30",
+            "h": -1.51
+          },
+          {
+            "t": "19:00",
+            "h": -1.43
+          },
+          {
+            "t": "19:30",
+            "h": -1.29
+          },
+          {
+            "t": "20:00",
+            "h": -1.1
+          },
+          {
+            "t": "20:30",
+            "h": -0.86
+          },
+          {
+            "t": "21:00",
+            "h": -0.6
+          },
+          {
+            "t": "21:30",
+            "h": -0.35
+          },
+          {
+            "t": "22:00",
+            "h": -0.11
+          },
+          {
+            "t": "22:30",
+            "h": 0.09
+          },
+          {
+            "t": "23:00",
+            "h": 0.25
+          },
+          {
+            "t": "23:30",
+            "h": 0.38
+          }
+        ],
+        "anomalyFt": 1.49,
+        "todayPredictedPeakFt": 0.62,
+        "todayForecastPeakFt": 2.11,
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "Virginia Key gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
+        },
+        "updatedAt": "2026-10-29T13:39:53.772Z"
+      },
+      "floodDays": {
+        "thisYear": {
+          "year": 2026,
+          "label": "May 2026 to Apr 2027",
+          "count": 19,
+          "lastFloodDay": "2026-10-29",
+          "thresholdFt": 1.28
+        },
+        "lastYear": {
+          "year": 2025,
+          "label": "May 2025 to Apr 2026",
+          "count": 24,
+          "thresholdFt": 1.28
+        },
+        "definition": "Days when water reached the NWS minor flood level at this gauge. Meteorological year, May to April.",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "Virginia Key gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
+        },
+        "updatedAt": "2026-10-29T13:39:54.383Z"
+      },
+      "weather": {
+        "rain24hIn": 0.13,
+        "reportsCounted": 18,
+        "station": {
+          "id": "KMIA",
+          "name": "Miami International Airport"
+        },
+        "source": {
+          "name": "National Weather Service",
+          "detail": "Miami International Airport (KMIA)",
+          "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
+        },
+        "updatedAt": "2026-10-29T13:39:54.973Z"
+      }
+    },
+    "hallandale-beach": {
+      "id": "hallandale-beach",
+      "name": "Hallandale Beach",
+      "gauge": {
+        "id": "8722956",
+        "label": "South Port Everglades",
+        "name": "South Port Everglades, FL"
+      },
+      "weatherStation": {
+        "id": "KHWO",
+        "name": "North Perry Airport"
+      },
+      "point": {
+        "lat": 25.9812,
+        "lon": -80.1484
+      },
+      "alerts": {
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued October 28 at 7:54PM EDT until October 29 at 8:00PM EDT by NWS Miami FL",
+            "onset": "2026-10-28T20:00:00-04:00",
+            "expires": "2026-10-29T20:00:00-04:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f704c2c75b669ec03cfaec2c0028be3801b0af86.002.3"
+          }
+        ],
+        "source": {
+          "name": "National Weather Service alerts",
+          "detail": "Point 25.9812, -80.1484",
+          "url": "https://alerts.weather.gov/"
+        },
+        "updatedAt": "2026-10-29T13:39:51.846Z"
+      },
+      "flooding": {
+        "likely": true,
+        "forecastPeakFt": 2.19,
+        "minorFloodFt": 1.27,
+        "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
+      },
+      "risk": {
+        "level": "high",
+        "why": "Active: Coastal Flood Advisory."
+      },
+      "headline": {
+        "line1": "King Tide",
+        "line2": "with Street Flooding Likely",
+        "condition": "kingTideFloodingLikely"
+      },
+      "thresholds": {
+        "minorFlood": 1.27,
+        "moderateFlood": 1.67,
+        "majorFlood": 2.47,
+        "datum": "MHHW",
+        "basis": "NWS flood categories",
+        "updatedAt": "2026-10-29T13:39:52.700Z"
+      },
+      "water": {
+        "levelFt": 1.59,
+        "status": "rising",
+        "observedAt": "2026-10-29T09:30:00-04:00",
+        "rawTime": "2026-10-29 09:30",
+        "unit": "ft above MHHW",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "South Port Everglades gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
+        },
+        "updatedAt": "2026-10-29T13:39:52.784Z"
+      },
+      "tides": {
+        "date": "2026-10-29",
+        "nextHigh": {
+          "type": "high",
+          "at": "2026-10-29T11:23:00-04:00",
+          "localTime": "11:23",
+          "date": "2026-10-29",
+          "heightFt": 0.82
+        },
+        "today": [
+          {
+            "type": "low",
+            "at": "2026-10-29T04:43:00-04:00",
+            "localTime": "04:43",
+            "date": "2026-10-29",
+            "heightFt": -2.65
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T11:23:00-04:00",
+            "localTime": "11:23",
+            "date": "2026-10-29",
+            "heightFt": 0.82
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T17:24:00-04:00",
+            "localTime": "17:24",
+            "date": "2026-10-29",
+            "heightFt": -2.06
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T23:30:00-04:00",
+            "localTime": "23:30",
+            "date": "2026-10-29",
+            "heightFt": 0.4
+          }
+        ],
+        "next48h": [
+          {
+            "type": "low",
+            "at": "2026-10-29T04:43:00-04:00",
+            "localTime": "04:43",
+            "date": "2026-10-29",
+            "heightFt": -2.65
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T11:23:00-04:00",
+            "localTime": "11:23",
+            "date": "2026-10-29",
+            "heightFt": 0.82
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T17:24:00-04:00",
+            "localTime": "17:24",
+            "date": "2026-10-29",
+            "heightFt": -2.06
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T23:30:00-04:00",
+            "localTime": "23:30",
+            "date": "2026-10-29",
+            "heightFt": 0.4
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T05:39:00-04:00",
+            "localTime": "05:39",
+            "date": "2026-10-30",
+            "heightFt": -2.52
+          },
+          {
+            "type": "high",
+            "at": "2026-10-30T12:19:00-04:00",
+            "localTime": "12:19",
+            "date": "2026-10-30",
+            "heightFt": 0.69
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T18:23:00-04:00",
+            "localTime": "18:23",
+            "date": "2026-10-30",
+            "heightFt": -1.96
+          }
+        ],
+        "curve": [
+          {
+            "t": "00:00",
+            "h": 0.14
+          },
+          {
+            "t": "00:30",
+            "h": -0.14
+          },
+          {
+            "t": "01:00",
+            "h": -0.5
+          },
+          {
+            "t": "01:30",
+            "h": -0.89
+          },
+          {
+            "t": "02:00",
+            "h": -1.3
+          },
+          {
+            "t": "02:30",
+            "h": -1.69
+          },
+          {
+            "t": "03:00",
+            "h": -2.05
+          },
+          {
+            "t": "03:30",
+            "h": -2.34
+          },
+          {
+            "t": "04:00",
+            "h": -2.54
+          },
+          {
+            "t": "04:30",
+            "h": -2.64
+          },
+          {
+            "t": "05:00",
+            "h": -2.63
+          },
+          {
+            "t": "05:30",
+            "h": -2.52
+          },
+          {
+            "t": "06:00",
+            "h": -2.31
+          },
+          {
+            "t": "06:30",
+            "h": -2.03
+          },
+          {
+            "t": "07:00",
+            "h": -1.69
+          },
+          {
+            "t": "07:30",
+            "h": -1.3
+          },
+          {
+            "t": "08:00",
+            "h": -0.9
+          },
+          {
+            "t": "08:30",
+            "h": -0.5
+          },
+          {
+            "t": "09:00",
+            "h": -0.12
+          },
+          {
+            "t": "09:30",
+            "h": 0.22
+          },
+          {
+            "t": "10:00",
+            "h": 0.49
+          },
+          {
+            "t": "10:30",
+            "h": 0.69
+          },
+          {
+            "t": "11:00",
+            "h": 0.8
+          },
+          {
+            "t": "11:30",
+            "h": 0.82
+          },
+          {
+            "t": "12:00",
+            "h": 0.75
+          },
+          {
+            "t": "12:30",
+            "h": 0.59
+          },
+          {
+            "t": "13:00",
+            "h": 0.34
+          },
+          {
+            "t": "13:30",
+            "h": 0.03
+          },
+          {
+            "t": "14:00",
+            "h": -0.33
+          },
+          {
+            "t": "14:30",
+            "h": -0.71
+          },
+          {
+            "t": "15:00",
+            "h": -1.08
+          },
+          {
+            "t": "15:30",
+            "h": -1.42
+          },
+          {
+            "t": "16:00",
+            "h": -1.7
+          },
+          {
+            "t": "16:30",
+            "h": -1.91
+          },
+          {
+            "t": "17:00",
+            "h": -2.03
+          },
+          {
+            "t": "17:30",
+            "h": -2.05
+          },
+          {
+            "t": "18:00",
+            "h": -1.99
+          },
+          {
+            "t": "18:30",
+            "h": -1.85
+          },
+          {
+            "t": "19:00",
+            "h": -1.64
+          },
+          {
+            "t": "19:30",
+            "h": -1.38
+          },
+          {
+            "t": "20:00",
+            "h": -1.09
+          },
+          {
+            "t": "20:30",
+            "h": -0.78
+          },
+          {
+            "t": "21:00",
+            "h": -0.47
+          },
+          {
+            "t": "21:30",
+            "h": -0.18
+          },
+          {
+            "t": "22:00",
+            "h": 0.06
+          },
+          {
+            "t": "22:30",
+            "h": 0.25
+          },
+          {
+            "t": "23:00",
+            "h": 0.36
+          },
+          {
+            "t": "23:30",
+            "h": 0.4
+          }
+        ],
+        "anomalyFt": 1.37,
+        "todayPredictedPeakFt": 0.82,
+        "todayForecastPeakFt": 2.19,
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "South Port Everglades gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
+        },
+        "updatedAt": "2026-10-29T13:39:52.928Z"
+      },
+      "floodDays": {
+        "thisYear": {
+          "year": 2026,
+          "label": "May 2026 to Apr 2027",
+          "count": 19,
+          "lastFloodDay": "2026-10-29",
+          "thresholdFt": 1.27
+        },
+        "lastYear": {
+          "year": 2025,
+          "label": "May 2025 to Apr 2026",
+          "count": 21,
+          "thresholdFt": 1.27
+        },
+        "definition": "Days when water reached the NWS minor flood level at this gauge. Meteorological year, May to April.",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "South Port Everglades gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
+        },
+        "updatedAt": "2026-10-29T13:39:53.579Z"
+      },
+      "weather": {
+        "rain24hIn": 0,
+        "reportsCounted": 18,
+        "station": {
+          "id": "KHWO",
+          "name": "North Perry Airport"
+        },
+        "source": {
+          "name": "National Weather Service",
+          "detail": "North Perry Airport (KHWO)",
+          "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
+        },
+        "updatedAt": "2026-10-29T13:39:55.411Z"
+      }
+    },
+    "hollywood": {
+      "id": "hollywood",
+      "name": "Hollywood",
+      "gauge": {
+        "id": "8722956",
+        "label": "South Port Everglades",
+        "name": "South Port Everglades, FL"
+      },
+      "weatherStation": {
+        "id": "KHWO",
+        "name": "North Perry Airport"
+      },
+      "point": {
+        "lat": 26.0112,
+        "lon": -80.1495
+      },
+      "alerts": {
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued October 28 at 7:54PM EDT until October 29 at 8:00PM EDT by NWS Miami FL",
+            "onset": "2026-10-28T20:00:00-04:00",
+            "expires": "2026-10-29T20:00:00-04:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f704c2c75b669ec03cfaec2c0028be3801b0af86.002.3"
+          }
+        ],
+        "source": {
+          "name": "National Weather Service alerts",
+          "detail": "Point 26.0112, -80.1495",
+          "url": "https://alerts.weather.gov/"
+        },
+        "updatedAt": "2026-10-29T13:39:51.957Z"
+      },
+      "flooding": {
+        "likely": true,
+        "forecastPeakFt": 2.19,
+        "minorFloodFt": 1.27,
+        "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
+      },
+      "risk": {
+        "level": "high",
+        "why": "Active: Coastal Flood Advisory."
+      },
+      "headline": {
+        "line1": "King Tide",
+        "line2": "with Street Flooding Likely",
+        "condition": "kingTideFloodingLikely"
+      },
+      "thresholds": {
+        "minorFlood": 1.27,
+        "moderateFlood": 1.67,
+        "majorFlood": 2.47,
+        "datum": "MHHW",
+        "basis": "NWS flood categories",
+        "updatedAt": "2026-10-29T13:39:52.700Z"
+      },
+      "water": {
+        "levelFt": 1.59,
+        "status": "rising",
+        "observedAt": "2026-10-29T09:30:00-04:00",
+        "rawTime": "2026-10-29 09:30",
+        "unit": "ft above MHHW",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "South Port Everglades gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
+        },
+        "updatedAt": "2026-10-29T13:39:52.784Z"
+      },
+      "tides": {
+        "date": "2026-10-29",
+        "nextHigh": {
+          "type": "high",
+          "at": "2026-10-29T11:23:00-04:00",
+          "localTime": "11:23",
+          "date": "2026-10-29",
+          "heightFt": 0.82
+        },
+        "today": [
+          {
+            "type": "low",
+            "at": "2026-10-29T04:43:00-04:00",
+            "localTime": "04:43",
+            "date": "2026-10-29",
+            "heightFt": -2.65
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T11:23:00-04:00",
+            "localTime": "11:23",
+            "date": "2026-10-29",
+            "heightFt": 0.82
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T17:24:00-04:00",
+            "localTime": "17:24",
+            "date": "2026-10-29",
+            "heightFt": -2.06
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T23:30:00-04:00",
+            "localTime": "23:30",
+            "date": "2026-10-29",
+            "heightFt": 0.4
+          }
+        ],
+        "next48h": [
+          {
+            "type": "low",
+            "at": "2026-10-29T04:43:00-04:00",
+            "localTime": "04:43",
+            "date": "2026-10-29",
+            "heightFt": -2.65
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T11:23:00-04:00",
+            "localTime": "11:23",
+            "date": "2026-10-29",
+            "heightFt": 0.82
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T17:24:00-04:00",
+            "localTime": "17:24",
+            "date": "2026-10-29",
+            "heightFt": -2.06
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T23:30:00-04:00",
+            "localTime": "23:30",
+            "date": "2026-10-29",
+            "heightFt": 0.4
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T05:39:00-04:00",
+            "localTime": "05:39",
+            "date": "2026-10-30",
+            "heightFt": -2.52
+          },
+          {
+            "type": "high",
+            "at": "2026-10-30T12:19:00-04:00",
+            "localTime": "12:19",
+            "date": "2026-10-30",
+            "heightFt": 0.69
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T18:23:00-04:00",
+            "localTime": "18:23",
+            "date": "2026-10-30",
+            "heightFt": -1.96
+          }
+        ],
+        "curve": [
+          {
+            "t": "00:00",
+            "h": 0.14
+          },
+          {
+            "t": "00:30",
+            "h": -0.14
+          },
+          {
+            "t": "01:00",
+            "h": -0.5
+          },
+          {
+            "t": "01:30",
+            "h": -0.89
+          },
+          {
+            "t": "02:00",
+            "h": -1.3
+          },
+          {
+            "t": "02:30",
+            "h": -1.69
+          },
+          {
+            "t": "03:00",
+            "h": -2.05
+          },
+          {
+            "t": "03:30",
+            "h": -2.34
+          },
+          {
+            "t": "04:00",
+            "h": -2.54
+          },
+          {
+            "t": "04:30",
+            "h": -2.64
+          },
+          {
+            "t": "05:00",
+            "h": -2.63
+          },
+          {
+            "t": "05:30",
+            "h": -2.52
+          },
+          {
+            "t": "06:00",
+            "h": -2.31
+          },
+          {
+            "t": "06:30",
+            "h": -2.03
+          },
+          {
+            "t": "07:00",
+            "h": -1.69
+          },
+          {
+            "t": "07:30",
+            "h": -1.3
+          },
+          {
+            "t": "08:00",
+            "h": -0.9
+          },
+          {
+            "t": "08:30",
+            "h": -0.5
+          },
+          {
+            "t": "09:00",
+            "h": -0.12
+          },
+          {
+            "t": "09:30",
+            "h": 0.22
+          },
+          {
+            "t": "10:00",
+            "h": 0.49
+          },
+          {
+            "t": "10:30",
+            "h": 0.69
+          },
+          {
+            "t": "11:00",
+            "h": 0.8
+          },
+          {
+            "t": "11:30",
+            "h": 0.82
+          },
+          {
+            "t": "12:00",
+            "h": 0.75
+          },
+          {
+            "t": "12:30",
+            "h": 0.59
+          },
+          {
+            "t": "13:00",
+            "h": 0.34
+          },
+          {
+            "t": "13:30",
+            "h": 0.03
+          },
+          {
+            "t": "14:00",
+            "h": -0.33
+          },
+          {
+            "t": "14:30",
+            "h": -0.71
+          },
+          {
+            "t": "15:00",
+            "h": -1.08
+          },
+          {
+            "t": "15:30",
+            "h": -1.42
+          },
+          {
+            "t": "16:00",
+            "h": -1.7
+          },
+          {
+            "t": "16:30",
+            "h": -1.91
+          },
+          {
+            "t": "17:00",
+            "h": -2.03
+          },
+          {
+            "t": "17:30",
+            "h": -2.05
+          },
+          {
+            "t": "18:00",
+            "h": -1.99
+          },
+          {
+            "t": "18:30",
+            "h": -1.85
+          },
+          {
+            "t": "19:00",
+            "h": -1.64
+          },
+          {
+            "t": "19:30",
+            "h": -1.38
+          },
+          {
+            "t": "20:00",
+            "h": -1.09
+          },
+          {
+            "t": "20:30",
+            "h": -0.78
+          },
+          {
+            "t": "21:00",
+            "h": -0.47
+          },
+          {
+            "t": "21:30",
+            "h": -0.18
+          },
+          {
+            "t": "22:00",
+            "h": 0.06
+          },
+          {
+            "t": "22:30",
+            "h": 0.25
+          },
+          {
+            "t": "23:00",
+            "h": 0.36
+          },
+          {
+            "t": "23:30",
+            "h": 0.4
+          }
+        ],
+        "anomalyFt": 1.37,
+        "todayPredictedPeakFt": 0.82,
+        "todayForecastPeakFt": 2.19,
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "South Port Everglades gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
+        },
+        "updatedAt": "2026-10-29T13:39:52.928Z"
+      },
+      "floodDays": {
+        "thisYear": {
+          "year": 2026,
+          "label": "May 2026 to Apr 2027",
+          "count": 19,
+          "lastFloodDay": "2026-10-29",
+          "thresholdFt": 1.27
+        },
+        "lastYear": {
+          "year": 2025,
+          "label": "May 2025 to Apr 2026",
+          "count": 21,
+          "thresholdFt": 1.27
+        },
+        "definition": "Days when water reached the NWS minor flood level at this gauge. Meteorological year, May to April.",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "South Port Everglades gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
+        },
+        "updatedAt": "2026-10-29T13:39:53.579Z"
+      },
+      "weather": {
+        "rain24hIn": 0,
+        "reportsCounted": 18,
+        "station": {
+          "id": "KHWO",
+          "name": "North Perry Airport"
+        },
+        "source": {
+          "name": "National Weather Service",
+          "detail": "North Perry Airport (KHWO)",
+          "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
+        },
+        "updatedAt": "2026-10-29T13:39:55.411Z"
+      }
+    },
+    "fort-lauderdale": {
+      "id": "fort-lauderdale",
+      "name": "Fort Lauderdale",
+      "gauge": {
+        "id": "8722956",
+        "label": "South Port Everglades",
+        "name": "South Port Everglades, FL"
+      },
+      "weatherStation": {
+        "id": "KFLL",
+        "name": "Fort Lauderdale/Hollywood International Airport"
+      },
+      "point": {
+        "lat": 26.1224,
+        "lon": -80.1373
+      },
+      "alerts": {
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued October 28 at 7:54PM EDT until October 29 at 8:00PM EDT by NWS Miami FL",
+            "onset": "2026-10-28T20:00:00-04:00",
+            "expires": "2026-10-29T20:00:00-04:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f704c2c75b669ec03cfaec2c0028be3801b0af86.002.3"
+          }
+        ],
+        "source": {
+          "name": "National Weather Service alerts",
+          "detail": "Point 26.1224, -80.1373",
+          "url": "https://alerts.weather.gov/"
+        },
+        "updatedAt": "2026-10-29T13:39:52.262Z"
+      },
+      "flooding": {
+        "likely": true,
+        "forecastPeakFt": 2.19,
+        "minorFloodFt": 1.27,
+        "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
+      },
+      "risk": {
+        "level": "high",
+        "why": "Active: Coastal Flood Advisory."
+      },
+      "headline": {
+        "line1": "King Tide",
+        "line2": "with Street Flooding Likely",
+        "condition": "kingTideFloodingLikely"
+      },
+      "thresholds": {
+        "minorFlood": 1.27,
+        "moderateFlood": 1.67,
+        "majorFlood": 2.47,
+        "datum": "MHHW",
+        "basis": "NWS flood categories",
+        "updatedAt": "2026-10-29T13:39:52.700Z"
+      },
+      "water": {
+        "levelFt": 1.59,
+        "status": "rising",
+        "observedAt": "2026-10-29T09:30:00-04:00",
+        "rawTime": "2026-10-29 09:30",
+        "unit": "ft above MHHW",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "South Port Everglades gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
+        },
+        "updatedAt": "2026-10-29T13:39:52.784Z"
+      },
+      "tides": {
+        "date": "2026-10-29",
+        "nextHigh": {
+          "type": "high",
+          "at": "2026-10-29T11:23:00-04:00",
+          "localTime": "11:23",
+          "date": "2026-10-29",
+          "heightFt": 0.82
+        },
+        "today": [
+          {
+            "type": "low",
+            "at": "2026-10-29T04:43:00-04:00",
+            "localTime": "04:43",
+            "date": "2026-10-29",
+            "heightFt": -2.65
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T11:23:00-04:00",
+            "localTime": "11:23",
+            "date": "2026-10-29",
+            "heightFt": 0.82
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T17:24:00-04:00",
+            "localTime": "17:24",
+            "date": "2026-10-29",
+            "heightFt": -2.06
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T23:30:00-04:00",
+            "localTime": "23:30",
+            "date": "2026-10-29",
+            "heightFt": 0.4
+          }
+        ],
+        "next48h": [
+          {
+            "type": "low",
+            "at": "2026-10-29T04:43:00-04:00",
+            "localTime": "04:43",
+            "date": "2026-10-29",
+            "heightFt": -2.65
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T11:23:00-04:00",
+            "localTime": "11:23",
+            "date": "2026-10-29",
+            "heightFt": 0.82
+          },
+          {
+            "type": "low",
+            "at": "2026-10-29T17:24:00-04:00",
+            "localTime": "17:24",
+            "date": "2026-10-29",
+            "heightFt": -2.06
+          },
+          {
+            "type": "high",
+            "at": "2026-10-29T23:30:00-04:00",
+            "localTime": "23:30",
+            "date": "2026-10-29",
+            "heightFt": 0.4
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T05:39:00-04:00",
+            "localTime": "05:39",
+            "date": "2026-10-30",
+            "heightFt": -2.52
+          },
+          {
+            "type": "high",
+            "at": "2026-10-30T12:19:00-04:00",
+            "localTime": "12:19",
+            "date": "2026-10-30",
+            "heightFt": 0.69
+          },
+          {
+            "type": "low",
+            "at": "2026-10-30T18:23:00-04:00",
+            "localTime": "18:23",
+            "date": "2026-10-30",
+            "heightFt": -1.96
+          }
+        ],
+        "curve": [
+          {
+            "t": "00:00",
+            "h": 0.14
+          },
+          {
+            "t": "00:30",
+            "h": -0.14
+          },
+          {
+            "t": "01:00",
+            "h": -0.5
+          },
+          {
+            "t": "01:30",
+            "h": -0.89
+          },
+          {
+            "t": "02:00",
+            "h": -1.3
+          },
+          {
+            "t": "02:30",
+            "h": -1.69
+          },
+          {
+            "t": "03:00",
+            "h": -2.05
+          },
+          {
+            "t": "03:30",
+            "h": -2.34
+          },
+          {
+            "t": "04:00",
+            "h": -2.54
+          },
+          {
+            "t": "04:30",
+            "h": -2.64
+          },
+          {
+            "t": "05:00",
+            "h": -2.63
+          },
+          {
+            "t": "05:30",
+            "h": -2.52
+          },
+          {
+            "t": "06:00",
+            "h": -2.31
+          },
+          {
+            "t": "06:30",
+            "h": -2.03
+          },
+          {
+            "t": "07:00",
+            "h": -1.69
+          },
+          {
+            "t": "07:30",
+            "h": -1.3
+          },
+          {
+            "t": "08:00",
+            "h": -0.9
+          },
+          {
+            "t": "08:30",
+            "h": -0.5
+          },
+          {
+            "t": "09:00",
+            "h": -0.12
+          },
+          {
+            "t": "09:30",
+            "h": 0.22
+          },
+          {
+            "t": "10:00",
+            "h": 0.49
+          },
+          {
+            "t": "10:30",
+            "h": 0.69
+          },
+          {
+            "t": "11:00",
+            "h": 0.8
+          },
+          {
+            "t": "11:30",
+            "h": 0.82
+          },
+          {
+            "t": "12:00",
+            "h": 0.75
+          },
+          {
+            "t": "12:30",
+            "h": 0.59
+          },
+          {
+            "t": "13:00",
+            "h": 0.34
+          },
+          {
+            "t": "13:30",
+            "h": 0.03
+          },
+          {
+            "t": "14:00",
+            "h": -0.33
+          },
+          {
+            "t": "14:30",
+            "h": -0.71
+          },
+          {
+            "t": "15:00",
+            "h": -1.08
+          },
+          {
+            "t": "15:30",
+            "h": -1.42
+          },
+          {
+            "t": "16:00",
+            "h": -1.7
+          },
+          {
+            "t": "16:30",
+            "h": -1.91
+          },
+          {
+            "t": "17:00",
+            "h": -2.03
+          },
+          {
+            "t": "17:30",
+            "h": -2.05
+          },
+          {
+            "t": "18:00",
+            "h": -1.99
+          },
+          {
+            "t": "18:30",
+            "h": -1.85
+          },
+          {
+            "t": "19:00",
+            "h": -1.64
+          },
+          {
+            "t": "19:30",
+            "h": -1.38
+          },
+          {
+            "t": "20:00",
+            "h": -1.09
+          },
+          {
+            "t": "20:30",
+            "h": -0.78
+          },
+          {
+            "t": "21:00",
+            "h": -0.47
+          },
+          {
+            "t": "21:30",
+            "h": -0.18
+          },
+          {
+            "t": "22:00",
+            "h": 0.06
+          },
+          {
+            "t": "22:30",
+            "h": 0.25
+          },
+          {
+            "t": "23:00",
+            "h": 0.36
+          },
+          {
+            "t": "23:30",
+            "h": 0.4
+          }
+        ],
+        "anomalyFt": 1.37,
+        "todayPredictedPeakFt": 0.82,
+        "todayForecastPeakFt": 2.19,
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "South Port Everglades gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
+        },
+        "updatedAt": "2026-10-29T13:39:52.928Z"
+      },
+      "floodDays": {
+        "thisYear": {
+          "year": 2026,
+          "label": "May 2026 to Apr 2027",
+          "count": 19,
+          "lastFloodDay": "2026-10-29",
+          "thresholdFt": 1.27
+        },
+        "lastYear": {
+          "year": 2025,
+          "label": "May 2025 to Apr 2026",
+          "count": 21,
+          "thresholdFt": 1.27
+        },
+        "definition": "Days when water reached the NWS minor flood level at this gauge. Meteorological year, May to April.",
+        "source": {
+          "name": "NOAA Tides & Currents",
+          "detail": "South Port Everglades gauge",
+          "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
+        },
+        "updatedAt": "2026-10-29T13:39:53.579Z"
+      },
+      "weather": {
+        "rain24hIn": 0,
+        "reportsCounted": 18,
+        "station": {
+          "id": "KFLL",
+          "name": "Fort Lauderdale/Hollywood International Airport"
+        },
+        "source": {
+          "name": "National Weather Service",
+          "detail": "Fort Lauderdale/Hollywood International Airport (KFLL)",
+          "url": "https://www.weather.gov/wrh/timeseries?site=KFLL"
+        },
+        "updatedAt": "2026-10-29T13:39:55.942Z"
+      }
+    }
+  },
+  "schemaVersion": 1
+}
