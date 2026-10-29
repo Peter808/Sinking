@@ -4,25 +4,25 @@
     "The GitHub workflow wakes up every hour. Each script checks data/meta.json for its last run",
     "and exits early if it isn't due yet, based on the numbers below."
   ],
-
   "_comment_season": [
     "South Florida king tides peak in fall (roughly mid-August to mid-December), when the",
     "seasonal high water lines up with the year's biggest astronomical tides.",
     "Format is MM-DD. NOAA's monthly high tide flooding outlook can be used to refine this window later."
   ],
-  "kingTideSeason": { "start": "08-15", "end": "12-15" },
+  "kingTideSeason": {
+    "start": "08-15",
+    "end": "12-15"
+  },
   "inSeasonEveryMinutes": 60,
   "offSeasonEveryMinutes": 360,
-
   "_comment_alertOverride": "If true, any active NWS coastal flood or flood alert for any city forces hourly updates, even off-season.",
   "alertOverride": true,
-
   "newsEveryMinutes": 180,
   "socialEveryMinutes": 120,
-
+  "_comment_stats": "FEMA flood insurance claims totals (By the Numbers). Weekly is plenty; FEMA updates the dataset monthly.",
+  "statsEveryMinutes": 10080,
   "_comment_stale": "A panel shows 'Data delayed' when its data is older than this many times its expected interval.",
   "staleMultiplier": 3,
-
   "rules": {
     "risk": {
       "_comment": [
@@ -33,20 +33,34 @@
       ],
       "severe": {
         "atOrAbove": "moderateFlood",
-        "alertSeverities": ["Extreme"],
+        "alertSeverities": [
+          "Extreme"
+        ],
         "alerts": []
       },
       "high": {
         "atOrAbove": "minorFlood",
-        "alerts": ["Coastal Flood Warning", "Flood Warning", "Flash Flood Warning"]
+        "alerts": [
+          "Coastal Flood Warning",
+          "Flood Warning",
+          "Flash Flood Warning"
+        ]
       },
       "moderate": {
         "withinFtOfMinor": 0.25,
-        "alerts": ["Coastal Flood Statement", "Coastal Flood Advisory", "Coastal Flood Watch", "Flood Advisory", "Flood Watch", "Flash Flood Watch"]
+        "alerts": [
+          "Coastal Flood Statement",
+          "Coastal Flood Advisory",
+          "Coastal Flood Watch",
+          "Flood Advisory",
+          "Flood Watch",
+          "Flash Flood Watch"
+        ]
       },
-      "low": { "_comment": "Everything else: below minor flood threshold and no matching alerts." }
+      "low": {
+        "_comment": "Everything else: below minor flood threshold and no matching alerts."
+      }
     },
-
     "headline": {
       "_comment": [
         "The hero headline (h1) is generated from data, never hardcoded.",
@@ -55,13 +69,39 @@
       ],
       "elevatedMinFt": 0.5,
       "_comment_elevatedMinFt": "'Higher than normal' means water now, or today's predicted high, is at least this many ft above MHHW but still under the minor flood threshold.",
-      "heavyRainAlerts": ["Flood Watch", "Flood Advisory", "Flash Flood Watch", "Flash Flood Warning", "Flood Warning"],
+      "heavyRainAlerts": [
+        "Flood Watch",
+        "Flood Advisory",
+        "Flash Flood Watch",
+        "Flash Flood Warning",
+        "Flood Warning"
+      ],
       "order": [
-        { "when": "coastalFloodWarning", "line1": "Coastal Flood Warning",   "line2": "Flooding Expected Today" },
-        { "when": "kingTideFloodingLikely", "line1": "King Tide",           "line2": "with Street Flooding Likely" },
-        { "when": "heavyRainAlert",      "line1": "Heavy Rain",              "line2": "Flooding Possible in Low Areas" },
-        { "when": "waterElevated",       "line1": "Higher Than Normal Tides", "line2": "Minor Flooding Possible" },
-        { "when": "default",             "line1": "Normal Tides",            "line2": "No Flooding Expected" }
+        {
+          "when": "coastalFloodWarning",
+          "line1": "Coastal Flood Warning",
+          "line2": "Flooding Expected Today"
+        },
+        {
+          "when": "kingTideFloodingLikely",
+          "line1": "King Tide",
+          "line2": "with Street Flooding Likely"
+        },
+        {
+          "when": "heavyRainAlert",
+          "line1": "Heavy Rain",
+          "line2": "Flooding Possible in Low Areas"
+        },
+        {
+          "when": "waterElevated",
+          "line1": "Higher Than Normal Tides",
+          "line2": "Minor Flooding Possible"
+        },
+        {
+          "when": "default",
+          "line1": "Normal Tides",
+          "line2": "No Flooding Expected"
+        }
       ],
       "_comment_conditions": {
         "coastalFloodWarning": "An NWS 'Coastal Flood Warning' is active for the city.",

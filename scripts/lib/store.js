@@ -54,7 +54,7 @@ function recordError(meta, key, err) {
    Decides whether a script should run now.
    runKey: which script ('tides', 'weather', 'floods', 'news', 'social');
            each keeps its own last-run time in meta.runs
-   type:   'conditions' (tides, weather, alerts), 'news', or 'social'
+   type:   'conditions' (tides, weather, alerts), 'news', 'social', or 'stats'
    - conditions: hourly in king tide season, every 6h off-season, and hourly
      whenever any flood alert is active (alertOverride in schedule.json)
    - FORCE=1 skips the check (manual runs, tests)
@@ -64,6 +64,7 @@ function checkDue(meta, runKey, type, now = new Date()) {
   let interval, reason;
   if (type === 'news') { interval = schedule.newsEveryMinutes; reason = 'news interval'; }
   else if (type === 'social') { interval = schedule.socialEveryMinutes; reason = 'social interval'; }
+  else if (type === 'stats') { interval = schedule.statsEveryMinutes; reason = 'weekly stats'; }
   else {
     const season = inSeason(schedule.kingTideSeason, now);
     const alerts = schedule.alertOverride && anyFloodAlert();

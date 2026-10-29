@@ -22,7 +22,12 @@ function hasAlert(city, names) {
    Uses the current water level vs the gauge's NWS flood thresholds,
    plus active NWS alerts. First matching level (from severe down) wins. */
 function riskFor(city, rules) {
-  const level = city.water && city.water.levelFt;
+  /* Uses the HIGHER of the water level right now and today's forecast peak,
+     so risk matches the headline all day, not just at high tide
+     (decided 2026-10-29). */
+  const now = city.water && city.water.levelFt;
+  const peak = city.tides && city.tides.todayForecastPeakFt;
+  const level = now == null && peak == null ? null : Math.max(now ?? -99, peak ?? -99);
   const th = city.thresholds || {};
   const items = (city.alerts && city.alerts.items) || [];
   const has = (n) => level != null && th[n] != null && level >= th[n];
@@ -36,7 +41,7 @@ function riskFor(city, rules) {
 
   function whyText(c, lvl) {
     const a = items.map((x) => x.event);
-    return a.length ? `Active: ${a.join(', ')}.` : `Water at ${level != null ? level.toFixed(2) : '?'} ft vs minor flood level ${th.minorFlood} ft.`;
+    return a.length ? `Active: ${a.join(', ')}.` : `Peak water ${level != null ? level.toFixed(2) : '?'} ft vs minor flood level ${th.minorFlood} ft.`;
   }
 }
 

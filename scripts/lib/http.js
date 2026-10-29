@@ -21,10 +21,11 @@ const BREAK = process.env.BREAK_URL || '';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /* Fetches a URL and returns the response body as text.
-   Options: accept (Accept header), userAgent (override for sites that
+   Options: accept (Accept header), timeoutMs (for slow APIs like OpenFEMA),
+   userAgent (override for sites that
    reject bot-style names; see sources.json userAgent: "browser").
    Throws after the last failed attempt, with a short readable message. */
-async function fetchText(url, { accept, userAgent } = {}) {
+async function fetchText(url, { accept, userAgent, timeoutMs } = {}) {
   const { stations } = loadConfig();
   let lastErr;
   for (let i = 0; i < ATTEMPTS; i++) {
@@ -33,7 +34,7 @@ async function fetchText(url, { accept, userAgent } = {}) {
       if (BREAK && url.includes(BREAK)) throw new Error('BREAK_URL test: request blocked on purpose');
       const res = await fetch(url, {
         headers: { 'User-Agent': userAgent || stations.userAgent, Accept: accept || '*/*' },
-        signal: AbortSignal.timeout(TIMEOUT_MS)
+        signal: AbortSignal.timeout(timeoutMs || TIMEOUT_MS)
       });
       if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
       return await res.text();

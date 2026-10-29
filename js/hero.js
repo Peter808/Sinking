@@ -9,7 +9,9 @@
   'use strict';
 
   /* ------------------------------------------------------------------------
-     SAMPLE DATA (all hardcoded placeholders, not real readings)
+     FALLBACK SAMPLE DATA (placeholders, only used if the page has no live
+     snapshot). At deploy, scripts/prerender.js embeds real data for all 5
+     cities in <script id="hero-data">, which replaces this object below.
      One object per city. Keys must match the data-city-btn values in the HTML.
        level          ft above normal high tide (shown as "+1.4")
        risk           low | moderate | high | severe
@@ -19,9 +21,9 @@
        tideStatus     text for the header pill ("Rising" / "Falling")
        summary        two lines of supporting text under the h1
        tide           today's highs and lows: [time, height ft, 'high'|'low']
-     FUTURE: replace this object with a fetch from /data/cities.json, written
-     by a scheduled GitHub Action that pulls NOAA tide predictions. Keep the
-     same shape and nothing else in this file needs to change.
+     Live snapshot adds: gauge (label), updated ("2:07 PM"), updatedAt (ISO).
+     In the snapshot, level = today's forecast PEAK and tide heights are
+     expected water (prediction + current anomaly).
      ------------------------------------------------------------------------ */
   var CITIES = {
     'miami': {
@@ -56,6 +58,16 @@
     }
   };
 
+  /* Live snapshot written at deploy (see header comment). Skipped in Node,
+     where prerender.js loads this file only for the tide math. */
+  var SNAP = null;
+  if (typeof document !== 'undefined') {
+    try {
+      var snapEl = document.getElementById('hero-data');
+      if (snapEl) { SNAP = JSON.parse(snapEl.textContent); CITIES = SNAP.cities; }
+    } catch (e) { SNAP = null; }
+  }
+
   /* Order used for the three mini stats: shows the first three cities that
      are NOT the active one. Default (Miami active) = Miami Beach, Hollywood,
      Fort Lauderdale. Reorder this list to change which cities appear. */
@@ -69,7 +81,7 @@
   var RADIAL_MAX_DAYS = 60;
 
   /* Tide wave drawing area. Matches the SVG viewBox in index.html. */
-  var WAVE = { w: 1000, h: 100, minFt: -0.5, maxFt: 3.0, top: 14, bottom: 86 };
+  var WAVE = { w: 1000, h: 100, minFt: -2.5, maxFt: 3.0, top: 32, bottom: 80 }; /* real lows reach about -2 ft */
 
 
   /* ===== Helpers ======================================================== */
@@ -167,6 +179,9 @@
       var t = nowHours();
       dot.style.left = (t / 24 * 100).toFixed(2) + '%';
       dot.style.top = yFor(heightAt(pts, t)).toFixed(2) + '%';
+      /* Keep the "Now" pill off a nearby HIGH label */
+      var nearHigh = pts.some(function (p) { return !p.edge && p.type === 'high' && Math.abs(p.t - t) < 2; });
+      dot.classList.toggle('is-below', nearHigh);
     }
   }
 
@@ -190,12 +205,15 @@
       'flood-days-last': c.floodDaysLast,
       'risk-label': RISK_LABEL[c.risk],
       'summary': c.summary,
-      'tide-status': c.tideStatus
+      'tide-status': c.tideStatus,
+      'gauge': c.gauge || '',
+      'updated': c.updated || ''
     };
     hero.querySelectorAll('[data-field]').forEach(function (el) {
       var k = el.getAttribute('data-field');
-      if (k in fields) el.textContent = fields[k];
+      if (k in fields && fields[k] !== '') el.textContent = fields[k];
     });
+    markDelayed(hero, c);
     /* Header tide pill lives outside the hero */
     document.querySelectorAll('[data-field="tide-status"]').forEach(function (el) { el.textContent = c.tideStatus; });
 
@@ -286,6 +304,16 @@
         : nextIdx > -1 ? 'Next: cycle ' + (nextIdx + 1) + ' of ' + rows.length
         : 'Season over';
     }
+  }
+
+
+  /* ===== "Data delayed" label ===========================================
+     Shown when the active city's data is older than staleAfterMinutes
+     (3x the update interval, from config/schedule.json via the snapshot). */
+  function markDelayed(hero, c) {
+    var el = hero.querySelector('[data-delayed]');
+    if (!el || !SNAP || !c.updatedAt) return;
+    el.hidden = (Date.now() - new Date(c.updatedAt)) / 60000 <= SNAP.staleAfterMinutes;
   }
 
 
