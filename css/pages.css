@@ -19,6 +19,9 @@
   13. Latest news
   14. What you can do
   15. Final CTA
+   CITY PAGES
+  16. City list as links (hero)
+  17. Proposed fixes timeline (infographic)
    ========================================================================== */
 
 
@@ -127,6 +130,8 @@
 .hero__title { font-weight: 300; letter-spacing: -0.035em; line-height: 0.98; }
 .hero__title-1 { display: block; font-size: var(--fs-hero); }
 .hero__title-2 { display: block; font-size: var(--fs-hero-sub); letter-spacing: -0.02em; margin-top: 0.15em; }
+/* City pages: "Miami Beach Flooding" is longer than "King Tide", so line 1 is smaller */
+.hero__title--city .hero__title-1 { font-size: clamp(44px, 5.4vw, 80px); }
 .hero__summary { margin-top: var(--space-2); max-width: 36ch; font-size: var(--fs-body-lg); line-height: 1.55; color: var(--text-primary); }
 
 
@@ -489,3 +494,100 @@ html.js .kingtides__scroll {
 .final-cta { isolation: isolate; }
 .final-cta .display { max-width: 12ch; }
 .final-cta__buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: var(--space-1); }
+
+
+/* ==========================================================================
+   16. CITY LIST AS LINKS (city pages)
+   Same look as the home page's buttons; the current city is filled.
+   ========================================================================== */
+a.city-row { color: inherit; text-decoration: none; }
+.city-row[aria-current="page"] { background: rgba(255, 255, 255, 0.12); }
+.city-row[aria-current="page"] .city-row__icon { background: #fff; color: var(--navy-900); border-color: #fff; }
+@media (max-width: 959.98px) {
+  .city-row[aria-current="page"] { background: #fff; color: var(--navy-900); border-color: #fff; }
+}
+
+
+/* ==========================================================================
+   17. PROPOSED FIXES TIMELINE (city pages)
+   Infographic: summary strip, then a vertical line with one card per plan
+   or project, newest first. Desktop alternates left/right; mobile stacks
+   on one side. Each card's bar shows cost relative to the biggest item
+   (square-root scale so small projects stay visible).
+   Status colors: set by data-status on each item.
+   ========================================================================== */
+.fixes__summary {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+@media (min-width: 960px) { .fixes__summary { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.fixes__sum { padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); background: var(--navy-700); border: 1px solid var(--navy-600); }
+.fixes__sum-num { font-size: var(--fs-number-md); font-weight: 300; line-height: 1.1; }
+.fixes__sum-label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+.timeline { position: relative; list-style: none; padding: 0; display: grid; gap: var(--space-4); }
+.timeline::before { /* the spine */
+  content: ""; position: absolute; top: 0; bottom: 0; left: 15px; width: 2px;
+  background: linear-gradient(180deg, var(--tide-aqua), var(--navy-600));
+}
+.tl { --st: var(--tide-aqua); position: relative; padding-left: 48px; }
+.tl[data-status="in-design"]   { --st: var(--risk-moderate); }
+.tl[data-status="in-progress"] { --st: var(--risk-high); }
+.tl[data-status="completed"]   { --st: var(--risk-low); }
+.tl[data-status="revised"], .tl[data-status="on-hold"] { --st: rgba(255, 255, 255, 0.55); }
+
+/* Year bubble on the spine */
+.tl__year {
+  position: absolute; left: 0; top: 18px; width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--navy-900); border: 2px solid var(--st);
+  font-size: 0; /* year text shows in the card on mobile */
+}
+.tl__year::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--st); }
+
+.tl__card {
+  background: var(--navy-700); border: 1px solid var(--navy-600); border-radius: var(--radius-lg);
+  padding: var(--space-3); display: grid; gap: 12px;
+  border-top: 3px solid var(--st);
+}
+.tl__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+.tl__when { font-size: 12px; font-weight: 600; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--text-secondary); }
+.tl__status {
+  display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: var(--radius-pill);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  background: rgba(5, 11, 26, 0.6); border: 1px solid var(--st); color: var(--text-primary);
+}
+.tl__status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--st); }
+.tl__title { font-size: var(--fs-h3); font-weight: 600; line-height: 1.25; }
+.tl__cost { display: grid; gap: 6px; }
+.tl__cost-num { font-size: clamp(36px, 4vw, 52px); font-weight: 300; line-height: 1; letter-spacing: -0.02em; }
+.tl[data-status="revised"] .tl__cost-num { text-decoration: line-through; text-decoration-thickness: 2px; color: var(--text-secondary); }
+.tl__bar { height: 8px; border-radius: 4px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+.tl__bar span { display: block; height: 100%; border-radius: 4px; background: var(--st); }
+.tl__bar-label { font-size: 11px; color: var(--text-secondary); }
+.tl__summary { color: var(--text-secondary); }
+.tl__outcome { padding: 12px 14px; border-radius: var(--radius-sm); background: rgba(5, 11, 26, 0.45); font-size: 15px; }
+.tl__outcome strong { display: block; font-size: 11px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--tide-aqua); margin-bottom: 4px; }
+.tl__sources { font-size: 13px; color: var(--text-secondary); }
+.tl__sources a { color: var(--tide-aqua); }
+.fixes__note { margin-top: var(--space-4); font-size: 13px; color: var(--text-secondary); }
+
+/* Desktop: spine in the middle, cards alternate sides, year shown on the spine */
+@media (min-width: 960px) {
+  .timeline { gap: var(--space-2); }
+  .timeline::before { left: 50%; transform: translateX(-1px); }
+  .tl { padding-left: 0; width: calc(50% - 56px); }
+  .tl:nth-child(odd)  { justify-self: start; }
+  .tl:nth-child(even) { justify-self: end; }
+  .tl__year {
+    width: auto; height: auto; padding: 6px 12px; border-radius: var(--radius-pill);
+    font-size: 14px; font-weight: 700; color: var(--text-primary); top: 22px;
+  }
+  .tl__year::after { display: none; }
+  .tl:nth-child(odd)  .tl__year { left: calc(100% + 56px); transform: translateX(-50%); }
+  .tl:nth-child(even) .tl__year { left: -56px; transform: translateX(-50%); }
+  /* connector from card to spine */
+  .tl::after { content: ""; position: absolute; top: 37px; width: 40px; height: 2px; background: var(--st); }
+  .tl:nth-child(odd)::after  { left: 100%; }
+  .tl:nth-child(even)::after { right: 100%; }
+}

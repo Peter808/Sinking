@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  PAGE: Miami city page (miami/index.html)
+  PURPOSE: Today's flood conditions for Miami only, the latest Miami
+           flooding news, and an infographic timeline of proposed fixes with
+           cost and outcomes.
+  TARGET KEYWORDS: miami flooding, sinking miami
+  LAST EDITED: 2026-10-29, first build (template for the other city pages)
+  DATA: hero values, news, and the timeline are written in at deploy by
+        scripts/prerender.js. Fixes live in data/curated/timeline/miami.json
+        (hand-edited, review quarterly).
+  NOTES: This page sits one folder down, so every local link starts with ../
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miami Flooding &amp; King Tides Today | Sinking South Florida</title>
+  <meta name="description" content="Live tide levels, flood risk, and flooding news for Miami, plus every proposed fix with its cost and results. Sinking Miami, tracked daily.">
+  <link rel="canonical" href="https://miamiflooding.com/miami/">
+  <meta name="theme-color" content="#050B1A">
+
+  <!-- Open Graph / Twitter. PLACEHOLDER: create images/og-home.jpg at 1200x630 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sinking South Florida">
+  <meta property="og:title" content="Miami Flooding &amp; King Tides Today">
+  <meta property="og:description" content="Live tide levels, flood risk, and flooding news for Miami, plus every proposed fix with its cost and results. Sinking Miami, tracked daily.">
+  <meta property="og:url" content="https://miamiflooding.com/miami/">
+  <meta property="og:image" content="https://miamiflooding.com/images/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Miami Flooding &amp; King Tides Today">
+  <meta name="twitter:description" content="Live tide levels, flood risk, and flooding news for Miami, plus every proposed fix with its cost and results. Sinking Miami, tracked daily.">
+  <meta name="twitter:image" content="https://miamiflooding.com/images/og-home.jpg">
+
+  <!-- Fonts: Anton (section headlines) + Inter (everything else) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap">
+
+  <!-- Hero photo loads first (it's above the fold) -->
+  <link rel="preload" as="image" href="../images/hero-miami.webp" type="image/webp">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+
+  <!-- Structured data: WebPage + Place (city, with coordinates) + BreadcrumbList -->
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://miamiflooding.com/miami/#webpage",
+        "url": "https://miamiflooding.com/miami/",
+        "name": "Miami Flooding & King Tides Today | Sinking South Florida",
+        "description": "Live tide levels, flood risk, and flooding news for Miami, plus every proposed fix with its cost and results. Sinking Miami, tracked daily.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://miamiflooding.com/#website"
+        },
+        "about": {
+          "@id": "https://miamiflooding.com/miami/#place"
+        }
+      },
+      {
+        "@type": "Place",
+        "@id": "https://miamiflooding.com/miami/#place",
+        "name": "Miami, Florida",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.7617,
+          "longitude": -80.1918
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://miamiflooding.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Miami",
+            "item": "https://miamiflooding.com/miami/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Adds .js to <html> before paint so JS-only UI doesn't flash -->
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="../js/config.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/hero.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== SECTION: Header (global) ===== -->
+<header class="site-header site-header--hero" data-header>
+  <div class="site-header__inner container">
+
+    <a class="brand" href="../" aria-label="Sinking South Florida, home">
+      <!-- Logo mark: placeholder wave in a circle. Swap for the final logo SVG. -->
+      <svg class="brand__mark" viewBox="0 0 34 34" aria-hidden="true">
+        <circle cx="17" cy="17" r="16" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.5)"/>
+        <path d="M7 15c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <path d="M7 21c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#4FD1E8" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>Sinking South Florida</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary" data-nav>
+      <ul class="site-nav__list" role="list">
+        <li class="has-dropdown" data-dropdown>
+          <!-- JS version: a button that opens the menu -->
+          <button class="site-nav__link site-nav__toggle js-only" type="button" aria-expanded="false" aria-controls="cities-menu" data-dropdown-toggle>
+            Cities
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <!-- No-JS version: a link; the menu still opens on hover and focus -->
+          <a class="site-nav__link no-js-only" href="../#your-city">Cities</a>
+          <ul class="dropdown" id="cities-menu" role="list">
+            <li><a href="../miami/">Miami</a></li>
+            <li><a href="../miami-beach/">Miami Beach <span class="label" style="color:var(--text-secondary)">South Beach</span></a></li>
+            <li><a href="../hallandale-beach/">Hallandale Beach</a></li>
+            <li><a href="../hollywood/">Hollywood</a></li>
+            <li><a href="../fort-lauderdale/">Fort Lauderdale</a></li>
+          </ul>
+        </li>
+        <li><a class="site-nav__link" href="../news/">News</a></li>
+        <li><a class="site-nav__link" href="../resources/">Resources</a></li>
+        <li class="site-nav__cta"><a class="btn btn--primary" href="../#check-your-address" data-close-menu>Check Your Address</a></li>
+      </ul>
+    </nav>
+
+    <!-- Live time and date (Miami time), plus tide status. Filled by main.js; hidden without JS. -->
+    <div class="site-header__meta js-only">
+      <p class="clock"><span class="clock__time" data-clock-time>--:--</span><span class="clock__sub"><span data-clock-ampm>AM</span><br>Time</span></p>
+      <p class="clock"><span class="clock__time" data-clock-date>-- ---</span><span class="clock__sub"><span data-clock-year>2026</span><br>Date</span></p>
+      <!-- PLACEHOLDER: tide direction from NOAA predictions for the active city -->
+      <p class="tide-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        Tide: <span data-field="tide-status">Rising</span>
+      </p>
+    </div>
+
+    <a class="btn btn--glass btn--sm site-header__cta" href="../#check-your-address">Check Your Address</a>
+
+    <button class="menu-toggle js-only" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu" data-menu-toggle>
+      <span class="menu-toggle__bars"></span>
+    </button>
+  </div>
+</header>
+<!-- ===== END: Header ===== -->
+
+<main id="main">
+
+<!-- ===== SECTION: Hero ===== -->
+<!-- City page: hero is locked to Miami. The city list links to the other city pages
+     (rendered at deploy). hero.js still draws the tide wave and the live "Now" dot. -->
+<section class="hero" id="hero" data-hero data-city="miami" aria-labelledby="hero-title">
+
+  <!-- Background: sky gradient (CSS) + center photo + fade to navy -->
+  <div class="hero__bg" aria-hidden="true">
+    <!-- IMAGE: storm over the Miami skyline and Biscayne Bay. The PNG already has soft, transparent
+         edges, so it blends into the sky without a CSS mask. images/hero.png is the original;
+         hero-miami.webp is the compressed copy browsers load (about 460KB vs 2.9MB).
+         To swap the photo: replace both files, keeping the names, or update the paths here. -->
+    <picture>
+      <source srcset="../images/hero-miami.webp" type="image/webp">
+      <img class="hero__image" src="../images/hero.png" width="1672" height="941" alt="" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+
+  <div class="hero__inner container">
+
+    <!-- Left column: eyebrow, h1, summary -->
+    <div class="hero__head">
+      <div class="hero__eyebrow-row">
+        <p class="label hero__eyebrow">Live conditions · <span data-field="city-name">Miami</span></p>
+      </div>
+      <!-- h1 stays the same for every city (SEO). Hidden suffix adds the region. -->
+      <!-- PRERENDER:hero-h1 START (headline from Miami data, config/schedule.json rules) -->
+      <h1 class="hero__title hero__title--city" id="hero-title">
+        <span class="hero__title-1">Miami Flooding</span>
+        <span class="hero__title-2">King Tide with Street Flooding Likely</span>
+      </h1>
+      <!-- PRERENDER:hero-h1 END -->
+      <!-- PLACEHOLDER: daily conditions text, later generated from NOAA tide + NWS rain data -->
+      <p class="hero__summary" data-field="summary">Seasonal king tides peak this evening. Expect shallow water on low streets in Brickell and Shorecrest around high tide.</p>
+    </div>
+
+    <!-- Left column: three mini stats (water level in other cities) -->
+    <!-- PLACEHOLDER: water levels from NOAA tide gauges (Virginia Key, Port Everglades) -->
+    <!-- PRERENDER:hero-mini START -->
+    <ul class="hero__mini" role="list" aria-label="Water level in other cities">
+      <li class="mini" data-mini data-risk="high">
+        <p class="mini__value"><span data-mini-level>+1.9</span><span class="mini__unit">ft</span></p>
+        <p class="mini__city"><span data-mini-city>Miami Beach</span></p>
+        <p class="mini__risk"><span data-mini-risk>High</span> risk</p>
+      </li>
+      <li class="mini" data-mini data-risk="moderate">
+        <p class="mini__value"><span data-mini-level>+1.2</span><span class="mini__unit">ft</span></p>
+        <p class="mini__city"><span data-mini-city>Hollywood</span></p>
+        <p class="mini__risk"><span data-mini-risk>Moderate</span> risk</p>
+      </li>
+      <li class="mini" data-mini data-risk="high">
+        <p class="mini__value"><span data-mini-level>+1.6</span><span class="mini__unit">ft</span></p>
+        <p class="mini__city"><span data-mini-city>Fort Lauderdale</span></p>
+        <p class="mini__risk"><span data-mini-risk>High</span> risk</p>
+      </li>
+    </ul>
+    <!-- PRERENDER:hero-mini END -->
+
+    <!-- Left column bottom: radial chart + risk slider -->
+    <div class="hero__gauges">
+      <!-- Radial chart: outer ring = this year, inner ring = last year.
+           Ring length = days / 60 (RADIAL_MAX_DAYS in hero.js).
+           PLACEHOLDER: flood day counts from NOAA high tide flooding outlook -->
+      <figure class="radial">
+        <svg class="radial__svg" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" class="radial__track"/>
+          <circle cx="60" cy="60" r="40" class="radial__track"/>
+          <circle cx="60" cy="60" r="52" class="radial__ring radial__ring--this" data-ring="this" stroke-dasharray="206.9 326.7"/>
+          <circle cx="60" cy="60" r="40" class="radial__ring radial__ring--last" data-ring="last" stroke-dasharray="113.1 251.3"/>
+        </svg>
+        <div class="radial__center"><span class="radial__num" data-field="flood-days">38</span><span class="radial__unit">days</span></div>
+        <figcaption class="radial__legend">
+          <span class="label">Flood days</span>
+          <span class="radial__key radial__key--this">This year: <strong data-field="flood-days">38</strong></span>
+          <span class="radial__key radial__key--last">Last year: <strong data-field="flood-days-last">27</strong></span>
+          <span class="radial__note">Days at NWS minor flood level, <span data-field="gauge">Virginia Key</span>. Year runs May to April.</span>
+        </figcaption>
+      </figure>
+
+      <!-- Risk slider: display only. --pos sets the marker (hero.js RISK_POS). -->
+      <div class="risk-meter" data-risk-meter data-risk="moderate" style="--pos: 38%">
+        <div class="risk-meter__top">
+          <span class="label">Flood risk today</span>
+          <span class="risk-meter__value" data-field="risk-label">Moderate</span>
+        </div>
+        <div class="risk-meter__track" aria-hidden="true"><span class="risk-meter__marker"></span></div>
+        <div class="risk-meter__scale" aria-hidden="true"><span>Low</span><span>Moderate</span><span>High</span><span>Severe</span></div>
+      </div>
+    </div>
+
+    <!-- Right column: king tide season calendar.
+         Each row's data-start / data-end (YYYY-MM-DD) drive the highlight.
+         hero.js marks the cycle that includes today as "Now" (or the next one
+         as "Next" between cycles) and dims past cycles. Without JS, the
+         is-current / is-past classes below show the state as of this edit.
+         To add a new season: copy a row, change the dates and the text.
+         PLACEHOLDER: verify dates against NOAA tide predictions or the
+         Miami-Dade County king tide calendar before launch. -->
+    <section class="hero__readout kingtides glass" aria-labelledby="kt-title">
+      <div class="kingtides__head">
+        <h2 class="label kingtides__title" id="kt-title">King tide season <span class="kingtides__year">2026</span></h2>
+        <p class="kingtides__count" data-kt-count>Cycle 5 of 9</p>
+      </div>
+      <!-- Scroll box: shows the most recent past cycle plus what's ahead.
+           Scroll up for earlier cycles. tabindex lets keyboard users scroll it. -->
+      <div class="kingtides__scroll" tabindex="0" role="region" aria-label="King tide cycles, scroll up for earlier dates" data-kt-scroll>
+      <ol class="kingtides__list" role="list" data-kt-list>
+        <li class="kt is-past" data-start="2026-08-11" data-end="2026-08-14"><span class="kt__month">Aug</span><span class="kt__days">11 – 14</span><span class="kt__status">Past</span></li>
+        <li class="kt is-past" data-start="2026-09-09" data-end="2026-09-13"><span class="kt__month">Sep</span><span class="kt__days">9 – 13</span><span class="kt__status">Past</span></li>
+        <li class="kt is-past" data-start="2026-09-26" data-end="2026-10-01"><span class="kt__month">Sep</span><span class="kt__days">26 – Oct 1</span><span class="kt__status">Past</span></li>
+        <li class="kt is-past" data-start="2026-10-07" data-end="2026-10-13"><span class="kt__month">Oct</span><span class="kt__days">7 – 13</span><span class="kt__status">Past</span></li>
+        <li class="kt is-current" data-start="2026-10-24" data-end="2026-10-31" aria-current="date"><span class="kt__month">Oct</span><span class="kt__days">24 – 31</span><span class="kt__status">Now</span></li>
+        <li class="kt" data-start="2026-11-05" data-end="2026-11-11"><span class="kt__month">Nov</span><span class="kt__days">5 – 11</span><span class="kt__status"></span></li>
+        <li class="kt" data-start="2026-11-22" data-end="2026-11-28"><span class="kt__month">Nov</span><span class="kt__days">22 – 28</span><span class="kt__status"></span></li>
+        <li class="kt" data-start="2026-12-05" data-end="2026-12-08"><span class="kt__month">Dec</span><span class="kt__days">5 – 8</span><span class="kt__status"></span></li>
+        <li class="kt" data-start="2026-12-23" data-end="2026-12-27"><span class="kt__month">Dec</span><span class="kt__days">23 – 27</span><span class="kt__status"></span></li>
+      </ol>
+      </div>
+    </section>
+
+    <!-- Right column: city selector. Becomes horizontal chips on mobile. -->
+    <div class="hero__cities glass">
+      <p class="label hero__cities-title" id="city-picker-label">Compare cities</p>
+      <!-- PRERENDER:hero-cities START -->
+      <ul class="city-list" role="list" aria-labelledby="city-picker-label">
+        <li><a class="city-row" href="./" data-risk="moderate" aria-current="page">
+          <span class="city-row__name">Miami</span><span class="city-row__value">+1.4 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </a></li>
+        <li><a class="city-row" href="../miami-beach/" data-risk="high">
+          <span class="city-row__name">Miami Beach</span><span class="city-row__value">+1.9 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </a></li>
+        <li><a class="city-row" href="../hallandale-beach/" data-risk="moderate">
+          <span class="city-row__name">Hallandale Beach</span><span class="city-row__value">+1.1 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </a></li>
+        <li><a class="city-row" href="../hollywood/" data-risk="moderate">
+          <span class="city-row__name">Hollywood</span><span class="city-row__value">+1.2 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </a></li>
+        <li><a class="city-row" href="../fort-lauderdale/" data-risk="high">
+          <span class="city-row__name">Fort Lauderdale</span><span class="city-row__value">+1.6 ft</span>
+          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
+        </a></li>
+      </ul>
+      <!-- PRERENDER:hero-cities END -->
+      <p class="hero__cities-caption">Peak water expected today, ft above normal high tide</p>
+      <!-- Source + freshness. hero.js shows "Data delayed" if the data is over 3x its update interval old. -->
+      <p class="hero__source">Source: NOAA Tides &amp; Currents, <span data-field="gauge">Virginia Key</span> gauge; NWS. Updated <span data-field="updated">2:00 PM</span> ET<span class="hero__delayed" data-delayed hidden> · Data delayed</span></p>
+      <p class="visually-hidden" aria-live="polite" data-hero-live></p>
+    </div>
+  </div>
+
+  <!-- Tide wave: 24h tide curve for the active city.
+       The static path below is Miami's sample curve (generated by hero.js).
+       PLACEHOLDER: tide predictions from NOAA CO-OPS API -->
+  <div class="tide" role="img" data-tide-aria aria-label="Today's sample tide curve: high 7:42 AM at 2.1 feet, low 1:58 PM at 0.3 feet, high 7:42 PM at 2.3 feet.">
+    <!-- Decorative drifting swells (animation off under reduced motion) -->
+    <svg class="tide__ghost tide__ghost--1" viewBox="0 0 2000 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 Q125 40 250 60 T500 60 T750 60 T1000 60 T1250 60 T1500 60 T1750 60 T2000 60"/></svg>
+    <svg class="tide__ghost tide__ghost--2" viewBox="0 0 2000 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 Q160 54 333 70 T667 70 T1000 70 T1333 70 T1667 70 T2000 70"/></svg>
+
+    <!-- PRERENDER:hero-tide START -->
+    <svg class="tide__svg" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+      <path class="tide__path" data-tide-path d="M0.0 62.7 L10.4 64.1 L20.8 65.3 L31.3 66.2 L41.7 66.9 L52.1 67.3 L62.5 67.5 L72.9 67.3 L83.3 66.9 L93.8 66.2 L104.2 65.3 L114.6 64.1 L125.0 62.7 L135.4 61.0 L145.8 59.2 L156.3 57.3 L166.7 55.2 L177.1 53.1 L187.5 50.9 L197.9 48.7 L208.3 46.5 L218.8 44.3 L229.2 42.3 L239.6 40.4 L250.0 38.6 L260.4 37.0 L270.8 35.6 L281.3 34.5 L291.7 33.6 L302.1 33.0 L312.5 32.6 L322.9 32.5 L333.3 32.7 L343.8 33.2 L354.2 34.0 L364.6 35.0 L375.0 36.3 L385.4 37.8 L395.8 39.6 L406.3 41.5 L416.7 43.5 L427.1 45.7 L437.5 47.9 L447.9 50.3 L458.3 52.6 L468.8 54.9 L479.2 57.1 L489.6 59.2 L500.0 61.3 L510.4 63.1 L520.8 64.8 L531.3 66.2 L541.7 67.4 L552.1 68.4 L562.5 69.0 L572.9 69.4 L583.3 69.5 L593.8 69.3 L604.2 68.7 L614.6 67.7 L625.0 66.3 L635.4 64.7 L645.8 62.7 L656.3 60.5 L666.7 58.0 L677.1 55.4 L687.5 52.7 L697.9 49.9 L708.3 47.1 L718.8 44.3 L729.2 41.6 L739.6 39.1 L750.0 36.7 L760.4 34.6 L770.8 32.7 L781.3 31.1 L791.7 29.9 L802.1 29.0 L812.5 28.5 L822.9 28.4 L833.3 28.6 L843.8 29.2 L854.2 30.1 L864.6 31.2 L875.0 32.7 L885.4 34.4 L895.8 36.4 L906.3 38.5 L916.7 40.8 L927.1 43.3 L937.5 45.8 L947.9 48.4 L958.3 51.0 L968.8 53.6 L979.2 56.1 L989.6 58.4 L1000.0 60.7"/>
+    </svg>
+
+    <ul class="tide__labels" role="list" aria-hidden="true" data-tide-labels>
+      <li class="tide__label tide__label--low is-start" style="left:6.25%;top:67.49%"><span>LOW 1:30 AM</span><span>0.4 FT</span></li>
+      <li class="tide__label tide__label--high" style="left:32.08%;top:32.51%"><span>HIGH 7:42 AM</span><span>+2.1 FT</span></li>
+      <li class="tide__label tide__label--low" style="left:58.19%;top:69.54%"><span>LOW 1:58 PM</span><span>0.3 FT</span></li>
+      <li class="tide__label tide__label--high" style="left:82.08%;top:28.40%"><span>HIGH 7:42 PM</span><span>+2.3 FT</span></li>
+    </ul>
+    <!-- "Now" marker. Static at 10:30 AM without JS; hero.js moves it to the current Miami time. -->
+    <span class="tide__now" data-tide-now style="left:43.75%;top:47.95%" aria-hidden="true"><span class="tide__now-label">Now</span></span>
+    <!-- PRERENDER:hero-tide END -->
+  </div>
+  <!-- PRERENDER:hero-data START (all 5 cities as JSON for the city switcher; empty = hero.js uses its built-in sample) -->
+  <!-- PRERENDER:hero-data END -->
+</section>
+<!-- ===== END: Hero ===== -->
+
+<!-- ===== SECTION: City news ===== -->
+<!-- 3 newest stories that mention Miami. If there aren't 3, regional South
+     Florida flooding stories fill in, tagged "Regional". Rendered at deploy. -->
+<section class="section news" id="news" aria-labelledby="news-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <div class="section-head__row">
+          <!-- PRERENDER:news-status START -->
+          <p class="label section-head__eyebrow">Latest news</p>
+          <!-- PRERENDER:news-status END -->
+        </div>
+        <h2 class="display" id="news-title">Miami flooding news</h2>
+      </div>
+      <a class="btn btn--outline btn--sm" href="../news/">View All News</a>
+    </div>
+    <!-- PRERENDER:news-cards START (city-filtered headlines from data/news.json) -->
+    <p class="lede">The latest Miami flooding headlines appear here when the site is built.</p>
+    <!-- PRERENDER:news-cards END -->
+  </div>
+</section>
+<!-- ===== END: City news ===== -->
+
+
+<!-- ===== SECTION: Proposed fixes ===== -->
+<!-- Infographic timeline of plans and projects, newest first. Data:
+     data/curated/timeline/miami.json (hand-edited, review quarterly).
+     Rendered by scripts/prerender.js (also run once when the page was built,
+     so the timeline shows even without the deploy step). -->
+<section class="section section--alt fixes" id="fixes" aria-labelledby="fixes-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <p class="label section-head__eyebrow">Plans, costs, and results</p>
+        <h2 class="display" id="fixes-title">Proposed fixes</h2>
+      </div>
+    </div>
+    <!-- PRERENDER:fixes START -->
+    <div class="fixes__summary">
+      <div class="fixes__sum"><p class="fixes__sum-num">$6.8B</p><p class="fixes__sum-label">proposed or under way</p></div>
+      <div class="fixes__sum"><p class="fixes__sum-num">6</p><p class="fixes__sum-label">plans, projects, and funding</p></div>
+      <div class="fixes__sum"><p class="fixes__sum-num">3</p><p class="fixes__sum-label">in design or under construction</p></div>
+      <div class="fixes__sum"><p class="fixes__sum-num">0</p><p class="fixes__sum-label">completed</p></div>
+    </div>
+    <ol class="timeline" role="list">
+      <li class="tl" data-status="in-progress">
+        <span class="tl__year" aria-hidden="true">2026</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2026-07-01">Jul 2026</time><span class="tl__status">In progress</span></div>
+          <h3 class="tl__title">Shorecrest South flood improvements</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$34.6M</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:8.7%"></span></div>
+          </div>
+          <p class="tl__summary">New and larger storm drains, injection wells, and a stormwater pump station that empties into the Little River Canal, plus rebuilt roads.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>Built to relieve street flooding for 327 properties worth about $264M. Phase I construction July 2026 to March 2027; Phase II through May 2029.</p>
+          <p class="tl__sources">Source: <a href="https://www.miami.gov/My-Government/Departments/Resilience-and-Public-Works/Resilience-and-Public-Works-Projects-Per-District/District-5-Resilience-and-Public-Works-Projects/Shorecrest-South-Neighborhood-Flood-Improvements" rel="noopener">City of Miami</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="in-design">
+        <span class="tl__year" aria-hidden="true">2025</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2025-11-19">Nov 2025</time><span class="tl__status">In design</span></div>
+          <h3 class="tl__title">Brickell Bay Drive seawall and road</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$32.7M</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:8.4%"></span></div>
+          </div>
+          <p class="tl__summary">New seawall, bay walk, rebuilt road, and drainage along Brickell Bay Drive from SE 14th Street to SE 15th Road.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>Protects about 787 homes and $316M in property value from storm surge and rising seas. Construction expected February 2027 to January 2029.</p>
+          <p class="tl__sources">Source: <a href="https://www.miami.gov/My-Government/Departments/Resilience-and-Public-Works/Resilience-and-Public-Works-Projects-Per-District/District-2-Resilience-and-Public-Works-Projects/Brickell-Bay-Drive-Seawall-Resiliency-Improvements" rel="noopener">City of Miami</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="planned">
+        <span class="tl__year" aria-hidden="true">2024</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2024-05-01">May 2024</time><span class="tl__status">Planned</span></div>
+          <h3 class="tl__title">Back Bay storm surge plan, revised</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$2.7B</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:76.6%"></span></div>
+          </div>
+          <p class="tl__summary">The Army Corps of Engineers' redrawn plan drops the floodwall. It elevates about 2,100 homes, floodproofs about 400 critical buildings like fire stations and shelters, and studies reefs and mangroves.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>Sent to Congress for authorization in 2024. Federally funded if approved; not yet built.</p>
+          <p class="tl__sources">Source: <a href="https://www.wuwf.org/florida-news/2024-05-08/plan-to-spend-2-7-billion-to-protect-miami-dade-from-storm-surge-headed-to-congress" rel="noopener">WUWF / WLRN</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="planned">
+        <span class="tl__year" aria-hidden="true">2021</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2021-05-01">May 2021</time><span class="tl__status">Planned</span></div>
+          <h3 class="tl__title">Miami Stormwater Master Plan</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$3.8B</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:90.9%"></span></div>
+          </div>
+          <p class="tl__summary">A 40-year plan for giant pumps, miles of 6-foot seawalls, thousands of injection wells, and 8-foot underground pipes.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>Aims to keep Miami livable largely as it is through 2060. The city says it will not keep every neighborhood dry.</p>
+          <p class="tl__sources">Source: <a href="https://www.bdcnetwork.com/cost-keep-miami-dry-over-next-few-decades-4-billion" rel="noopener">Building Design + Construction</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="revised">
+        <span class="tl__year" aria-hidden="true">2020</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2020-06-01">Jun 2020</time><span class="tl__status">Revised</span></div>
+          <h3 class="tl__title">Back Bay floodwall plan</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$4.6B</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:100.0%"></span></div>
+          </div>
+          <p class="tl__summary">The Army Corps' first plan: a mile-long floodwall along Biscayne Bay and flood gates across the Miami River, Little River, and Biscayne Canal.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>Rejected by residents and the county. In 2022 the Corps agreed to redo it with more natural protection.</p>
+          <p class="tl__sources">Source: <a href="https://www.wlrn.org/post/army-corps-unveils-46-billion-plan-protect-miami-dade-storm-surge" rel="noopener">WLRN, 2020</a>, <a href="https://www.wlrn.org/news/2022-09-07/army-corps-agrees-to-redo-billion-dollar-plan-to-fortify-miami-dade-against-storm-surge" rel="noopener">WLRN, 2022</a></p>
+        </article>
+      </li>
+      <li class="tl" data-status="in-progress">
+        <span class="tl__year" aria-hidden="true">2017</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="2017-11-07">Nov 2017</time><span class="tl__status">In progress</span></div>
+          <h3 class="tl__title">Miami Forever Bond</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">$192M</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:20.4%"></span></div>
+          </div>
+          <p class="tl__summary">Voters approved a $400M bond. The biggest share, $192M, is set aside for sea level rise and flood prevention.</p>
+          <p class="tl__outcome"><strong>Outcome</strong>By late 2025 only about $30M (16%) of the flood money had been spent. Officials cite delays, lost grants, and changing plans.</p>
+          <p class="tl__sources">Source: <a href="https://www.wlrn.org/government-politics/2025-12-31/miamis-forever-bond-program-sinkhole-or-solution" rel="noopener">WLRN, 2025</a>, <a href="https://www.miami.gov/Government/Miami-Forever-Bond" rel="noopener">City of Miami</a></p>
+        </article>
+      </li>
+    </ol>
+    <p class="fixes__note">Bars compare each cost with the largest item (square-root scale, so smaller projects stay visible). Last reviewed Oct 2026. Costs are as published; final costs may change.</p>
+<!-- PRERENDER:fixes END -->
+  </div>
+</section>
+<!-- ===== END: Proposed fixes ===== -->
+
+
+<!-- ===== SECTION: Final CTA ===== -->
+<section class="section final-cta" aria-labelledby="cta-title">
+  <div class="container final-cta__inner">
+    <h2 class="display" id="cta-title">Is your Miami address at risk?</h2>
+    <p class="lede">See your flood zone, ground elevation, and projected 2050 high tide in seconds. Free, no sign-up.</p>
+    <div class="final-cta__buttons">
+      <a class="btn btn--primary" href="../#check-your-address">Check Your Address</a>
+      <a class="btn btn--outline" href="../">Back to all cities</a>
+    </div>
+  </div>
+</section>
+<!-- ===== END: Final CTA ===== -->
+
+</main>
+
+<!-- ===== SECTION: Footer (global) ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__about">
+        <a class="brand" href="../">
+          <svg class="brand__mark" viewBox="0 0 34 34" aria-hidden="true">
+            <circle cx="17" cy="17" r="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.4)"/>
+            <path d="M7 15c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 21c2.5 0 2.5-2.4 5-2.4s2.5 2.4 5 2.4 2.5-2.4 5-2.4 2.5 2.4 5 2.4" fill="none" stroke="#4FD1E8" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>Sinking South Florida</span>
+        </a>
+        <p>Plain, sourced information on flooding and sea level rise for the people who live with it.</p>
+      </div>
+      <nav aria-label="Cities">
+        <h2>Cities</h2>
+        <ul role="list">
+          <li><a href="../miami/">Miami</a></li>
+          <li><a href="../miami-beach/">Miami Beach</a></li>
+          <li><a href="../hallandale-beach/">Hallandale Beach</a></li>
+          <li><a href="../hollywood/">Hollywood</a></li>
+          <li><a href="../fort-lauderdale/">Fort Lauderdale</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Explore">
+        <h2>Explore</h2>
+        <ul role="list">
+          <li><a href="../#check-your-address">Risk Tool</a></li>
+          <li><a href="../news/">News</a></li>
+          <li><a href="../resources/">Resources</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Data sources</h2>
+        <ul role="list">
+          <li><a href="https://tidesandcurrents.noaa.gov/" rel="noopener">NOAA Tides &amp; Currents</a></li>
+          <li><a href="https://msc.fema.gov/portal/home" rel="noopener">FEMA Flood Map Service Center</a></li>
+          <li><a href="https://www.usgs.gov/" rel="noopener">USGS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>&copy; 2026 Sinking South Florida</p>
+      <p>Not a substitute for official flood zone determinations.</p>
+    </div>
+  </div>
+</footer>
+<!-- ===== END: Footer ===== -->
+
+</body>
+</html>

@@ -352,5 +352,6 @@ Deploy workflow: checkout main + copy /data from the data branch
 - The King Tide Season panel in the hero is hand-edited in `index.html` (dates per season), not pipeline data.
 - Curated content (Instagram, hidden posts, history timeline) is added through owner-only GitHub Issue Forms.
 - Pre-render works through marker comments: `<!-- PRERENDER:name START -->` ... `<!-- PRERENDER:name END -->`. Content between a pair is replaced at deploy; sample markup inside only shows if data is missing. Don't delete the markers.
+- City pages (decided 2026-10-29): same hero as home, locked to that city, with the city list as links to the other city pages. Then 3 news stories for that city (regional stories fill gaps, tagged "Regional"), then the "Proposed fixes" infographic timeline from `data/curated/timeline/{city}.json` (cost, status, outcome, sources; hand-edited, reviewed quarterly). Miami is the template for the other four.
 - News auto-publishes after keyword, location, and blocklist filters. Reddit posts are vetted: they go to a daily GitHub review issue and only ticked posts publish (decided 2026-10-29). Bluesky auto-publishes after filters.
 

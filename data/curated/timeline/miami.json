@@ -1,0 +1,86 @@
+{
+  "_comment": [
+    "Proposed fixes for Miami: shown as the infographic timeline on miami/index.html.",
+    "Hand-curated. Review about once a quarter: update status, cost, and outcome, add new projects.",
+    "Fields per entry:",
+    "  date      YYYY-MM-DD (or YYYY-MM-01 / YYYY-01-01 when only month or year is known)",
+    "  title     short project name",
+    "  summary   one or two plain sentences: what it is",
+    "  type      plan | project | funding | study",
+    "  status    Planned | In design | In progress | Completed | Revised | On hold",
+    "  cost      { usd: number, label: text shown on the page }",
+    "  outcome   what it does or has done, in plain words",
+    "  sources   at least one { name, url }. Entries without a source are skipped.",
+    "Entries show newest first."
+  ],
+  "city": "miami",
+  "lastReviewed": "2026-10-29",
+  "items": [
+    {
+      "date": "2026-07-01",
+      "title": "Shorecrest South flood improvements",
+      "summary": "New and larger storm drains, injection wells, and a stormwater pump station that empties into the Little River Canal, plus rebuilt roads.",
+      "type": "project",
+      "status": "In progress",
+      "cost": { "usd": 34607969, "label": "$34.6M" },
+      "outcome": "Built to relieve street flooding for 327 properties worth about $264M. Phase I construction July 2026 to March 2027; Phase II through May 2029.",
+      "sources": [{ "name": "City of Miami", "url": "https://www.miami.gov/My-Government/Departments/Resilience-and-Public-Works/Resilience-and-Public-Works-Projects-Per-District/District-5-Resilience-and-Public-Works-Projects/Shorecrest-South-Neighborhood-Flood-Improvements" }]
+    },
+    {
+      "date": "2025-11-19",
+      "title": "Brickell Bay Drive seawall and road",
+      "summary": "New seawall, bay walk, rebuilt road, and drainage along Brickell Bay Drive from SE 14th Street to SE 15th Road.",
+      "type": "project",
+      "status": "In design",
+      "cost": { "usd": 32661520, "label": "$32.7M" },
+      "outcome": "Protects about 787 homes and $316M in property value from storm surge and rising seas. Construction expected February 2027 to January 2029.",
+      "sources": [{ "name": "City of Miami", "url": "https://www.miami.gov/My-Government/Departments/Resilience-and-Public-Works/Resilience-and-Public-Works-Projects-Per-District/District-2-Resilience-and-Public-Works-Projects/Brickell-Bay-Drive-Seawall-Resiliency-Improvements" }]
+    },
+    {
+      "date": "2024-05-01",
+      "title": "Back Bay storm surge plan, revised",
+      "summary": "The Army Corps of Engineers' redrawn plan drops the floodwall. It elevates about 2,100 homes, floodproofs about 400 critical buildings like fire stations and shelters, and studies reefs and mangroves.",
+      "type": "plan",
+      "status": "Planned",
+      "cost": { "usd": 2700000000, "label": "$2.7B" },
+      "outcome": "Sent to Congress for authorization in 2024. Federally funded if approved; not yet built.",
+      "sources": [{ "name": "WUWF / WLRN", "url": "https://www.wuwf.org/florida-news/2024-05-08/plan-to-spend-2-7-billion-to-protect-miami-dade-from-storm-surge-headed-to-congress" }]
+    },
+    {
+      "date": "2021-05-01",
+      "title": "Miami Stormwater Master Plan",
+      "summary": "A 40-year plan for giant pumps, miles of 6-foot seawalls, thousands of injection wells, and 8-foot underground pipes.",
+      "type": "plan",
+      "status": "Planned",
+      "cost": { "usd": 3800000000, "label": "$3.8B" },
+      "outcome": "Aims to keep Miami livable largely as it is through 2060. The city says it will not keep every neighborhood dry.",
+      "sources": [{ "name": "Building Design + Construction", "url": "https://www.bdcnetwork.com/cost-keep-miami-dry-over-next-few-decades-4-billion" }]
+    },
+    {
+      "date": "2020-06-01",
+      "title": "Back Bay floodwall plan",
+      "summary": "The Army Corps' first plan: a mile-long floodwall along Biscayne Bay and flood gates across the Miami River, Little River, and Biscayne Canal.",
+      "type": "plan",
+      "status": "Revised",
+      "cost": { "usd": 4600000000, "label": "$4.6B" },
+      "outcome": "Rejected by residents and the county. In 2022 the Corps agreed to redo it with more natural protection.",
+      "sources": [
+        { "name": "WLRN, 2020", "url": "https://www.wlrn.org/post/army-corps-unveils-46-billion-plan-protect-miami-dade-storm-surge" },
+        { "name": "WLRN, 2022", "url": "https://www.wlrn.org/news/2022-09-07/army-corps-agrees-to-redo-billion-dollar-plan-to-fortify-miami-dade-against-storm-surge" }
+      ]
+    },
+    {
+      "date": "2017-11-07",
+      "title": "Miami Forever Bond",
+      "summary": "Voters approved a $400M bond. The biggest share, $192M, is set aside for sea level rise and flood prevention.",
+      "type": "funding",
+      "status": "In progress",
+      "cost": { "usd": 192000000, "label": "$192M" },
+      "outcome": "By late 2025 only about $30M (16%) of the flood money had been spent. Officials cite delays, lost grants, and changing plans.",
+      "sources": [
+        { "name": "WLRN, 2025", "url": "https://www.wlrn.org/government-politics/2025-12-31/miamis-forever-bond-program-sinkhole-or-solution" },
+        { "name": "City of Miami", "url": "https://www.miami.gov/Government/Miami-Forever-Bond" }
+      ]
+    }
+  ]
+}

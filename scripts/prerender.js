@@ -16,7 +16,10 @@
                      every data-field, and a JSON snapshot of all 5 cities
                      that js/hero.js uses for the city switcher
      city cards      risk chip + peak today (data-card-risk / data-card-peak)
-     numbers-*       the 4 "By the numbers" stats
+     numbers-*       the 4 "By the numbers" stats (home only)
+     fixes           proposed fixes timeline (city pages, from
+                     data/curated/timeline/<city>.json)
+   Pages: index.html and every <city>/index.html that exists.
    Data files: cities.json (hourly), news.json, stats.json (weekly).
 
    Usage: node scripts/prerender.js <site-folder>   (e.g. _site)
@@ -53,7 +56,7 @@ const fmtTime = (d) => new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour: 'n
    (unchanged if the markers aren't found). */
 function replaceBlock(html, name, inner) {
   const re = new RegExp(`(<!-- PRERENDER:${name} START[\\s\\S]*?-->)[\\s\\S]*?(<!-- PRERENDER:${name} END -->)`);
-  if (!re.test(html)) { console.warn(`  marker PRERENDER:${name} not found`); return html; }
+  if (!re.test(html)) return html;   // this page doesn't have that block
   return html.replace(re, (_, a, b) => `${a}\n${inner}\n${b}`);
 }
 
@@ -67,14 +70,15 @@ function pickVaried(items, n) {
 
 /* One news card. No article images or text (copyright): the photo is our
    own city image, and the line under the headline is the outlet name. */
-function newsCard(it, used) {
+function newsCard(it, used, base = '', regional = false) {
   const city = CITY[it.cities[0]];
   /* First unused photo for this city, else any unused photo (untagged stories) */
   const img = (city ? city.imgs : []).concat(ALL_IMGS).find((p) => !used.has(p)) || ALL_IMGS[0];
   used.add(img);
-  const tags = it.cities.map((c) => CITY[c] && `<span class="tag">${esc(CITY[c].name)}</span>`).filter(Boolean).join('');
+  const tags = regional ? '<span class="tag">Regional</span>'
+    : it.cities.map((c) => CITY[c] && `<span class="tag">${esc(CITY[c].name)}</span>`).filter(Boolean).join('');
   return `      <li class="card">
-        <div class="card__media"><img src="${img}" alt="" loading="lazy" decoding="async"></div>
+        <div class="card__media"><img src="${base}${img}" alt="" loading="lazy" decoding="async"></div>
         <div class="card__body">
           <p class="card__meta">${it.date ? `<time datetime="${esc(it.date)}">${esc(fmtDate(it.date))}</time>` : ''}${tags}</p>
           <h3 class="card__title"><a href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.headline)}<span class="visually-hidden"> (opens ${esc(it.source)} in a new tab)</span></a></h3>
@@ -83,13 +87,22 @@ function newsCard(it, used) {
       </li>`;
 }
 
-function renderNews(html) {
+/* Home: 3 newest, one per city where possible.
+   City page: 3 newest that mention that city; if fewer than 3, the newest
+   other South Florida stories fill in, tagged "Regional". */
+function renderNews(html, page) {
   const news = readJSON('news.json');
   const items = news && news.items || [];
   if (!items.length) { console.log('  news: no data, keeping sample cards'); return html; }
-  const pick = pickVaried(items, 3);
+  let pick, regional = new Set();
+  if (page.city) {
+    pick = items.filter((it) => it.cities.includes(page.city)).slice(0, 3);
+    items.filter((it) => !pick.includes(it)).slice(0, 3 - pick.length).forEach((it) => { pick.push(it); regional.add(it); });
+  } else {
+    pick = pickVaried(items, 3);
+  }
   const used = new Set();
-  html = replaceBlock(html, 'news-cards', `    <ul class="news__row" role="list">\n${pick.map((it) => newsCard(it, used)).join('\n')}\n    </ul>`);
+  html = replaceBlock(html, 'news-cards', `    <ul class="news__row" role="list">\n${pick.map((it) => newsCard(it, used, page.base, regional.has(it))).join('\n')}\n    </ul>`);
   html = replaceBlock(html, 'news-status', `          <p class="label section-head__eyebrow">Updated ${esc(fmtTime(new Date()))} ET</p>`);
   console.log(`  news: rendered ${pick.length} cards`);
   return html;
@@ -161,18 +174,24 @@ function snapshotCity(c) {
   };
 }
 
-function renderHero(html) {
+/* page.city = null for the home page (Miami data, city switcher),
+   or a city id for a city page (that city's data, city list as links). */
+function renderHero(html, page) {
   const doc = readJSON('cities.json');
   if (!doc || !doc.cities || !doc.cities.miami || !doc.cities.miami.tides) { console.log('  hero: no data, keeping sample'); return html; }
   const snap = {};
   Object.values(doc.cities).forEach((c) => { snap[c.id] = snapshotCity(c); });
-  const m = snap.miami, mc = doc.cities.miami;
+  const id = page.city || 'miami';
+  if (!snap[id]) return html;
+  const m = snap[id], mc = doc.cities[id];
 
-  /* h1 from Miami's headline */
+  /* h1. Home: Miami's headline ("King Tide / with Street Flooding Likely").
+     City page: "Miami Flooding" + that city's condition, for the keyword. */
   const h = mc.headline || { line1: 'Normal Tides', line2: 'No Flooding Expected' };
-  html = replaceBlock(html, 'hero-h1', `      <h1 class="hero__title" id="hero-title">
-        <span class="hero__title-1">${esc(h.line1)}</span>
-        <span class="hero__title-2">${esc(h.line2)}<span class="visually-hidden"> in South Florida</span></span>
+  const line2 = page.city ? (/^[a-z]/.test(h.line2) ? `${h.line1} ${h.line2}` : `${h.line1}, ${h.line2}`) : h.line2;
+  html = replaceBlock(html, 'hero-h1', `      <h1 class="hero__title${page.city ? ' hero__title--city' : ''}" id="hero-title">
+        <span class="hero__title-1">${esc(page.city ? m.name + ' Flooding' : h.line1)}</span>
+        <span class="hero__title-2">${esc(line2)}<span class="visually-hidden"> ${page.city ? 'today' : 'in South Florida'}</span></span>
       </h1>`);
 
   /* Simple text fields (also the header tide pill) */
@@ -186,8 +205,8 @@ function renderHero(html) {
              .replace(/(data-ring="last" stroke-dasharray=")[^"]*"/, `$1${dash(m.floodDaysLast, 40)}"`)
              .replace(/data-risk-meter data-risk="\w+" style="--pos: \d+%"/, `data-risk-meter data-risk="${m.risk}" style="--pos: ${RISK_POS[m.risk]}%"`);
 
-  /* Mini stats: first three cities that aren't Miami */
-  const minis = MINI_ORDER.filter((k) => k !== 'miami' && snap[k]).slice(0, 3).map((k) => { const c = snap[k]; return `      <li class="mini" data-mini data-risk="${c.risk}">
+  /* Mini stats: first three cities that aren't this page's city */
+  const minis = MINI_ORDER.filter((k) => k !== id && snap[k]).slice(0, 3).map((k) => { const c = snap[k]; return `      <li class="mini" data-mini data-risk="${c.risk}">
         <p class="mini__value"><span data-mini-level>${fmtLevel(c.level)}</span><span class="mini__unit">ft</span></p>
         <p class="mini__city"><span data-mini-city>${esc(c.name)}</span></p>
         <p class="mini__risk"><span data-mini-risk>${RISK_LABEL[c.risk]}</span> risk</p>
@@ -196,10 +215,13 @@ function renderHero(html) {
 
   /* City list */
   const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg>';
-  const rows = Object.keys(CITY).filter((k) => snap[k]).map((k) => `        <li><button class="city-row" type="button" data-city-btn="${k}" aria-pressed="${k === 'miami'}" data-risk="${snap[k].risk}">
+  const inner = (k) => `
           <span class="city-row__name">${esc(snap[k].name)}</span><span class="city-row__value">${fmtLevel(snap[k].level)} ft</span>
           <span class="city-row__icon" aria-hidden="true">${icon}</span>
-        </button></li>`).join('\n');
+        `;
+  const rows = Object.keys(CITY).filter((k) => snap[k]).map((k) => page.city
+    ? `        <li><a class="city-row" href="${k === id ? './' : '../' + k + '/'}" data-risk="${snap[k].risk}"${k === id ? ' aria-current="page"' : ''}>${inner(k)}</a></li>`
+    : `        <li><button class="city-row" type="button" data-city-btn="${k}" aria-pressed="${k === 'miami'}" data-risk="${snap[k].risk}">${inner(k)}</button></li>`).join('\n');
   html = replaceBlock(html, 'hero-cities', `      <ul class="city-list" role="list" aria-labelledby="city-picker-label">\n${rows}\n      </ul>`);
 
   /* Tide wave: curve, HIGH/LOW labels, "Now" dot (as of deploy; hero.js moves it live) */
@@ -237,7 +259,7 @@ ${labels}
                .replace(new RegExp(`(<strong data-card-peak="${k}">)[^<]*(</strong>)`), `$1${fmtLevel(c.level)} ft$2`);
   });
   html = replaceBlock(html, 'cities-status', `      <p class="label section-head__eyebrow">Updated ${esc(m.updated)} ET</p>`);
-  console.log(`  hero: ${mc.headline ? mc.headline.line1 : '?'}; Miami peak ${fmtLevel(m.level)} ft, risk ${m.risk}`);
+  console.log(`  hero: ${mc.headline ? mc.headline.line1 : '?'}; ${m.name} peak ${fmtLevel(m.level)} ft, risk ${m.risk}`);
   return html;
 }
 
@@ -257,6 +279,7 @@ function stat(color, value, unit, label, sourceHtml) {
       </li>`;
 }
 function renderNumbers(html) {
+  if (!html.includes('PRERENDER:numbers-stats')) return html;
   const doc = readJSON('cities.json');
   const claims = (readJSON('stats.json') || {}).nfipClaims;
   const mia = doc && doc.cities && doc.cities.miami;
@@ -278,12 +301,80 @@ function renderNumbers(html) {
   return html;
 }
 
+
+/* ========================================================================
+   PROPOSED FIXES TIMELINE (city pages)
+   Reads data/curated/timeline/<city>.json from the repo (hand-edited,
+   reviewed quarterly). Newest first. Entries without a source are skipped.
+   ======================================================================== */
+const STATUS_SLUG = (s) => String(s || '').toLowerCase().replace(/\s+/g, '-');
+const fmtUsd = (n) => n >= 1e9 ? '$' + (n / 1e9).toFixed(1).replace(/\.0$/, '') + 'B' : '$' + Math.round(n / 1e6) + 'M';
+const fmtMonth = (d) => new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(d + 'T12:00:00Z'));
+
+function renderFixes(html, page) {
+  if (!page.city || !html.includes('PRERENDER:fixes')) return html;
+  let tl;
+  try { tl = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'curated', 'timeline', page.city + '.json'), 'utf8')); }
+  catch (e) { console.log(`  fixes: no timeline file for ${page.city}`); return html; }
+  const items = (tl.items || []).filter((i) => i.sources && i.sources.length).sort((a, b) => b.date.localeCompare(a.date));
+  if (!items.length) return html;
+
+  /* Summary strip. "Proposed or under way" leaves out revised and on-hold
+     items so a replaced plan isn't counted twice. */
+  const live = items.filter((i) => !/revised|on hold/i.test(i.status));
+  const total = live.reduce((a, i) => a + (i.cost && i.cost.usd || 0), 0);
+  const count = (re) => items.filter((i) => re.test(i.status)).length;
+  const maxCost = Math.max(...items.map((i) => (i.cost && i.cost.usd) || 0));
+  const sum = (num, label) => `      <div class="fixes__sum"><p class="fixes__sum-num">${num}</p><p class="fixes__sum-label">${label}</p></div>`;
+
+  const cards = items.map((i) => {
+    const usd = (i.cost && i.cost.usd) || 0;
+    const pct = maxCost ? Math.max(2, Math.sqrt(usd / maxCost) * 100) : 0;   // square-root scale
+    const srcs = i.sources.map((x) => `<a href="${esc(x.url)}" rel="noopener">${esc(x.name)}</a>`).join(', ');
+    return `      <li class="tl" data-status="${STATUS_SLUG(i.status)}">
+        <span class="tl__year" aria-hidden="true">${esc(i.date.slice(0, 4))}</span>
+        <article class="tl__card">
+          <div class="tl__top"><time class="tl__when" datetime="${esc(i.date)}">${esc(fmtMonth(i.date))}</time><span class="tl__status">${esc(i.status)}</span></div>
+          <h3 class="tl__title">${esc(i.title)}</h3>
+          <div class="tl__cost">
+            <p class="tl__cost-num">${esc((i.cost && i.cost.label) || fmtUsd(usd))}</p>
+            <div class="tl__bar" aria-hidden="true"><span style="width:${pct.toFixed(1)}%"></span></div>
+          </div>
+          <p class="tl__summary">${esc(i.summary)}</p>
+          <p class="tl__outcome"><strong>Outcome</strong>${esc(i.outcome)}</p>
+          <p class="tl__sources">Source: ${srcs}</p>
+        </article>
+      </li>`;
+  }).join('\n');
+
+  html = replaceBlock(html, 'fixes', `    <div class="fixes__summary">
+${sum(fmtUsd(total), 'proposed or under way')}
+${sum(items.length, 'plans, projects, and funding')}
+${sum(count(/in progress|in design/i), 'in design or under construction')}
+${sum(count(/completed/i), 'completed')}
+    </div>
+    <ol class="timeline" role="list">
+${cards}
+    </ol>
+    <p class="fixes__note">Bars compare each cost with the largest item (square-root scale, so smaller projects stay visible). Last reviewed ${esc(fmtMonth(tl.lastReviewed))}. Costs are as published; final costs may change.</p>`);
+  console.log(`  fixes: ${items.length} items, ${fmtUsd(total)}`);
+  return html;
+}
+
 /* ----- Main ------------------------------------------------------------- */
-const file = path.join(SITE, 'index.html');
-let html = fs.readFileSync(file, 'utf8');
-console.log(`prerender: ${file}`);
-html = renderNews(html);
-html = renderHero(html);
-html = renderNumbers(html);
-fs.writeFileSync(file, html);
+/* Every page that exists: the home page plus each city folder */
+const PAGES = [{ file: 'index.html', city: null, base: '' }]
+  .concat(Object.keys(CITY).map((id) => ({ file: `${id}/index.html`, city: id, base: '../' })))
+  .filter((p) => fs.existsSync(path.join(SITE, p.file)));
+
+PAGES.forEach((page) => {
+  const file = path.join(SITE, page.file);
+  let html = fs.readFileSync(file, 'utf8');
+  console.log(`prerender: ${page.file}`);
+  html = renderNews(html, page);
+  html = renderHero(html, page);
+  html = renderNumbers(html);
+  html = renderFixes(html, page);
+  fs.writeFileSync(file, html);
+});
 console.log('prerender: done');
