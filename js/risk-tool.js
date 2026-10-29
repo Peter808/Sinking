@@ -53,14 +53,17 @@
   /* fetch() with a timeout and one retry (FEMA's server is sometimes slow);
      resolves to parsed JSON or rejects */
   function getJSON(url) {
-    return getOnce(url).catch(function () { return sleep(800).then(function () { return getOnce(url); }); });
+    return getOnce(url).catch(function (e) {
+      if (e && e.status === 429) throw e;   // rate limited: retrying right away makes it worse
+      return sleep(800).then(function () { return getOnce(url); });
+    });
   }
   function getOnce(url) {
     var ctrl = 'AbortController' in window ? new AbortController() : null;
     var t = setTimeout(function () { if (ctrl) ctrl.abort(); }, CFG.timeoutMs);
     return fetch(url, ctrl ? { signal: ctrl.signal } : {}).then(function (r) {
       clearTimeout(t);
-      if (!r.ok) throw new Error('HTTP ' + r.status);
+      if (!r.ok) { var err = new Error('HTTP ' + r.status); err.status = r.status; throw err; }
       return r.json();
     }, function (e) { clearTimeout(t); throw e; });
   }
@@ -81,15 +84,41 @@
 
 
   /* ----- 1. Address -> location (OpenStreetMap Nominatim) ---------------
-     Prefers results inside the two counties (viewbox), but isn't limited to
-     it, so we can tell people when an address is outside coverage. */
-  function geocode(address) {
+     Covers all of Miami-Dade, including unincorporated areas, and Broward.
+
+     normalizeAddress(): people often write "Unincorporated Dade" or
+     "Dade County", which OpenStreetMap doesn't recognize. We remove
+     "unincorporated", turn any "Dade"/"Dade County" into "Miami-Dade County",
+     and add ", FL" if no state is given.
+
+     If the first search only finds the street (no house number) and the
+     address has a neighborhood name (Kendall, Westchester...), we try once
+     more with "Miami", the official mailing city for unincorporated
+     addresses. That second try often finds the exact house.
+     Max 2 lookups per check, 1.1s apart (OpenStreetMap's usage policy). */
+  function normalizeAddress(address) {
+    var a = address
+      .replace(/\bunincorporated\b/ig, '')
+      .replace(/\b(?:miami[\s-]*)?dade(?:\s+county)?\b/ig, 'Miami-Dade County')
+      .replace(/\s*,\s*,+/g, ',').replace(/^[\s,]+|[\s,]+$/g, '').replace(/\s{2,}/g, ' ');
+    if (!/,\s*(fl|fla|florida)\b|\bFL\s*\d{5}/i.test(a) && !/\b(?:[A-Z]{2})\s*\d{5}\b/.test(a)) a += ', FL';
+    return a;
+  }
+
+  /* "3000 SW 87th Ave, Westchester, FL 33165" -> "3000 SW 87th Ave, Miami, FL 33165" */
+  function asMiamiMailing(address) {
+    var parts = address.split(',').map(function (p) { return p.trim(); });
+    var zip = (address.match(/\b(3\d{4})\b/) || [])[1];
+    return parts[0] + ', Miami, FL' + (zip ? ' ' + zip : '');
+  }
+
+  function searchOnce(q) {
     var wait = Math.max(0, 1100 - (Date.now() - lastGeocode));
     return sleep(wait).then(function () {
       lastGeocode = Date.now();
       var b = CFG.searchBox;
-      return getJSON(CFG.endpoints.geocode + '?' + qs({
-        q: address, format: 'jsonv2', addressdetails: 1, limit: 1, countrycodes: 'us',
+      return getOnce(CFG.endpoints.geocode + '?' + qs({
+        q: q, format: 'jsonv2', addressdetails: 1, limit: 1, countrycodes: 'us',
         viewbox: [b.west, b.north, b.east, b.south].join(',')
       }));
     }).then(function (list) {
@@ -99,8 +128,25 @@
         lat: +r.lat, lon: +r.lon,
         county: a.county || '',
         exact: !!a.house_number,
-        label: [a.house_number && a.road ? a.house_number + ' ' + a.road : (a.road || r.name || ''), a.city || a.town || a.village || a.hamlet || '', a.postcode || ''].filter(Boolean).join(', ')
+        label: [a.house_number && a.road ? a.house_number + ' ' + a.road : (a.road || r.name || ''), a.city || a.town || a.village || (a.county === 'Miami-Dade County' ? 'Unincorporated Miami-Dade' : (a.hamlet || '')), a.postcode || ''].filter(Boolean).join(', ')
       };
+    });
+  }
+
+  function geocode(address) {
+    var q = normalizeAddress(address);
+    var hasNumber = /^\s*\d+/.test(q);
+    var place = q.split(',')[1] ? q.split(',')[1].trim().toLowerCase() : '';
+    var retryable = hasNumber && place && place !== 'miami' && place !== 'fl';
+    return searchOnce(q).then(function (first) {
+      if ((first && first.exact) || !retryable) return first;
+      /* Only retry for Miami-Dade (or no match yet). A street-level Broward
+         match stays as is, so it can't jump to a same-named street in Miami. */
+      if (first && first.county !== 'Miami-Dade County') return first;
+      return searchOnce(asMiamiMailing(q)).then(function (second) {
+        if (second && second.exact && second.county === 'Miami-Dade County') return second;
+        return first || second;
+      }, function () { return first; });
     });
   }
 
@@ -226,6 +272,7 @@
     loading: '<div class="risk-tool__status"><div class="risk-tool__status-icon"><span class="spinner"></span></div><div><h3>Checking <span data-addr></span></h3><p>Finding the address, then looking up its flood zone and ground elevation.</p></div></div>',
     outside: '<div class="risk-tool__status"><div class="risk-tool__status-icon" style="color:var(--risk-moderate)">' + ICON_PIN + '</div><div><h3>Outside our coverage area</h3><p><span data-addr></span> looks like it is outside Miami-Dade and Broward. For other areas, check the <a href="https://msc.fema.gov/portal/home" rel="noopener">FEMA Flood Map Service Center</a>.</p></div></div>',
     notfound: '<div class="risk-tool__status"><div class="risk-tool__status-icon" style="color:var(--risk-moderate)">' + ICON_PIN + '</div><div><h3>We couldn\'t find that address</h3><p>Try adding the city, for example "123 Main St, Hollywood". Unit numbers can confuse the search, so leave them out.</p></div></div>',
+    busy: '<div class="risk-tool__status"><div class="risk-tool__status-icon" style="color:var(--risk-moderate)">' + ICON_ALERT + '</div><div><h3>The address search is busy</h3><p>OpenStreetMap\'s free address search is limiting requests right now. Please wait a minute and try again.</p></div></div>',
     error: '<div class="risk-tool__status"><div class="risk-tool__status-icon" style="color:var(--risk-severe)">' + ICON_ALERT + '</div><div><h3>Something went wrong</h3><p>The mapping services didn\'t respond. Please try again in a minute.</p></div></div>'
   };
 
@@ -299,8 +346,8 @@
           result.hidden = false;
           result.scrollIntoView({ block: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         });
-      }).catch(function () {
-        if (my === runId) showStatus('error', address);
+      }).catch(function (e) {
+        if (my === runId) showStatus(e && e.status === 429 ? 'busy' : 'error', address);
       }).then(function () { if (my === runId) submit.disabled = false; });
     });
   }
