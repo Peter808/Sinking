@@ -624,10 +624,10 @@ html.js .kingtides__scroll {
    Short version of the home hero: same sky, photo, scrims and navy fade
    (sections 1 above), no data. Change padding to make it taller or shorter.
    ========================================================================== */
-.hero--page { padding-bottom: clamp(96px, 12vw, 160px); }
+.hero--page { min-height: 0; padding-bottom: clamp(64px, 7vw, 104px); }   /* short: content below shows on first screen */
 .hero--page .hero__image { opacity: 22%; }
 .hero-page { display: flex; flex-direction: column; gap: var(--space-2); padding-top: var(--space-4); }
-.hero-page__title { font-weight: 300; font-size: clamp(44px, 6vw, 88px); letter-spacing: -0.035em; line-height: 1; max-width: 16ch; }
+.hero-page__title { font-weight: 300; font-size: clamp(44px, 6vw, 88px); letter-spacing: -0.035em; line-height: 1; max-width: 22ch; }
 .hero-page__lede { font-size: var(--fs-body-lg); color: var(--text-primary); max-width: 58ch; opacity: 0.9; }
 .hero-page__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: var(--space-1); }
 
