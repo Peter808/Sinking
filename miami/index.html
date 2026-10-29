@@ -168,9 +168,11 @@
 <main id="main">
 
 <!-- ===== SECTION: Hero ===== -->
-<!-- City page: hero is locked to Miami. The city list links to the other city pages
-     (rendered at deploy). hero.js still draws the tide wave and the live "Now" dot. -->
-<section class="hero" id="hero" data-hero data-city="miami" aria-labelledby="hero-title">
+<!-- City page hero: compact, Miami only. Values are written in at deploy
+     by scripts/prerender.js (data-field elements); hero.js keeps the tide
+     wave's "Now" dot live and shows "Data delayed" if the data goes stale.
+     Sample values below only show if the site was built without data. -->
+<section class="hero hero--city" id="hero" data-hero data-city="miami" aria-labelledby="hero-title">
 
   <!-- Background: sky gradient (CSS) + center photo + fade to navy -->
   <div class="hero__bg" aria-hidden="true">
@@ -184,139 +186,40 @@
     </picture>
   </div>
 
-  <div class="hero__inner container">
-
-    <!-- Left column: eyebrow, h1, summary -->
-    <div class="hero__head">
-      <div class="hero__eyebrow-row">
-        <p class="label hero__eyebrow">Live conditions · <span data-field="city-name">Miami</span></p>
-      </div>
-      <!-- h1 stays the same for every city (SEO). Hidden suffix adds the region. -->
-      <!-- PRERENDER:hero-h1 START (headline from Miami data, config/schedule.json rules) -->
+  <div class="hero__inner hero-city container">
+    <div class="hero-city__head">
+      <p class="label hero__eyebrow">Live conditions · <span data-field="city-name">Miami</span></p>
+      <!-- PRERENDER:hero-h1 START (city keyword + today's condition) -->
       <h1 class="hero__title hero__title--city" id="hero-title">
         <span class="hero__title-1">Miami Flooding</span>
-        <span class="hero__title-2">King Tide with Street Flooding Likely</span>
+        <span class="hero__title-2">King Tide with Street Flooding Likely<span class="visually-hidden"> today</span></span>
       </h1>
       <!-- PRERENDER:hero-h1 END -->
-      <!-- PLACEHOLDER: daily conditions text, later generated from NOAA tide + NWS rain data -->
-      <p class="hero__summary" data-field="summary">Seasonal king tides peak this evening. Expect shallow water on low streets in Brickell and Shorecrest around high tide.</p>
+      <p class="hero__summary" data-field="summary">Seasonal king tides peak this evening. Expect shallow water on low streets around high tide.</p>
     </div>
 
-    <!-- Left column: three mini stats (water level in other cities) -->
-    <!-- PLACEHOLDER: water levels from NOAA tide gauges (Virginia Key, Port Everglades) -->
-    <!-- PRERENDER:hero-mini START -->
-    <ul class="hero__mini" role="list" aria-label="Water level in other cities">
-      <li class="mini" data-mini data-risk="high">
-        <p class="mini__value"><span data-mini-level>+1.9</span><span class="mini__unit">ft</span></p>
-        <p class="mini__city"><span data-mini-city>Miami Beach</span></p>
-        <p class="mini__risk"><span data-mini-risk>High</span> risk</p>
-      </li>
-      <li class="mini" data-mini data-risk="moderate">
-        <p class="mini__value"><span data-mini-level>+1.2</span><span class="mini__unit">ft</span></p>
-        <p class="mini__city"><span data-mini-city>Hollywood</span></p>
-        <p class="mini__risk"><span data-mini-risk>Moderate</span> risk</p>
-      </li>
-      <li class="mini" data-mini data-risk="high">
-        <p class="mini__value"><span data-mini-level>+1.6</span><span class="mini__unit">ft</span></p>
-        <p class="mini__city"><span data-mini-city>Fort Lauderdale</span></p>
-        <p class="mini__risk"><span data-mini-risk>High</span> risk</p>
-      </li>
-    </ul>
-    <!-- PRERENDER:hero-mini END -->
-
-    <!-- Left column bottom: radial chart + risk slider -->
-    <div class="hero__gauges">
-      <!-- Radial chart: outer ring = this year, inner ring = last year.
-           Ring length = days / 60 (RADIAL_MAX_DAYS in hero.js).
-           PLACEHOLDER: flood day counts from NOAA high tide flooding outlook -->
-      <figure class="radial">
-        <svg class="radial__svg" viewBox="0 0 120 120" aria-hidden="true">
-          <circle cx="60" cy="60" r="52" class="radial__track"/>
-          <circle cx="60" cy="60" r="40" class="radial__track"/>
-          <circle cx="60" cy="60" r="52" class="radial__ring radial__ring--this" data-ring="this" stroke-dasharray="206.9 326.7"/>
-          <circle cx="60" cy="60" r="40" class="radial__ring radial__ring--last" data-ring="last" stroke-dasharray="113.1 251.3"/>
-        </svg>
-        <div class="radial__center"><span class="radial__num" data-field="flood-days">38</span><span class="radial__unit">days</span></div>
-        <figcaption class="radial__legend">
-          <span class="label">Flood days</span>
-          <span class="radial__key radial__key--this">This year: <strong data-field="flood-days">38</strong></span>
-          <span class="radial__key radial__key--last">Last year: <strong data-field="flood-days-last">27</strong></span>
-          <span class="radial__note">Days at NWS minor flood level, <span data-field="gauge">Virginia Key</span>. Year runs May to April.</span>
-        </figcaption>
-      </figure>
-
-      <!-- Risk slider: display only. --pos sets the marker (hero.js RISK_POS). -->
-      <div class="risk-meter" data-risk-meter data-risk="moderate" style="--pos: 38%">
+    <!-- Today's numbers for Miami -->
+    <div class="hero-city__panel glass">
+      <div class="hero-city__peak">
+        <p class="label">Peak water today</p>
+        <p class="hero-city__num"><span data-field="water-level">+2.2</span><span class="hero-city__unit">ft</span></p>
+        <p class="hero-city__cap">above normal high tide</p>
+      </div>
+      <div class="risk-meter" data-risk-meter data-risk="severe" style="--pos: 88%">
         <div class="risk-meter__top">
           <span class="label">Flood risk today</span>
-          <span class="risk-meter__value" data-field="risk-label">Moderate</span>
+          <span class="risk-meter__value" data-field="risk-label">Severe</span>
         </div>
         <div class="risk-meter__track" aria-hidden="true"><span class="risk-meter__marker"></span></div>
         <div class="risk-meter__scale" aria-hidden="true"><span>Low</span><span>Moderate</span><span>High</span><span>Severe</span></div>
       </div>
-    </div>
-
-    <!-- Right column: king tide season calendar.
-         Each row's data-start / data-end (YYYY-MM-DD) drive the highlight.
-         hero.js marks the cycle that includes today as "Now" (or the next one
-         as "Next" between cycles) and dims past cycles. Without JS, the
-         is-current / is-past classes below show the state as of this edit.
-         To add a new season: copy a row, change the dates and the text.
-         PLACEHOLDER: verify dates against NOAA tide predictions or the
-         Miami-Dade County king tide calendar before launch. -->
-    <section class="hero__readout kingtides glass" aria-labelledby="kt-title">
-      <div class="kingtides__head">
-        <h2 class="label kingtides__title" id="kt-title">King tide season <span class="kingtides__year">2026</span></h2>
-        <p class="kingtides__count" data-kt-count>Cycle 5 of 9</p>
-      </div>
-      <!-- Scroll box: shows the most recent past cycle plus what's ahead.
-           Scroll up for earlier cycles. tabindex lets keyboard users scroll it. -->
-      <div class="kingtides__scroll" tabindex="0" role="region" aria-label="King tide cycles, scroll up for earlier dates" data-kt-scroll>
-      <ol class="kingtides__list" role="list" data-kt-list>
-        <li class="kt is-past" data-start="2026-08-11" data-end="2026-08-14"><span class="kt__month">Aug</span><span class="kt__days">11 – 14</span><span class="kt__status">Past</span></li>
-        <li class="kt is-past" data-start="2026-09-09" data-end="2026-09-13"><span class="kt__month">Sep</span><span class="kt__days">9 – 13</span><span class="kt__status">Past</span></li>
-        <li class="kt is-past" data-start="2026-09-26" data-end="2026-10-01"><span class="kt__month">Sep</span><span class="kt__days">26 – Oct 1</span><span class="kt__status">Past</span></li>
-        <li class="kt is-past" data-start="2026-10-07" data-end="2026-10-13"><span class="kt__month">Oct</span><span class="kt__days">7 – 13</span><span class="kt__status">Past</span></li>
-        <li class="kt is-current" data-start="2026-10-24" data-end="2026-10-31" aria-current="date"><span class="kt__month">Oct</span><span class="kt__days">24 – 31</span><span class="kt__status">Now</span></li>
-        <li class="kt" data-start="2026-11-05" data-end="2026-11-11"><span class="kt__month">Nov</span><span class="kt__days">5 – 11</span><span class="kt__status"></span></li>
-        <li class="kt" data-start="2026-11-22" data-end="2026-11-28"><span class="kt__month">Nov</span><span class="kt__days">22 – 28</span><span class="kt__status"></span></li>
-        <li class="kt" data-start="2026-12-05" data-end="2026-12-08"><span class="kt__month">Dec</span><span class="kt__days">5 – 8</span><span class="kt__status"></span></li>
-        <li class="kt" data-start="2026-12-23" data-end="2026-12-27"><span class="kt__month">Dec</span><span class="kt__days">23 – 27</span><span class="kt__status"></span></li>
-      </ol>
-      </div>
-    </section>
-
-    <!-- Right column: city selector. Becomes horizontal chips on mobile. -->
-    <div class="hero__cities glass">
-      <p class="label hero__cities-title" id="city-picker-label">Compare cities</p>
-      <!-- PRERENDER:hero-cities START -->
-      <ul class="city-list" role="list" aria-labelledby="city-picker-label">
-        <li><a class="city-row" href="./" data-risk="moderate" aria-current="page">
-          <span class="city-row__name">Miami</span><span class="city-row__value">+1.4 ft</span>
-          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
-        </a></li>
-        <li><a class="city-row" href="../miami-beach/" data-risk="high">
-          <span class="city-row__name">Miami Beach</span><span class="city-row__value">+1.9 ft</span>
-          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
-        </a></li>
-        <li><a class="city-row" href="../hallandale-beach/" data-risk="moderate">
-          <span class="city-row__name">Hallandale Beach</span><span class="city-row__value">+1.1 ft</span>
-          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
-        </a></li>
-        <li><a class="city-row" href="../hollywood/" data-risk="moderate">
-          <span class="city-row__name">Hollywood</span><span class="city-row__value">+1.2 ft</span>
-          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
-        </a></li>
-        <li><a class="city-row" href="../fort-lauderdale/" data-risk="high">
-          <span class="city-row__name">Fort Lauderdale</span><span class="city-row__value">+1.6 ft</span>
-          <span class="city-row__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10c1.5 0 1.5-1.6 3-1.6S7.5 10 9 10s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6M3 15c1.5 0 1.5-1.6 3-1.6S7.5 15 9 15s1.5-1.6 3-1.6 1.5 1.6 3 1.6 1.5-1.6 3-1.6 1.5 1.6 3 1.6"/></svg></span>
-        </a></li>
-      </ul>
-      <!-- PRERENDER:hero-cities END -->
-      <p class="hero__cities-caption">Peak water expected today, ft above normal high tide</p>
-      <!-- Source + freshness. hero.js shows "Data delayed" if the data is over 3x its update interval old. -->
-      <p class="hero__source">Source: NOAA Tides &amp; Currents, <span data-field="gauge">Virginia Key</span> gauge; NWS. Updated <span data-field="updated">2:00 PM</span> ET<span class="hero__delayed" data-delayed hidden> · Data delayed</span></p>
-      <p class="visually-hidden" aria-live="polite" data-hero-live></p>
+      <dl class="hero-city__facts">
+        <div><dt>Next high tide</dt><dd data-field="next-high">7:42 PM</dd></div>
+        <div><dt>Tide now</dt><dd data-field="tide-status">Rising</dd></div>
+        <div><dt>Rain, 24 hours</dt><dd><span data-field="rainfall">0.4</span> in</dd></div>
+        <div><dt>Flood days, May to Apr</dt><dd><span data-field="flood-days">19</span> <span class="hero-city__vs">vs <span data-field="flood-days-last">24</span> last year</span></dd></div>
+      </dl>
+      <p class="hero__source">Source: NOAA Tides &amp; Currents, <span data-field="gauge">Virginia Key</span> gauge; NWS. Updated <span data-field="updated">11:20 AM</span> ET<span class="hero__delayed" data-delayed hidden> · Data delayed</span></p>
     </div>
   </div>
 
@@ -343,7 +246,8 @@
     <span class="tide__now" data-tide-now style="left:43.75%;top:47.95%" aria-hidden="true"><span class="tide__now-label">Now</span></span>
     <!-- PRERENDER:hero-tide END -->
   </div>
-  <!-- PRERENDER:hero-data START (all 5 cities as JSON for the city switcher; empty = hero.js uses its built-in sample) -->
+
+  <!-- PRERENDER:hero-data START (this city's data as JSON for hero.js; empty = sample) -->
   <!-- PRERENDER:hero-data END -->
 </section>
 <!-- ===== END: Hero ===== -->

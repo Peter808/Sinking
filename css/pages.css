@@ -20,7 +20,7 @@
   14. What you can do
   15. Final CTA
    CITY PAGES
-  16. City list as links (hero)
+  16. Compact city hero
   17. Proposed fixes timeline (infographic)
    ========================================================================== */
 
@@ -132,6 +132,7 @@
 .hero__title-2 { display: block; font-size: var(--fs-hero-sub); letter-spacing: -0.02em; margin-top: 0.15em; }
 /* City pages: "Miami Beach Flooding" is longer than "King Tide", so line 1 is smaller */
 .hero__title--city .hero__title-1 { font-size: clamp(44px, 5.4vw, 80px); }
+.hero__title--city .hero__title-2 { font-size: clamp(24px, 2.4vw, 36px); }
 .hero__summary { margin-top: var(--space-2); max-width: 36ch; font-size: var(--fs-body-lg); line-height: 1.55; color: var(--text-primary); }
 
 
@@ -497,15 +498,33 @@ html.js .kingtides__scroll {
 
 
 /* ==========================================================================
-   16. CITY LIST AS LINKS (city pages)
-   Same look as the home page's buttons; the current city is filled.
+   16. COMPACT CITY HERO (city pages)
+   Shorter than the home hero and about one city only: headline + summary on
+   the left, one glass panel with today's numbers on the right, tide wave
+   along the bottom. .hero--city overrides the home hero's full-screen height.
    ========================================================================== */
-a.city-row { color: inherit; text-decoration: none; }
-.city-row[aria-current="page"] { background: rgba(255, 255, 255, 0.12); }
-.city-row[aria-current="page"] .city-row__icon { background: #fff; color: var(--navy-900); border-color: #fff; }
-@media (max-width: 959.98px) {
-  .city-row[aria-current="page"] { background: #fff; color: var(--navy-900); border-color: #fff; }
-}
+.hero--city { min-height: 0; padding-top: calc(var(--header-h) + var(--space-2)); padding-bottom: 104px; }
+@media (min-width: 960px) { .hero--city { min-height: 0; display: block; } }
+.hero--city .hero__image { top: 0; height: 100%; }
+.hero--city .tide { height: 96px; bottom: 0; }
+.hero--city + .section { padding-top: clamp(32px, 4vw, 56px); }   /* news starts right under the wave */
+
+.hero-city { display: grid; gap: var(--space-4); align-items: center; }
+@media (min-width: 960px) { .hero-city { grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.9fr); column-gap: var(--space-6); } }
+.hero-city__head .hero__summary { max-width: 46ch; }
+
+.hero-city__panel { padding: var(--space-3); display: grid; gap: var(--space-3); }
+.hero-city__peak { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; }
+.hero-city__peak .label { flex-basis: 100%; }
+.hero-city__num { font-weight: 300; font-size: clamp(52px, 5.6vw, 80px); line-height: 1; letter-spacing: -0.04em; }
+.hero-city__unit { font-size: 0.35em; letter-spacing: 0; margin-left: 6px; }
+.hero-city__cap { font-size: 14px; }
+.hero-city__panel .risk-meter { max-width: none; }
+.hero-city__facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px var(--space-3); margin: 0; }
+.hero-city__facts dt { font-size: 11px; line-height: 1.3; font-weight: 600; letter-spacing: var(--ls-label); text-transform: uppercase; }
+.hero-city__facts dd { margin: 2px 0 0; font-size: 20px; font-weight: 300; }
+.hero-city__vs { font-size: 13px; font-weight: 400; }
+.hero-city__panel .hero__source { padding: 0; }
 
 
 /* ==========================================================================

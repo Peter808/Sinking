@@ -200,7 +200,7 @@
       'city-name': c.name,
       'water-level': fmtLevel(c.level),
       'next-high': c.nextHigh,
-      'rainfall': c.rain.toFixed(1),
+      'rainfall': c.rain != null ? c.rain.toFixed(2) : '',
       'flood-days': c.floodDays,
       'flood-days-last': c.floodDaysLast,
       'risk-label': RISK_LABEL[c.risk],

@@ -196,7 +196,8 @@ function renderHero(html, page) {
 
   /* Simple text fields (also the header tide pill) */
   [['city-name', m.name], ['summary', m.summary], ['flood-days', m.floodDays], ['flood-days-last', m.floodDaysLast],
-   ['risk-label', RISK_LABEL[m.risk]], ['tide-status', m.tideStatus || 'Steady'], ['gauge', m.gauge], ['updated', m.updated]]
+   ['risk-label', RISK_LABEL[m.risk]], ['tide-status', m.tideStatus || 'Steady'], ['gauge', m.gauge], ['updated', m.updated],
+   ['water-level', fmtLevel(m.level)], ['next-high', m.nextHigh || '-'], ['rainfall', m.rain != null ? m.rain.toFixed(2) : '-']]
     .forEach(([k, v]) => { html = setField(html, k, v); });
 
   /* Radial rings and risk slider */
@@ -250,7 +251,9 @@ ${labels}
   const inSeasonNow = (() => { const md = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, month: '2-digit', day: '2-digit' }).format(new Date()).replace('/', '-'); const s = SCHEDULE.kingTideSeason; return md >= s.start && md <= s.end; })();
   const anyAlert = Object.values(doc.cities).some((c) => c.alerts && c.alerts.items && c.alerts.items.length);
   const interval = inSeasonNow || anyAlert ? SCHEDULE.inSeasonEveryMinutes : SCHEDULE.offSeasonEveryMinutes;
-  const payload = JSON.stringify({ generatedAt: new Date().toISOString(), staleAfterMinutes: interval * (SCHEDULE.staleMultiplier || 3), cities: snap }).replace(/</g, '\\u003c');
+  /* City pages only need their own city (smaller page) */
+  const cities = page.city ? { [id]: snap[id] } : snap;
+  const payload = JSON.stringify({ generatedAt: new Date().toISOString(), staleAfterMinutes: interval * (SCHEDULE.staleMultiplier || 3), cities }).replace(/</g, '\\u003c');
   html = replaceBlock(html, 'hero-data', `  <script type="application/json" id="hero-data">${payload}</script>`);
 
   /* City cards: risk chip + peak */
