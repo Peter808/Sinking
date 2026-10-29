@@ -25,14 +25,18 @@ const SITE = path.resolve(process.argv[2] || '.');
 const DATA = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(SITE, 'data');
 const TZ = 'America/New_York';
 
-/* City id -> display name and card photo. Add a city here if one is added to config. */
+/* City id -> display name and news photos. News cards use the "news-" photo
+   first (different from the city cards above them); if two stories share a
+   city, the second gets the "city-" photo so no two cards look the same.
+   Add a city here if one is added to config. */
 const CITY = {
-  'miami': { name: 'Miami', img: 'images/city-miami.webp' },
-  'miami-beach': { name: 'Miami Beach', img: 'images/city-miami-beach.webp' },
-  'hallandale-beach': { name: 'Hallandale Beach', img: 'images/city-hallandale-beach.webp' },
-  'hollywood': { name: 'Hollywood', img: 'images/city-hollywood.webp' },
-  'fort-lauderdale': { name: 'Fort Lauderdale', img: 'images/city-fort-lauderdale.webp' }
+  'miami': { name: 'Miami', imgs: ['images/news-miami.webp', 'images/city-miami.webp'] },
+  'miami-beach': { name: 'Miami Beach', imgs: ['images/news-miami-beach.webp', 'images/city-miami-beach.webp'] },
+  'hallandale-beach': { name: 'Hallandale Beach', imgs: ['images/news-hallandale-beach.webp', 'images/city-hallandale-beach.webp'] },
+  'hollywood': { name: 'Hollywood', imgs: ['images/news-hollywood.webp', 'images/city-hollywood.webp'] },
+  'fort-lauderdale': { name: 'Fort Lauderdale', imgs: ['images/news-fort-lauderdale.webp', 'images/city-fort-lauderdale.webp'] }
 };
+const ALL_IMGS = Object.values(CITY).reduce((a, c) => a.concat(c.imgs), []);
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const readJSON = (f) => { try { return JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8')); } catch (e) { return null; } };
@@ -57,11 +61,14 @@ function pickVaried(items, n) {
 
 /* One news card. No article images or text (copyright): the photo is our
    own city image, and the line under the headline is the outlet name. */
-function newsCard(it) {
-  const city = CITY[it.cities[0]] || CITY.miami;
+function newsCard(it, used) {
+  const city = CITY[it.cities[0]];
+  /* First unused photo for this city, else any unused photo (untagged stories) */
+  const img = (city ? city.imgs : []).concat(ALL_IMGS).find((p) => !used.has(p)) || ALL_IMGS[0];
+  used.add(img);
   const tags = it.cities.map((c) => CITY[c] && `<span class="tag">${esc(CITY[c].name)}</span>`).filter(Boolean).join('');
   return `      <li class="card">
-        <div class="card__media"><img src="${city.img}" alt="" loading="lazy" decoding="async"></div>
+        <div class="card__media"><img src="${img}" alt="" loading="lazy" decoding="async"></div>
         <div class="card__body">
           <p class="card__meta">${it.date ? `<time datetime="${esc(it.date)}">${esc(fmtDate(it.date))}</time>` : ''}${tags}</p>
           <h3 class="card__title"><a href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.headline)}<span class="visually-hidden"> (opens ${esc(it.source)} in a new tab)</span></a></h3>
@@ -75,7 +82,8 @@ function renderNews(html) {
   const items = news && news.items || [];
   if (!items.length) { console.log('  news: no data, keeping sample cards'); return html; }
   const pick = pickVaried(items, 3);
-  html = replaceBlock(html, 'news-cards', `    <ul class="news__row" role="list">\n${pick.map(newsCard).join('\n')}\n    </ul>`);
+  const used = new Set();
+  html = replaceBlock(html, 'news-cards', `    <ul class="news__row" role="list">\n${pick.map((it) => newsCard(it, used)).join('\n')}\n    </ul>`);
   html = replaceBlock(html, 'news-status', `          <p class="label section-head__eyebrow">Updated ${esc(fmtTime(new Date()))} ET</p>`);
   console.log(`  news: rendered ${pick.length} cards`);
   return html;
