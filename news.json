@@ -1,6 +1,16 @@
 {
   "items": [
     {
+      "headline": "Miami king tide flooding: record streak and major flooding",
+      "source": "The Weather Channel",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPT1RlMHA1SWVrTVBRMGs0MTR0STJVaHhfYnVyQXdRNi1sWFQ0U083Q2NvcmFBTy01NERLMGdGZF9BNkVjZXc4ZzIxQTBNdkUtSmY3RWtQNGZOUFZSQktQM1RUeUtTcUlHcGNiY2F3WWNfWnRRLXY4OUdGLTNOb1ZpbjY4akpaTGV6UVFfWVhIN25SS2V3c3IwdWpnVU4waFNod0U3ekpKTE9sdTJrbFE?oc=5",
+      "date": "2026-10-30T19:56:25.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
       "headline": "King tide flooding hits fourth day in Fort Lauderdale as boat show opens, snarling traffic",
       "source": "CBS News",
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNck5wa01fbVVQelE5LU9iTjhmZ2xJODlLRXE5bTNVREpwZklRVWNmbGRJcWRTYXJOYTgzUC1HU2RIR3RMbnozM3lWU0tmYWxwaWFNRHB6c0x6VGRmbURjVVdZMUo5eEVMdjY0UUxWaUlXbXR2bHBzbDFxVS1xUWRJYnpLUlRqNlRsR3p6NDh3MzB2Z0lSR2hzTGZtNWVyTURaRVgtMUc0M1F6UWc?oc=5",
@@ -310,22 +320,22 @@
       "via": "Google News"
     },
     {
-      "headline": "King Tides and flooding throughout South Florida brought some unexpected flooding to tourists and residents. #KingTides #Florida #Miami",
-      "source": "Facebook",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNY1JiNndoOTRwZFBZQm1ORy1fRkpmdk1NSnBlQVQyMkJZVjZVU0JDSXoxWDB6dWVpQXZVNjV6TWFfaFZnWVdva1U5Z3NJV3daVVpsVVByWUpkcVRPYkpaMldyYWpiMHhHQm5uQzhDcWNZLWthU1hrUW9PektaNGtEdnRCWEl4dHhDeF9Xckh1eDBkNDJrdEJaeXdOVUx4MEtPUldBRHpfb2lFR09YemtOaVgydE90cVZtOHVVQWJMVDB0bi1RNDNleTFVLWJFYVNRcVpkMlFVYTZEbnNFNjlrZ2dn?oc=5",
-      "date": "2026-09-28T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
       "headline": "King tide flooding in South Florida puts residents on alert from Fort Lauderdale to Miami",
       "source": "CBS News",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPNUZPamU2LTJwQ0E4eVNHLTBXaGlxR0pHTXRTTjNQZEs0REtwMG1PT1hFV2wtMzFmQzVvQW1KRG51ZVBOSDlCVUVNRFQ3eHNWblE1ai0xbTVQazBPcG9DbHJOeDdPdDRtcldqWS1ObXhYcVZaWTlISzRGbzJZZEw4NEVEOWRJOEFRQzdaNldxejBmTWVSMlpadnlHZHpTR2N2MjBqZFY4OXhrWTRRbWVrRWlKalRkazlJOURNNTZn?oc=5",
       "date": "2026-09-28T07:00:00.000Z",
       "cities": [
         "fort-lauderdale",
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "King Tides and flooding throughout South Florida brought some unexpected flooding to tourists and residents. #KingTides #Florida #Miami",
+      "source": "Facebook",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNY1JiNndoOTRwZFBZQm1ORy1fRkpmdk1NSnBlQVQyMkJZVjZVU0JDSXoxWDB6dWVpQXZVNjV6TWFfaFZnWVdva1U5Z3NJV3daVVpsVVByWUpkcVRPYkpaMldyYWpiMHhHQm5uQzhDcWNZLWthU1hrUW9PektaNGtEdnRCWEl4dHhDeF9Xckh1eDBkNDJrdEJaeXdOVUx4MEtPUldBRHpfb2lFR09YemtOaVgydE90cVZtOHVVQWJMVDB0bi1RNDNleTFVLWJFYVNRcVpkMlFVYTZEbnNFNjlrZ2dn?oc=5",
+      "date": "2026-09-28T07:00:00.000Z",
+      "cities": [
         "miami"
       ],
       "via": "Google News"
@@ -580,16 +590,6 @@
       "source": "The Miami Times",
       "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPN29sUW5LUnJIN0lXRVE1SlhNZktfMWJpVC1HSDI1Q3N0bG1yV1ZObjRrblZMMWtWUldFWUdVSzAyOXg3cHEzd1kyQk83ZlZmbVFfMFRmZmRrZEV6bEFDQ2JHS0FhYy1jQmRnTElpSnJFd25YWWFVMUMzZVV3RFhRMjk5Ny1FSzZmM2pqWnptUEFOTXFXTEVDVmhkX1BGZUpnZGhQSGlBTDQ5YUtNN2FRYzN0M2F2WFRGeVpfUkREMkZfVDNYNDhDNXk3MVVIN0dUWTFleVk3R2w0Q2hOVDVCTlVpcTBFNFQ1MkNaMFlvZTgxNDM4OVJkQ0NqMA?oc=5",
       "date": "2025-07-09T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "North Miami residents still skeptical after city unveils $11M flood plan",
-      "source": "WLRN",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPVTB0NEszQ2FSNHFMY2JxOFNDYlowcERvYlFlYzhVV0xqcGxGS1VsTW5qUHU2U1FKWk5QU3YtSHEyeHhVVEpMb2pFbGVhYVBQYzZFRVVkdzMwaGhKQUQ5eUpLWmMxWjF3ZTkwVUtKcUpRbEpDRVk5QVBsT1M1SVBVbFRCXzB1cjQ?oc=5",
-      "date": "2025-05-15T07:00:00.000Z",
       "cities": [
         "miami"
       ],
