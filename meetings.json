@@ -35,6 +35,27 @@
       "link": "https://hollywoodfl.legistar.com/MeetingDetail.aspx?LEGID=2745&GID=353&G=7678503F-1AF8-4553-B6C1-FBE4E5357BA8",
       "agenda": "https://legistar.granicus.com/hollywoodfl/meetings/2026/11/2745_A_Regular_City_Commission_Meeting_26-11-05_Meeting_Agenda.pdf",
       "source": "Legistar"
+    },
+    {
+      "id": "broward-1211",
+      "org": "Broward County",
+      "title": "County Commission",
+      "level": "county",
+      "cities": [
+        "hallandale-beach",
+        "hollywood",
+        "fort-lauderdale"
+      ],
+      "date": "2026-11-10",
+      "time": "10:00 AM",
+      "start": "2026-11-10T10:00:00-05:00",
+      "location": "Broward County Governmental Center\r\nRoom 422 (Commission Chambers)",
+      "topics": [
+        "A. MOTION TO APPROVE Third Amendment to Florida Department of Environmental Protection (“FDEP”) Agreement No. 22BO3 for cost sharing of..."
+      ],
+      "link": "https://broward.legistar.com/MeetingDetail.aspx?LEGID=1211&GID=728&G=9CC0A88F-9982-4209-A126-7C71741CABC2",
+      "agenda": "https://broward.legistar1.com/broward/meetings/2026/11/1211_A_County_Commission_26-11-10_Regular_Meeting_Agenda.pdf",
+      "source": "Legistar"
     }
   ]
 }
