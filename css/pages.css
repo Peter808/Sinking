@@ -148,6 +148,9 @@
    Underline color comes from data-risk on each <li>.
    ========================================================================== */
 .hero__mini { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
+/* Mobile: hide the other-city numbers. The chip you pick already shows its
+   own peak, and three more cities under it was confusing (decided 2026-10-30). */
+@media (max-width: 959.98px) { .hero__mini { display: none; } }
 .mini { display: flex; flex-direction: column; }
 .mini__value { font-weight: 300; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .mini__unit { font-size: 0.4em; margin-left: 4px; letter-spacing: 0; }
