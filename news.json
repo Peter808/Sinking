@@ -220,6 +220,16 @@
       "via": "Google News"
     },
     {
+      "headline": "Flooding takes place in Fort Lauderdale neighborhoods as king tides peak Tuesday",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUG1ORWt3X3RHUUtNMHVrbXVWb2ZNdmJ5bGVNTS1RNTU5SFhvYzhiV01BVVRpeEstOUlyeFFEeWptRmIzVUhFNklFbG9HXzBpeS1NWkFjYXhpRmRDUE50eEVnRjhmakpCd1lZUWNFRVJCUkw1b3Rvc1RIWWlsVWFoN0Ntd1drazFJamZzWmg2dG1JYzhqNUtpYnFUckNrYnQybFBBeDVaVDl4ZTdvazFMeE9uNU9qbDFO?oc=5",
+      "date": "2026-10-27T14:25:00.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "Google News"
+    },
+    {
       "headline": "Flooding Explorer: Fort Lauderdale (IMAGE)",
       "source": "EurekAlert!",
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9FQkl5N3hwcmM5dmxnUFdNeDMzQmRrWFlzYXg5Z2xleEFueVVZY2xWWXZNN2RyVWlGYUN3S0pDUEtPTXhLb2JkdXJSbGxjaERZaVNfQWI1d28?oc=5",
@@ -582,16 +592,6 @@
       "date": "2025-07-28T07:00:00.000Z",
       "cities": [
         "miami-beach"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Report lists North Miami as the least resilient coastal city in America",
-      "source": "The Miami Times",
-      "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPN29sUW5LUnJIN0lXRVE1SlhNZktfMWJpVC1HSDI1Q3N0bG1yV1ZObjRrblZMMWtWUldFWUdVSzAyOXg3cHEzd1kyQk83ZlZmbVFfMFRmZmRrZEV6bEFDQ2JHS0FhYy1jQmRnTElpSnJFd25YWWFVMUMzZVV3RFhRMjk5Ny1FSzZmM2pqWnptUEFOTXFXTEVDVmhkX1BGZUpnZGhQSGlBTDQ5YUtNN2FRYzN0M2F2WFRGeVpfUkREMkZfVDNYNDhDNXk3MVVIN0dUWTFleVk3R2w0Q2hOVDVCTlVpcTBFNFQ1MkNaMFlvZTgxNDM4OVJkQ0NqMA?oc=5",
-      "date": "2025-07-09T07:00:00.000Z",
-      "cities": [
-        "miami"
       ],
       "via": "Google News"
     }
