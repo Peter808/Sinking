@@ -1,6 +1,16 @@
 {
   "items": [
     {
+      "headline": "LIVE RADAR: Flash flood warning in effect in Miami-Dade amid thunderstorms",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/weather/stories-weather/live-radar-flood-watch-in-effect-as-heavy-rain-drenches-south-florida/3881463/",
+      "date": "2026-11-01T11:21:45.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
       "headline": "Miami king tide flooding: record streak and major flooding",
       "source": "The Weather Channel",
       "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPT1RlMHA1SWVrTVBRMGs0MTR0STJVaHhfYnVyQXdRNi1sWFQ0U083Q2NvcmFBTy01NERLMGdGZF9BNkVjZXc4ZzIxQTBNdkUtSmY3RWtQNGZOUFZSQktQM1RUeUtTcUlHcGNiY2F3WWNfWnRRLXY4OUdGLTNOb1ZpbjY4akpaTGV6UVFfWVhIN25SS2V3c3IwdWpnVU4waFNod0U3ekpKTE9sdTJrbFE?oc=5",
@@ -583,16 +593,6 @@
       "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcVZ1Q2VHcXJJS3FyeHBVUkN0N1ZnY0JyY2k2M2N4d19ONUxrZFBfUmhUbjdPYTNHVEVISktJOENpdUd0cDBGZDdleDhnVV9fZDlpV1EwemhoM1NRQkZxUHpQWHpKbjZlV0ZMS3Z2Z3poOVd0V2N6WW5GSmxUUmpaZGJkbnd0dnREYi1lb3VaMngwR1BGQUZkUlRHUUx2MjJx?oc=5",
       "date": "2025-09-09T07:00:00.000Z",
       "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Raze or save? A fight over fate of home in flood-prone South Beach historic district",
-      "source": "WLRN",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMUh4eHA3T0psb3E3dHdOeVpTSmRvSy1uanFTTkRLZjRpRS1QNVRPUGtoZ2ZZM2psR1JTc1AxbXNSOHY0NUtCNkRvVGc0bXYyMTBCWWZ1RkhUWnhpYkNpS3Z1Q2FmVXZXYzVFWkVSN1BqVTdDckVMZTVmbGZCRzd2ZjZCNnp6UzFMVi1rV3p5bjRZQ0lZZ1FtMEhfT01yNzV1djBDUUZtNHpMelpiNWJfOGNFRzRRb3J1bmZ4M1RETWVlX3hpRnc?oc=5",
-      "date": "2025-07-28T07:00:00.000Z",
-      "cities": [
-        "miami-beach"
-      ],
       "via": "Google News"
     }
   ]
