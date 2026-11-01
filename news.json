@@ -2,13 +2,13 @@
   "items": [
     {
       "headline": "LIVE RADAR: Flash flood warning in effect in Miami-Dade amid thunderstorms",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/weather/stories-weather/live-radar-flood-watch-in-effect-as-heavy-rain-drenches-south-florida/3881463/",
-      "date": "2026-11-01T11:21:45.000Z",
+      "source": "NBC 6 South Florida",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMUpmQURGWl84R0JSQjZnX29SU3pObEdDOFFLd1phSkdGOHIxRDVIaUlYRDQ3RGUzQXhuWGNCWF9iYzMyVlZlR1NDMDI2NVJraXZrZ2loSnYwZV9GakJHaXozbVZQRXF1X21heElsY1p5OUdtajRBWnNBVnVHY2VtQ1F5cWs5eGFVRkpLU3lOY25pNUZvYkN5YTMyLWlKcXgtN01UVkRhTzBoYWQ2WGxtOUlGS3A5dFFpb0s5Yk1COHBRc3RQdkHSAc4BQVVfeXFMT0lJNnVQZF9oaThZajg1UXRqQUF0dklhcmNaa1B3SkJTZzZwV2E2ZmNqRDBNVkRRNjRNMDlydW5wNmJuUmVhc2lSdGs5akNpRk1xU3FZaGdDNVBZUlg4VEJTMlNJMUJ5RGFNWXdHVnlYV0FzLURvVUNUYk9LMDJoQXZlOE1pbFREdTY0dGduWm80YlFNTVh3RUY3VF9QUndnNGc3UnZlWmVlQ0JiV21hOURfcjczVFlKUVVzbUJNcUN6cDN4UDVhbF9OSkt0N3c?oc=5",
+      "date": "2026-11-01T16:21:45.000Z",
       "cities": [
         "miami"
       ],
-      "via": "NBC6 Miami"
+      "via": "Google News"
     },
     {
       "headline": "Miami king tide flooding: record streak and major flooding",
@@ -351,6 +351,16 @@
       "via": "Google News"
     },
     {
+      "headline": "Miami Beach residents deal with King Tide flooding",
+      "source": "NBC 6 South Florida",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWVVab2t1MkhRbXVmbHV3RjY2ZmZTU3lqaTZYcEZhVGtMYUY0UG5yd293elJXZ2RHZnlwb0hPZGZ4ZWZqb0tVSWFGeGtINEFkV08yU0RJM1hLRW1MVlNqLTgtOUJ0Y1BSWS1FaWlQRlQteXJxOVRjUHExZXYwVmQ1T0ZKLXNZc0xXMk5QVUUyNzZON3EyOE5Cb3dWeEk3WXhOd3pN0gGrAUFVX3lxTE5TNnhCclZPaUdkaWJibTFEYVNBSHhQdmd4c29qdzR3b1llbVlhb3NKckV6aUNNWWktbUotSnNIWk9oN21tWEN5d1VoVVY4RGhMQkNtc0MxUkdCc0EzZ1FON0ptOFc4dWNETzVmVTBQTnJNYkJpR20wcDREeHlXa3JrSlVteTdWc2JhZ1NUUW5pM1hOTURwOFhoUHFlY0xGSWhWLXF0ZWFlcGg0Yw?oc=5",
+      "date": "2026-09-28T07:00:00.000Z",
+      "cities": [
+        "miami-beach"
+      ],
+      "via": "Google News"
+    },
+    {
       "headline": "King Tides and flooding throughout South Florida brought some unexpected flooding to tourists and residents. #KingTides #Florida #Miami",
       "source": "Facebook",
       "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNY1JiNndoOTRwZFBZQm1ORy1fRkpmdk1NSnBlQVQyMkJZVjZVU0JDSXoxWDB6dWVpQXZVNjV6TWFfaFZnWVdva1U5Z3NJV3daVVpsVVByWUpkcVRPYkpaMldyYWpiMHhHQm5uQzhDcWNZLWthU1hrUW9PektaNGtEdnRCWEl4dHhDeF9Xckh1eDBkNDJrdEJaeXdOVUx4MEtPUldBRHpfb2lFR09YemtOaVgydE90cVZtOHVVQWJMVDB0bi1RNDNleTFVLWJFYVNRcVpkMlFVYTZEbnNFNjlrZ2dn?oc=5",
@@ -585,14 +595,6 @@
       "cities": [
         "miami"
       ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Heavy rain brings temporary flooding concerns to Broward County",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcVZ1Q2VHcXJJS3FyeHBVUkN0N1ZnY0JyY2k2M2N4d19ONUxrZFBfUmhUbjdPYTNHVEVISktJOENpdUd0cDBGZDdleDhnVV9fZDlpV1EwemhoM1NRQkZxUHpQWHpKbjZlV0ZMS3Z2Z3poOVd0V2N6WW5GSmxUUmpaZGJkbnd0dnREYi1lb3VaMngwR1BGQUZkUlRHUUx2MjJx?oc=5",
-      "date": "2025-09-09T07:00:00.000Z",
-      "cities": [],
       "via": "Google News"
     }
   ]
