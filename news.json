@@ -1,7 +1,17 @@
 {
   "items": [
     {
-      "headline": "LIVE RADAR: Flash flood warning in effect in Miami-Dade amid thunderstorms",
+      "headline": "Flood Watch remains in effect for Miami-Dade, Broward as heavy rain moves into South Florida",
+      "source": "WPLG Local 10",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPV3JXeGV4VVpWSFdSVG1NME1OVkxWZHhiSUZMSVJ5cmM2c0JhbkYyX2REcFZCWWFTb21iY29TYlo4SXhaTFpKSnpNUDdWV1lVNG5JYTVRaGVJUS1MVkRIYklTQWFoczVPXzI4RVRJLVZSalhyTkhNTWxMeGFVa01fVGtrZ1h2MkZBY3hSOEViSG56Qk5SXzctTFZIUmtvMEpkb1ZKbTVtRTFZYUNuNUNLYzVZam5ROEc0MDZXRW5HNVZqZlZfcnJmNmtkMmV5dkdt?oc=5",
+      "date": "2026-11-02T12:10:35.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Flash flood warning in effect in Miami-Dade amid thunderstorms",
       "source": "NBC 6 South Florida",
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMUpmQURGWl84R0JSQjZnX29SU3pObEdDOFFLd1phSkdGOHIxRDVIaUlYRDQ3RGUzQXhuWGNCWF9iYzMyVlZlR1NDMDI2NVJraXZrZ2loSnYwZV9GakJHaXozbVZQRXF1X21heElsY1p5OUdtajRBWnNBVnVHY2VtQ1F5cWs5eGFVRkpLU3lOY25pNUZvYkN5YTMyLWlKcXgtN01UVkRhTzBoYWQ2WGxtOUlGS3A5dFFpb0s5Yk1COHBRc3RQdkHSAc4BQVVfeXFMT0lJNnVQZF9oaThZajg1UXRqQUF0dklhcmNaa1B3SkJTZzZwV2E2ZmNqRDBNVkRRNjRNMDlydW5wNmJuUmVhc2lSdGs5akNpRk1xU3FZaGdDNVBZUlg4VEJTMlNJMUJ5RGFNWXdHVnlYV0FzLURvVUNUYk9LMDJoQXZlOE1pbFREdTY0dGduWm80YlFNTVh3RUY3VF9QUndnNGc3UnZlWmVlQ0JiV21hOURfcjczVFlKUVVzbUJNcUN6cDN4UDVhbF9OSkt0N3c?oc=5",
       "date": "2026-11-01T16:21:45.000Z",
@@ -63,7 +73,7 @@
     {
       "headline": "Fort Lauderdale dealing with overflow from king tide flooding Wednesday",
       "source": "NBC 6 South Florida",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNQmtYR090UjNpTE1VdUxWaWc3ZnZRQUhTbERNak5IRGE5Q0YtcHpvZDBGeFZZMTdLWnc3SlZLdm5fTHo0NndhWVJZa0FOX3JTV0E3VFpQdDA5ZUtVNFhtUlhUTzJrRTc3SklmTWxXZVZWVmVkcHN5QlpBbGRROEN3bjE1Q0tCZHpNcEdKNWJqRVNFNDZ2ZUhtbFlYVnhlbHpKd0trTUpYSGwxa0JaRHluQnMyR1plUTdl0gHAAUFVX3lxTFBBNUV2UDZ0eGtsQXJ5aWt1MnVZcWh3R2VsbUJndVNMVC1hZUpmLW1RaFNWaDAtYjlVLWY5NHJTZ21HYUY1RG1mRUdFQnh3VzdzZFN0MnYyLVk2bUJra01zTFJBNU4zcVV3am9iN3M0V3p2NGVjVlFPOVFWU2hSV0x4cWRDUXVGblVuUUxZdlhLZFFybUczQ0FPNDJRdUtwdWk4TjVxUkJtLXJwNmRMTllQVHNIMUZ5djFSRnJEdjl5aw?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNQmtYR090UjNpTE1VdUxWaWc3ZnZRQUhTbERNak5IRGE5Q0YtcHpvZDBGeFZZMTdLWnc3SlZLdm5fTHo0NndhWVJZa0FOX3JTV0E3VFpQdDA5ZUtVNFhtUlhUTzJrRTc3SklmTWxXZVZWVmVkcHN5QlpBbGRROEN3bjE1Q0tCZHpNcEdKNWJqRVNFNDZ2ZUhtbFlYVnhlbHpKd0trTUpYSGwxa0JaRHluQnMyR1plUTdl?oc=5",
       "date": "2026-10-28T16:36:09.000Z",
       "cities": [
         "fort-lauderdale"
@@ -578,20 +588,10 @@
       "via": "Google News"
     },
     {
-      "headline": "Commentary: How to help Globe-Miami residents after devastating flooding",
-      "source": "Copper Courier",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBKVUZ3ZjZyNlZBbGZrdUFwMlhwU0hpSjFWNk4yLUwtS2N4N1c2QmVRQkhhQ2pTQmlkUy14dXhUUWMwZjk1bW5DRzhVVHZsdnhhU2tlV1J1eUxWbEEtNFpJaWMxLVZIWlV4SVE?oc=5",
-      "date": "2025-09-30T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Death toll rises to 3 after Globe-Miami flooding; Missing man found safe",
+      "headline": "Miami Unified cancels class for rest of week after deadly Gila County floods",
       "source": "AZ Family",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNeDFGTldrTEQzOGFTYzhkV2U0QndRT195dTRQUFh2ZVNMNk9wT2tKUXk0b2FueUtDcjhVVUZFS0hQZTIxSncyZEd4STVQZ2NRVjdfZ0xMSjR3N0lBMGtRLU9RNlkyMEdIQ1dmX3BEQS1FeU80S19JdGtIYjNfSWh2bi1HZm5CZUJOTTRzT28ySjFROVBLQkR0LWR5V0dBdXF0OFE?oc=5",
-      "date": "2025-09-29T07:00:00.000Z",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZG1GZ2JJRndKR0hYeW12WHZHT2c2Zl9raXpUcFV2SUlfbEZZRkE3Y2lERFZLc243TGhDeWp4VllmZVJCbmQwQU1UMER3NE1GcnNXUk1fXy0yd21pUHpGRTRONlpyeGYxeHZ1Sy1EZWpUT1dycUY2RG5lN1hiX2FUY3FxZy1LaXV4SDI5NERuWml6RndSdDNldHkwMGRZM0x0N21WNzVDWWl4dw?oc=5",
+      "date": "2025-09-30T07:00:00.000Z",
       "cities": [
         "miami"
       ],
