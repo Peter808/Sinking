@@ -21,18 +21,18 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.002.2"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.002.1"
           }
         ],
         "source": {
@@ -40,11 +40,11 @@
           "detail": "Point 25.7617, -80.1918",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-02T02:23:20.536Z"
+        "updatedAt": "2026-11-02T10:54:00.214Z"
       },
       "flooding": {
         "likely": true,
-        "forecastPeakFt": 1.52,
+        "forecastPeakFt": 1.59,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -66,86 +66,28 @@
         "updatedAt": "2026-11-01T22:43:29.193Z"
       },
       "water": {
-        "levelFt": -0.2,
-        "status": "rising",
-        "observedAt": "2026-11-01T21:18:00-05:00",
-        "rawTime": "2026-11-01 21:18",
+        "levelFt": 0.45,
+        "status": "falling",
+        "observedAt": "2026-11-02T05:48:00-05:00",
+        "rawTime": "2026-11-02 05:48",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-02T02:23:22.406Z"
+        "updatedAt": "2026-11-02T10:54:03.370Z"
       },
       "tides": {
-        "date": "2026-11-01",
+        "date": "2026-11-02",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-02T02:26:00-05:00",
-          "localTime": "02:26",
+          "at": "2026-11-02T15:04:00-05:00",
+          "localTime": "15:04",
           "date": "2026-11-02",
-          "heightFt": 0.28
+          "heightFt": 0.32
         },
         "today": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:20:00-05:00",
-            "localTime": "01:20",
-            "date": "2026-11-01",
-            "heightFt": 0.32
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T07:44:00-05:00",
-            "localTime": "07:44",
-            "date": "2026-11-01",
-            "heightFt": -1.72
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T14:04:00-05:00",
-            "localTime": "14:04",
-            "date": "2026-11-01",
-            "heightFt": 0.36
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T20:18:00-05:00",
-            "localTime": "20:18",
-            "date": "2026-11-01",
-            "heightFt": -1.48
-          }
-        ],
-        "next48h": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:20:00-05:00",
-            "localTime": "01:20",
-            "date": "2026-11-01",
-            "heightFt": 0.32
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T07:44:00-05:00",
-            "localTime": "07:44",
-            "date": "2026-11-01",
-            "heightFt": -1.72
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T14:04:00-05:00",
-            "localTime": "14:04",
-            "date": "2026-11-01",
-            "heightFt": 0.36
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T20:18:00-05:00",
-            "localTime": "20:18",
-            "date": "2026-11-01",
-            "heightFt": -1.48
-          },
           {
             "type": "high",
             "at": "2026-11-02T02:26:00-05:00",
@@ -175,74 +117,132 @@
             "heightFt": -1.55
           }
         ],
+        "next48h": [
+          {
+            "type": "high",
+            "at": "2026-11-02T02:26:00-05:00",
+            "localTime": "02:26",
+            "date": "2026-11-02",
+            "heightFt": 0.28
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T08:48:00-05:00",
+            "localTime": "08:48",
+            "date": "2026-11-02",
+            "heightFt": -1.65
+          },
+          {
+            "type": "high",
+            "at": "2026-11-02T15:04:00-05:00",
+            "localTime": "15:04",
+            "date": "2026-11-02",
+            "heightFt": 0.32
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T21:22:00-05:00",
+            "localTime": "21:22",
+            "date": "2026-11-02",
+            "heightFt": -1.55
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T03:33:00-05:00",
+            "localTime": "03:33",
+            "date": "2026-11-03",
+            "heightFt": 0.29
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T09:52:00-05:00",
+            "localTime": "09:52",
+            "date": "2026-11-03",
+            "heightFt": -1.61
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T16:05:00-05:00",
+            "localTime": "16:05",
+            "date": "2026-11-03",
+            "heightFt": 0.32
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T22:23:00-05:00",
+            "localTime": "22:23",
+            "date": "2026-11-03",
+            "heightFt": -1.64
+          }
+        ],
         "curve": [
           {
             "t": "00:00",
-            "h": -0.23
+            "h": -0.34
           },
           {
             "t": "00:30",
-            "h": -0.06
+            "h": -0.15
           },
           {
             "t": "01:00",
-            "h": 0.3
+            "h": 0.02
           },
           {
             "t": "01:30",
-            "h": 0.31
+            "h": 0.16
           },
           {
             "t": "02:00",
-            "h": 0.24
+            "h": 0.26
           },
           {
             "t": "02:30",
-            "h": 0.09
+            "h": 0.28
           },
           {
             "t": "03:00",
-            "h": -0.12
+            "h": 0.23
           },
           {
             "t": "03:30",
-            "h": -0.36
+            "h": 0.1
           },
           {
             "t": "04:00",
-            "h": -0.6
+            "h": -0.08
           },
           {
             "t": "04:30",
-            "h": -0.82
+            "h": -0.28
           },
           {
             "t": "05:00",
-            "h": -1.03
+            "h": -0.49
           },
           {
             "t": "05:30",
-            "h": -1.22
+            "h": -0.69
           },
           {
             "t": "06:00",
-            "h": -1.39
+            "h": -0.9
           },
           {
             "t": "06:30",
-            "h": -1.54
+            "h": -1.09
           },
           {
             "t": "07:00",
-            "h": -1.65
+            "h": -1.28
           },
           {
             "t": "07:30",
-            "h": -1.71
+            "h": -1.45
           },
           {
             "t": "08:00",
-            "h": -1.71
+            "h": -1.57
           },
           {
             "t": "08:30",
@@ -250,141 +250,141 @@
           },
           {
             "t": "09:00",
-            "h": -1.51
+            "h": -1.65
           },
           {
             "t": "09:30",
-            "h": -1.32
+            "h": -1.59
           },
           {
             "t": "10:00",
-            "h": -1.1
-          },
-          {
-            "t": "10:30",
-            "h": -0.86
-          },
-          {
-            "t": "11:00",
-            "h": -0.62
-          },
-          {
-            "t": "11:30",
-            "h": -0.4
-          },
-          {
-            "t": "12:00",
-            "h": -0.18
-          },
-          {
-            "t": "12:30",
-            "h": 0.01
-          },
-          {
-            "t": "13:00",
-            "h": 0.19
-          },
-          {
-            "t": "13:30",
-            "h": 0.31
-          },
-          {
-            "t": "14:00",
-            "h": 0.36
-          },
-          {
-            "t": "14:30",
-            "h": 0.33
-          },
-          {
-            "t": "15:00",
-            "h": 0.22
-          },
-          {
-            "t": "15:30",
-            "h": 0.04
-          },
-          {
-            "t": "16:00",
-            "h": -0.16
-          },
-          {
-            "t": "16:30",
-            "h": -0.37
-          },
-          {
-            "t": "17:00",
-            "h": -0.57
-          },
-          {
-            "t": "17:30",
-            "h": -0.76
-          },
-          {
-            "t": "18:00",
-            "h": -0.95
-          },
-          {
-            "t": "18:30",
-            "h": -1.13
-          },
-          {
-            "t": "19:00",
-            "h": -1.29
-          },
-          {
-            "t": "19:30",
-            "h": -1.41
-          },
-          {
-            "t": "20:00",
             "h": -1.47
           },
           {
+            "t": "10:30",
+            "h": -1.3
+          },
+          {
+            "t": "11:00",
+            "h": -1.1
+          },
+          {
+            "t": "11:30",
+            "h": -0.88
+          },
+          {
+            "t": "12:00",
+            "h": -0.66
+          },
+          {
+            "t": "12:30",
+            "h": -0.44
+          },
+          {
+            "t": "13:00",
+            "h": -0.23
+          },
+          {
+            "t": "13:30",
+            "h": -0.03
+          },
+          {
+            "t": "14:00",
+            "h": 0.14
+          },
+          {
+            "t": "14:30",
+            "h": 0.27
+          },
+          {
+            "t": "15:00",
+            "h": 0.32
+          },
+          {
+            "t": "15:30",
+            "h": 0.29
+          },
+          {
+            "t": "16:00",
+            "h": 0.19
+          },
+          {
+            "t": "16:30",
+            "h": 0.03
+          },
+          {
+            "t": "17:00",
+            "h": -0.16
+          },
+          {
+            "t": "17:30",
+            "h": -0.35
+          },
+          {
+            "t": "18:00",
+            "h": -0.55
+          },
+          {
+            "t": "18:30",
+            "h": -0.76
+          },
+          {
+            "t": "19:00",
+            "h": -0.96
+          },
+          {
+            "t": "19:30",
+            "h": -1.16
+          },
+          {
+            "t": "20:00",
+            "h": -1.33
+          },
+          {
             "t": "20:30",
-            "h": -1.48
+            "h": -1.46
           },
           {
             "t": "21:00",
-            "h": -1.42
+            "h": -1.53
           },
           {
             "t": "21:30",
-            "h": -1.31
+            "h": -1.55
           },
           {
             "t": "22:00",
-            "h": -1.14
+            "h": -1.5
           },
           {
             "t": "22:30",
-            "h": -0.95
+            "h": -1.39
           },
           {
             "t": "23:00",
-            "h": -0.74
+            "h": -1.23
           },
           {
             "t": "23:30",
-            "h": -0.53
+            "h": -1.04
           }
         ],
-        "anomalyFt": 1.16,
-        "todayPredictedPeakFt": 0.36,
-        "todayForecastPeakFt": 1.52,
+        "anomalyFt": 1.27,
+        "todayPredictedPeakFt": 0.32,
+        "todayForecastPeakFt": 1.59,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-02T02:23:22.462Z"
+        "updatedAt": "2026-11-02T10:54:03.469Z"
       },
       "floodDays": {
         "thisYear": {
           "year": 2026,
           "label": "May 2026 to Apr 2027",
-          "count": 22,
-          "lastFloodDay": "2026-11-01",
+          "count": 23,
+          "lastFloodDay": "2026-11-02",
           "thresholdFt": 1.3
         },
         "lastYear": {
@@ -399,10 +399,10 @@
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-01T22:43:29.664Z"
+        "updatedAt": "2026-11-02T10:54:04.180Z"
       },
       "weather": {
-        "rain24hIn": 0.46,
+        "rain24hIn": 0.43,
         "reportsCounted": 16,
         "station": {
           "id": "KMIA",
@@ -413,27 +413,27 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-11-02T02:23:22.969Z"
+        "updatedAt": "2026-11-02T10:54:04.822Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1",
+            "id": "urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
-            "id": "urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.002.2",
+            "id": "urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.002.1",
             "event": "Coastal Flood Advisory",
             "level": "advisory",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.002.2"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.002.1"
           }
         ]
       }
@@ -459,18 +459,18 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.002.2"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.002.1"
           }
         ],
         "source": {
@@ -478,11 +478,11 @@
           "detail": "Point 25.7907, -80.13",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-02T02:23:20.846Z"
+        "updatedAt": "2026-11-02T10:54:00.625Z"
       },
       "flooding": {
         "likely": true,
-        "forecastPeakFt": 1.52,
+        "forecastPeakFt": 1.59,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -504,86 +504,28 @@
         "updatedAt": "2026-11-01T22:43:29.193Z"
       },
       "water": {
-        "levelFt": -0.2,
-        "status": "rising",
-        "observedAt": "2026-11-01T21:18:00-05:00",
-        "rawTime": "2026-11-01 21:18",
+        "levelFt": 0.45,
+        "status": "falling",
+        "observedAt": "2026-11-02T05:48:00-05:00",
+        "rawTime": "2026-11-02 05:48",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-02T02:23:22.406Z"
+        "updatedAt": "2026-11-02T10:54:03.370Z"
       },
       "tides": {
-        "date": "2026-11-01",
+        "date": "2026-11-02",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-02T02:26:00-05:00",
-          "localTime": "02:26",
+          "at": "2026-11-02T15:04:00-05:00",
+          "localTime": "15:04",
           "date": "2026-11-02",
-          "heightFt": 0.28
+          "heightFt": 0.32
         },
         "today": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:20:00-05:00",
-            "localTime": "01:20",
-            "date": "2026-11-01",
-            "heightFt": 0.32
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T07:44:00-05:00",
-            "localTime": "07:44",
-            "date": "2026-11-01",
-            "heightFt": -1.72
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T14:04:00-05:00",
-            "localTime": "14:04",
-            "date": "2026-11-01",
-            "heightFt": 0.36
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T20:18:00-05:00",
-            "localTime": "20:18",
-            "date": "2026-11-01",
-            "heightFt": -1.48
-          }
-        ],
-        "next48h": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:20:00-05:00",
-            "localTime": "01:20",
-            "date": "2026-11-01",
-            "heightFt": 0.32
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T07:44:00-05:00",
-            "localTime": "07:44",
-            "date": "2026-11-01",
-            "heightFt": -1.72
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T14:04:00-05:00",
-            "localTime": "14:04",
-            "date": "2026-11-01",
-            "heightFt": 0.36
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T20:18:00-05:00",
-            "localTime": "20:18",
-            "date": "2026-11-01",
-            "heightFt": -1.48
-          },
           {
             "type": "high",
             "at": "2026-11-02T02:26:00-05:00",
@@ -613,74 +555,132 @@
             "heightFt": -1.55
           }
         ],
+        "next48h": [
+          {
+            "type": "high",
+            "at": "2026-11-02T02:26:00-05:00",
+            "localTime": "02:26",
+            "date": "2026-11-02",
+            "heightFt": 0.28
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T08:48:00-05:00",
+            "localTime": "08:48",
+            "date": "2026-11-02",
+            "heightFt": -1.65
+          },
+          {
+            "type": "high",
+            "at": "2026-11-02T15:04:00-05:00",
+            "localTime": "15:04",
+            "date": "2026-11-02",
+            "heightFt": 0.32
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T21:22:00-05:00",
+            "localTime": "21:22",
+            "date": "2026-11-02",
+            "heightFt": -1.55
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T03:33:00-05:00",
+            "localTime": "03:33",
+            "date": "2026-11-03",
+            "heightFt": 0.29
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T09:52:00-05:00",
+            "localTime": "09:52",
+            "date": "2026-11-03",
+            "heightFt": -1.61
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T16:05:00-05:00",
+            "localTime": "16:05",
+            "date": "2026-11-03",
+            "heightFt": 0.32
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T22:23:00-05:00",
+            "localTime": "22:23",
+            "date": "2026-11-03",
+            "heightFt": -1.64
+          }
+        ],
         "curve": [
           {
             "t": "00:00",
-            "h": -0.23
+            "h": -0.34
           },
           {
             "t": "00:30",
-            "h": -0.06
+            "h": -0.15
           },
           {
             "t": "01:00",
-            "h": 0.3
+            "h": 0.02
           },
           {
             "t": "01:30",
-            "h": 0.31
+            "h": 0.16
           },
           {
             "t": "02:00",
-            "h": 0.24
+            "h": 0.26
           },
           {
             "t": "02:30",
-            "h": 0.09
+            "h": 0.28
           },
           {
             "t": "03:00",
-            "h": -0.12
+            "h": 0.23
           },
           {
             "t": "03:30",
-            "h": -0.36
+            "h": 0.1
           },
           {
             "t": "04:00",
-            "h": -0.6
+            "h": -0.08
           },
           {
             "t": "04:30",
-            "h": -0.82
+            "h": -0.28
           },
           {
             "t": "05:00",
-            "h": -1.03
+            "h": -0.49
           },
           {
             "t": "05:30",
-            "h": -1.22
+            "h": -0.69
           },
           {
             "t": "06:00",
-            "h": -1.39
+            "h": -0.9
           },
           {
             "t": "06:30",
-            "h": -1.54
+            "h": -1.09
           },
           {
             "t": "07:00",
-            "h": -1.65
+            "h": -1.28
           },
           {
             "t": "07:30",
-            "h": -1.71
+            "h": -1.45
           },
           {
             "t": "08:00",
-            "h": -1.71
+            "h": -1.57
           },
           {
             "t": "08:30",
@@ -688,141 +688,141 @@
           },
           {
             "t": "09:00",
-            "h": -1.51
+            "h": -1.65
           },
           {
             "t": "09:30",
-            "h": -1.32
+            "h": -1.59
           },
           {
             "t": "10:00",
-            "h": -1.1
-          },
-          {
-            "t": "10:30",
-            "h": -0.86
-          },
-          {
-            "t": "11:00",
-            "h": -0.62
-          },
-          {
-            "t": "11:30",
-            "h": -0.4
-          },
-          {
-            "t": "12:00",
-            "h": -0.18
-          },
-          {
-            "t": "12:30",
-            "h": 0.01
-          },
-          {
-            "t": "13:00",
-            "h": 0.19
-          },
-          {
-            "t": "13:30",
-            "h": 0.31
-          },
-          {
-            "t": "14:00",
-            "h": 0.36
-          },
-          {
-            "t": "14:30",
-            "h": 0.33
-          },
-          {
-            "t": "15:00",
-            "h": 0.22
-          },
-          {
-            "t": "15:30",
-            "h": 0.04
-          },
-          {
-            "t": "16:00",
-            "h": -0.16
-          },
-          {
-            "t": "16:30",
-            "h": -0.37
-          },
-          {
-            "t": "17:00",
-            "h": -0.57
-          },
-          {
-            "t": "17:30",
-            "h": -0.76
-          },
-          {
-            "t": "18:00",
-            "h": -0.95
-          },
-          {
-            "t": "18:30",
-            "h": -1.13
-          },
-          {
-            "t": "19:00",
-            "h": -1.29
-          },
-          {
-            "t": "19:30",
-            "h": -1.41
-          },
-          {
-            "t": "20:00",
             "h": -1.47
           },
           {
+            "t": "10:30",
+            "h": -1.3
+          },
+          {
+            "t": "11:00",
+            "h": -1.1
+          },
+          {
+            "t": "11:30",
+            "h": -0.88
+          },
+          {
+            "t": "12:00",
+            "h": -0.66
+          },
+          {
+            "t": "12:30",
+            "h": -0.44
+          },
+          {
+            "t": "13:00",
+            "h": -0.23
+          },
+          {
+            "t": "13:30",
+            "h": -0.03
+          },
+          {
+            "t": "14:00",
+            "h": 0.14
+          },
+          {
+            "t": "14:30",
+            "h": 0.27
+          },
+          {
+            "t": "15:00",
+            "h": 0.32
+          },
+          {
+            "t": "15:30",
+            "h": 0.29
+          },
+          {
+            "t": "16:00",
+            "h": 0.19
+          },
+          {
+            "t": "16:30",
+            "h": 0.03
+          },
+          {
+            "t": "17:00",
+            "h": -0.16
+          },
+          {
+            "t": "17:30",
+            "h": -0.35
+          },
+          {
+            "t": "18:00",
+            "h": -0.55
+          },
+          {
+            "t": "18:30",
+            "h": -0.76
+          },
+          {
+            "t": "19:00",
+            "h": -0.96
+          },
+          {
+            "t": "19:30",
+            "h": -1.16
+          },
+          {
+            "t": "20:00",
+            "h": -1.33
+          },
+          {
             "t": "20:30",
-            "h": -1.48
+            "h": -1.46
           },
           {
             "t": "21:00",
-            "h": -1.42
+            "h": -1.53
           },
           {
             "t": "21:30",
-            "h": -1.31
+            "h": -1.55
           },
           {
             "t": "22:00",
-            "h": -1.14
+            "h": -1.5
           },
           {
             "t": "22:30",
-            "h": -0.95
+            "h": -1.39
           },
           {
             "t": "23:00",
-            "h": -0.74
+            "h": -1.23
           },
           {
             "t": "23:30",
-            "h": -0.53
+            "h": -1.04
           }
         ],
-        "anomalyFt": 1.16,
-        "todayPredictedPeakFt": 0.36,
-        "todayForecastPeakFt": 1.52,
+        "anomalyFt": 1.27,
+        "todayPredictedPeakFt": 0.32,
+        "todayForecastPeakFt": 1.59,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-02T02:23:22.462Z"
+        "updatedAt": "2026-11-02T10:54:03.469Z"
       },
       "floodDays": {
         "thisYear": {
           "year": 2026,
           "label": "May 2026 to Apr 2027",
-          "count": 22,
-          "lastFloodDay": "2026-11-01",
+          "count": 23,
+          "lastFloodDay": "2026-11-02",
           "thresholdFt": 1.3
         },
         "lastYear": {
@@ -837,10 +837,10 @@
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-01T22:43:29.664Z"
+        "updatedAt": "2026-11-02T10:54:04.180Z"
       },
       "weather": {
-        "rain24hIn": 0.46,
+        "rain24hIn": 0.43,
         "reportsCounted": 16,
         "station": {
           "id": "KMIA",
@@ -851,27 +851,27 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-11-02T02:23:22.969Z"
+        "updatedAt": "2026-11-02T10:54:04.822Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1",
+            "id": "urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
-            "id": "urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.002.2",
+            "id": "urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.002.1",
             "event": "Coastal Flood Advisory",
             "level": "advisory",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.002.2"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.002.1"
           }
         ]
       }
@@ -897,18 +897,18 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.001.3"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.001.1"
           }
         ],
         "source": {
@@ -916,11 +916,11 @@
           "detail": "Point 25.9812, -80.1484",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-02T02:23:21.150Z"
+        "updatedAt": "2026-11-02T10:54:00.971Z"
       },
       "flooding": {
         "likely": true,
-        "forecastPeakFt": 1.44,
+        "forecastPeakFt": 1.45,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -942,86 +942,28 @@
         "updatedAt": "2026-11-01T22:43:28.725Z"
       },
       "water": {
-        "levelFt": -0.53,
-        "status": "rising",
-        "observedAt": "2026-11-01T21:18:00-05:00",
-        "rawTime": "2026-11-01 21:18",
+        "levelFt": -0.33,
+        "status": "falling",
+        "observedAt": "2026-11-02T05:48:00-05:00",
+        "rawTime": "2026-11-02 05:48",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-02T02:23:22.234Z"
+        "updatedAt": "2026-11-02T10:54:02.209Z"
       },
       "tides": {
-        "date": "2026-11-01",
+        "date": "2026-11-02",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-02T01:50:00-05:00",
-          "localTime": "01:50",
+          "at": "2026-11-02T14:31:00-05:00",
+          "localTime": "14:31",
           "date": "2026-11-02",
-          "heightFt": 0.21
+          "heightFt": 0.35
         },
         "today": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:37:00-05:00",
-            "localTime": "01:37",
-            "date": "2026-11-01",
-            "heightFt": 0.23
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T06:50:00-05:00",
-            "localTime": "06:50",
-            "date": "2026-11-01",
-            "heightFt": -2.22
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T13:24:00-05:00",
-            "localTime": "13:24",
-            "date": "2026-11-01",
-            "heightFt": 0.43
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T19:37:00-05:00",
-            "localTime": "19:37",
-            "date": "2026-11-01",
-            "heightFt": -1.91
-          }
-        ],
-        "next48h": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:37:00-05:00",
-            "localTime": "01:37",
-            "date": "2026-11-01",
-            "heightFt": 0.23
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T06:50:00-05:00",
-            "localTime": "06:50",
-            "date": "2026-11-01",
-            "heightFt": -2.22
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T13:24:00-05:00",
-            "localTime": "13:24",
-            "date": "2026-11-01",
-            "heightFt": 0.43
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T19:37:00-05:00",
-            "localTime": "19:37",
-            "date": "2026-11-01",
-            "heightFt": -1.91
-          },
           {
             "type": "high",
             "at": "2026-11-02T01:50:00-05:00",
@@ -1051,216 +993,274 @@
             "heightFt": -1.99
           }
         ],
+        "next48h": [
+          {
+            "type": "high",
+            "at": "2026-11-02T01:50:00-05:00",
+            "localTime": "01:50",
+            "date": "2026-11-02",
+            "heightFt": 0.21
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T08:00:00-05:00",
+            "localTime": "08:00",
+            "date": "2026-11-02",
+            "heightFt": -2.12
+          },
+          {
+            "type": "high",
+            "at": "2026-11-02T14:31:00-05:00",
+            "localTime": "14:31",
+            "date": "2026-11-02",
+            "heightFt": 0.35
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T20:43:00-05:00",
+            "localTime": "20:43",
+            "date": "2026-11-02",
+            "heightFt": -1.99
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T03:04:00-05:00",
+            "localTime": "03:04",
+            "date": "2026-11-03",
+            "heightFt": 0.26
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T09:08:00-05:00",
+            "localTime": "09:08",
+            "date": "2026-11-03",
+            "heightFt": -2.06
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T15:34:00-05:00",
+            "localTime": "15:34",
+            "date": "2026-11-03",
+            "heightFt": 0.33
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T21:43:00-05:00",
+            "localTime": "21:43",
+            "date": "2026-11-03",
+            "heightFt": -2.1
+          }
+        ],
         "curve": [
           {
             "t": "00:00",
-            "h": -0.1
+            "h": -0.2
           },
           {
             "t": "00:30",
-            "h": 0.07
+            "h": -0.02
           },
           {
             "t": "01:00",
-            "h": 0.21
-          },
-          {
-            "t": "01:30",
             "h": 0.12
           },
           {
+            "t": "01:30",
+            "h": 0.19
+          },
+          {
             "t": "02:00",
-            "h": -0.04
+            "h": 0.2
           },
           {
             "t": "02:30",
-            "h": -0.26
+            "h": 0.14
           },
           {
             "t": "03:00",
-            "h": -0.53
+            "h": 0.02
           },
           {
             "t": "03:30",
-            "h": -0.83
-          },
-          {
-            "t": "04:00",
-            "h": -1.14
-          },
-          {
-            "t": "04:30",
-            "h": -1.44
-          },
-          {
-            "t": "05:00",
-            "h": -1.71
-          },
-          {
-            "t": "05:30",
-            "h": -1.94
-          },
-          {
-            "t": "06:00",
-            "h": -2.1
-          },
-          {
-            "t": "06:30",
-            "h": -2.2
-          },
-          {
-            "t": "07:00",
-            "h": -2.21
-          },
-          {
-            "t": "07:30",
-            "h": -2.15
-          },
-          {
-            "t": "08:00",
-            "h": -2.01
-          },
-          {
-            "t": "08:30",
-            "h": -1.81
-          },
-          {
-            "t": "09:00",
-            "h": -1.55
-          },
-          {
-            "t": "09:30",
-            "h": -1.26
-          },
-          {
-            "t": "10:00",
-            "h": -0.94
-          },
-          {
-            "t": "10:30",
-            "h": -0.62
-          },
-          {
-            "t": "11:00",
-            "h": -0.32
-          },
-          {
-            "t": "11:30",
-            "h": -0.05
-          },
-          {
-            "t": "12:00",
-            "h": 0.16
-          },
-          {
-            "t": "12:30",
-            "h": 0.31
-          },
-          {
-            "t": "13:00",
-            "h": 0.4
-          },
-          {
-            "t": "13:30",
-            "h": 0.43
-          },
-          {
-            "t": "14:00",
-            "h": 0.38
-          },
-          {
-            "t": "14:30",
-            "h": 0.25
-          },
-          {
-            "t": "15:00",
-            "h": 0.07
-          },
-          {
-            "t": "15:30",
             "h": -0.17
           },
           {
-            "t": "16:00",
-            "h": -0.45
+            "t": "04:00",
+            "h": -0.41
           },
           {
-            "t": "16:30",
-            "h": -0.74
-          },
-          {
-            "t": "17:00",
-            "h": -1.03
-          },
-          {
-            "t": "17:30",
-            "h": -1.3
-          },
-          {
-            "t": "18:00",
-            "h": -1.54
-          },
-          {
-            "t": "18:30",
-            "h": -1.73
-          },
-          {
-            "t": "19:00",
-            "h": -1.85
-          },
-          {
-            "t": "19:30",
-            "h": -1.91
-          },
-          {
-            "t": "20:00",
-            "h": -1.89
-          },
-          {
-            "t": "20:30",
-            "h": -1.8
-          },
-          {
-            "t": "21:00",
-            "h": -1.66
-          },
-          {
-            "t": "21:30",
-            "h": -1.46
-          },
-          {
-            "t": "22:00",
-            "h": -1.22
-          },
-          {
-            "t": "22:30",
-            "h": -0.95
-          },
-          {
-            "t": "23:00",
+            "t": "04:30",
             "h": -0.68
           },
           {
+            "t": "05:00",
+            "h": -0.97
+          },
+          {
+            "t": "05:30",
+            "h": -1.27
+          },
+          {
+            "t": "06:00",
+            "h": -1.54
+          },
+          {
+            "t": "06:30",
+            "h": -1.78
+          },
+          {
+            "t": "07:00",
+            "h": -1.96
+          },
+          {
+            "t": "07:30",
+            "h": -2.08
+          },
+          {
+            "t": "08:00",
+            "h": -2.12
+          },
+          {
+            "t": "08:30",
+            "h": -2.08
+          },
+          {
+            "t": "09:00",
+            "h": -1.97
+          },
+          {
+            "t": "09:30",
+            "h": -1.8
+          },
+          {
+            "t": "10:00",
+            "h": -1.56
+          },
+          {
+            "t": "10:30",
+            "h": -1.29
+          },
+          {
+            "t": "11:00",
+            "h": -0.99
+          },
+          {
+            "t": "11:30",
+            "h": -0.69
+          },
+          {
+            "t": "12:00",
+            "h": -0.41
+          },
+          {
+            "t": "12:30",
+            "h": -0.15
+          },
+          {
+            "t": "13:00",
+            "h": 0.06
+          },
+          {
+            "t": "13:30",
+            "h": 0.22
+          },
+          {
+            "t": "14:00",
+            "h": 0.32
+          },
+          {
+            "t": "14:30",
+            "h": 0.35
+          },
+          {
+            "t": "15:00",
+            "h": 0.32
+          },
+          {
+            "t": "15:30",
+            "h": 0.22
+          },
+          {
+            "t": "16:00",
+            "h": 0.05
+          },
+          {
+            "t": "16:30",
+            "h": -0.18
+          },
+          {
+            "t": "17:00",
+            "h": -0.44
+          },
+          {
+            "t": "17:30",
+            "h": -0.73
+          },
+          {
+            "t": "18:00",
+            "h": -1.03
+          },
+          {
+            "t": "18:30",
+            "h": -1.31
+          },
+          {
+            "t": "19:00",
+            "h": -1.56
+          },
+          {
+            "t": "19:30",
+            "h": -1.77
+          },
+          {
+            "t": "20:00",
+            "h": -1.91
+          },
+          {
+            "t": "20:30",
+            "h": -1.98
+          },
+          {
+            "t": "21:00",
+            "h": -1.97
+          },
+          {
+            "t": "21:30",
+            "h": -1.9
+          },
+          {
+            "t": "22:00",
+            "h": -1.76
+          },
+          {
+            "t": "22:30",
+            "h": -1.56
+          },
+          {
+            "t": "23:00",
+            "h": -1.32
+          },
+          {
             "t": "23:30",
-            "h": -0.42
+            "h": -1.04
           }
         ],
-        "anomalyFt": 1.01,
-        "todayPredictedPeakFt": 0.43,
-        "todayForecastPeakFt": 1.44,
+        "anomalyFt": 1.1,
+        "todayPredictedPeakFt": 0.35,
+        "todayForecastPeakFt": 1.45,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-02T02:23:22.365Z"
+        "updatedAt": "2026-11-02T10:54:02.455Z"
       },
       "floodDays": {
         "thisYear": {
           "year": 2026,
           "label": "May 2026 to Apr 2027",
-          "count": 22,
-          "lastFloodDay": "2026-11-01",
+          "count": 23,
+          "lastFloodDay": "2026-11-02",
           "thresholdFt": 1.3
         },
         "lastYear": {
@@ -1275,10 +1275,10 @@
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-01T22:43:29.148Z"
+        "updatedAt": "2026-11-02T10:54:03.286Z"
       },
       "weather": {
-        "rain24hIn": 0.72,
+        "rain24hIn": 0.82,
         "reportsCounted": 16,
         "station": {
           "id": "KHWO",
@@ -1289,27 +1289,27 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-11-02T02:23:23.373Z"
+        "updatedAt": "2026-11-02T10:54:05.311Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1",
+            "id": "urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
-            "id": "urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.001.3",
+            "id": "urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.001.1",
             "event": "Coastal Flood Advisory",
             "level": "advisory",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.001.3"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.001.1"
           }
         ]
       }
@@ -1335,18 +1335,18 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.001.3"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.001.1"
           }
         ],
         "source": {
@@ -1354,11 +1354,11 @@
           "detail": "Point 26.0112, -80.1495",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-02T02:23:21.464Z"
+        "updatedAt": "2026-11-02T10:54:01.401Z"
       },
       "flooding": {
         "likely": true,
-        "forecastPeakFt": 1.44,
+        "forecastPeakFt": 1.45,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -1380,86 +1380,28 @@
         "updatedAt": "2026-11-01T22:43:28.725Z"
       },
       "water": {
-        "levelFt": -0.53,
-        "status": "rising",
-        "observedAt": "2026-11-01T21:18:00-05:00",
-        "rawTime": "2026-11-01 21:18",
+        "levelFt": -0.33,
+        "status": "falling",
+        "observedAt": "2026-11-02T05:48:00-05:00",
+        "rawTime": "2026-11-02 05:48",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-02T02:23:22.234Z"
+        "updatedAt": "2026-11-02T10:54:02.209Z"
       },
       "tides": {
-        "date": "2026-11-01",
+        "date": "2026-11-02",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-02T01:50:00-05:00",
-          "localTime": "01:50",
+          "at": "2026-11-02T14:31:00-05:00",
+          "localTime": "14:31",
           "date": "2026-11-02",
-          "heightFt": 0.21
+          "heightFt": 0.35
         },
         "today": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:37:00-05:00",
-            "localTime": "01:37",
-            "date": "2026-11-01",
-            "heightFt": 0.23
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T06:50:00-05:00",
-            "localTime": "06:50",
-            "date": "2026-11-01",
-            "heightFt": -2.22
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T13:24:00-05:00",
-            "localTime": "13:24",
-            "date": "2026-11-01",
-            "heightFt": 0.43
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T19:37:00-05:00",
-            "localTime": "19:37",
-            "date": "2026-11-01",
-            "heightFt": -1.91
-          }
-        ],
-        "next48h": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:37:00-05:00",
-            "localTime": "01:37",
-            "date": "2026-11-01",
-            "heightFt": 0.23
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T06:50:00-05:00",
-            "localTime": "06:50",
-            "date": "2026-11-01",
-            "heightFt": -2.22
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T13:24:00-05:00",
-            "localTime": "13:24",
-            "date": "2026-11-01",
-            "heightFt": 0.43
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T19:37:00-05:00",
-            "localTime": "19:37",
-            "date": "2026-11-01",
-            "heightFt": -1.91
-          },
           {
             "type": "high",
             "at": "2026-11-02T01:50:00-05:00",
@@ -1489,216 +1431,274 @@
             "heightFt": -1.99
           }
         ],
+        "next48h": [
+          {
+            "type": "high",
+            "at": "2026-11-02T01:50:00-05:00",
+            "localTime": "01:50",
+            "date": "2026-11-02",
+            "heightFt": 0.21
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T08:00:00-05:00",
+            "localTime": "08:00",
+            "date": "2026-11-02",
+            "heightFt": -2.12
+          },
+          {
+            "type": "high",
+            "at": "2026-11-02T14:31:00-05:00",
+            "localTime": "14:31",
+            "date": "2026-11-02",
+            "heightFt": 0.35
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T20:43:00-05:00",
+            "localTime": "20:43",
+            "date": "2026-11-02",
+            "heightFt": -1.99
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T03:04:00-05:00",
+            "localTime": "03:04",
+            "date": "2026-11-03",
+            "heightFt": 0.26
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T09:08:00-05:00",
+            "localTime": "09:08",
+            "date": "2026-11-03",
+            "heightFt": -2.06
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T15:34:00-05:00",
+            "localTime": "15:34",
+            "date": "2026-11-03",
+            "heightFt": 0.33
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T21:43:00-05:00",
+            "localTime": "21:43",
+            "date": "2026-11-03",
+            "heightFt": -2.1
+          }
+        ],
         "curve": [
           {
             "t": "00:00",
-            "h": -0.1
+            "h": -0.2
           },
           {
             "t": "00:30",
-            "h": 0.07
+            "h": -0.02
           },
           {
             "t": "01:00",
-            "h": 0.21
-          },
-          {
-            "t": "01:30",
             "h": 0.12
           },
           {
+            "t": "01:30",
+            "h": 0.19
+          },
+          {
             "t": "02:00",
-            "h": -0.04
+            "h": 0.2
           },
           {
             "t": "02:30",
-            "h": -0.26
+            "h": 0.14
           },
           {
             "t": "03:00",
-            "h": -0.53
+            "h": 0.02
           },
           {
             "t": "03:30",
-            "h": -0.83
-          },
-          {
-            "t": "04:00",
-            "h": -1.14
-          },
-          {
-            "t": "04:30",
-            "h": -1.44
-          },
-          {
-            "t": "05:00",
-            "h": -1.71
-          },
-          {
-            "t": "05:30",
-            "h": -1.94
-          },
-          {
-            "t": "06:00",
-            "h": -2.1
-          },
-          {
-            "t": "06:30",
-            "h": -2.2
-          },
-          {
-            "t": "07:00",
-            "h": -2.21
-          },
-          {
-            "t": "07:30",
-            "h": -2.15
-          },
-          {
-            "t": "08:00",
-            "h": -2.01
-          },
-          {
-            "t": "08:30",
-            "h": -1.81
-          },
-          {
-            "t": "09:00",
-            "h": -1.55
-          },
-          {
-            "t": "09:30",
-            "h": -1.26
-          },
-          {
-            "t": "10:00",
-            "h": -0.94
-          },
-          {
-            "t": "10:30",
-            "h": -0.62
-          },
-          {
-            "t": "11:00",
-            "h": -0.32
-          },
-          {
-            "t": "11:30",
-            "h": -0.05
-          },
-          {
-            "t": "12:00",
-            "h": 0.16
-          },
-          {
-            "t": "12:30",
-            "h": 0.31
-          },
-          {
-            "t": "13:00",
-            "h": 0.4
-          },
-          {
-            "t": "13:30",
-            "h": 0.43
-          },
-          {
-            "t": "14:00",
-            "h": 0.38
-          },
-          {
-            "t": "14:30",
-            "h": 0.25
-          },
-          {
-            "t": "15:00",
-            "h": 0.07
-          },
-          {
-            "t": "15:30",
             "h": -0.17
           },
           {
-            "t": "16:00",
-            "h": -0.45
+            "t": "04:00",
+            "h": -0.41
           },
           {
-            "t": "16:30",
-            "h": -0.74
-          },
-          {
-            "t": "17:00",
-            "h": -1.03
-          },
-          {
-            "t": "17:30",
-            "h": -1.3
-          },
-          {
-            "t": "18:00",
-            "h": -1.54
-          },
-          {
-            "t": "18:30",
-            "h": -1.73
-          },
-          {
-            "t": "19:00",
-            "h": -1.85
-          },
-          {
-            "t": "19:30",
-            "h": -1.91
-          },
-          {
-            "t": "20:00",
-            "h": -1.89
-          },
-          {
-            "t": "20:30",
-            "h": -1.8
-          },
-          {
-            "t": "21:00",
-            "h": -1.66
-          },
-          {
-            "t": "21:30",
-            "h": -1.46
-          },
-          {
-            "t": "22:00",
-            "h": -1.22
-          },
-          {
-            "t": "22:30",
-            "h": -0.95
-          },
-          {
-            "t": "23:00",
+            "t": "04:30",
             "h": -0.68
           },
           {
+            "t": "05:00",
+            "h": -0.97
+          },
+          {
+            "t": "05:30",
+            "h": -1.27
+          },
+          {
+            "t": "06:00",
+            "h": -1.54
+          },
+          {
+            "t": "06:30",
+            "h": -1.78
+          },
+          {
+            "t": "07:00",
+            "h": -1.96
+          },
+          {
+            "t": "07:30",
+            "h": -2.08
+          },
+          {
+            "t": "08:00",
+            "h": -2.12
+          },
+          {
+            "t": "08:30",
+            "h": -2.08
+          },
+          {
+            "t": "09:00",
+            "h": -1.97
+          },
+          {
+            "t": "09:30",
+            "h": -1.8
+          },
+          {
+            "t": "10:00",
+            "h": -1.56
+          },
+          {
+            "t": "10:30",
+            "h": -1.29
+          },
+          {
+            "t": "11:00",
+            "h": -0.99
+          },
+          {
+            "t": "11:30",
+            "h": -0.69
+          },
+          {
+            "t": "12:00",
+            "h": -0.41
+          },
+          {
+            "t": "12:30",
+            "h": -0.15
+          },
+          {
+            "t": "13:00",
+            "h": 0.06
+          },
+          {
+            "t": "13:30",
+            "h": 0.22
+          },
+          {
+            "t": "14:00",
+            "h": 0.32
+          },
+          {
+            "t": "14:30",
+            "h": 0.35
+          },
+          {
+            "t": "15:00",
+            "h": 0.32
+          },
+          {
+            "t": "15:30",
+            "h": 0.22
+          },
+          {
+            "t": "16:00",
+            "h": 0.05
+          },
+          {
+            "t": "16:30",
+            "h": -0.18
+          },
+          {
+            "t": "17:00",
+            "h": -0.44
+          },
+          {
+            "t": "17:30",
+            "h": -0.73
+          },
+          {
+            "t": "18:00",
+            "h": -1.03
+          },
+          {
+            "t": "18:30",
+            "h": -1.31
+          },
+          {
+            "t": "19:00",
+            "h": -1.56
+          },
+          {
+            "t": "19:30",
+            "h": -1.77
+          },
+          {
+            "t": "20:00",
+            "h": -1.91
+          },
+          {
+            "t": "20:30",
+            "h": -1.98
+          },
+          {
+            "t": "21:00",
+            "h": -1.97
+          },
+          {
+            "t": "21:30",
+            "h": -1.9
+          },
+          {
+            "t": "22:00",
+            "h": -1.76
+          },
+          {
+            "t": "22:30",
+            "h": -1.56
+          },
+          {
+            "t": "23:00",
+            "h": -1.32
+          },
+          {
             "t": "23:30",
-            "h": -0.42
+            "h": -1.04
           }
         ],
-        "anomalyFt": 1.01,
-        "todayPredictedPeakFt": 0.43,
-        "todayForecastPeakFt": 1.44,
+        "anomalyFt": 1.1,
+        "todayPredictedPeakFt": 0.35,
+        "todayForecastPeakFt": 1.45,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-02T02:23:22.365Z"
+        "updatedAt": "2026-11-02T10:54:02.455Z"
       },
       "floodDays": {
         "thisYear": {
           "year": 2026,
           "label": "May 2026 to Apr 2027",
-          "count": 22,
-          "lastFloodDay": "2026-11-01",
+          "count": 23,
+          "lastFloodDay": "2026-11-02",
           "thresholdFt": 1.3
         },
         "lastYear": {
@@ -1713,10 +1713,10 @@
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-01T22:43:29.148Z"
+        "updatedAt": "2026-11-02T10:54:03.286Z"
       },
       "weather": {
-        "rain24hIn": 0.72,
+        "rain24hIn": 0.82,
         "reportsCounted": 16,
         "station": {
           "id": "KHWO",
@@ -1727,27 +1727,27 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-11-02T02:23:23.373Z"
+        "updatedAt": "2026-11-02T10:54:05.311Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1",
+            "id": "urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
-            "id": "urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.001.3",
+            "id": "urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.001.1",
             "event": "Coastal Flood Advisory",
             "level": "advisory",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.001.3"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.001.1"
           }
         ]
       }
@@ -1773,18 +1773,18 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.001.3"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.001.1"
           }
         ],
         "source": {
@@ -1792,11 +1792,11 @@
           "detail": "Point 26.1224, -80.1373",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-02T02:23:21.889Z"
+        "updatedAt": "2026-11-02T10:54:01.759Z"
       },
       "flooding": {
         "likely": true,
-        "forecastPeakFt": 1.44,
+        "forecastPeakFt": 1.45,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -1818,86 +1818,28 @@
         "updatedAt": "2026-11-01T22:43:28.725Z"
       },
       "water": {
-        "levelFt": -0.53,
-        "status": "rising",
-        "observedAt": "2026-11-01T21:18:00-05:00",
-        "rawTime": "2026-11-01 21:18",
+        "levelFt": -0.33,
+        "status": "falling",
+        "observedAt": "2026-11-02T05:48:00-05:00",
+        "rawTime": "2026-11-02 05:48",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-02T02:23:22.234Z"
+        "updatedAt": "2026-11-02T10:54:02.209Z"
       },
       "tides": {
-        "date": "2026-11-01",
+        "date": "2026-11-02",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-02T01:50:00-05:00",
-          "localTime": "01:50",
+          "at": "2026-11-02T14:31:00-05:00",
+          "localTime": "14:31",
           "date": "2026-11-02",
-          "heightFt": 0.21
+          "heightFt": 0.35
         },
         "today": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:37:00-05:00",
-            "localTime": "01:37",
-            "date": "2026-11-01",
-            "heightFt": 0.23
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T06:50:00-05:00",
-            "localTime": "06:50",
-            "date": "2026-11-01",
-            "heightFt": -2.22
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T13:24:00-05:00",
-            "localTime": "13:24",
-            "date": "2026-11-01",
-            "heightFt": 0.43
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T19:37:00-05:00",
-            "localTime": "19:37",
-            "date": "2026-11-01",
-            "heightFt": -1.91
-          }
-        ],
-        "next48h": [
-          {
-            "type": "high",
-            "at": "2026-11-01T01:37:00-05:00",
-            "localTime": "01:37",
-            "date": "2026-11-01",
-            "heightFt": 0.23
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T06:50:00-05:00",
-            "localTime": "06:50",
-            "date": "2026-11-01",
-            "heightFt": -2.22
-          },
-          {
-            "type": "high",
-            "at": "2026-11-01T13:24:00-05:00",
-            "localTime": "13:24",
-            "date": "2026-11-01",
-            "heightFt": 0.43
-          },
-          {
-            "type": "low",
-            "at": "2026-11-01T19:37:00-05:00",
-            "localTime": "19:37",
-            "date": "2026-11-01",
-            "heightFt": -1.91
-          },
           {
             "type": "high",
             "at": "2026-11-02T01:50:00-05:00",
@@ -1927,216 +1869,274 @@
             "heightFt": -1.99
           }
         ],
+        "next48h": [
+          {
+            "type": "high",
+            "at": "2026-11-02T01:50:00-05:00",
+            "localTime": "01:50",
+            "date": "2026-11-02",
+            "heightFt": 0.21
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T08:00:00-05:00",
+            "localTime": "08:00",
+            "date": "2026-11-02",
+            "heightFt": -2.12
+          },
+          {
+            "type": "high",
+            "at": "2026-11-02T14:31:00-05:00",
+            "localTime": "14:31",
+            "date": "2026-11-02",
+            "heightFt": 0.35
+          },
+          {
+            "type": "low",
+            "at": "2026-11-02T20:43:00-05:00",
+            "localTime": "20:43",
+            "date": "2026-11-02",
+            "heightFt": -1.99
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T03:04:00-05:00",
+            "localTime": "03:04",
+            "date": "2026-11-03",
+            "heightFt": 0.26
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T09:08:00-05:00",
+            "localTime": "09:08",
+            "date": "2026-11-03",
+            "heightFt": -2.06
+          },
+          {
+            "type": "high",
+            "at": "2026-11-03T15:34:00-05:00",
+            "localTime": "15:34",
+            "date": "2026-11-03",
+            "heightFt": 0.33
+          },
+          {
+            "type": "low",
+            "at": "2026-11-03T21:43:00-05:00",
+            "localTime": "21:43",
+            "date": "2026-11-03",
+            "heightFt": -2.1
+          }
+        ],
         "curve": [
           {
             "t": "00:00",
-            "h": -0.1
+            "h": -0.2
           },
           {
             "t": "00:30",
-            "h": 0.07
+            "h": -0.02
           },
           {
             "t": "01:00",
-            "h": 0.21
-          },
-          {
-            "t": "01:30",
             "h": 0.12
           },
           {
+            "t": "01:30",
+            "h": 0.19
+          },
+          {
             "t": "02:00",
-            "h": -0.04
+            "h": 0.2
           },
           {
             "t": "02:30",
-            "h": -0.26
+            "h": 0.14
           },
           {
             "t": "03:00",
-            "h": -0.53
+            "h": 0.02
           },
           {
             "t": "03:30",
-            "h": -0.83
-          },
-          {
-            "t": "04:00",
-            "h": -1.14
-          },
-          {
-            "t": "04:30",
-            "h": -1.44
-          },
-          {
-            "t": "05:00",
-            "h": -1.71
-          },
-          {
-            "t": "05:30",
-            "h": -1.94
-          },
-          {
-            "t": "06:00",
-            "h": -2.1
-          },
-          {
-            "t": "06:30",
-            "h": -2.2
-          },
-          {
-            "t": "07:00",
-            "h": -2.21
-          },
-          {
-            "t": "07:30",
-            "h": -2.15
-          },
-          {
-            "t": "08:00",
-            "h": -2.01
-          },
-          {
-            "t": "08:30",
-            "h": -1.81
-          },
-          {
-            "t": "09:00",
-            "h": -1.55
-          },
-          {
-            "t": "09:30",
-            "h": -1.26
-          },
-          {
-            "t": "10:00",
-            "h": -0.94
-          },
-          {
-            "t": "10:30",
-            "h": -0.62
-          },
-          {
-            "t": "11:00",
-            "h": -0.32
-          },
-          {
-            "t": "11:30",
-            "h": -0.05
-          },
-          {
-            "t": "12:00",
-            "h": 0.16
-          },
-          {
-            "t": "12:30",
-            "h": 0.31
-          },
-          {
-            "t": "13:00",
-            "h": 0.4
-          },
-          {
-            "t": "13:30",
-            "h": 0.43
-          },
-          {
-            "t": "14:00",
-            "h": 0.38
-          },
-          {
-            "t": "14:30",
-            "h": 0.25
-          },
-          {
-            "t": "15:00",
-            "h": 0.07
-          },
-          {
-            "t": "15:30",
             "h": -0.17
           },
           {
-            "t": "16:00",
-            "h": -0.45
+            "t": "04:00",
+            "h": -0.41
           },
           {
-            "t": "16:30",
-            "h": -0.74
-          },
-          {
-            "t": "17:00",
-            "h": -1.03
-          },
-          {
-            "t": "17:30",
-            "h": -1.3
-          },
-          {
-            "t": "18:00",
-            "h": -1.54
-          },
-          {
-            "t": "18:30",
-            "h": -1.73
-          },
-          {
-            "t": "19:00",
-            "h": -1.85
-          },
-          {
-            "t": "19:30",
-            "h": -1.91
-          },
-          {
-            "t": "20:00",
-            "h": -1.89
-          },
-          {
-            "t": "20:30",
-            "h": -1.8
-          },
-          {
-            "t": "21:00",
-            "h": -1.66
-          },
-          {
-            "t": "21:30",
-            "h": -1.46
-          },
-          {
-            "t": "22:00",
-            "h": -1.22
-          },
-          {
-            "t": "22:30",
-            "h": -0.95
-          },
-          {
-            "t": "23:00",
+            "t": "04:30",
             "h": -0.68
           },
           {
+            "t": "05:00",
+            "h": -0.97
+          },
+          {
+            "t": "05:30",
+            "h": -1.27
+          },
+          {
+            "t": "06:00",
+            "h": -1.54
+          },
+          {
+            "t": "06:30",
+            "h": -1.78
+          },
+          {
+            "t": "07:00",
+            "h": -1.96
+          },
+          {
+            "t": "07:30",
+            "h": -2.08
+          },
+          {
+            "t": "08:00",
+            "h": -2.12
+          },
+          {
+            "t": "08:30",
+            "h": -2.08
+          },
+          {
+            "t": "09:00",
+            "h": -1.97
+          },
+          {
+            "t": "09:30",
+            "h": -1.8
+          },
+          {
+            "t": "10:00",
+            "h": -1.56
+          },
+          {
+            "t": "10:30",
+            "h": -1.29
+          },
+          {
+            "t": "11:00",
+            "h": -0.99
+          },
+          {
+            "t": "11:30",
+            "h": -0.69
+          },
+          {
+            "t": "12:00",
+            "h": -0.41
+          },
+          {
+            "t": "12:30",
+            "h": -0.15
+          },
+          {
+            "t": "13:00",
+            "h": 0.06
+          },
+          {
+            "t": "13:30",
+            "h": 0.22
+          },
+          {
+            "t": "14:00",
+            "h": 0.32
+          },
+          {
+            "t": "14:30",
+            "h": 0.35
+          },
+          {
+            "t": "15:00",
+            "h": 0.32
+          },
+          {
+            "t": "15:30",
+            "h": 0.22
+          },
+          {
+            "t": "16:00",
+            "h": 0.05
+          },
+          {
+            "t": "16:30",
+            "h": -0.18
+          },
+          {
+            "t": "17:00",
+            "h": -0.44
+          },
+          {
+            "t": "17:30",
+            "h": -0.73
+          },
+          {
+            "t": "18:00",
+            "h": -1.03
+          },
+          {
+            "t": "18:30",
+            "h": -1.31
+          },
+          {
+            "t": "19:00",
+            "h": -1.56
+          },
+          {
+            "t": "19:30",
+            "h": -1.77
+          },
+          {
+            "t": "20:00",
+            "h": -1.91
+          },
+          {
+            "t": "20:30",
+            "h": -1.98
+          },
+          {
+            "t": "21:00",
+            "h": -1.97
+          },
+          {
+            "t": "21:30",
+            "h": -1.9
+          },
+          {
+            "t": "22:00",
+            "h": -1.76
+          },
+          {
+            "t": "22:30",
+            "h": -1.56
+          },
+          {
+            "t": "23:00",
+            "h": -1.32
+          },
+          {
             "t": "23:30",
-            "h": -0.42
+            "h": -1.04
           }
         ],
-        "anomalyFt": 1.01,
-        "todayPredictedPeakFt": 0.43,
-        "todayForecastPeakFt": 1.44,
+        "anomalyFt": 1.1,
+        "todayPredictedPeakFt": 0.35,
+        "todayForecastPeakFt": 1.45,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-02T02:23:22.365Z"
+        "updatedAt": "2026-11-02T10:54:02.455Z"
       },
       "floodDays": {
         "thisYear": {
           "year": 2026,
           "label": "May 2026 to Apr 2027",
-          "count": 22,
-          "lastFloodDay": "2026-11-01",
+          "count": 23,
+          "lastFloodDay": "2026-11-02",
           "thresholdFt": 1.3
         },
         "lastYear": {
@@ -2151,10 +2151,10 @@
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-01T22:43:29.148Z"
+        "updatedAt": "2026-11-02T10:54:03.286Z"
       },
       "weather": {
-        "rain24hIn": 0.75,
+        "rain24hIn": 0.67,
         "reportsCounted": 16,
         "station": {
           "id": "KFLL",
@@ -2165,27 +2165,27 @@
           "detail": "Fort Lauderdale/Hollywood International Airport (KFLL)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KFLL"
         },
-        "updatedAt": "2026-11-02T02:23:23.912Z"
+        "updatedAt": "2026-11-02T10:54:05.856Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1",
+            "id": "urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 1 at 12:49PM EST until November 2 at 3:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T12:49:00-05:00",
-            "expires": "2026-11-02T15:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1df7ace1109595b6e55fe7e70ea87168365d4127.002.1"
+            "headline": "Flood Watch issued November 1 at 11:59PM EST until November 2 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-01T23:59:00-05:00",
+            "expires": "2026-11-02T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f07e60623d00938b46403a238fbab7e9c79145a.002.1"
           },
           {
-            "id": "urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.001.3",
+            "id": "urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.001.1",
             "event": "Coastal Flood Advisory",
             "level": "advisory",
-            "headline": "Coastal Flood Advisory issued November 1 at 1:20PM EST until November 2 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-01T13:20:00-05:00",
-            "expires": "2026-11-02T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.016815980b229d4fe5d1f8150e3c69f5426a47f6.001.3"
+            "headline": "Coastal Flood Advisory issued November 2 at 1:41AM EST until November 3 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-02T01:41:00-05:00",
+            "expires": "2026-11-03T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.532a103165b31f396bf0ee0fdf897459bce46774.001.1"
           }
         ]
       }
