@@ -1,23 +1,6 @@
 {
   "items": [
     {
-      "id": "miami-iqm2-5360",
-      "org": "City of Miami",
-      "title": "Climate Resilience Committee",
-      "level": "city",
-      "cities": [
-        "miami"
-      ],
-      "date": "2026-11-02",
-      "time": "6:00 PM",
-      "start": "2026-11-02T18:00:00-05:00",
-      "location": "",
-      "topics": [],
-      "link": "https://MiamiFL.IQM2.com/Citizens/Detail_Meeting.aspx?ID=5360",
-      "agenda": null,
-      "source": "City of Miami"
-    },
-    {
       "id": "hollywoodfl-2745",
       "org": "City of Hollywood",
       "title": "Regular City Commission Meeting",
