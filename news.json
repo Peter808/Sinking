@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "headline": "Heavy rain causes street flooding in Broward, leaving roads, gas station, school parking lots underwater,",
+      "source": "Local10",
+      "link": "https://www.local10.com/weather/2026/11/04/heavy-rain-causes-street-flooding-in-pompano-beach-leaving-roads-and-gas-station-underwater/",
+      "date": "2026-11-04T12:12:30.000Z",
+      "cities": [],
+      "via": "Local10"
+    },
+    {
+      "headline": "LIVE RADAR: Flood advisory in effect in Broward after huge rains pummel South Florida",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/weather/stories-weather/live-radar-flood-advisory-in-effect-in-broward-after-huge-rains-pummel-south-florida/3883526/",
+      "date": "2026-11-04T08:25:10.000Z",
+      "cities": [],
+      "via": "NBC6 Miami"
+    },
+    {
       "headline": "Flash flood warning issued for parts of Broward County, NWS says",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/flash-flood-warning-issued-for-parts-of-broward-county-nws-says/3883194/",
@@ -17,10 +33,18 @@
       "via": "Google News"
     },
     {
+      "headline": "Flooding strands cars at Sawgrass Mills, Amerant Bank Arena after heavy rain in Broward",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQW5tdXlWenA1NFY5OXFZZ1V3ZGpOd3RsVTlQQ2RCVUQwRDBvS1pfNGxvY0plQzFta3dvc1pQOHFrZjNtUmZiMzFiZUJOeWk1YWRrOUlyUF9hZGxFbUdhaGFOLWZncXVybk5MNDJNeUdScTJEZjVSdGU2UnZVN0VjTmZxcFJCNUdHeXNuOVBOUDhMM2FqTVNBYTQ3dnQwdlhJLWtNamVjZ2Rnb2s1bUlZQ3RocTQ?oc=5",
+      "date": "2026-11-03T16:48:00.000Z",
+      "cities": [],
+      "via": "Google News"
+    },
+    {
       "headline": "Miami Weather Tuesday Storms Flooding And Rough Surf",
       "source": "Hoodline",
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSVMycUFZTU45T3RVeG9jZ3ZyVFVmUGJqTk96WWxyUFJXdURRYkJvSjhIMUhzWFNrbjkwX29ZMVdPSnhoUzYtWW1oQXhFNEhTRmRFT0ZKcm95elpUdTRVbWNBS2FWMFhuZmYtX3YyQmRkOV8zOFItQkFPN2VBVHJFTTZYVzB6ZlhSMFc1Y3dEYkp4eWpieVZMVG1ZUVZaUlVTZUFyNUZoRkk5Vm9rS1dZNw?oc=5",
-      "date": "2026-11-03T13:33:42.000Z",
+      "date": "2026-11-03T14:23:43.000Z",
       "cities": [
         "miami"
       ],
@@ -457,22 +481,22 @@
       "via": "Google News"
     },
     {
-      "headline": "Heavy rain floods neighborhoods across Miami-Dade, Broward",
-      "source": "WPLG Local 10",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQNklxY01GZmNwc2JDeE5NYjJCNkxmX1ZoMkFmSzFONXBWN3k4UFBMQjhrVEdoU1VJTDBvbE9BQnpaRDRDUmNNa0Jzd0R2bW5NanlBMXhta3doTjZaZzVGRW9XbGVIS1NCdVRYTjFhMXp3ZnpNb2JiY01uQmZkeGtoQU56XzdfNnFVLVBnLXRuWGs5Szg4YV9ST0ZMR3JjR0xMN1BlT3p4Y2xTNXNTbnlLN1duUFFHWjRPaTI2U2JKWW51ZUVQR3NLczVNUXFxVG5L?oc=5",
-      "date": "2026-09-23T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
       "headline": "Roads across Hallandale Beach flooded after overnight downpours in South Florida",
       "source": "CBS News",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQemxQS0NsclVGOE95ZVRiSm9LY2tjbks3QzRUU0I1YlREQlFiX3JTQmo5TU8wZ3l0enR2VDU2U3R3ampaWVZsRkdtV0MzM2tSeER6bzJvTWhmZ2xSb0dYN0JKX1ZBMDk2bTBNSWZzZzRxV1VkZmNaV09BOTVpVmNRVWZfcnoyeU1rVDBvcjVVbVQzUHRYdm9PYkR2SVRvUXgxQ1k3WWFveWdxWk5PLWJtc1h3ZzdKc0Vz?oc=5",
       "date": "2026-09-23T07:00:00.000Z",
       "cities": [
         "hallandale-beach"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Heavy rain floods neighborhoods across Miami-Dade, Broward",
+      "source": "WPLG Local 10",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQNklxY01GZmNwc2JDeE5NYjJCNkxmX1ZoMkFmSzFONXBWN3k4UFBMQjhrVEdoU1VJTDBvbE9BQnpaRDRDUmNNa0Jzd0R2bW5NanlBMXhta3doTjZaZzVGRW9XbGVIS1NCdVRYTjFhMXp3ZnpNb2JiY01uQmZkeGtoQU56XzdfNnFVLVBnLXRuWGs5Szg4YV9ST0ZMR3JjR0xMN1BlT3p4Y2xTNXNTbnlLN1duUFFHWjRPaTI2U2JKWW51ZUVQR3NLczVNUXFxVG5L?oc=5",
+      "date": "2026-09-23T07:00:00.000Z",
+      "cities": [
+        "miami"
       ],
       "via": "Google News"
     },
@@ -561,36 +585,6 @@
       "date": "2025-11-21T08:00:00.000Z",
       "cities": [
         "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "King tides swamp Fort Lauderdale street twice daily as residents brace for more flooding",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONDIxVXE0TUJQdGJWT1pZczFsd29rNWxqUHM5VXZLSEg1UmdBYXNvcGQxcTZNcm8zazBtUS1KOVJMWTNmOTByc0dVM3FobzdfUmxCenhfM0RqdUt1M0kzbWhMZFl6TFBvQ0NLNTlLYjJUVWtJVUhhZ0VBa01LNWtTQ1pjd1FBbjNpN19acWxQd20tTHVTcnUyd2FRU2d6NTBHRFJ2T0RuWnBTMTFjaUx3SEdwTkVEUHdvY1dmck10bldLYms?oc=5",
-      "date": "2025-10-17T07:00:00.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Hallandale Beach neighborhoods flooded after heavy rain",
-      "source": "NBC 6 South Florida",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxONG9zUWlaQjV6ZFRjd1BYMDRRcDN6X09Lb1pYa3hVcFBTbW5CSFd2WldIRnlwODFDVWhfVTlydDNqdUVUVGVhM2J6QnNaUDJ3YlhDWlY1TjRvWDY4SkdCeElRZy1TOHpBa1cwYVgtTHRwQ3NFdURmTGZCTXN1VzdVd2w2ZTBfQWl6UzJjVDZMZko5bXVLTEFpejFkcnl2RkRnWWFMN3Y2T1VDQdIBsgFBVV95cUxOaVRCdmJGTEZuMVVKam5hWDcweTFoc0F2S3h6eUFPYlpJSVN3cTRKMExtUnJwZFM3TXlLcXpCV2g3SlNxeXJIRmFlNXdxS24wazBBekdHWnNyUHJDNF80WEQ5QXZRNmxrNndweGVWYkRMQ0F3Y2pGbEQwb20yRzhabmVNNjdSM0xTZ09kWVk3T2F3bVQ4V2t6cFhvTk53SFJ3eU1oX0tBLXA5cVlnV1JqbUFB?oc=5",
-      "date": "2025-10-10T07:00:00.000Z",
-      "cities": [
-        "hallandale-beach"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "‘It's getting worse': Heavy rain brings flooding in Hallandale Beach neighborhoods",
-      "source": "NBC 6 South Florida",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPR01FZk1XbmdnY3paMVo3ZDV5TkhxazZUSE9zMHpIRFh3MWdib1V0aEtmT2dyejRvY1JWZWxSaTgtOVRUV3dSdUVrekYzbGhjUTdQTlZjMno2NWY0elJNSXVWM0l6OUhEelZ5cTRVWjF3OXNBQzRPT0RtY0RGU1BzVUtzVWZfM05waVJ2LUF1QU1XY3VLbWNNQUhR0gGiAUFVX3lxTE9sVGNfN25ScU1obmhvTjQ5NjRhNThqWGNEdDlTOXE4cy05ZXNaV1JjZ2FlZENxcjllQzVMSng5amRVQUdKNUJIYWlNMW5VLWkzbF9iUVhlZEIyNnl5TUJWQkNhdkJPNlVLTkYxc21iWnVJbF9vVTFwenhVNG40U0N3UkRzWUJTd2o1ZjE2UVA5OTAtcXhzT0hoak01WWpZbVZXZw?oc=5",
-      "date": "2025-10-10T07:00:00.000Z",
-      "cities": [
-        "hallandale-beach"
       ],
       "via": "Google News"
     }
