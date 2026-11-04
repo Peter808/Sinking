@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "headline": "Flash flood warning issued for parts of Broward County, NWS says",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/flash-flood-warning-issued-for-parts-of-broward-county-nws-says/3883194/",
+      "date": "2026-11-03T21:34:03.000Z",
+      "cities": [],
+      "via": "NBC6 Miami"
+    },
+    {
       "headline": "Technical issues, flooding affects Election Day voting across Broward County",
       "source": "CBS News",
       "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxObkdETzVKSkJyYUNYMzhWNm5JRXhpdHplWDZ6UzBCeXpzODZlaEpzX2J4Ujd0UUtzNmt1QjVxSlZ2N2luYUo2YWpCYjZYNGIzR0JldHNoMG1OR0NfeFBNX0pnSnlNZ3Jfcjg3MWpya2hjR2FTVmxZcjJudUt0U1M4bFVyZUMwbVZrWVM2UUhBV2RqM3RCMHROWXBucGNFdUlpWk14ck5mZUlqazlhR2FXUTJn?oc=5",
@@ -584,14 +592,6 @@
       "cities": [
         "hallandale-beach"
       ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Heavy rain during high tide swamps Broward roads ahead of weekend cold front",
-      "source": "Sun Sentinel",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZjU5eUZrV2dYTHRHTUNkNE1ZRGFHTzVrMTc3cEJNeUxfY1IteWRqTkN2aVpCanNwRUZubXp0NVB3emFUdkZGbXlPSFpPSFZ5cUxETjhGZk5HZk42VDVUelowRXZ2N3FrZkFCQUF3eHA3VjFseXZadkd6T2NpemdxekNIVXJXeHotTmJjZDItQTQwS2xUX2lodTFtS0hqUDA3dnJGNUxESzVTSW9HUFpqYzhvXzhjSG4xWEFoTkJob1JrVU0?oc=5",
-      "date": "2025-10-10T07:00:00.000Z",
-      "cities": [],
       "via": "Google News"
     }
   ]
