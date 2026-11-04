@@ -1,18 +1,20 @@
 {
   "items": [
     {
-      "headline": "Heavy rain causes street flooding in Broward, leaving roads, gas station, school parking lots underwater,",
-      "source": "Local10",
-      "link": "https://www.local10.com/weather/2026/11/04/heavy-rain-causes-street-flooding-in-pompano-beach-leaving-roads-and-gas-station-underwater/",
-      "date": "2026-11-04T12:12:30.000Z",
-      "cities": [],
-      "via": "Local10"
+      "headline": "King Tides Return Twice This November",
+      "source": "City of Hallandale Beach",
+      "link": "https://hallandalebeachfl.gov/CivicAlerts.aspx?aid=669",
+      "date": "2026-11-04T21:11:44.000Z",
+      "cities": [
+        "hallandale-beach"
+      ],
+      "via": "City of Hallandale Beach"
     },
     {
       "headline": "LIVE RADAR: Flood advisory in effect in Broward after huge rains pummel South Florida",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/weather/stories-weather/live-radar-flood-advisory-in-effect-in-broward-after-huge-rains-pummel-south-florida/3883526/",
-      "date": "2026-11-04T08:25:10.000Z",
+      "date": "2026-11-04T16:13:39.000Z",
       "cities": [],
       "via": "NBC6 Miami"
     },
@@ -20,9 +22,27 @@
       "headline": "Flash flood warning issued for parts of Broward County, NWS says",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/flash-flood-warning-issued-for-parts-of-broward-county-nws-says/3883194/",
-      "date": "2026-11-03T21:34:03.000Z",
+      "date": "2026-11-04T16:13:39.000Z",
       "cities": [],
       "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Flood advisories issued in parts of Miami-Dade and Broward lifted as heavy rain floods Davie, Plantation neighborhoods",
+      "source": "WSVN",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOaTNKVklmTjhTY3l0NXhvcGJMYzFIY3FvNC04TGpSdzdlcUU3Yld1T3FnazhLakpkcXFwNkllOGh3MHBFTmVnaUMxQUlVQllNV2Y5NE94LUQ4b1F2M0Iya2ExU3E2UlBYc21rTDJ4czRINUxJdHJFLUlzSWZPSkh0T0pkMTJrUFZz?oc=5",
+      "date": "2026-11-04T16:09:06.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Heavy rain causes street flooding in Broward, leaving roads, gas station, school parking lots underwater,",
+      "source": "WPLG Local 10",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOMG45WlFPSEl0b3BXWHlnR3lDckJvMjRTTUFHSG1HM1EtRlZKbGlSakhtUjQ4em1IRXJkMWV6N0FPRGt5UEFWcjNSS2FyTEI1ckdJT3V4Nmc1NVdGLTdKdHQxcTBQRnItNEFKaFNsTnNvRDhodTFraFQwUmNWM2RPMy1LMkJ0QzdObDlEUkFWSzUtcEtxRXlFUlVqLTN1UHFrV3M0Vl9pdWdHU2RWZnlpUG9oaWFzQXJDei13NEU5bzZFelRabmQ3U2JMSGxCUGhF?oc=5",
+      "date": "2026-11-04T12:12:30.000Z",
+      "cities": [],
+      "via": "Google News"
     },
     {
       "headline": "Technical issues, flooding affects Election Day voting across Broward County",
@@ -246,6 +266,16 @@
       "date": "2026-10-27T20:49:56.000Z",
       "cities": [
         "miami-beach"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Rain, wind and king tide flooding making Miami’s streets tough to navigate",
+      "source": "Miami Herald",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MZUNjQ01UUDhEckoyc0RPekdDa3JVcWZvRmNLcmtNMVdtaHhXMzFSZzNQM1VKbjdMa1lOamxGZmwtakJWU01BUDl1NFlWMVgyZ01fVURHdzhPcmIyc21Rc08xWW5XQ1BMMnJkN1ZzUGFDYVJUSUJiUUQwNGI?oc=5",
+      "date": "2026-10-27T20:25:11.000Z",
+      "cities": [
+        "miami"
       ],
       "via": "Google News"
     },
@@ -491,16 +521,6 @@
       "via": "Google News"
     },
     {
-      "headline": "Heavy rain floods neighborhoods across Miami-Dade, Broward",
-      "source": "WPLG Local 10",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQNklxY01GZmNwc2JDeE5NYjJCNkxmX1ZoMkFmSzFONXBWN3k4UFBMQjhrVEdoU1VJTDBvbE9BQnpaRDRDUmNNa0Jzd0R2bW5NanlBMXhta3doTjZaZzVGRW9XbGVIS1NCdVRYTjFhMXp3ZnpNb2JiY01uQmZkeGtoQU56XzdfNnFVLVBnLXRuWGs5Szg4YV9ST0ZMR3JjR0xMN1BlT3p4Y2xTNXNTbnlLN1duUFFHWjRPaTI2U2JKWW51ZUVQR3NLczVNUXFxVG5L?oc=5",
-      "date": "2026-09-23T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
       "headline": "Hallandale Beach residents speak about how flooding impacted their morning commute",
       "source": "WPLG Local 10",
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxORDRqblRidVJJNXJYTmlIaEJMNGRKQmRPMWh1ejNfUUFOWm1GNkhRMkFxSnNzZVVueUlQclY3aV9mZExHUTBUZTdoUzRPRGlhckVub0hGeUFSczFIcGZIX1JUd3Z3dklPbzh2cnRnME5KcklCNi1ueVVNYmZIYWl0eUR1bUNVUHVybmlNRk82V3VfT1hGYXFvUVRpQ292OFoxNDJSNXdyVXlrbWxtX0xOSEZVTlJtU2djLXNPSGJPRjUyUWJFaEFVc3J3T2I?oc=5",
@@ -563,26 +583,6 @@
       "source": "USA Today",
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNWhqM3NydjlSN3NTZEVJSXpUUklZWGZCbXh0N1VVaVh2UGdwM3d3c1lMRENKM0Fka1lCX241bXlWVmIxMUhFMVNZRi1yQWFMQ2lOV0pvcU5Mdl9VRFBWVHd1MmhqMS1XR1dTUmM1TE4zUjBtN090OU9MQ3RJaWsycFZjeVo4bkwzMWFyd0NjNVhSQ1RSQWlQa3phWXQ4d1Bsc2M2MkI4Y3U5SUlOVjZ6eQ?oc=5",
       "date": "2026-04-07T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Globe-Miami leaders celebrate local businesses reopening after deadly flooding",
-      "source": "AZ Family",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQd2phNm05YktISUJmTVozT0tjemRqTThoTWlWTWpyQzZfYmtFYU02VU5FZ2xIR1MtSS16R1JSNzNkV0paUTBxNWprd2dTdzNuM1E4WUM1YXM3MmVqRi1ENy1LSUszNVUyS2ZCXzYxX1NBNV9PVDlZcVYwSjdJaTB4RmlUZ3R4bkFmaldHSGxvbXNPVHVDN0tUT1BzNWdaemFiaFpqaW9vclNWSF9xZ1VDSko1aWhKUQ?oc=5",
-      "date": "2025-12-05T08:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Miami commission moves to double density in Edgewater via resilience fund",
-      "source": "The Real Deal",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQT2M5UkFVWjdzUkVlZjdCLVJfdl9FYTA2SjdBeFFCLTBzTHZOcHUwU2Z4NmFacnQzblF6MHF1eU14OF9PeWo1am1RSERtV1RuYVE4eExkeGNkdmswRTJKbnlHc2xCS2UzUjFtZzlxN0pSQ0lGdnF6UHJRRzZNMjdyVjM4anFyajNmVGxVXzF0N2hmZXlPN1BGdXRDQ3dnQUhlZWpMa01B?oc=5",
-      "date": "2025-11-21T08:00:00.000Z",
       "cities": [
         "miami"
       ],
