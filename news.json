@@ -1,10 +1,28 @@
 {
   "items": [
     {
+      "headline": "Days after heavy rain, flooding continues in parts of Broward",
+      "source": "Local10",
+      "link": "https://www.local10.com/weather/2026/11/05/days-after-heavy-rain-flooding-continues-in-parts-of-broward/",
+      "date": "2026-11-05T18:02:06.000Z",
+      "cities": [],
+      "via": "Local10"
+    },
+    {
+      "headline": "King tides are getting worse in Miami. Predictions show more flooding is coming",
+      "source": "Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNREhTbDNGa3lwSnlndGMwU24xWUY5dDBNUnBSdlpTMXVETjdOdHJ1R243QTduVlJzSTdfQ19VNU9rNEZxdE5tVTlQQkd0ZFRXWEtxOHB1MW9INXByd2VzVHpCZURrVHJ3NHVPdFJFd0w2VEppNzV5aUc0QXN4SlFVbmlLUXZXejJXa1NkVXBKeHluLTNSZzJqcWJ3?oc=5",
+      "date": "2026-11-05T09:30:00.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
       "headline": "Flood advisory in effect in Broward after huge rains pummel South Florida",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/weather/stories-weather/live-radar-flood-advisory-in-effect-in-broward-after-huge-rains-pummel-south-florida/3883526/",
-      "date": "2026-11-05T04:47:35.000Z",
+      "date": "2026-11-05T06:06:05.000Z",
       "cities": [],
       "via": "NBC6 Miami"
     },
@@ -12,7 +30,7 @@
       "headline": "Flash flood warning issued for parts of Broward County, NWS says",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/flash-flood-warning-issued-for-parts-of-broward-county-nws-says/3883194/",
-      "date": "2026-11-05T04:47:35.000Z",
+      "date": "2026-11-05T06:06:05.000Z",
       "cities": [],
       "via": "NBC6 Miami"
     },
@@ -519,9 +537,9 @@
       "via": "Google News"
     },
     {
-      "headline": "Heavy rain floods streets, parking lots in Hallandale Beach",
-      "source": "WPLG Local 10",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLWhhWGwwdl9RQTd0WTZ2a3AxcXlzbzczLVNicmJJSDduZnRubmg1NUtGSURYUnltSy02TmZ5WXNMQ2NWS1ZBUnpsVS1Ya2QyMkcwdTk1NjBYOXMzdWYyQWRMcVRHU1ZkR01ncnFvcGktZkpVdVBUOVY1ZGNSZGN0UlZmejdOR3BPWFF6SU1PdUdJc2NXYkJOSUhmQ1NSWUwzWklWakNzVHdyODlL?oc=5",
+      "headline": "Roads across Hallandale Beach flooded after overnight downpours in South Florida",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQemxQS0NsclVGOE95ZVRiSm9LY2tjbks3QzRUU0I1YlREQlFiX3JTQmo5TU8wZ3l0enR2VDU2U3R3ampaWVZsRkdtV0MzM2tSeER6bzJvTWhmZ2xSb0dYN0JKX1ZBMDk2bTBNSWZzZzRxV1VkZmNaV09BOTVpVmNRVWZfcnoyeU1rVDBvcjVVbVQzUHRYdm9PYkR2SVRvUXgxQ1k3WWFveWdxWk5PLWJtc1h3ZzdKc0Vz?oc=5",
       "date": "2026-09-23T07:00:00.000Z",
       "cities": [
         "hallandale-beach"
@@ -529,9 +547,9 @@
       "via": "Google News"
     },
     {
-      "headline": "Roads across Hallandale Beach flooded after overnight downpours in South Florida",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQemxQS0NsclVGOE95ZVRiSm9LY2tjbks3QzRUU0I1YlREQlFiX3JTQmo5TU8wZ3l0enR2VDU2U3R3ampaWVZsRkdtV0MzM2tSeER6bzJvTWhmZ2xSb0dYN0JKX1ZBMDk2bTBNSWZzZzRxV1VkZmNaV09BOTVpVmNRVWZfcnoyeU1rVDBvcjVVbVQzUHRYdm9PYkR2SVRvUXgxQ1k3WWFveWdxWk5PLWJtc1h3ZzdKc0Vz?oc=5",
+      "headline": "Heavy rain floods streets, parking lots in Hallandale Beach",
+      "source": "WPLG Local 10",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLWhhWGwwdl9RQTd0WTZ2a3AxcXlzbzczLVNicmJJSDduZnRubmg1NUtGSURYUnltSy02TmZ5WXNMQ2NWS1ZBUnpsVS1Ya2QyMkcwdTk1NjBYOXMzdWYyQWRMcVRHU1ZkR01ncnFvcGktZkpVdVBUOVY1ZGNSZGN0UlZmejdOR3BPWFF6SU1PdUdJc2NXYkJOSUhmQ1NSWUwzWklWakNzVHdyODlL?oc=5",
       "date": "2026-09-23T07:00:00.000Z",
       "cities": [
         "hallandale-beach"
@@ -565,26 +583,6 @@
       "date": "2026-09-17T07:00:00.000Z",
       "cities": [
         "fort-lauderdale"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Fort Lauderdale streets flood again; families say rain triggers anxiety from historic floodings in 2023",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVFBhUFRSdlV0VmdTTk9zS3RoUjd3TTE5M2VfVGw2eUZLSDhXbFpLNWNYejgxUmlINVg1bk9oSl9fSHY4Zkd1Zkt3cjNjaGNLRTR0Q1plSXdhbm5NMWFYUnlSQTN1U2Y1bmpyNnlLMTZFcmR5Q3hLdVd5VEtSbDBkR2t2Wl9rcVc5WmREamY2cTZtV3RhUmw4LVdDRVk?oc=5",
-      "date": "2026-09-11T07:00:00.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Miami flooding issues expected as Neosho River pushes to 22 feet",
-      "source": "KOAM News Now",
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOeTc0WXlqQy1vTXdOM1dNRDV1emJWU0FSZkFRMkZ6VS1nSkZyNFlTbGg4X3pBZWE4a3dvdDJDZVVESXp1QWlvS0xWdUw1VmYzVGJGZ0laSFVmQ2NxZ2xNekxyWGxkVkFlUTg5Rm9BbENMODZ4SXROSHQ2b0VtaUtqMmc1ZWdKZVZQMHRZWThqNUNQM1lUNllxS29ueUVfMVh1U0RfbUZ2QkNRd05PNmdCU3NBaVZJeTM5TW82S2Q1OXI2U1VwekFIWVZNUUIyVTQ0clpPWTJyaEM0VU50T240TTl0ZVE?oc=5",
-      "date": "2026-06-08T07:00:00.000Z",
-      "cities": [
-        "miami"
       ],
       "via": "Google News"
     }
