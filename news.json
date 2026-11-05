@@ -1,10 +1,20 @@
 {
   "items": [
     {
+      "headline": "Get Ready for King Tides",
+      "source": "City of Hollywood",
+      "link": "https://www.hollywoodfl.org/CivicAlerts.aspx?aid=1870",
+      "date": "2026-11-04T22:47:00.000Z",
+      "cities": [
+        "hollywood"
+      ],
+      "via": "City of Hollywood"
+    },
+    {
       "headline": "King Tides Return Twice This November",
       "source": "City of Hallandale Beach",
       "link": "https://hallandalebeachfl.gov/CivicAlerts.aspx?aid=669",
-      "date": "2026-11-04T21:11:44.000Z",
+      "date": "2026-11-04T21:23:00.000Z",
       "cities": [
         "hallandale-beach"
       ],
@@ -37,12 +47,12 @@
       "via": "Google News"
     },
     {
-      "headline": "Heavy rain causes street flooding in Broward, leaving roads, gas station, school parking lots underwater,",
-      "source": "WPLG Local 10",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOMG45WlFPSEl0b3BXWHlnR3lDckJvMjRTTUFHSG1HM1EtRlZKbGlSakhtUjQ4em1IRXJkMWV6N0FPRGt5UEFWcjNSS2FyTEI1ckdJT3V4Nmc1NVdGLTdKdHQxcTBQRnItNEFKaFNsTnNvRDhodTFraFQwUmNWM2RPMy1LMkJ0QzdObDlEUkFWSzUtcEtxRXlFUlVqLTN1UHFrV3M0Vl9pdWdHU2RWZnlpUG9oaWFzQXJDei13NEU5bzZFelRabmQ3U2JMSGxCUGhF?oc=5",
+      "headline": "Heavy rain causes street flooding in Broward, leaving roads, gas station, school parking lots underwater",
+      "source": "Local10",
+      "link": "https://www.local10.com/weather/2026/11/04/heavy-rain-causes-street-flooding-in-pompano-beach-leaving-roads-and-gas-station-underwater/",
       "date": "2026-11-04T12:12:30.000Z",
       "cities": [],
-      "via": "Google News"
+      "via": "Local10"
     },
     {
       "headline": "Technical issues, flooding affects Election Day voting across Broward County",
@@ -77,6 +87,16 @@
       "date": "2026-11-03T13:18:00.000Z",
       "cities": [
         "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "King Tides May Flood Low Areas in Hallandale Beach",
+      "source": "NewsBreak: Local News & Alerts",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQejFKNWJSV29lU2c1V0hrbEZLcE5VS1BfZkpoMUczWG56OUJzbk5jTURYZFpTMDJaMGVsWUFCb0tfQnU0Qi0ycTd2Wl9QejlQdHR6Ny1TMW1HenZ4NGF1OVROVEpTT2dXUm1IMVM5ekRSZmxGbExzejF4VnZoQlBTQzZkU2ZQTFhjRVFOSkkwS2pMelJ3eTlITUhNMjZwaWVfeDZiS1FRWF9RZ2dEMGl0cUY0d2l2TzlLNHhRYkoxRjZvcncw?oc=5",
+      "date": "2026-11-03T00:13:51.000Z",
+      "cities": [
+        "hallandale-beach"
       ],
       "via": "Google News"
     },
@@ -288,16 +308,6 @@
         "miami-beach"
       ],
       "via": "Google News"
-    },
-    {
-      "headline": "Get Ready for King Tides",
-      "source": "City of Hollywood",
-      "link": "https://www.hollywoodfl.org/CivicAlerts.aspx?aid=1870",
-      "date": "2026-10-27T18:11:00.000Z",
-      "cities": [
-        "hollywood"
-      ],
-      "via": "City of Hollywood"
     },
     {
       "headline": "King Tides cause flooding in Fort Lauderdale's Esplanade Park",
@@ -576,16 +586,6 @@
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPYXBxUEVPYjVES1diQW5tU01qb1pRbzJRZkhsWHh5MzBIQWZkTU5YMWZFWVNTa1R0dTRSbldoS3p5U182T3V0eTI1TnJaTEUwNjY1R0Q0ZEoxM0plQU80NTRpZXhfQkN3c2U4VEZNamwyaXJLMW1yb2psNk85dlZvS0hxb0tTdw?oc=5",
       "date": "2026-05-28T07:00:00.000Z",
       "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Heavy Florida rains provoke flood watch for Miami-Dade. What to know",
-      "source": "USA Today",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNWhqM3NydjlSN3NTZEVJSXpUUklZWGZCbXh0N1VVaVh2UGdwM3d3c1lMRENKM0Fka1lCX241bXlWVmIxMUhFMVNZRi1yQWFMQ2lOV0pvcU5Mdl9VRFBWVHd1MmhqMS1XR1dTUmM1TE4zUjBtN090OU9MQ3RJaWsycFZjeVo4bkwzMWFyd0NjNVhSQ1RSQWlQa3phWXQ4d1Bsc2M2MkI4Y3U5SUlOVjZ6eQ?oc=5",
-      "date": "2026-04-07T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
       "via": "Google News"
     }
   ]
