@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "headline": "Flood advisory in effect in Broward after huge rains pummel South Florida",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/weather/stories-weather/live-radar-flood-advisory-in-effect-in-broward-after-huge-rains-pummel-south-florida/3883526/",
+      "date": "2026-11-05T04:47:35.000Z",
+      "cities": [],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Flash flood warning issued for parts of Broward County, NWS says",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/flash-flood-warning-issued-for-parts-of-broward-county-nws-says/3883194/",
+      "date": "2026-11-05T04:47:35.000Z",
+      "cities": [],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Roads become rivers in a Broward County neighborhood after flooding",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPTU56cFBrcDE2bmlPLWkzcDEzb2Q1Ql9CdXd6RWRmMHR0OFFOMUJOcHczTG9VYjJfX2NURVNJOTdzcmcyTmNTek5VN25kTFloOTd2dmJFRjR6Q0t6dUY1YS1hUWo2bkNyOUZ3YmhIZ2JPSUE1VzBVblV6X3lGYVllSzdIVWJhS2xTd1N3eEVKMFVDd2VzTkFPWFBuR3RyT3FOZUFINTRqRQ?oc=5",
+      "date": "2026-11-05T04:10:00.000Z",
+      "cities": [],
+      "via": "Google News"
+    },
+    {
       "headline": "Get Ready for King Tides",
       "source": "City of Hollywood",
       "link": "https://www.hollywoodfl.org/CivicAlerts.aspx?aid=1870",
@@ -19,22 +43,6 @@
         "hallandale-beach"
       ],
       "via": "City of Hallandale Beach"
-    },
-    {
-      "headline": "LIVE RADAR: Flood advisory in effect in Broward after huge rains pummel South Florida",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/weather/stories-weather/live-radar-flood-advisory-in-effect-in-broward-after-huge-rains-pummel-south-florida/3883526/",
-      "date": "2026-11-04T16:13:39.000Z",
-      "cities": [],
-      "via": "NBC6 Miami"
-    },
-    {
-      "headline": "Flash flood warning issued for parts of Broward County, NWS says",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/news/local/flash-flood-warning-issued-for-parts-of-broward-county-nws-says/3883194/",
-      "date": "2026-11-04T16:13:39.000Z",
-      "cities": [],
-      "via": "NBC6 Miami"
     },
     {
       "headline": "Flood advisories issued in parts of Miami-Dade and Broward lifted as heavy rain floods Davie, Plantation neighborhoods",
@@ -578,14 +586,6 @@
       "cities": [
         "miami"
       ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Heavy storms track toward eastern Broward County with localized flooding possible for Thursday night",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPYXBxUEVPYjVES1diQW5tU01qb1pRbzJRZkhsWHh5MzBIQWZkTU5YMWZFWVNTa1R0dTRSbldoS3p5U182T3V0eTI1TnJaTEUwNjY1R0Q0ZEoxM0plQU80NTRpZXhfQkN3c2U4VEZNamwyaXJLMW1yb2psNk85dlZvS0hxb0tTdw?oc=5",
-      "date": "2026-05-28T07:00:00.000Z",
-      "cities": [],
       "via": "Google News"
     }
   ]
