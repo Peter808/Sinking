@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "headline": "Florida bridge partially collapses following torrential rain, historical flooding in Broward County",
+      "source": "FOX Weather",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORUlSb2wxSmt0TzdERkFZMWVPbDZhNEdIcDlPbGpQSDFmbWxackZET2U5REdwS1ZoUmJKbVhlVG9VNkhpbGdCckJqN2x6S0t2RGdqeWl1NFR1d0c1bUVWYVA0M2tJWFIyNnpudWE5SzdSNXNsOE9GWllBb3RrZmVPeExKWTNULW1oZmZLUXg1WHhoSHZnSVpJT3JjMkh2N3FLc1F0ZnJZQjNFd9IBrwFBVV95cUxPWFFLcldYemR4cDQyNzhiamhQcjhpR3k2WE5mYnAyNlVUNklmQXFucVpuc1l2cnRZSW83Y0w4UWZtVmNKYXUwT3dQRk51bTNrUi0tRWZLaV9DamtRQ0NIWlYyMnZRcHVvTWFGMldILUtuTnZubS1nQWRhR3JFVUpVc2JjV0FETU1uN1hrdEo5LWxFd1RWQ0p1ZFF4aUhNaE5hSV9mMkZMWEhnangzUVFr?oc=5",
+      "date": "2026-11-05T18:36:00.000Z",
+      "cities": [],
+      "via": "Google News"
+    },
+    {
       "headline": "Days after heavy rain, flooding continues in parts of Broward",
       "source": "Local10",
       "link": "https://www.local10.com/weather/2026/11/05/days-after-heavy-rain-flooding-continues-in-parts-of-broward/",
@@ -10,8 +18,8 @@
     },
     {
       "headline": "King tides are getting worse in Miami. Predictions show more flooding is coming",
-      "source": "Yahoo",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNREhTbDNGa3lwSnlndGMwU24xWUY5dDBNUnBSdlpTMXVETjdOdHJ1R243QTduVlJzSTdfQ19VNU9rNEZxdE5tVTlQQkd0ZFRXWEtxOHB1MW9INXByd2VzVHpCZURrVHJ3NHVPdFJFd0w2VEppNzV5aUc0QXN4SlFVbmlLUXZXejJXa1NkVXBKeHluLTNSZzJqcWJ3?oc=5",
+      "source": "Miami Herald",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWUVkRGF4MExnMWJIYjR5YThkSnAwdzZYak9vWWdRZ1l6STdmQXhXVFFHN011NGxRZ25HNmtvSDNBRWdMOHE3bUcwRFVuUnBjalBjelFEbHhHdVNxemFON1ZOMEpyWExZVWpPOTZkOVc3bzJ5aWl0bU5BX25OcldqQU83dmlWRDRLWFZQMDZvYXXSAZABQVVfeXFMUGRiOTRSaHEtZmRFQUtLS0pvWUdsSHRhSzloTDdLR3Y2aGhjN1VpTnNwaDBNeDQxV3V0QTUzZ1hXWDZSNWY5NE90NmlxaG1ZQUstVXdEUjhSVVY3WUN2OExVb2plYTNDQzg3MmtYdVJMdHZhLUc0bWtBVTBqcUpmSDJieEpDNHFYVWR6T2haN04y?oc=5",
       "date": "2026-11-05T09:30:00.000Z",
       "cities": [
         "miami"
@@ -537,9 +545,9 @@
       "via": "Google News"
     },
     {
-      "headline": "Roads across Hallandale Beach flooded after overnight downpours in South Florida",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQemxQS0NsclVGOE95ZVRiSm9LY2tjbks3QzRUU0I1YlREQlFiX3JTQmo5TU8wZ3l0enR2VDU2U3R3ampaWVZsRkdtV0MzM2tSeER6bzJvTWhmZ2xSb0dYN0JKX1ZBMDk2bTBNSWZzZzRxV1VkZmNaV09BOTVpVmNRVWZfcnoyeU1rVDBvcjVVbVQzUHRYdm9PYkR2SVRvUXgxQ1k3WWFveWdxWk5PLWJtc1h3ZzdKc0Vz?oc=5",
+      "headline": "Heavy rain floods streets, parking lots in Hallandale Beach",
+      "source": "WPLG Local 10",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLWhhWGwwdl9RQTd0WTZ2a3AxcXlzbzczLVNicmJJSDduZnRubmg1NUtGSURYUnltSy02TmZ5WXNMQ2NWS1ZBUnpsVS1Ya2QyMkcwdTk1NjBYOXMzdWYyQWRMcVRHU1ZkR01ncnFvcGktZkpVdVBUOVY1ZGNSZGN0UlZmejdOR3BPWFF6SU1PdUdJc2NXYkJOSUhmQ1NSWUwzWklWakNzVHdyODlL?oc=5",
       "date": "2026-09-23T07:00:00.000Z",
       "cities": [
         "hallandale-beach"
@@ -547,9 +555,9 @@
       "via": "Google News"
     },
     {
-      "headline": "Heavy rain floods streets, parking lots in Hallandale Beach",
-      "source": "WPLG Local 10",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLWhhWGwwdl9RQTd0WTZ2a3AxcXlzbzczLVNicmJJSDduZnRubmg1NUtGSURYUnltSy02TmZ5WXNMQ2NWS1ZBUnpsVS1Ya2QyMkcwdTk1NjBYOXMzdWYyQWRMcVRHU1ZkR01ncnFvcGktZkpVdVBUOVY1ZGNSZGN0UlZmejdOR3BPWFF6SU1PdUdJc2NXYkJOSUhmQ1NSWUwzWklWakNzVHdyODlL?oc=5",
+      "headline": "Roads across Hallandale Beach flooded after overnight downpours in South Florida",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQemxQS0NsclVGOE95ZVRiSm9LY2tjbks3QzRUU0I1YlREQlFiX3JTQmo5TU8wZ3l0enR2VDU2U3R3ampaWVZsRkdtV0MzM2tSeER6bzJvTWhmZ2xSb0dYN0JKX1ZBMDk2bTBNSWZzZzRxV1VkZmNaV09BOTVpVmNRVWZfcnoyeU1rVDBvcjVVbVQzUHRYdm9PYkR2SVRvUXgxQ1k3WWFveWdxWk5PLWJtc1h3ZzdKc0Vz?oc=5",
       "date": "2026-09-23T07:00:00.000Z",
       "cities": [
         "hallandale-beach"
@@ -573,16 +581,6 @@
       "date": "2026-09-23T07:00:00.000Z",
       "cities": [
         "hallandale-beach"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Broward flooding turns streets into lakes, delays flights at Fort Lauderdale airport",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNaTJLSUZvNC1lWWhhQnYyLXRzem0xelZUU0pqaDV0OVlEc3ViM2tCVlU3dnFMUllOQk5qVERGWGRHZWYwOWxLbG9ZUWdadS1GWnE4Qmlkbzg4QjFmUXFhb29lR1VjcmYyVkFyX3RRamMwU2lLLWJPNHZnT2JkRmsxcTkzX2NzTnFiMHIzNzBvRUdsUVJJSGJ0M3Nxc2p2NnMzRHVB?oc=5",
-      "date": "2026-09-17T07:00:00.000Z",
-      "cities": [
-        "fort-lauderdale"
       ],
       "via": "Google News"
     }
