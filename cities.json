@@ -21,10 +21,10 @@
           {
             "event": "Coastal Flood Statement",
             "severity": "Minor",
-            "headline": "Coastal Flood Statement issued November 6 at 4:01AM EST until November 6 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-06T04:01:00-05:00",
-            "expires": "2026-11-06T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7ed7266c9a4cb8ba17b19a5b56713f4ed1f734b5.001.1"
+            "headline": "Coastal Flood Statement issued November 6 at 10:16AM EST until November 8 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-06T10:16:00-05:00",
+            "expires": "2026-11-08T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.05518c75107ff7a26efa5a514f07a7c127ae3861.001.1"
           }
         ],
         "source": {
@@ -32,22 +32,22 @@
           "detail": "Point 25.7617, -80.1918",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-06T14:57:00.448Z"
+        "updatedAt": "2026-11-06T20:49:53.469Z"
       },
       "flooding": {
-        "likely": false,
-        "forecastPeakFt": 1.22,
+        "likely": true,
+        "forecastPeakFt": 1.32,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
       "risk": {
-        "level": "moderate",
+        "level": "high",
         "why": "Active: Coastal Flood Statement."
       },
       "headline": {
-        "line1": "Higher Than Normal Tides",
-        "line2": "Minor Flooding Possible",
-        "condition": "waterElevated"
+        "line1": "King Tide",
+        "line2": "with Street Flooding Likely",
+        "condition": "kingTideFloodingLikely"
       },
       "thresholds": {
         "minorFlood": 1.3,
@@ -58,17 +58,17 @@
         "updatedAt": "2026-11-06T14:57:02.211Z"
       },
       "water": {
-        "levelFt": 0.12,
-        "status": "falling",
-        "observedAt": "2026-11-06T09:48:00-05:00",
-        "rawTime": "2026-11-06 09:48",
+        "levelFt": 0.27,
+        "status": "rising",
+        "observedAt": "2026-11-06T15:42:00-05:00",
+        "rawTime": "2026-11-06 15:42",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-06T14:57:02.257Z"
+        "updatedAt": "2026-11-06T20:49:55.724Z"
       },
       "tides": {
         "date": "2026-11-06",
@@ -361,15 +361,15 @@
             "h": -1.61
           }
         ],
-        "anomalyFt": 0.83,
+        "anomalyFt": 0.93,
         "todayPredictedPeakFt": 0.39,
-        "todayForecastPeakFt": 1.22,
+        "todayForecastPeakFt": 1.32,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-06T14:57:02.289Z"
+        "updatedAt": "2026-11-06T20:49:55.841Z"
       },
       "floodDays": {
         "thisYear": {
@@ -395,7 +395,7 @@
       },
       "weather": {
         "rain24hIn": 0,
-        "reportsCounted": 19,
+        "reportsCounted": 16,
         "station": {
           "id": "KMIA",
           "name": "Miami International Airport"
@@ -405,7 +405,7 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-11-06T14:57:03.242Z"
+        "updatedAt": "2026-11-06T20:49:56.199Z"
       },
       "weatherAlerts": {
         "items": []
@@ -432,10 +432,10 @@
           {
             "event": "Coastal Flood Statement",
             "severity": "Minor",
-            "headline": "Coastal Flood Statement issued November 6 at 4:01AM EST until November 6 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-06T04:01:00-05:00",
-            "expires": "2026-11-06T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7ed7266c9a4cb8ba17b19a5b56713f4ed1f734b5.001.1"
+            "headline": "Coastal Flood Statement issued November 6 at 10:16AM EST until November 8 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-06T10:16:00-05:00",
+            "expires": "2026-11-08T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.05518c75107ff7a26efa5a514f07a7c127ae3861.001.1"
           }
         ],
         "source": {
@@ -443,22 +443,22 @@
           "detail": "Point 25.7907, -80.13",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-06T14:57:00.604Z"
+        "updatedAt": "2026-11-06T20:49:53.629Z"
       },
       "flooding": {
-        "likely": false,
-        "forecastPeakFt": 1.22,
+        "likely": true,
+        "forecastPeakFt": 1.32,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
       "risk": {
-        "level": "moderate",
+        "level": "high",
         "why": "Active: Coastal Flood Statement."
       },
       "headline": {
-        "line1": "Higher Than Normal Tides",
-        "line2": "Minor Flooding Possible",
-        "condition": "waterElevated"
+        "line1": "King Tide",
+        "line2": "with Street Flooding Likely",
+        "condition": "kingTideFloodingLikely"
       },
       "thresholds": {
         "minorFlood": 1.3,
@@ -469,17 +469,17 @@
         "updatedAt": "2026-11-06T14:57:02.211Z"
       },
       "water": {
-        "levelFt": 0.12,
-        "status": "falling",
-        "observedAt": "2026-11-06T09:48:00-05:00",
-        "rawTime": "2026-11-06 09:48",
+        "levelFt": 0.27,
+        "status": "rising",
+        "observedAt": "2026-11-06T15:42:00-05:00",
+        "rawTime": "2026-11-06 15:42",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-06T14:57:02.257Z"
+        "updatedAt": "2026-11-06T20:49:55.724Z"
       },
       "tides": {
         "date": "2026-11-06",
@@ -772,15 +772,15 @@
             "h": -1.61
           }
         ],
-        "anomalyFt": 0.83,
+        "anomalyFt": 0.93,
         "todayPredictedPeakFt": 0.39,
-        "todayForecastPeakFt": 1.22,
+        "todayForecastPeakFt": 1.32,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-06T14:57:02.289Z"
+        "updatedAt": "2026-11-06T20:49:55.841Z"
       },
       "floodDays": {
         "thisYear": {
@@ -806,7 +806,7 @@
       },
       "weather": {
         "rain24hIn": 0,
-        "reportsCounted": 19,
+        "reportsCounted": 16,
         "station": {
           "id": "KMIA",
           "name": "Miami International Airport"
@@ -816,7 +816,7 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-11-06T14:57:03.242Z"
+        "updatedAt": "2026-11-06T20:49:56.199Z"
       },
       "weatherAlerts": {
         "items": []
@@ -843,10 +843,10 @@
           {
             "event": "Coastal Flood Statement",
             "severity": "Minor",
-            "headline": "Coastal Flood Statement issued November 6 at 4:01AM EST until November 6 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-06T04:01:00-05:00",
-            "expires": "2026-11-06T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7ed7266c9a4cb8ba17b19a5b56713f4ed1f734b5.001.1"
+            "headline": "Coastal Flood Statement issued November 6 at 10:16AM EST until November 8 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-06T10:16:00-05:00",
+            "expires": "2026-11-08T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.05518c75107ff7a26efa5a514f07a7c127ae3861.001.1"
           }
         ],
         "source": {
@@ -854,11 +854,11 @@
           "detail": "Point 25.9812, -80.1484",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-06T14:57:00.759Z"
+        "updatedAt": "2026-11-06T20:49:53.812Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 1.15,
+        "forecastPeakFt": 1.01,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -880,17 +880,17 @@
         "updatedAt": "2026-11-06T14:57:01.544Z"
       },
       "water": {
-        "levelFt": -0.49,
-        "status": "falling",
-        "observedAt": "2026-11-06T09:48:00-05:00",
-        "rawTime": "2026-11-06 09:48",
+        "levelFt": 0.22,
+        "status": "rising",
+        "observedAt": "2026-11-06T15:42:00-05:00",
+        "rawTime": "2026-11-06 15:42",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-06T14:57:01.615Z"
+        "updatedAt": "2026-11-06T20:49:55.366Z"
       },
       "tides": {
         "date": "2026-11-06",
@@ -1169,15 +1169,15 @@
             "h": -2.32
           }
         ],
-        "anomalyFt": 0.83,
+        "anomalyFt": 0.69,
         "todayPredictedPeakFt": 0.32,
-        "todayForecastPeakFt": 1.15,
+        "todayForecastPeakFt": 1.01,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-06T14:57:01.701Z"
+        "updatedAt": "2026-11-06T20:49:55.647Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1203,7 +1203,7 @@
       },
       "weather": {
         "rain24hIn": 0,
-        "reportsCounted": 19,
+        "reportsCounted": 16,
         "station": {
           "id": "KHWO",
           "name": "North Perry Airport"
@@ -1213,7 +1213,7 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-11-06T14:57:03.685Z"
+        "updatedAt": "2026-11-06T20:49:56.550Z"
       },
       "weatherAlerts": {
         "items": []
@@ -1240,10 +1240,10 @@
           {
             "event": "Coastal Flood Statement",
             "severity": "Minor",
-            "headline": "Coastal Flood Statement issued November 6 at 4:01AM EST until November 6 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-06T04:01:00-05:00",
-            "expires": "2026-11-06T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7ed7266c9a4cb8ba17b19a5b56713f4ed1f734b5.001.1"
+            "headline": "Coastal Flood Statement issued November 6 at 10:16AM EST until November 8 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-06T10:16:00-05:00",
+            "expires": "2026-11-08T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.05518c75107ff7a26efa5a514f07a7c127ae3861.001.1"
           }
         ],
         "source": {
@@ -1251,11 +1251,11 @@
           "detail": "Point 26.0112, -80.1495",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-06T14:57:01.045Z"
+        "updatedAt": "2026-11-06T20:49:54.056Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 1.15,
+        "forecastPeakFt": 1.01,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -1277,17 +1277,17 @@
         "updatedAt": "2026-11-06T14:57:01.544Z"
       },
       "water": {
-        "levelFt": -0.49,
-        "status": "falling",
-        "observedAt": "2026-11-06T09:48:00-05:00",
-        "rawTime": "2026-11-06 09:48",
+        "levelFt": 0.22,
+        "status": "rising",
+        "observedAt": "2026-11-06T15:42:00-05:00",
+        "rawTime": "2026-11-06 15:42",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-06T14:57:01.615Z"
+        "updatedAt": "2026-11-06T20:49:55.366Z"
       },
       "tides": {
         "date": "2026-11-06",
@@ -1566,15 +1566,15 @@
             "h": -2.32
           }
         ],
-        "anomalyFt": 0.83,
+        "anomalyFt": 0.69,
         "todayPredictedPeakFt": 0.32,
-        "todayForecastPeakFt": 1.15,
+        "todayForecastPeakFt": 1.01,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-06T14:57:01.701Z"
+        "updatedAt": "2026-11-06T20:49:55.647Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1600,7 +1600,7 @@
       },
       "weather": {
         "rain24hIn": 0,
-        "reportsCounted": 19,
+        "reportsCounted": 16,
         "station": {
           "id": "KHWO",
           "name": "North Perry Airport"
@@ -1610,7 +1610,7 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-11-06T14:57:03.685Z"
+        "updatedAt": "2026-11-06T20:49:56.550Z"
       },
       "weatherAlerts": {
         "items": []
@@ -1637,10 +1637,10 @@
           {
             "event": "Coastal Flood Statement",
             "severity": "Minor",
-            "headline": "Coastal Flood Statement issued November 6 at 4:01AM EST until November 6 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-06T04:01:00-05:00",
-            "expires": "2026-11-06T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7ed7266c9a4cb8ba17b19a5b56713f4ed1f734b5.001.1"
+            "headline": "Coastal Flood Statement issued November 6 at 10:16AM EST until November 8 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-06T10:16:00-05:00",
+            "expires": "2026-11-08T19:00:00-05:00",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.05518c75107ff7a26efa5a514f07a7c127ae3861.001.1"
           }
         ],
         "source": {
@@ -1648,11 +1648,11 @@
           "detail": "Point 26.1224, -80.1373",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-06T14:57:01.162Z"
+        "updatedAt": "2026-11-06T20:49:54.842Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 1.15,
+        "forecastPeakFt": 1.01,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -1674,17 +1674,17 @@
         "updatedAt": "2026-11-06T14:57:01.544Z"
       },
       "water": {
-        "levelFt": -0.49,
-        "status": "falling",
-        "observedAt": "2026-11-06T09:48:00-05:00",
-        "rawTime": "2026-11-06 09:48",
+        "levelFt": 0.22,
+        "status": "rising",
+        "observedAt": "2026-11-06T15:42:00-05:00",
+        "rawTime": "2026-11-06 15:42",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-06T14:57:01.615Z"
+        "updatedAt": "2026-11-06T20:49:55.366Z"
       },
       "tides": {
         "date": "2026-11-06",
@@ -1963,15 +1963,15 @@
             "h": -2.32
           }
         ],
-        "anomalyFt": 0.83,
+        "anomalyFt": 0.69,
         "todayPredictedPeakFt": 0.32,
-        "todayForecastPeakFt": 1.15,
+        "todayForecastPeakFt": 1.01,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-06T14:57:01.701Z"
+        "updatedAt": "2026-11-06T20:49:55.647Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1997,7 +1997,7 @@
       },
       "weather": {
         "rain24hIn": 0.01,
-        "reportsCounted": 21,
+        "reportsCounted": 18,
         "station": {
           "id": "KFLL",
           "name": "Fort Lauderdale/Hollywood International Airport"
@@ -2007,7 +2007,7 @@
           "detail": "Fort Lauderdale/Hollywood International Airport (KFLL)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KFLL"
         },
-        "updatedAt": "2026-11-06T14:57:04.171Z"
+        "updatedAt": "2026-11-06T20:49:56.961Z"
       },
       "weatherAlerts": {
         "items": []
