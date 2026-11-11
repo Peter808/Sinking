@@ -1,6 +1,16 @@
 {
   "items": [
     {
+      "headline": "Video shows 14 cats thrown into flooded parking lot in North Miami Beach",
+      "source": "Local10",
+      "link": "https://www.local10.com/news/local/2026/11/10/video-shows-14-cats-kittens-thrown-into-flooded-parking-lot-in-north-miami-beach/",
+      "date": "2026-11-10T23:19:27.000Z",
+      "cities": [
+        "miami-beach"
+      ],
+      "via": "Local10"
+    },
+    {
       "headline": "Flood advisory in effect in Broward after huge rains pummel South Florida",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/weather/stories-weather/live-radar-flood-advisory-in-effect-in-broward-after-huge-rains-pummel-south-florida/3883526/",
@@ -566,16 +576,6 @@
       "headline": "Roads across Hallandale Beach flooded after overnight downpours in South Florida",
       "source": "CBS News",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQemxQS0NsclVGOE95ZVRiSm9LY2tjbks3QzRUU0I1YlREQlFiX3JTQmo5TU8wZ3l0enR2VDU2U3R3ampaWVZsRkdtV0MzM2tSeER6bzJvTWhmZ2xSb0dYN0JKX1ZBMDk2bTBNSWZzZzRxV1VkZmNaV09BOTVpVmNRVWZfcnoyeU1rVDBvcjVVbVQzUHRYdm9PYkR2SVRvUXgxQ1k3WWFveWdxWk5PLWJtc1h3ZzdKc0Vz?oc=5",
-      "date": "2026-09-23T07:00:00.000Z",
-      "cities": [
-        "hallandale-beach"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Heavy rain floods Hallandale Beach streets as Broward shatters rainfall record",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQeF9rMjFjQUduZGc4RWxFLTJHRXdYVTJZdC1Hanp3RFdfbXdlMXJWRDNaSm1SS1o5MkVQRWhVNWlLYlNIcWxEeWhZYUtVZ0ltTmNfdWktdUFKRm9nS1J2NXpIbmR0R1dZb3VGYXFEWmxKMWstRkNoRUwxd3pDOU9BQ2gwYldpeXRuSEIweHZQcllOcGFCQVJRX1NwRmNaLTJYOUUzM1ZYX2hsV0hKM21MenFCNUF5dw?oc=5",
       "date": "2026-09-23T07:00:00.000Z",
       "cities": [
         "hallandale-beach"
