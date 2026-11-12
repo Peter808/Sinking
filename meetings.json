@@ -1,3 +1,23 @@
 {
-  "items": []
+  "items": [
+    {
+      "id": "fortlauderdale-2159",
+      "org": "City of Fort Lauderdale",
+      "title": "City Commission Regular Meeting",
+      "level": "city",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "date": "2026-11-17",
+      "time": "6:00 PM",
+      "start": "2026-11-17T18:00:00-05:00",
+      "location": "Fort Lauderdale Police Department - Community Room #1004 - 1300 West Broward Boulevard, Fort Lauderdale, FL  33312",
+      "topics": [
+        "Motion Approving Proprietary Purchases for Stormwater System Infrastructures (Public Works Department) - Estimated Amount of $4,200,000..."
+      ],
+      "link": "https://fortlauderdale.legistar.com/MeetingDetail.aspx?LEGID=2159&GID=252&G=F11871F6-88F5-40B5-BD94-B6711694F9A7",
+      "agenda": "https://legistar.granicus.com/FortLauderdale/meetings/2026/11/2159_A_City_Commission_Regular_Meeting_26-11-17_Regular_Agenda.pdf",
+      "source": "Legistar"
+    }
+  ]
 }
