@@ -18,6 +18,25 @@
       "link": "https://fortlauderdale.legistar.com/MeetingDetail.aspx?LEGID=2159&GID=252&G=F11871F6-88F5-40B5-BD94-B6711694F9A7",
       "agenda": "https://legistar.granicus.com/FortLauderdale/meetings/2026/11/2159_A_City_Commission_Regular_Meeting_26-11-17_Regular_Agenda.pdf",
       "source": "Legistar"
+    },
+    {
+      "id": "hallandalebeach-2209",
+      "org": "City of Hallandale Beach",
+      "title": "City Commission",
+      "level": "city",
+      "cities": [
+        "hallandale-beach"
+      ],
+      "date": "2026-11-18",
+      "time": "5:30 PM",
+      "start": "2026-11-18T17:30:00-05:00",
+      "location": "Commission Chambers",
+      "topics": [
+        "URGING THE FLORIDA LEGISLATURE TO REPEAL SECTION 166.04151, FLORIDA STATUTES (THE LIVE LOCAL ACT) OR, IN THE ALTERNATIVE, ADOPT..."
+      ],
+      "link": "https://hallandalebeach.legistar.com/MeetingDetail.aspx?LEGID=2209&GID=300&G=6AE3F89F-9AB0-4710-9C55-D10B8B94BC5F",
+      "agenda": "https://legistar1.granicus.com/hallandalebeach/meetings/2026/11/2209_A_City_Commission_26-11-18_Meeting_Agenda.pdf",
+      "source": "Legistar"
     }
   ]
 }
