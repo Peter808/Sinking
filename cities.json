@@ -23,11 +23,11 @@
           "detail": "Point 25.7617, -80.1918",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-12T18:49:38.645Z"
+        "updatedAt": "2026-11-13T00:11:02.217Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.86,
+        "forecastPeakFt": 0.8,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -49,17 +49,17 @@
         "updatedAt": "2026-11-12T10:55:05.907Z"
       },
       "water": {
-        "levelFt": 0.07,
-        "status": "falling",
-        "observedAt": "2026-11-12T13:42:00-05:00",
-        "rawTime": "2026-11-12 13:42",
+        "levelFt": -0.19,
+        "status": "rising",
+        "observedAt": "2026-11-12T19:00:00-05:00",
+        "rawTime": "2026-11-12 19:00",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-12T18:49:41.524Z"
+        "updatedAt": "2026-11-13T00:11:03.537Z"
       },
       "tides": {
         "date": "2026-11-12",
@@ -352,15 +352,15 @@
             "h": 0.02
           }
         ],
-        "anomalyFt": 0.76,
+        "anomalyFt": 0.7,
         "todayPredictedPeakFt": 0.1,
-        "todayForecastPeakFt": 0.86,
+        "todayForecastPeakFt": 0.8,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-12T18:49:41.616Z"
+        "updatedAt": "2026-11-13T00:11:03.579Z"
       },
       "floodDays": {
         "thisYear": {
@@ -386,7 +386,7 @@
       },
       "weather": {
         "rain24hIn": 0,
-        "reportsCounted": 12,
+        "reportsCounted": 9,
         "station": {
           "id": "KMIA",
           "name": "Miami International Airport"
@@ -396,7 +396,7 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-11-12T18:49:42.396Z"
+        "updatedAt": "2026-11-13T00:11:03.979Z"
       },
       "weatherAlerts": {
         "items": []
@@ -425,11 +425,11 @@
           "detail": "Point 25.7907, -80.13",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-12T18:49:38.936Z"
+        "updatedAt": "2026-11-13T00:11:02.530Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.86,
+        "forecastPeakFt": 0.8,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -451,17 +451,17 @@
         "updatedAt": "2026-11-12T10:55:05.907Z"
       },
       "water": {
-        "levelFt": 0.07,
-        "status": "falling",
-        "observedAt": "2026-11-12T13:42:00-05:00",
-        "rawTime": "2026-11-12 13:42",
+        "levelFt": -0.19,
+        "status": "rising",
+        "observedAt": "2026-11-12T19:00:00-05:00",
+        "rawTime": "2026-11-12 19:00",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-12T18:49:41.524Z"
+        "updatedAt": "2026-11-13T00:11:03.537Z"
       },
       "tides": {
         "date": "2026-11-12",
@@ -754,15 +754,15 @@
             "h": 0.02
           }
         ],
-        "anomalyFt": 0.76,
+        "anomalyFt": 0.7,
         "todayPredictedPeakFt": 0.1,
-        "todayForecastPeakFt": 0.86,
+        "todayForecastPeakFt": 0.8,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-12T18:49:41.616Z"
+        "updatedAt": "2026-11-13T00:11:03.579Z"
       },
       "floodDays": {
         "thisYear": {
@@ -788,7 +788,7 @@
       },
       "weather": {
         "rain24hIn": 0,
-        "reportsCounted": 12,
+        "reportsCounted": 9,
         "station": {
           "id": "KMIA",
           "name": "Miami International Airport"
@@ -798,7 +798,7 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-11-12T18:49:42.396Z"
+        "updatedAt": "2026-11-13T00:11:03.979Z"
       },
       "weatherAlerts": {
         "items": []
@@ -827,11 +827,11 @@
           "detail": "Point 25.9812, -80.1484",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-12T18:49:39.619Z"
+        "updatedAt": "2026-11-13T00:11:02.725Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.67,
+        "forecastPeakFt": 0.53,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -853,17 +853,17 @@
         "updatedAt": "2026-11-12T10:55:05.247Z"
       },
       "water": {
-        "levelFt": -0.47,
-        "status": "falling",
-        "observedAt": "2026-11-12T13:42:00-05:00",
-        "rawTime": "2026-11-12 13:42",
+        "levelFt": -0.37,
+        "status": "rising",
+        "observedAt": "2026-11-12T19:00:00-05:00",
+        "rawTime": "2026-11-12 19:00",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-12T18:49:40.569Z"
+        "updatedAt": "2026-11-13T00:11:03.455Z"
       },
       "tides": {
         "date": "2026-11-12",
@@ -1156,15 +1156,15 @@
             "h": -0.29
           }
         ],
-        "anomalyFt": 0.69,
+        "anomalyFt": 0.55,
         "todayPredictedPeakFt": -0.02,
-        "todayForecastPeakFt": 0.67,
+        "todayForecastPeakFt": 0.53,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-12T18:49:40.819Z"
+        "updatedAt": "2026-11-13T00:11:03.515Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1190,7 +1190,7 @@
       },
       "weather": {
         "rain24hIn": 0,
-        "reportsCounted": 12,
+        "reportsCounted": 10,
         "station": {
           "id": "KHWO",
           "name": "North Perry Airport"
@@ -1200,7 +1200,7 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-11-12T18:49:42.832Z"
+        "updatedAt": "2026-11-13T00:11:04.507Z"
       },
       "weatherAlerts": {
         "items": []
@@ -1229,11 +1229,11 @@
           "detail": "Point 26.0112, -80.1495",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-12T18:49:39.807Z"
+        "updatedAt": "2026-11-13T00:11:02.890Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.67,
+        "forecastPeakFt": 0.53,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -1255,17 +1255,17 @@
         "updatedAt": "2026-11-12T10:55:05.247Z"
       },
       "water": {
-        "levelFt": -0.47,
-        "status": "falling",
-        "observedAt": "2026-11-12T13:42:00-05:00",
-        "rawTime": "2026-11-12 13:42",
+        "levelFt": -0.37,
+        "status": "rising",
+        "observedAt": "2026-11-12T19:00:00-05:00",
+        "rawTime": "2026-11-12 19:00",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-12T18:49:40.569Z"
+        "updatedAt": "2026-11-13T00:11:03.455Z"
       },
       "tides": {
         "date": "2026-11-12",
@@ -1558,15 +1558,15 @@
             "h": -0.29
           }
         ],
-        "anomalyFt": 0.69,
+        "anomalyFt": 0.55,
         "todayPredictedPeakFt": -0.02,
-        "todayForecastPeakFt": 0.67,
+        "todayForecastPeakFt": 0.53,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-12T18:49:40.819Z"
+        "updatedAt": "2026-11-13T00:11:03.515Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1592,7 +1592,7 @@
       },
       "weather": {
         "rain24hIn": 0,
-        "reportsCounted": 12,
+        "reportsCounted": 10,
         "station": {
           "id": "KHWO",
           "name": "North Perry Airport"
@@ -1602,7 +1602,7 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-11-12T18:49:42.832Z"
+        "updatedAt": "2026-11-13T00:11:04.507Z"
       },
       "weatherAlerts": {
         "items": []
@@ -1631,11 +1631,11 @@
           "detail": "Point 26.1224, -80.1373",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-12T18:49:40.010Z"
+        "updatedAt": "2026-11-13T00:11:03.138Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.67,
+        "forecastPeakFt": 0.53,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -1657,17 +1657,17 @@
         "updatedAt": "2026-11-12T10:55:05.247Z"
       },
       "water": {
-        "levelFt": -0.47,
-        "status": "falling",
-        "observedAt": "2026-11-12T13:42:00-05:00",
-        "rawTime": "2026-11-12 13:42",
+        "levelFt": -0.37,
+        "status": "rising",
+        "observedAt": "2026-11-12T19:00:00-05:00",
+        "rawTime": "2026-11-12 19:00",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-12T18:49:40.569Z"
+        "updatedAt": "2026-11-13T00:11:03.455Z"
       },
       "tides": {
         "date": "2026-11-12",
@@ -1960,15 +1960,15 @@
             "h": -0.29
           }
         ],
-        "anomalyFt": 0.69,
+        "anomalyFt": 0.55,
         "todayPredictedPeakFt": -0.02,
-        "todayForecastPeakFt": 0.67,
+        "todayForecastPeakFt": 0.53,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-12T18:49:40.819Z"
+        "updatedAt": "2026-11-13T00:11:03.515Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1994,7 +1994,7 @@
       },
       "weather": {
         "rain24hIn": 0,
-        "reportsCounted": 16,
+        "reportsCounted": 14,
         "station": {
           "id": "KFLL",
           "name": "Fort Lauderdale/Hollywood International Airport"
@@ -2004,7 +2004,7 @@
           "detail": "Fort Lauderdale/Hollywood International Airport (KFLL)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KFLL"
         },
-        "updatedAt": "2026-11-12T18:49:43.242Z"
+        "updatedAt": "2026-11-13T00:11:04.953Z"
       },
       "weatherAlerts": {
         "items": []
