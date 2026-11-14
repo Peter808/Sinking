@@ -1,23 +1,23 @@
 {
   "sources": {
     "nws-alerts:miami": {
-      "lastSuccess": "2026-11-14T16:59:19.775Z",
+      "lastSuccess": "2026-11-14T21:23:21.587Z",
       "lastError": null
     },
     "nws-alerts:miami-beach": {
-      "lastSuccess": "2026-11-14T16:59:19.885Z",
+      "lastSuccess": "2026-11-14T21:23:21.768Z",
       "lastError": null
     },
     "nws-alerts:hallandale-beach": {
-      "lastSuccess": "2026-11-14T16:59:20.037Z",
+      "lastSuccess": "2026-11-14T21:23:21.873Z",
       "lastError": null
     },
     "nws-alerts:hollywood": {
-      "lastSuccess": "2026-11-14T16:59:20.156Z",
+      "lastSuccess": "2026-11-14T21:23:22.107Z",
       "lastError": null
     },
     "nws-alerts:fort-lauderdale": {
-      "lastSuccess": "2026-11-14T16:59:20.255Z",
+      "lastSuccess": "2026-11-14T21:23:22.260Z",
       "lastError": null
     },
     "noaa-thresholds:8722956": {
@@ -25,11 +25,11 @@
       "lastError": null
     },
     "noaa-water:8722956": {
-      "lastSuccess": "2026-11-14T16:59:20.707Z",
+      "lastSuccess": "2026-11-14T21:23:22.728Z",
       "lastError": null
     },
     "noaa-predictions:8722956": {
-      "lastSuccess": "2026-11-14T16:59:20.935Z",
+      "lastSuccess": "2026-11-14T21:23:22.965Z",
       "lastError": null
     },
     "noaa-flooddays:8722956": {
@@ -41,11 +41,11 @@
       "lastError": null
     },
     "noaa-water:8723214": {
-      "lastSuccess": "2026-11-14T16:59:21.455Z",
+      "lastSuccess": "2026-11-14T21:23:23.048Z",
       "lastError": null
     },
     "noaa-predictions:8723214": {
-      "lastSuccess": "2026-11-14T16:59:21.562Z",
+      "lastSuccess": "2026-11-14T21:23:23.151Z",
       "lastError": null
     },
     "noaa-flooddays:8723214": {
@@ -53,67 +53,76 @@
       "lastError": null
     },
     "nws-rain:KMIA": {
-      "lastSuccess": "2026-11-14T16:59:22.365Z",
+      "lastSuccess": "2026-11-14T21:23:23.722Z",
       "lastError": null
     },
     "nws-rain:KHWO": {
-      "lastSuccess": "2026-11-14T16:59:22.665Z",
+      "lastSuccess": "2026-11-14T21:23:24.048Z",
       "lastError": null
     },
     "nws-rain:KFLL": {
-      "lastSuccess": "2026-11-14T16:59:22.967Z",
+      "lastSuccess": "2026-11-14T21:23:24.449Z",
       "lastError": null
     },
     "news:Google News / Miami flooding": {
-      "lastSuccess": "2026-11-14T16:59:23.578Z",
+      "lastSuccess": "2026-11-14T21:23:25.007Z",
       "lastError": null
     },
     "news:Google News / Miami Beach flooding": {
-      "lastSuccess": "2026-11-14T16:59:23.808Z",
+      "lastSuccess": "2026-11-14T21:23:25.257Z",
       "lastError": null
     },
     "news:Google News / king tide Florida": {
-      "lastSuccess": "2026-11-14T16:59:24.117Z",
+      "lastSuccess": "2026-11-14T21:23:25.584Z",
       "lastError": null
     },
     "news:Google News / Fort Lauderdale flooding": {
-      "lastSuccess": "2026-11-14T16:59:24.572Z",
+      "lastSuccess": "2026-11-14T21:23:26.087Z",
       "lastError": null
     },
     "news:Google News / Hollywood Broward flooding": {
-      "lastSuccess": "2026-11-14T16:59:24.966Z",
+      "lastSuccess": "2026-11-14T21:23:26.372Z",
       "lastError": null
     },
     "news:Google News / Hallandale Beach flooding": {
-      "lastSuccess": "2026-11-14T16:59:25.309Z",
+      "lastSuccess": "2026-11-14T21:23:26.810Z",
       "lastError": null
     },
     "news:NBC6 Miami": {
-      "lastSuccess": "2026-11-14T16:59:25.509Z",
+      "lastSuccess": "2026-11-14T21:23:27.032Z",
       "lastError": null
     },
     "news:WLRN": {
-      "lastSuccess": "2026-11-14T16:59:25.863Z",
+      "lastSuccess": "2026-11-14T21:23:27.305Z",
       "lastError": null
     },
     "news:Local10": {
       "lastSuccess": "2026-11-14T16:59:26.232Z",
-      "lastError": null
+      "lastError": {
+        "at": "2026-11-14T21:23:31.704Z",
+        "message": "HTTP 403 Forbidden (www.local10.com/arc/outboundfeeds/rss/)"
+      }
     },
     "news:City of Hallandale Beach": {
       "lastSuccess": "2026-11-14T16:59:27.192Z",
-      "lastError": null
+      "lastError": {
+        "at": "2026-11-14T21:24:07.186Z",
+        "message": "fetch failed (www.cohb.org/RSSFeed.aspx)"
+      }
     },
     "news:City of Hollywood": {
       "lastSuccess": "2026-11-14T16:59:27.621Z",
-      "lastError": null
+      "lastError": {
+        "at": "2026-11-14T21:24:42.674Z",
+        "message": "fetch failed (www.hollywoodfl.org/RSSFeed.aspx)"
+      }
     },
     "news:Florida Phoenix": {
-      "lastSuccess": "2026-11-14T16:59:28.152Z",
+      "lastSuccess": "2026-11-14T21:24:43.428Z",
       "lastError": null
     },
     "news:Miami New Times": {
-      "lastSuccess": "2026-11-14T16:59:28.345Z",
+      "lastSuccess": "2026-11-14T21:24:43.568Z",
       "lastError": null
     },
     "fema-nfip-claims": {
@@ -142,10 +151,10 @@
     }
   },
   "runs": {
-    "floods": "2026-11-14T16:59:20.255Z",
-    "tides": "2026-11-14T16:59:21.909Z",
-    "weather": "2026-11-14T16:59:22.968Z",
-    "news": "2026-11-14T16:59:28.363Z",
+    "floods": "2026-11-14T21:23:22.260Z",
+    "tides": "2026-11-14T21:23:23.151Z",
+    "weather": "2026-11-14T21:23:24.449Z",
+    "news": "2026-11-14T21:24:43.601Z",
     "stats": "2026-11-13T00:12:27.844Z",
     "meetings": "2026-11-14T16:59:32.131Z"
   },
