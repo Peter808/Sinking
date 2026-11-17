@@ -21,10 +21,10 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ],
         "source": {
@@ -32,11 +32,11 @@
           "detail": "Point 25.7617, -80.1918",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-17T13:09:17.451Z"
+        "updatedAt": "2026-11-17T22:12:25.381Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.91,
+        "forecastPeakFt": 0.82,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -55,29 +55,29 @@
         "majorFlood": 2.5,
         "datum": "MHHW",
         "basis": "NWS flood categories",
-        "updatedAt": "2026-11-16T20:20:10.355Z"
+        "updatedAt": "2026-11-17T22:12:27.722Z"
       },
       "water": {
-        "levelFt": -0.54,
-        "status": "falling",
-        "observedAt": "2026-11-17T08:00:00-05:00",
-        "rawTime": "2026-11-17 08:00",
+        "levelFt": 0.2,
+        "status": "steady",
+        "observedAt": "2026-11-17T17:06:00-05:00",
+        "rawTime": "2026-11-17 17:06",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-17T13:09:19.033Z"
+        "updatedAt": "2026-11-17T22:12:27.807Z"
       },
       "tides": {
         "date": "2026-11-17",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-17T14:36:00-05:00",
-          "localTime": "14:36",
-          "date": "2026-11-17",
-          "heightFt": -0.03
+          "at": "2026-11-18T03:02:00-05:00",
+          "localTime": "03:02",
+          "date": "2026-11-18",
+          "heightFt": -0.1
         },
         "today": [
           {
@@ -361,15 +361,15 @@
             "h": -0.83
           }
         ],
-        "anomalyFt": 0.94,
+        "anomalyFt": 0.85,
         "todayPredictedPeakFt": -0.03,
-        "todayForecastPeakFt": 0.91,
+        "todayForecastPeakFt": 0.82,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-17T13:09:19.102Z"
+        "updatedAt": "2026-11-17T22:12:27.891Z"
       },
       "floodDays": {
         "thisYear": {
@@ -391,7 +391,7 @@
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-17T13:09:19.397Z"
+        "updatedAt": "2026-11-17T22:12:28.262Z"
       },
       "weather": {
         "rain24hIn": 1.17,
@@ -405,18 +405,18 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-11-17T13:09:19.989Z"
+        "updatedAt": "2026-11-17T22:12:28.801Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1",
+            "id": "urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ]
       }
@@ -442,10 +442,10 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ],
         "source": {
@@ -453,11 +453,11 @@
           "detail": "Point 25.7907, -80.13",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-17T13:09:17.611Z"
+        "updatedAt": "2026-11-17T22:12:25.637Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.91,
+        "forecastPeakFt": 0.82,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -476,29 +476,29 @@
         "majorFlood": 2.5,
         "datum": "MHHW",
         "basis": "NWS flood categories",
-        "updatedAt": "2026-11-16T20:20:10.355Z"
+        "updatedAt": "2026-11-17T22:12:27.722Z"
       },
       "water": {
-        "levelFt": -0.54,
-        "status": "falling",
-        "observedAt": "2026-11-17T08:00:00-05:00",
-        "rawTime": "2026-11-17 08:00",
+        "levelFt": 0.2,
+        "status": "steady",
+        "observedAt": "2026-11-17T17:06:00-05:00",
+        "rawTime": "2026-11-17 17:06",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-17T13:09:19.033Z"
+        "updatedAt": "2026-11-17T22:12:27.807Z"
       },
       "tides": {
         "date": "2026-11-17",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-17T14:36:00-05:00",
-          "localTime": "14:36",
-          "date": "2026-11-17",
-          "heightFt": -0.03
+          "at": "2026-11-18T03:02:00-05:00",
+          "localTime": "03:02",
+          "date": "2026-11-18",
+          "heightFt": -0.1
         },
         "today": [
           {
@@ -782,15 +782,15 @@
             "h": -0.83
           }
         ],
-        "anomalyFt": 0.94,
+        "anomalyFt": 0.85,
         "todayPredictedPeakFt": -0.03,
-        "todayForecastPeakFt": 0.91,
+        "todayForecastPeakFt": 0.82,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-17T13:09:19.102Z"
+        "updatedAt": "2026-11-17T22:12:27.891Z"
       },
       "floodDays": {
         "thisYear": {
@@ -812,7 +812,7 @@
           "detail": "Virginia Key gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8723214"
         },
-        "updatedAt": "2026-11-17T13:09:19.397Z"
+        "updatedAt": "2026-11-17T22:12:28.262Z"
       },
       "weather": {
         "rain24hIn": 1.17,
@@ -826,18 +826,18 @@
           "detail": "Miami International Airport (KMIA)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KMIA"
         },
-        "updatedAt": "2026-11-17T13:09:19.989Z"
+        "updatedAt": "2026-11-17T22:12:28.801Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1",
+            "id": "urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ]
       }
@@ -863,10 +863,10 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ],
         "source": {
@@ -874,11 +874,11 @@
           "detail": "Point 25.9812, -80.1484",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-17T13:09:17.768Z"
+        "updatedAt": "2026-11-17T22:12:25.772Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.54,
+        "forecastPeakFt": 0.52,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -897,29 +897,29 @@
         "majorFlood": 2.5,
         "datum": "MHHW",
         "basis": "NWS flood categories",
-        "updatedAt": "2026-11-16T20:20:06.640Z"
+        "updatedAt": "2026-11-17T22:12:26.728Z"
       },
       "water": {
-        "levelFt": -1.15,
-        "status": "steady",
-        "observedAt": "2026-11-17T08:00:00-05:00",
-        "rawTime": "2026-11-17 08:00",
+        "levelFt": -0.43,
+        "status": "falling",
+        "observedAt": "2026-11-17T17:06:00-05:00",
+        "rawTime": "2026-11-17 17:06",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-17T13:09:18.393Z"
+        "updatedAt": "2026-11-17T22:12:26.814Z"
       },
       "tides": {
         "date": "2026-11-17",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-17T13:46:00-05:00",
-          "localTime": "13:46",
-          "date": "2026-11-17",
-          "heightFt": -0.06
+          "at": "2026-11-18T02:16:00-05:00",
+          "localTime": "02:16",
+          "date": "2026-11-18",
+          "heightFt": -0.19
         },
         "today": [
           {
@@ -1203,15 +1203,15 @@
             "h": -0.83
           }
         ],
-        "anomalyFt": 0.6,
+        "anomalyFt": 0.58,
         "todayPredictedPeakFt": -0.06,
-        "todayForecastPeakFt": 0.54,
+        "todayForecastPeakFt": 0.52,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-17T13:09:18.538Z"
+        "updatedAt": "2026-11-17T22:12:27.027Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1233,10 +1233,10 @@
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-17T13:09:18.979Z"
+        "updatedAt": "2026-11-17T22:12:27.627Z"
       },
       "weather": {
-        "rain24hIn": 0.85,
+        "rain24hIn": 1.12,
         "reportsCounted": 22,
         "station": {
           "id": "KHWO",
@@ -1247,18 +1247,18 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-11-17T13:09:20.386Z"
+        "updatedAt": "2026-11-17T22:12:29.323Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1",
+            "id": "urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ]
       }
@@ -1284,10 +1284,10 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ],
         "source": {
@@ -1295,11 +1295,11 @@
           "detail": "Point 26.0112, -80.1495",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-17T13:09:17.877Z"
+        "updatedAt": "2026-11-17T22:12:25.958Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.54,
+        "forecastPeakFt": 0.52,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -1318,29 +1318,29 @@
         "majorFlood": 2.5,
         "datum": "MHHW",
         "basis": "NWS flood categories",
-        "updatedAt": "2026-11-16T20:20:06.640Z"
+        "updatedAt": "2026-11-17T22:12:26.728Z"
       },
       "water": {
-        "levelFt": -1.15,
-        "status": "steady",
-        "observedAt": "2026-11-17T08:00:00-05:00",
-        "rawTime": "2026-11-17 08:00",
+        "levelFt": -0.43,
+        "status": "falling",
+        "observedAt": "2026-11-17T17:06:00-05:00",
+        "rawTime": "2026-11-17 17:06",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-17T13:09:18.393Z"
+        "updatedAt": "2026-11-17T22:12:26.814Z"
       },
       "tides": {
         "date": "2026-11-17",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-17T13:46:00-05:00",
-          "localTime": "13:46",
-          "date": "2026-11-17",
-          "heightFt": -0.06
+          "at": "2026-11-18T02:16:00-05:00",
+          "localTime": "02:16",
+          "date": "2026-11-18",
+          "heightFt": -0.19
         },
         "today": [
           {
@@ -1624,15 +1624,15 @@
             "h": -0.83
           }
         ],
-        "anomalyFt": 0.6,
+        "anomalyFt": 0.58,
         "todayPredictedPeakFt": -0.06,
-        "todayForecastPeakFt": 0.54,
+        "todayForecastPeakFt": 0.52,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-17T13:09:18.538Z"
+        "updatedAt": "2026-11-17T22:12:27.027Z"
       },
       "floodDays": {
         "thisYear": {
@@ -1654,10 +1654,10 @@
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-17T13:09:18.979Z"
+        "updatedAt": "2026-11-17T22:12:27.627Z"
       },
       "weather": {
-        "rain24hIn": 0.85,
+        "rain24hIn": 1.12,
         "reportsCounted": 22,
         "station": {
           "id": "KHWO",
@@ -1668,18 +1668,18 @@
           "detail": "North Perry Airport (KHWO)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KHWO"
         },
-        "updatedAt": "2026-11-17T13:09:20.386Z"
+        "updatedAt": "2026-11-17T22:12:29.323Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1",
+            "id": "urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ]
       }
@@ -1705,10 +1705,10 @@
           {
             "event": "Flood Watch",
             "severity": "Severe",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ],
         "source": {
@@ -1716,11 +1716,11 @@
           "detail": "Point 26.1224, -80.1373",
           "url": "https://alerts.weather.gov/"
         },
-        "updatedAt": "2026-11-17T13:09:17.979Z"
+        "updatedAt": "2026-11-17T22:12:26.183Z"
       },
       "flooding": {
         "likely": false,
-        "forecastPeakFt": 0.54,
+        "forecastPeakFt": 0.52,
         "minorFloodFt": 1.3,
         "basis": "Today's highest predicted tide plus the current difference between observed and predicted water level."
       },
@@ -1739,29 +1739,29 @@
         "majorFlood": 2.5,
         "datum": "MHHW",
         "basis": "NWS flood categories",
-        "updatedAt": "2026-11-16T20:20:06.640Z"
+        "updatedAt": "2026-11-17T22:12:26.728Z"
       },
       "water": {
-        "levelFt": -1.15,
-        "status": "steady",
-        "observedAt": "2026-11-17T08:00:00-05:00",
-        "rawTime": "2026-11-17 08:00",
+        "levelFt": -0.43,
+        "status": "falling",
+        "observedAt": "2026-11-17T17:06:00-05:00",
+        "rawTime": "2026-11-17 17:06",
         "unit": "ft above MHHW",
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-17T13:09:18.393Z"
+        "updatedAt": "2026-11-17T22:12:26.814Z"
       },
       "tides": {
         "date": "2026-11-17",
         "nextHigh": {
           "type": "high",
-          "at": "2026-11-17T13:46:00-05:00",
-          "localTime": "13:46",
-          "date": "2026-11-17",
-          "heightFt": -0.06
+          "at": "2026-11-18T02:16:00-05:00",
+          "localTime": "02:16",
+          "date": "2026-11-18",
+          "heightFt": -0.19
         },
         "today": [
           {
@@ -2045,15 +2045,15 @@
             "h": -0.83
           }
         ],
-        "anomalyFt": 0.6,
+        "anomalyFt": 0.58,
         "todayPredictedPeakFt": -0.06,
-        "todayForecastPeakFt": 0.54,
+        "todayForecastPeakFt": 0.52,
         "source": {
           "name": "NOAA Tides & Currents",
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-17T13:09:18.538Z"
+        "updatedAt": "2026-11-17T22:12:27.027Z"
       },
       "floodDays": {
         "thisYear": {
@@ -2075,7 +2075,7 @@
           "detail": "South Port Everglades gauge",
           "url": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8722956"
         },
-        "updatedAt": "2026-11-17T13:09:18.979Z"
+        "updatedAt": "2026-11-17T22:12:27.627Z"
       },
       "weather": {
         "rain24hIn": 0.8,
@@ -2089,18 +2089,18 @@
           "detail": "Fort Lauderdale/Hollywood International Airport (KFLL)",
           "url": "https://www.weather.gov/wrh/timeseries?site=KFLL"
         },
-        "updatedAt": "2026-11-17T13:09:20.813Z"
+        "updatedAt": "2026-11-17T22:12:29.855Z"
       },
       "weatherAlerts": {
         "items": [
           {
-            "id": "urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1",
+            "id": "urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1",
             "event": "Flood Watch",
             "level": "watch",
-            "headline": "Flood Watch issued November 17 at 8:07AM EST until November 19 at 7:00PM EST by NWS Miami FL",
-            "onset": "2026-11-17T13:00:00-05:00",
+            "headline": "Flood Watch issued November 17 at 4:37PM EST until November 19 at 7:00PM EST by NWS Miami FL",
+            "onset": "2026-11-17T16:37:00-05:00",
             "expires": "2026-11-19T19:00:00-05:00",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.34e1233ec6bc79e30c9bc98038a2433a03feb520.001.1"
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e56b6a067e9d6a25c2f00431766ea8b57894ab08.001.1"
           }
         ]
       }
