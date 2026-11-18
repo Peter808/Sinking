@@ -1,14 +1,122 @@
 {
   "items": [
     {
+      "headline": "Broward County flooding leads to rescues, road closures after torrential rain",
+      "source": "WPBF",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPR01vV2xncThMaVlieW40MWdWMFEwRjBBQzBWaWlOWjFXY1IzVVVST3ktUDBqQXpFN2tPM2xaQTRCdWNTRmJvcmRtWWt4NlRGT0lURXRmVXdvVTVfRFg5RnJYZndJMTNiRDFxa1VhcDBLRzJUTXdnblpyNk9KRXh3eTdYNjc4b0FrZ1d6dV9heDRQSGp0WHk5RDVRSUtrSGMxNE02NQ?oc=5",
+      "date": "2026-11-18T13:25:00.000Z",
+      "cities": [],
+      "via": "Google News"
+    },
+    {
+      "headline": "What else is closed in Broward after the flooding? Roads, hospital visits and FAU Davie",
+      "source": "Nacionale",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORjBtX1hLcXd4eDRvWXVNX2pmWXhjeVl3a3MtM2Z3Yy1sdUVjbHA5UXM2UGJ4UmplNl9yM3Z1NlpOLXNybFo4Qnl1ejJiQXJ4dDNuLXJPNDE2YUMzNzVMLXpkWk9JYlZPS2VwR09DNzRYVDNGbWJFckZQZ3JDSlBzd2NyNmp4TDBLUnAxTzE5ZEFxODlsalBwV05YQ1liV3lKRkRhS0lCX1J6QUd3V212eDRaLVpGQzFSNXc?oc=5",
+      "date": "2026-11-18T13:22:52.000Z",
+      "cities": [],
+      "via": "Google News"
+    },
+    {
+      "headline": "South Florida under flood watch as overnight storms cause extensive flooding in parts of Broward, Miami-Dade",
+      "source": "WSVN",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPWHNCYXVFdjNVd09XdF9SVHMyNTFEdWFDTUpjN1dsSXlvd2pSVXdQNVg0THRKU21kUzNqODFPUGN6UFFJeExKZzVCZWJ2SVJVc1JuM1VnS0dkaWNUUzhCT3FFa1hOVXBVaXRmMF9wSDRLcU1nSTJXV3VQSmZrem9hVEpYLXNXUQ?oc=5",
+      "date": "2026-11-18T12:52:11.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Hollywood under a flash flood warning - roadways closed",
+      "source": "City of Hollywood",
+      "link": "https://www.hollywoodfl.org/CivicAlerts.aspx?aid=1882",
+      "date": "2026-11-18T12:52:00.000Z",
+      "cities": [
+        "hollywood"
+      ],
+      "via": "City of Hollywood"
+    },
+    {
+      "headline": "Hospital suspends visitation; synagogue roof collapses in Hollywood — Severe flooding in Broward",
+      "source": "cedarnews.net",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPd3hHZmpSYjVEVnNFQ29sY2s3My04VEJIbFBBeGxPYVZkamFuQ3Y5eG1BQXpwZExrQUF0aXMzb0xLb1Q3MVRtMkthdEdRODRrb0FzWmo3TjJtU1I2V0tvNGctMzI4cHdpLTZUanczUHloLVZnTW5TdjFWdTM1eWl5emZZczRqNkdLeVBvTlFORmhra2tmdnZUTFpndlFyQmEyNW5Yd3YtRQ?oc=5",
+      "date": "2026-11-18T12:45:27.000Z",
+      "cities": [
+        "hollywood"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Schools closed, roads swamped as a foot of rain floods Broward overnight",
+      "source": "Miami Herald",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONVZIeUFKZXlOdU5KV3BBenVvOWxROWlld0lpMFpqU2NiVDR5elRoalFtWWVwYWpyUDlnUS00dWtpYmt4UUdXWDlKc3c1aS1wVjVvUmZWM0tQNllldW42TUF6Nk44UDk1bUxsSDJsU3VOMGE1Vk0teHBza2RiVG9aNTBJVU7SAYQBQVVfeXFMUDdXMWREMHcwZmNjX1RnZ3hqY3FMT3RJRENWdWtFRGpsSUJnaklicU9RVXNYRmVqQjlfT1psdi1ybjlhWXpibkN5NEpCQl8tNWRkd0NpNmlaTno5YVIzWERfQjhKcGExVFBfeHRqdGdQcE9IYVRJdVU4aG9aVzlLX05pQnVq?oc=5",
+      "date": "2026-11-18T12:32:00.000Z",
+      "cities": [],
+      "via": "Google News"
+    },
+    {
+      "headline": "Heavy rain causes flooding in Broward as South Florida braces for more storms",
+      "source": "Local10",
+      "link": "https://www.local10.com/weather/2026/11/18/heavy-rain-causes-flooding-in-broward-as-south-florida-braces-for-more-storms/",
+      "date": "2026-11-18T12:09:27.000Z",
+      "cities": [],
+      "via": "Local10"
+    },
+    {
+      "headline": "Major flooding in South Florida forces Broward officials to close schools Wednesday",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSDc2akFnSXNyWjVQeG1sd01ZT2VtWGxsNFliX0tRSkxEVjhHdzUyM1RpWFhCbTdwZG12VTFoaEFCZlJSOVZRWG5sN2hQR05xNjZjempKbGczYnE0TmNuVzlidlRvbHowNGhQSVdQUnZtcHBZSXN6YXlITVZ1RVVPUE81c045aDJyOVQzTm1VdU9SNjlRQnBmNS1STnVWVWl0X0t0MzdsWQ?oc=5",
+      "date": "2026-11-18T11:34:00.000Z",
+      "cities": [],
+      "via": "Google News"
+    },
+    {
+      "headline": "Flash Flood Warning issued November 18 at 12:42AM EST until November 18 at 2:00AM EST by NWS Miami FL",
+      "source": "Forth.News",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBMZFRkS3lHcXdlWUdtU0dRZExiZTFMdkRldTNydlVpQmR1bWgtTURyQm95ZlQ5bWVYQWxJWjFZQUluZzN0UDMxcnlrc0xOTWZUZ3pmR3EwaGVRdENXTFZxWmJ4Si1DZEU?oc=5",
+      "date": "2026-11-18T09:27:41.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Broward public schools, offices closed on Wednesday due to flooding",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/broward-public-schools-offices-closed-on-wednesday-due-to-flooding/3889656/",
+      "date": "2026-11-18T08:48:57.000Z",
+      "cities": [],
+      "via": "NBC6 Miami"
+    },
+    {
       "headline": "Fort Lauderdale, Broward County prepare for potential flooding ahead of rainy week",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/weather/stories-weather/fort-lauderdale-broward-county-prepare-flooding/3889549/",
-      "date": "2026-11-17T23:07:35.000Z",
+      "date": "2026-11-18T08:48:57.000Z",
       "cities": [
         "fort-lauderdale"
       ],
       "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Drivers stranded as torrential rain floods shopping plaza lots, I-95 in Broward, Miami-Dade",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNd1l6VmtlUWpDb1l2RnM1Vmh5RldMSmc2VmtnODFWSTVCVWx1aDVKcmdjVk5kQ0RWa01iS1FmTnRiaTVycTI0TXdVaDR4Q2FXNHlPU0o5dU5vcjRGMm55ejB6eGVmVVRBRkF0QVBDSUVWNC0xMkZuRjFZT012Zjd2dEJhTzJxSmVXM0dJT2hnYWgxaVkxQjFSQ0FyM2pKQzRpcTlHSUYzS2NrYVd5R3Z2VHJLRzJKbmYtQS03VEQ5SlFuSlE?oc=5",
+      "date": "2026-11-18T04:38:00.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Flash flooding impacts drivers in several parts of Miami-Dade, Broward",
+      "source": "WPLG Local 10",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRWlza0ptQjkyM1gtNlNudzB3RE10MGI3Q2d1YXV3QTNtd2EzNHdYZ0FzNUp0M0ZDUnlUU2lWMGJLTDJNWGtGNWJDU3pXSy1YMVkxV3RPZWp2RTJHR3VfcUJubXpBREFQYTBfNzZZRVB3TjdZa1lLUXZiYmljUkFZR0x3RnZaaGloTlJoWGZmY09uOFdCb1RGdnhyREpZM3V3UFA2WUNSWUZaLUpzczdjdVdzcS1qTDA?oc=5",
+      "date": "2026-11-18T04:14:16.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
     },
     {
       "headline": "Flood watch, warnings in effect in Broward, Miami-Dade; isolated spots could see 10 in of rain",
@@ -19,6 +127,14 @@
         "miami"
       ],
       "via": "NBC6 Miami"
+    },
+    {
+      "headline": "NEXT Weather Alert issued for South Florida, with dangerous flash flooding across southern Broward",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOaVphdE1RakJEa1RBVDg5cWFFbF9raTgyTm82WGx0QzFMUTBsTHlTUlNYOVVqQWQ2QWhSQVg5OHhzNVBGcEtYV2dWZ0hnNjRaY2d1LUZsUEV2ZzFlOGpoam13aWFZWE5UNlcyS2JJNGRRYlNpeTlPb2JvUE45YUc2RWVLZmhmS1pDUFRGa3o2c1JBa0l0ZTlZcEtxSUNFczhkV0U0aE5hTWtWbTZQYmtvU1AwMUNPdXBNNkY2WkktOUFVdw?oc=5",
+      "date": "2026-11-17T11:56:00.000Z",
+      "cities": [],
+      "via": "Google News"
     },
     {
       "headline": "Fort Lauderdale eyes urgent fixes for worsening king tides",
@@ -446,137 +562,6 @@
       "source": "Florida Atlantic University",
       "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOb3FmT0ZYQTgtR0ZvdzBRa01penVhb1JCaXZ0YzhjYXdsMDlvQU82Sl80R3pYZm1xd2M2b2lFSUlPR2hhTzE5b1FRX29YVVRfVDc3ejRsb1NfMGxmT0E0WjZOaWxsdGRNVDVBQjB3LXZUQzBQWXhMU0dpR1FpUHZIVi1BSlhfT1Fsenc?oc=5",
       "date": "2026-10-27T13:13:21.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "King tides had double the flooding in Fort Lauderdale and Hollywood neighborhoods Monday evening",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOQW16YWN6WGREMGI4R3FOQzgzbkdVSThFeFpneER3aDFMWUU0SzdQYVZlTEtvLURQQ2FLSVZTVW5nVzVhRVFUYlNieHItZzM0elkwSDlub00xMGhyN21waUhDZXRjc01ndzlfTUE2RmpLeTRfc05WWXA4by1qY3drTEZFOXJrbHFUZGExdGUwaWxfSVZManVwT080Wk1ILVZYNXVLXzJ6Z1JjUUxkbXZYVnQxbXFkTzJHYzhWQXFLdUI4Z2tPRWR1Z042TzRxZw?oc=5",
-      "date": "2026-10-27T03:14:00.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Coastal flooding hits Miami-Dade and Broward as businesses in Hollywood Beach pile up sandbags",
-      "source": "WPBF",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9GMEh2TDdCYzFkbldPTklqMkJ3MUpWOFBHcnFoQVUwRDhKSnVyOGpmLWwzQ2o1LVlmcXRDYWl6ZGhqYnk3SURIRVdDWHBaQi0xUHFVUWtsMDNFRGVST1ZIRWJ0RGtLQTNDS2VZdTVUSVVHSFdsRmZkSndaajlmQQ?oc=5",
-      "date": "2026-10-26T16:45:00.000Z",
-      "cities": [
-        "hollywood",
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Drivers stranded, roads flooded as king tides send water rushing inland in Fort Lauderdale",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOY2RxdWhZZVowQ3JpaXZDem1wQjlqWDFrX0xRYXgxVTRkWEs1TGlRVFMyQV9ua0JPREJobjhmWm1HSHc0VDEwNnZZYmd4ZGlCMEw4cU1zR0h3ejNlTUhpUjlFUlRSVk45dlczQm5xU0p0bnFTNG9FdU5qUXVhY05aM2c3cWViejBnb2F4clhNSFBsRGJheWhneXBwN3F1WUtrcldsYzJRNmRqMmVfN3lzS2NMNTBiVWI5eGVPM1BYeHdUWU9N?oc=5",
-      "date": "2026-10-26T16:12:00.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "King tides, rain and gusty winds bring coastal flooding threat from Fort Lauderdale to Miami",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxONnRvYm1XeWZkUGxHWk93S2Qyb3hmaW1vUWt4M2lxaG1FNG81ekRBNDlPUWZDblR5aDJrU2JnNE1NR1JUcmk5VXF0amRCZ183NEQwdUJGT242Q25nMGtDWmhtS29wVUQ3ZkRCM2M3TjNSR2VmeFNZSGExYUpWZC1NS1ZaZ1JPVXJDSWZnMDd2M2JlTFBpWEZWMmI4TGlwR1ZDZUk1TzFLQlZXZEJTYkx4VlpfUTNZMnJhektXSnU1X29mejdiVUhyMTNSN1FQeF9EUmw1RERfWHF3UQ?oc=5",
-      "date": "2026-10-26T12:27:00.000Z",
-      "cities": [
-        "fort-lauderdale",
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "King tide causes flooding across Miami-Dade and Broward County streets",
-      "source": "WSVN",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1XaWE2T0dtWW5VWVZPTUw0ekdNZDVrNkozQi1jd2dySS1hbnJlMDhIcWMwUWZhaDA5UjJ4YkZQdEYwZ2J4bHZpYTUzdTZEejcwVnJwTTU3akpqVEQ2YWNSSFY2YTNWNWJpNzFyRWpLYmhzMWlVNHk0dHlR?oc=5",
-      "date": "2026-10-23T16:57:23.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "October King Tides Urges Residents to Plan Ahead",
-      "source": "City of Hallandale Beach",
-      "link": "https://hallandalebeachfl.gov/CivicAlerts.aspx?aid=655",
-      "date": "2026-10-22T21:50:00.000Z",
-      "cities": [
-        "hallandale-beach"
-      ],
-      "via": "City of Hallandale Beach"
-    },
-    {
-      "headline": "Heavy rain leaves flooded streets, hazardous driving conditions in Broward County",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcTNGVXdhZlFUemljM3VBNVdmaGI5WHpzSV9fSzdITHF5NnJ3SHZuajhDRUF5LXY5UE8wWVRRa3d6MllTRVVpQmxIdzd3R25pY1p2eWZDekxhY3ZvYk1pRTdwbm5wX25ZR1IzNXJSZmlXUENKMnBzQTJxS3BLSUM5QUZ6M01xb0dyemtVenBuSlZtRmNGYUc2Mk8ybGo5RkZP?oc=5",
-      "date": "2026-10-17T07:00:00.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "North Miami Flooding Persists After Stormwater Plan Update",
-      "source": "Hoodline",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMXhMS09yZWNiZ0U0R0I5OUNSWUJBRl8za3RBb2l4S2VRNW9xU0lCb2g5V0hhOG9CbkdabDVfZFdwSVJWLVF0M2hIbEk2Ti1kTUJBX3NYUmh4RnNFLVhLaTRmS2oydVFoZWhSY0NWR1laWnBRSWRucjJoT1paLXNKbk9aRlZXZFNJeFZQQktrbkJ6TkdyQVpZdE01NjRRUUdqdFVBMFhVNnYxWndFZGd0QmttTzEtQU9M?oc=5",
-      "date": "2026-10-03T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "King tides and heavy rain flood streets in Broward and Miami-Dade, with some cities hit for 2nd week in a row",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSkdPVHRtNGEta2ZNUVF1Qm1XRExtNnVEYXJNdWhCanlwRjRnNzc5emdJSFZSbkVYMktjV1MyU056cVlwa3FBeVNsNVpoR2xvek1DNlp2WGVSRlF4cVdQZ2syUlNibUhacG04dldiM2xyU0ZJWkhtOU53eFpjUU84T0lvSmZoZzNQMFIzZjlyd1NMUExkVXc?oc=5",
-      "date": "2026-09-29T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "King tide flooding in South Florida puts residents on alert from Fort Lauderdale to Miami",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPNUZPamU2LTJwQ0E4eVNHLTBXaGlxR0pHTXRTTjNQZEs0REtwMG1PT1hFV2wtMzFmQzVvQW1KRG51ZVBOSDlCVUVNRFQ3eHNWblE1ai0xbTVQazBPcG9DbHJOeDdPdDRtcldqWS1ObXhYcVZaWTlISzRGbzJZZEw4NEVEOWRJOEFRQzdaNldxejBmTWVSMlpadnlHZHpTR2N2MjBqZFY4OXhrWTRRbWVrRWlKalRkazlJOURNNTZn?oc=5",
-      "date": "2026-09-28T07:00:00.000Z",
-      "cities": [
-        "fort-lauderdale",
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Miami Beach residents deal with King Tide flooding",
-      "source": "NBC 6 South Florida",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWVVab2t1MkhRbXVmbHV3RjY2ZmZTU3lqaTZYcEZhVGtMYUY0UG5yd293elJXZ2RHZnlwb0hPZGZ4ZWZqb0tVSWFGeGtINEFkV08yU0RJM1hLRW1MVlNqLTgtOUJ0Y1BSWS1FaWlQRlQteXJxOVRjUHExZXYwVmQ1T0ZKLXNZc0xXMk5QVUUyNzZON3EyOE5Cb3dWeEk3WXhOd3pN0gGrAUFVX3lxTE5TNnhCclZPaUdkaWJibTFEYVNBSHhQdmd4c29qdzR3b1llbVlhb3NKckV6aUNNWWktbUotSnNIWk9oN21tWEN5d1VoVVY4RGhMQkNtc0MxUkdCc0EzZ1FON0ptOFc4dWNETzVmVTBQTnJNYkJpR20wcDREeHlXa3JrSlVteTdWc2JhZ1NUUW5pM1hOTURwOFhoUHFlY0xGSWhWLXF0ZWFlcGg0Yw?oc=5",
-      "date": "2026-09-28T07:00:00.000Z",
-      "cities": [
-        "miami-beach"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "King Tides and flooding throughout South Florida brought some unexpected flooding to tourists and residents. #KingTides #Florida #Miami",
-      "source": "Facebook",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNY1JiNndoOTRwZFBZQm1ORy1fRkpmdk1NSnBlQVQyMkJZVjZVU0JDSXoxWDB6dWVpQXZVNjV6TWFfaFZnWVdva1U5Z3NJV3daVVpsVVByWUpkcVRPYkpaMldyYWpiMHhHQm5uQzhDcWNZLWthU1hrUW9PektaNGtEdnRCWEl4dHhDeF9Xckh1eDBkNDJrdEJaeXdOVUx4MEtPUldBRHpfb2lFR09YemtOaVgydE90cVZtOHVVQWJMVDB0bi1RNDNleTFVLWJFYVNRcVpkMlFVYTZEbnNFNjlrZ2dn?oc=5",
-      "date": "2026-09-28T07:00:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "King Tides Swamp South Florida Streets, Fort Lauderdale Highway Shut Down",
-      "source": "Hoodline",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQTWtPQVJZc01IajhVOGZWRGZ0c2lFQlRuempYQ1I0ZWJ4TzQyTDZyTklqN3FrTUt3ZVNjSm85OWsyblRxc1V0QWhaSkp1OENTTmdwSlJtRTJWeXh5dW5NWnNiaUdkRlR5aU9ZSjctZzlJcmRCLUx0eFNWcWxIUVE3TjIwdHN6TXh0RGpjQm9YNEF2X0s4YzNydnhsLTZ1Y3FTLUxxRA?oc=5",
-      "date": "2026-09-27T07:00:00.000Z",
       "cities": [
         "fort-lauderdale"
       ],
