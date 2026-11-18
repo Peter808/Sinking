@@ -1,10 +1,20 @@
 {
   "items": [
     {
-      "headline": "Flood watch in effect in Broward, Miami-Dade; isolated spots could see 10 in of rain",
+      "headline": "Fort Lauderdale, Broward County prepare for potential flooding ahead of rainy week",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/weather/stories-weather/fort-lauderdale-broward-county-prepare-flooding/3889549/",
+      "date": "2026-11-17T23:07:35.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Flood watch, warnings in effect in Broward, Miami-Dade; isolated spots could see 10 in of rain",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/weather/stories-weather/flood-watch-broward-miami-dade-isolated-spots-could-see-10-inches-rain/3889108/",
-      "date": "2026-11-17T16:58:45.000Z",
+      "date": "2026-11-17T23:07:35.000Z",
       "cities": [
         "miami"
       ],
@@ -569,16 +579,6 @@
       "date": "2026-09-27T07:00:00.000Z",
       "cities": [
         "fort-lauderdale"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Heavy rain, King Tide flood Hallandale Beach as residents plead for relief: \"We need a real solution\"",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRkJrMXNYQmRjbXVNVFhSaUZ5WVFUc19QNGJHQnhfZzlzWGJDdUlPZmNIeGY0bS16MWRHcHAtZkdrUzhnd2M2cWNVYk1GbFFVRnZwMHBzM0w1MFdPMmIyOVlsOXBmdkpUNUF3ekhpcGFHWkQ2RS01eHJCZGRObFhpaTRLbzhad0JVbnc?oc=5",
-      "date": "2026-09-23T07:00:00.000Z",
-      "cities": [
-        "hallandale-beach"
       ],
       "via": "Google News"
     }
