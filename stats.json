@@ -1,19 +1,19 @@
 {
   "nfipClaims": {
-    "count": 97078,
-    "paidUsd": 1313729154,
+    "count": 97249,
+    "paidUsd": 1315328246,
     "firstYear": 1978,
     "lastYear": 2026,
     "byCounty": {
       "Broward": {
-        "count": 35049,
-        "paid": 457944190.5300024,
+        "count": 35186,
+        "paid": 458908914.29000044,
         "first": 1978,
         "last": 2026
       },
       "Miami-Dade": {
-        "count": 62029,
-        "paid": 855784963.5699961,
+        "count": 62063,
+        "paid": 856419331.4399992,
         "first": 1978,
         "last": 2026
       }
@@ -22,6 +22,6 @@
       "name": "FEMA NFIP claims (OpenFEMA)",
       "url": "https://www.fema.gov/about/openfema/data-sets"
     },
-    "updatedAt": "2026-11-13T00:12:27.844Z"
+    "updatedAt": "2026-11-20T03:04:06.591Z"
   }
 }

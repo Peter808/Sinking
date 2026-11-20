@@ -1,6 +1,26 @@
 {
   "items": [
     {
+      "headline": "CAUGHT ON CAMERA: A FedEx truck found itself surrounded by deep floodwaters in Fort Lauderdale as heavy rain flooded streets across Broward County Thursday. The scene was captured from above by the NBC 6 chopper. #FortLauderdale #Flooding #Br",
+      "source": "Facebook",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQRU5pVTc2UWxvTDdDczBsSjdESGRmbVdXblJOYklpN1FuWVpkQmtrejlPLUQwMHV3NHpkUHRoVE1xSTdyMk1pV3lVeUdOa1Nwc21YYXFNYjZhQVUwaEJPZ2otUFRYZktlWFlCSnF6N2tLQXhfbU5LT2JndnFlclg5Z1hEcTdYMU5RWVBseFpnOVJyeERaQWRjRlJ0RkFEM1AxemZmMERHd2dfMW41cU04UUtUM1VPNy1tSXBneWM4VDZrRF82Q0xGOEw4RjQxZ01VTFNBUGtZV1llcjI2RTlR?oc=5",
+      "date": "2026-11-20T01:00:52.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Flooding leaves Fort Lauderdale neighborhoods underwater, Davie businesses facing costly damage",
+      "source": "NBC 6 South Florida",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQNVdIdEd2aVFYRmVORmVpTkpyd2VxenJZTjBZdDlaVHJ2ZlRxVHdIZFVVRnJMYngzLUJJRnVUYUM4RTkyTlRCVzNISFp2VVF6b0hFTnctcHZlZmt2bEpmblNCa3FEbHhSY25jcndxOXlxbjNuMXAxa0RJV1lTdWFyRGxPallIMmYxYi1JUDJWcllIbGVobG5VMEJHUdIBowFBVV95cUxPeHc4SE51TEdWX2N6Sk1aTzhXbGV6Ymc0Q1dMUnVERU1tcThQNHR4aWZkdWFxWkNIeXZEY1pOXzY3SllKWUcwSVVLZGkxRHllM2hiOXJSMWZFR3pER3NCR0ZuQk16Qkp5akNsRWxrY2ZNd2dFdWZfdWl4X3gxWTU0ZE9nbDktMkR6YnlWN2k5R3Z1Z3h0aTRibWppSlpKTTU0aTRJ?oc=5",
+      "date": "2026-11-19T22:39:14.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "Google News"
+    },
+    {
       "headline": "South Florida home sales drop in October, but Miami-Dade and Broward markets show resilience in 2026",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/south-florida-home-sales-drop-in-october-but-miami-dade-and-broward-markets-show-resilience-in-2026/3889373/",
@@ -508,7 +528,7 @@
       "via": "Google News"
     },
     {
-      "headline": "What else is closed in Broward after the flooding? Roads, hospital visits and FAU Davie",
+      "headline": "What else is closed in Broward after the flooding? Roads, county offices, FAU Davie and Broward College",
       "source": "Nacionale",
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORjBtX1hLcXd4eDRvWXVNX2pmWXhjeVl3a3MtM2Z3Yy1sdUVjbHA5UXM2UGJ4UmplNl9yM3Z1NlpOLXNybFo4Qnl1ejJiQXJ4dDNuLXJPNDE2YUMzNzVMLXpkWk9JYlZPS2VwR09DNzRYVDNGbWJFckZQZ3JDSlBzd2NyNmp4TDBLUnAxTzE5ZEFxODlsalBwV05YQ1liV3lKRkRhS0lCX1J6QUd3V212eDRaLVpGQzFSNXc?oc=5",
       "date": "2026-11-18T13:22:52.000Z",
@@ -530,26 +550,6 @@
       "date": "2026-11-18T13:17:00.000Z",
       "cities": [],
       "via": "Google News"
-    },
-    {
-      "headline": "Storms cause extensive flooding in Broward; Hollywood declares state of emergency",
-      "source": "WSVN",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNeDRvM3doRmJLdWJ1MHBvWGtSQ3NyRERYVHpraDJVMFNQZ3JGRE5VSU9FS3FzZFJCUlR1VDhuUTNyN2phT1pjT21rX3hNT1hHWUtROVJQay11ckQydnRXajMxaHlrVnExYnNmeGZUR1JKTUY0REpGUGdWMDdVeWJFNFp0R29hNGd4ZzAwNmlKYVUzRzdtWXVHLUpzS1RMYzJZOVR4UktRLW8wU3RDdW1NZ0pQdVdab2g4OUs4Mw?oc=5",
-      "date": "2026-11-18T12:52:11.000Z",
-      "cities": [
-        "hollywood"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Hollywood under a flash flood warning - roadways closed",
-      "source": "City of Hollywood",
-      "link": "https://www.hollywoodfl.org/CivicAlerts.aspx?aid=1882",
-      "date": "2026-11-18T12:52:00.000Z",
-      "cities": [
-        "hollywood"
-      ],
-      "via": "City of Hollywood"
     }
   ]
 }
