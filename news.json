@@ -1,10 +1,38 @@
 {
   "items": [
     {
+      "headline": "Flooded Home Cleanup and Safety Tips",
+      "source": "City of Hollywood",
+      "link": "https://www.hollywoodfl.org/CivicAlerts.aspx?aid=1894",
+      "date": "2026-11-20T19:26:00.000Z",
+      "cities": [
+        "hollywood"
+      ],
+      "via": "City of Hollywood"
+    },
+    {
+      "headline": "Flooding in Broward hits small businesses: a gym in Davie without insurance estimates $200,000 in damages",
+      "source": "CiberCuba",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNclo3eVAxalZ3UjFTRnRjN1lyeExaU2t0NzY4MFpVanFXNXI3bnR6OVJUWEdjMV9oX0FnMEJNbE5TV2FDRjZVZW9MRjM3LS1tSmREQkJIV2xLcThZV2w5RU4zbHJSeUQtd2dhN1k2dDNLOHlEYUk2ekhZNWV6U19SMGZGU001TmVDTDJtUlVUa1F0YkNITlQzdllDdUVLdUNuNVc5MVdraFZmZ0RaQnBEM0lMbi1FVGxYNWc?oc=5",
+      "date": "2026-11-20T15:40:56.000Z",
+      "cities": [],
+      "via": "Google News"
+    },
+    {
+      "headline": "Miami Beach mayor says improved infrastructure deterred severe flooding slamming parts of Florida",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1WMU9fcEtxZ0l5YkdWTENnYWlMTVllYVYwUVF0WkxyUmNTZDVPU3hfdWhsdDM4dlR3eXhYcVFkdS1OVTRtNno2cXluLWdFQkhoNUVubk5JLU5rd1VrOU50bXJYQXZ3MWVZNlBmSElJVTJwUDVmNXc?oc=5",
+      "date": "2026-11-20T15:07:00.000Z",
+      "cities": [
+        "miami-beach"
+      ],
+      "via": "Google News"
+    },
+    {
       "headline": "Flooding leaves Fort Lauderdale neighborhoods underwater, Davie businesses facing costly damage",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/weather/stories-weather/flooding-fort-lauderdale-davie-damage/3890702/",
-      "date": "2026-11-20T06:00:21.000Z",
+      "date": "2026-11-20T14:44:52.000Z",
       "cities": [
         "fort-lauderdale"
       ],
@@ -14,7 +42,7 @@
       "headline": "South Florida home sales drop in October, but Miami-Dade and Broward markets show resilience in 2026",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/south-florida-home-sales-drop-in-october-but-miami-dade-and-broward-markets-show-resilience-in-2026/3889373/",
-      "date": "2026-11-20T06:00:21.000Z",
+      "date": "2026-11-20T14:44:52.000Z",
       "cities": [
         "miami"
       ],
@@ -24,7 +52,7 @@
       "headline": "Miami-Dade County Public Schools to be closed on Thursday due to flooding",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/miami-dade-county-public-schools-to-be-closed-on-thursday-due-to-flooding/3890060/",
-      "date": "2026-11-20T06:00:21.000Z",
+      "date": "2026-11-20T14:44:52.000Z",
       "cities": [
         "miami"
       ],
@@ -34,7 +62,7 @@
       "headline": "Broward flooding impacts Memorial Regional Hospital in Hollywood",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/broward-flooding-impacts-memorial-regional-hospital-in-hollywood/3889805/",
-      "date": "2026-11-20T06:00:21.000Z",
+      "date": "2026-11-20T14:44:52.000Z",
       "cities": [
         "hollywood"
       ],
@@ -44,11 +72,19 @@
       "headline": "Fort Lauderdale, Broward County prepare for potential flooding ahead of rainy week",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/weather/stories-weather/fort-lauderdale-broward-county-prepare-flooding/3889549/",
-      "date": "2026-11-20T06:00:21.000Z",
+      "date": "2026-11-20T14:44:52.000Z",
       "cities": [
         "fort-lauderdale"
       ],
       "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Flood cleanup continues in Broward as drier weekend conditions bring relief to residents impacted by storms",
+      "source": "WSVN",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBIUjFwRkl3MkNNdjJyZHBaWmtfSXc1ZFBLdnp0RC1fR2NCLURuRzlxdHJoZXJ2ZS1obmtFN1hoM0p1dnV4em41d05Rei02TXhOcUd0Y0lWYlFhcENUZXItNXVPYnA0WVhSdHdGRlJBT0dCWlVvNnAxelhn?oc=5",
+      "date": "2026-11-20T12:55:33.000Z",
+      "cities": [],
+      "via": "Google News"
     },
     {
       "headline": "CAUGHT ON CAMERA: A FedEx truck found itself surrounded by deep floodwaters in Fort Lauderdale as heavy rain flooded streets across Broward County Thursday. The scene was captured from above by the NBC 6 chopper. #FortLauderdale #Flooding #Br",
@@ -252,7 +288,7 @@
       "headline": "Broward underwater: Hospital floods, drivers stranded, schools closed for second day",
       "source": "WPEC",
       "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSDBvbjE2MkVERFZQcXc0VG1vREZJNUh2RVJUTmV5ZFByYkJ0V0tRdjJXUFRUclJiZzVFd1NzWkxJbVNIMURMeUYtc3U4a0pSRTNyWFdlQ2VsZGpPYzM4eENwdUtfZ2p2VGJ5Q0pCTjFlTm50RDdtS3dfZ2tPZ0liMkdRU0dET3dJMm4wenpmaWFVT1Z6NUVPMUFMMVk0RkEwVGRxazE3bHYyVGR1eGlj?oc=5",
-      "date": "2026-11-18T22:44:10.000Z",
+      "date": "2026-11-18T22:45:07.000Z",
       "cities": [],
       "via": "Google News"
     },
@@ -397,7 +433,7 @@
     {
       "headline": "Miami Beach waives fees at city garages for residents due to flooding",
       "source": "NBC 6 South Florida",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNU21NN2t4SFgwakI4MVFLakI5Ujd2RXJYLUZRaUU4bEN6WnY4eGJZMGw2cU1WZ3NqVzRvaWlxdjhIUGVEVU56bHA0OFJlZTJJc3JWY2NhVW9LVHVjRVhFTm9DSmdJUkZEcm94eGRsVU9mZUpyUmFRV0xXa2dmNkJsRVZOdExaZG56MGl0TGozcG01bm9FVFFYbzNILW1NWGNndGxhUlNscmJ4NnRpMm9CQXhkRzNKdE9iOUFZVl9kSVhPMHVw0gHEAUFVX3lxTE1TbU03a3hIWDBqQjgxUUtqQjlSN3ZFclgtRlFpRThsQ3padjh4YlkwbDZxTVZnc2pXNG9paXF2OEhQZURVTnpscDQ4UmVlMklzclZjY2FVb0tUdWNFWEVOb0NKZ0lSRkRyb3h4ZGxVT2ZlSnJSYVFXTFdrZ2Y2QmxFVk50TFpkbnowaXRMajNwbTVub0VUUVhvM0gtbU1YY2d0bGFSU2xyYng2dGkyb0JBeGRHM0p0T2I5QVlWX2RJWE8wdXA?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNR25fSU1aSkNmdk9BWUFhR3N2TGVzMk4wNXZCY2JJdzZnUXBkSFFtdzRURzFiekR3dFdQaDMtcGFabXRzencyc3RvX3lrMkMyTDFaSHBiUUo4RXBjcDFSNTlJSHBoSTh0V1owWm1ERThMcm9tYTNLanhMNzVIMk9xZmVpVXVSam5qbzlGQzBQdDJjQ1FoQktiX3FzRU04RU1IRmt1RlVfYTV3NUpoNVIzeEVXb19KNWk0a2o4OdIBxAFBVV95cUxNU21NN2t4SFgwakI4MVFLakI5Ujd2RXJYLUZRaUU4bEN6WnY4eGJZMGw2cU1WZ3NqVzRvaWlxdjhIUGVEVU56bHA0OFJlZTJJc3JWY2NhVW9LVHVjRVhFTm9DSmdJUkZEcm94eGRsVU9mZUpyUmFRV0xXa2dmNkJsRVZOdExaZG56MGl0TGozcG01bm9FVFFYbzNILW1NWGNndGxhUlNscmJ4NnRpMm9CQXhkRzNKdE9iOUFZVl9kSVhPMHVw?oc=5",
       "date": "2026-11-18T18:05:01.000Z",
       "cities": [
         "miami-beach"
@@ -516,38 +552,6 @@
       "source": "Sun Sentinel",
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNWklQRkl2TW42cThPWHNHMkVQQ3JBQjNVajBPbUNNbjdYZnBNaFFSSzJuVlNWWEQ5U2N0eTQwU0NNT2NUZ3FzY1ZueWxvaklkLW1ydFgxalBIODVYcG5XZ3dpWXhIRnVaV1hQV3B6TW1sNUZYTEF2M210V216aWY2eUVBNXdXa29SNExyWEVDckZXN1FvMEw0ZnIzRQ?oc=5",
       "date": "2026-11-18T14:59:33.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Broward County flooding leads to rescues, road closures after torrential rain",
-      "source": "WPBF",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPR01vV2xncThMaVlieW40MWdWMFEwRjBBQzBWaWlOWjFXY1IzVVVST3ktUDBqQXpFN2tPM2xaQTRCdWNTRmJvcmRtWWt4NlRGT0lURXRmVXdvVTVfRFg5RnJYZndJMTNiRDFxa1VhcDBLRzJUTXdnblpyNk9KRXh3eTdYNjc4b0FrZ1d6dV9heDRQSGp0WHk5RDVRSUtrSGMxNE02NQ?oc=5",
-      "date": "2026-11-18T13:40:00.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Broward schools close after parts of the county get flooded from ‘rain bomb’",
-      "source": "Miami Herald",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNRTVWQkJQS2JMZi1JY0hxTWt3RG1vMGoxekl3Sy1CTDJGelN1MXJWUm53cVhZclNkamtOVjJ0aUg0Y2c1WUQ2UTM3azhHSmFBaHMyNWRUWGFHU3B2UzZzbzNfRWVWUUU4Mk5GVlpQSGl6VXUtYTFZOVdqRjhuSS1SUldSOGfSAYQBQVVfeXFMT0NrM2RxaTA2TlUyMUVHN2JnYWt3Q3FwV2VSenZWalFTTGxVQ18zNjIzQW5Zc1ZJM0JwcjRvYXd6WHBYWkZVanJQU1ExbUthMzZzTzRmQVFQNGNjMjJlUjRPaGFMWUFnUlBvbDZpRnpTNHhpa19UN21Ca0owTi1xbTY5Qkx0?oc=5",
-      "date": "2026-11-18T13:37:00.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "What else is closed in Broward after the flooding? Roads, county offices, FAU Davie and Broward College",
-      "source": "Nacionale",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORjBtX1hLcXd4eDRvWXVNX2pmWXhjeVl3a3MtM2Z3Yy1sdUVjbHA5UXM2UGJ4UmplNl9yM3Z1NlpOLXNybFo4Qnl1ejJiQXJ4dDNuLXJPNDE2YUMzNzVMLXpkWk9JYlZPS2VwR09DNzRYVDNGbWJFckZQZ3JDSlBzd2NyNmp4TDBLUnAxTzE5ZEFxODlsalBwV05YQ1liV3lKRkRhS0lCX1J6QUd3V212eDRaLVpGQzFSNXc?oc=5",
-      "date": "2026-11-18T13:22:52.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Torrential Rains Trigger Flooding: Close Broward Schools; Palm Beach Open",
-      "source": "The Boca Raton Tribune",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNX0RvSk0tWVI5ZHZmSEo1RnM0WDRDQ3ZZaEpJdGQxQkxQUWtldHJGbWV2T2gyUFduVC1yYTM4cVdiSVhPeTRuTzIwdXM1U2ZhejFoNlJIbXZWaXI1d1BucXUtZW54R0wwREZYR1dHWUdINFFGNVN4ajY0ZTZUMVlvUDYxY0pGbHdrX1FEVkNVd1JxTENoTGdBcE1tODVWb1hFblI4MGY0d3I4R0VlMTM1bFNKX3FnNy1Ra1psSGV3WUs0UlhFeUE?oc=5",
-      "date": "2026-11-18T13:21:59.000Z",
       "cities": [],
       "via": "Google News"
     }
