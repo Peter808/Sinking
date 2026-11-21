@@ -1,14 +1,82 @@
 {
   "items": [
     {
-      "headline": "Flooded Home Cleanup and Safety Tips",
+      "headline": "Broward residents and schools assess damage from flooding, storms",
+      "source": "Sun Sentinel",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPaENUTUFzcm5ITlhrd1E0SFB2SHl5VGRXV1o2Y0JXWlRQcnltem5QcUlTeWxBek43UVVvdGVZcU1tZ3JEZlJkMXM0emgweXVMVVp6THpGeC0takRoZXdkUDBiMk5zR1J4MUhhUEM2Y3c1NVZpU0hyYWdnckpmOGJDUmdkX0JBSnJzVkdpSU1lMVdZUkx6Mnc?oc=5",
+      "date": "2026-11-20T23:16:39.000Z",
+      "cities": [],
+      "via": "Google News"
+    },
+    {
+      "headline": "Flooding disrupts daily life in Fort Lauderdale neighborhood",
+      "source": "Local10",
+      "link": "https://www.local10.com/news/local/2026/11/20/flooding-disrupts-daily-life-in-fort-lauderdale-neighborhood/",
+      "date": "2026-11-20T23:03:03.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "Local10"
+    },
+    {
+      "headline": "Flooded Home Cleanup Safety Tips and Permitting Information",
       "source": "City of Hollywood",
       "link": "https://www.hollywoodfl.org/CivicAlerts.aspx?aid=1894",
-      "date": "2026-11-20T19:26:00.000Z",
+      "date": "2026-11-20T20:57:00.000Z",
       "cities": [
         "hollywood"
       ],
       "via": "City of Hollywood"
+    },
+    {
+      "headline": "Flooding leaves Fort Lauderdale neighborhoods underwater, Davie businesses facing costly damage",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/weather/stories-weather/flooding-fort-lauderdale-davie-damage/3890702/",
+      "date": "2026-11-20T18:03:00.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "South Florida home sales drop in October, but Miami-Dade and Broward markets show resilience in 2026",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/south-florida-home-sales-drop-in-october-but-miami-dade-and-broward-markets-show-resilience-in-2026/3889373/",
+      "date": "2026-11-20T18:03:00.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Miami-Dade County Public Schools to be closed on Thursday due to flooding",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/miami-dade-county-public-schools-to-be-closed-on-thursday-due-to-flooding/3890060/",
+      "date": "2026-11-20T18:03:00.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Broward flooding impacts Memorial Regional Hospital in Hollywood",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/broward-flooding-impacts-memorial-regional-hospital-in-hollywood/3889805/",
+      "date": "2026-11-20T18:03:00.000Z",
+      "cities": [
+        "hollywood"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Fort Lauderdale, Broward County prepare for potential flooding ahead of rainy week",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/weather/stories-weather/fort-lauderdale-broward-county-prepare-flooding/3889549/",
+      "date": "2026-11-20T18:03:00.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "NBC6 Miami"
     },
     {
       "headline": "Flooding in Broward hits small businesses: a gym in Davie without insurance estimates $200,000 in damages",
@@ -29,56 +97,6 @@
       "via": "Google News"
     },
     {
-      "headline": "Flooding leaves Fort Lauderdale neighborhoods underwater, Davie businesses facing costly damage",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/weather/stories-weather/flooding-fort-lauderdale-davie-damage/3890702/",
-      "date": "2026-11-20T14:44:52.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "NBC6 Miami"
-    },
-    {
-      "headline": "South Florida home sales drop in October, but Miami-Dade and Broward markets show resilience in 2026",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/news/local/south-florida-home-sales-drop-in-october-but-miami-dade-and-broward-markets-show-resilience-in-2026/3889373/",
-      "date": "2026-11-20T14:44:52.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "NBC6 Miami"
-    },
-    {
-      "headline": "Miami-Dade County Public Schools to be closed on Thursday due to flooding",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/news/local/miami-dade-county-public-schools-to-be-closed-on-thursday-due-to-flooding/3890060/",
-      "date": "2026-11-20T14:44:52.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "NBC6 Miami"
-    },
-    {
-      "headline": "Broward flooding impacts Memorial Regional Hospital in Hollywood",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/news/local/broward-flooding-impacts-memorial-regional-hospital-in-hollywood/3889805/",
-      "date": "2026-11-20T14:44:52.000Z",
-      "cities": [
-        "hollywood"
-      ],
-      "via": "NBC6 Miami"
-    },
-    {
-      "headline": "Fort Lauderdale, Broward County prepare for potential flooding ahead of rainy week",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/weather/stories-weather/fort-lauderdale-broward-county-prepare-flooding/3889549/",
-      "date": "2026-11-20T14:44:52.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "NBC6 Miami"
-    },
-    {
       "headline": "Flood cleanup continues in Broward as drier weekend conditions bring relief to residents impacted by storms",
       "source": "WSVN",
       "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBIUjFwRkl3MkNNdjJyZHBaWmtfSXc1ZFBLdnp0RC1fR2NCLURuRzlxdHJoZXJ2ZS1obmtFN1hoM0p1dnV4em41d05Rei02TXhOcUd0Y0lWYlFhcENUZXItNXVPYnA0WVhSdHdGRlJBT0dCWlVvNnAxelhn?oc=5",
@@ -93,6 +111,16 @@
       "date": "2026-11-20T01:00:52.000Z",
       "cities": [
         "fort-lauderdale"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Flooding halts Brightline service between Orlando and West Palm Beach; Miami route normal",
+      "source": "WPEC",
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPUHBueGt4U2hjc2EyLTQ1bDE2eENYeko1MDFVNjdjaGppVHJxWjBvNi1HLWExRnprV0puUXhBTlpjSUc1MGtyRWRSVi1MdTVwWXhYMVdDQ3NrNmRwaW9CTnVaczJLUmdCX0p3aXBaRmxDeWxLbmYzVjBXU3AwYnZXakU2T0hzV3lPMktxWGJaTFVZLVZfNllhcU5jNTdHaWVyTU9KWEVfWGdKRWtsSE9SR2FrUE8wYm16X3E1YU9ZOWdhMmVldXg0d3hseUIxNWhmN09icjlVTUR6OWF5ZXlvZHAxUS12Q28?oc=5",
+      "date": "2026-11-19T23:28:04.000Z",
+      "cities": [
+        "miami"
       ],
       "via": "Google News"
     },
@@ -146,13 +174,13 @@
     },
     {
       "headline": "Flood watch remains in effect for Broward, Miami-Dade as heavy rain threatens South Florida community",
-      "source": "Local10",
-      "link": "https://www.local10.com/news/local/2026/11/19/flood-watch-remains-in-effect-for-broward-miami-dade-as-heavy-rain-threatens-south-florida-community/",
+      "source": "WPLG Local 10",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQNjAxbFdMWnB2QzEyemRoMFJ0Y2dkdDBtSW82enc3TWo0Qmx1SEpJbUhVb3pqeVF4clpmV0d3dWx4N0huZFNRdUt0VDA5RFZpdnZtWWo1VXBUTFlodWJjZmtWWTZRLUlKRmpaTklzXzg4STd4OFJ0amh6c2FRZ0xtT291NlR4VmtJOEUwdHJMUUtfRkt3SHdUMm8wVXc3ZEMtMVhjVUtRODhxbmNwVXRoSmp3dHQ4ZEhnS2pLOUJxWFlpTXZlWDF0ZXp2ZWlZTE1PMEcteTI3cFpCdEF2VzlNXw?oc=5",
       "date": "2026-11-19T11:42:14.000Z",
       "cities": [
         "miami"
       ],
-      "via": "Local10"
+      "via": "Google News"
     },
     {
       "headline": "Is anything open after the big floods? Check info for Miami and Broward",
@@ -528,30 +556,6 @@
       "source": "Axios",
       "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSEJPREZXenV5blQzMDVLSmY5aTE1TFJNVWZ4NGhnWU1QbDBjRzVJa000d2JFeFlBTXduekRUUVg1R2c3X0g5Zmp2TlJ5cWRBeGJFTGR1RUZvLU1fQm5LX2JualFxQm5QcXNRdEZ3QWF4U201clM0dHpPVG0yVEJiWDVTaFh3ZG5WSDVPczdaVktGRndoOHdFOXY2NENIYjhBSDBYbWlvZ0tTV19QODJqRXFR?oc=5",
       "date": "2026-11-18T15:41:33.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Broward County declares local state of emergency due to flooding",
-      "source": "NBC 6 South Florida",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPd2xyaVdOdEpOSFkzNmNOTEFITEljTXdRZzlVZ1JGVlBWeV9RSzdBUEJCM29iVHc1Z2ZKS1Q0bDg2eGltR2dKWW9ZejNGVVZGUlM1U04tUzQ5WW9ZOGwyRnBBRnVFUFlYYmVwZnJyLXBkMl9yM0lLNE4zeV9QR05vQ1c5bHVmQXBSNGYtZ0c5cUJBTEYxVlo0NXZYZ1FqSUw0UnVKX3BqaHlPZVFFWjFMcE0wTlhGenVzdEZ0anFsZ9IBxwFBVV95cUxPYzNIMU5fV24xUnQxOFJVamJ6Mko0RXF5Wk9oTTZhZ1FQUXJiMkRmY2RtUFBUQ1oycE5NajROQm5LRXBaM0pWWFl5YkdxYXgxTFRMd3J3NG9DbFlROXVPOUJjZDA1Qm1EZGpDNDNSTFhIa0pjVFNFSXM1X05odHN0RjlLaXE0ejZEQXFTaXl5bk5HUDJDQmlGN1AzcXI5dkU3VzVnbHMydnc1YnJXaGsxYmVueTJqV05qdG0zVTVEMDdFRUVYcVFn?oc=5",
-      "date": "2026-11-18T15:23:03.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Flooded homes, floating cars: See photos of the worst flooding in Broward",
-      "source": "Miami Herald",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBNTWdkY0FvdFZzd0t2Ti1acERLOV9sNTBpWHZnUjZfRjlXSjkySkk5amxXUjRUMjZhSnZ4OF9wbDNSQnR5ZHNFWUlFWW1OZnVxY2Zvb29NRFEtV25sU2pWckI5X3BlSU9vWFpzNGU2dkFvWmxJUnfSAXZBVV95cUxOX2xwTXE2eWNnTHNndTN1ZUFXRzVwYUdDNVhUQkxsVGhzUDFFZUREaEdabHozLVdkc3FhaHdVMVplNmlpR0ozcGdyRnVRQzgtYUVLX0JoNHNqZ1p4dXZyb3RUVDgxY3F0NldmVm1ORXpXa3NPRGJB?oc=5",
-      "date": "2026-11-18T15:19:47.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Gallery: Heavy rain floods Broward County, closes schools | PHOTOS",
-      "source": "Sun Sentinel",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNWklQRkl2TW42cThPWHNHMkVQQ3JBQjNVajBPbUNNbjdYZnBNaFFSSzJuVlNWWEQ5U2N0eTQwU0NNT2NUZ3FzY1ZueWxvaklkLW1ydFgxalBIODVYcG5XZ3dpWXhIRnVaV1hQV3B6TW1sNUZYTEF2M210V216aWY2eUVBNXdXa29SNExyWEVDckZXN1FvMEw0ZnIzRQ?oc=5",
-      "date": "2026-11-18T14:59:33.000Z",
       "cities": [],
       "via": "Google News"
     }
