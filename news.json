@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "headline": "Will FEMA help Hollywood, Florida flood victims? Not yet: Broward has no federal disaster declaration",
+      "source": "Nacionale",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOSS1kd0pwdHJ5NWExZXNjWmxzMGRWYTJqb0EzTVN2ekxsOGpUWlF2aUhoMVJvREdTMjVYVkltLVA0SElibHowOVVDeWJlVmZwVzFnVGtLZWtoRkdURzY3Sl9rMHZnRjl4bXh6ZV9kRlp3WG5EY1hwekdSS0luWGp5RUlYVFpBaEpDUlFXX3NmMG1EQjAtMFY5SUszOTI1VS1lazg0ZXRDRkx0T2hSQXczeXBuVnZmOHc0R3BESGF3?oc=5",
+      "date": "2026-11-21T02:20:00.000Z",
+      "cities": [
+        "hollywood"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Flooding leaves Fort Lauderdale neighborhoods underwater, Davie businesses facing costly damage",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/weather/stories-weather/flooding-fort-lauderdale-davie-damage/3890702/",
+      "date": "2026-11-20T23:56:10.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "South Florida home sales drop in October, but Miami-Dade and Broward markets show resilience in 2026",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/south-florida-home-sales-drop-in-october-but-miami-dade-and-broward-markets-show-resilience-in-2026/3889373/",
+      "date": "2026-11-20T23:56:10.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Miami-Dade County Public Schools to be closed on Thursday due to flooding",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/miami-dade-county-public-schools-to-be-closed-on-thursday-due-to-flooding/3890060/",
+      "date": "2026-11-20T23:56:10.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Broward flooding impacts Memorial Regional Hospital in Hollywood",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/broward-flooding-impacts-memorial-regional-hospital-in-hollywood/3889805/",
+      "date": "2026-11-20T23:56:10.000Z",
+      "cities": [
+        "hollywood"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
+      "headline": "Fort Lauderdale, Broward County prepare for potential flooding ahead of rainy week",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/weather/stories-weather/fort-lauderdale-broward-county-prepare-flooding/3889549/",
+      "date": "2026-11-20T23:56:10.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
       "headline": "Broward residents and schools assess damage from flooding, storms",
       "source": "Sun Sentinel",
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPaENUTUFzcm5ITlhrd1E0SFB2SHl5VGRXV1o2Y0JXWlRQcnltem5QcUlTeWxBek43UVVvdGVZcU1tZ3JEZlJkMXM0emgweXVMVVp6THpGeC0takRoZXdkUDBiMk5zR1J4MUhhUEM2Y3c1NVZpU0hyYWdnckpmOGJDUmdkX0JBSnJzVkdpSU1lMVdZUkx6Mnc?oc=5",
@@ -29,54 +89,12 @@
       "via": "City of Hollywood"
     },
     {
-      "headline": "Flooding leaves Fort Lauderdale neighborhoods underwater, Davie businesses facing costly damage",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/weather/stories-weather/flooding-fort-lauderdale-davie-damage/3890702/",
-      "date": "2026-11-20T18:03:00.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "NBC6 Miami"
-    },
-    {
-      "headline": "South Florida home sales drop in October, but Miami-Dade and Broward markets show resilience in 2026",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/news/local/south-florida-home-sales-drop-in-october-but-miami-dade-and-broward-markets-show-resilience-in-2026/3889373/",
-      "date": "2026-11-20T18:03:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "NBC6 Miami"
-    },
-    {
-      "headline": "Miami-Dade County Public Schools to be closed on Thursday due to flooding",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/news/local/miami-dade-county-public-schools-to-be-closed-on-thursday-due-to-flooding/3890060/",
-      "date": "2026-11-20T18:03:00.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "NBC6 Miami"
-    },
-    {
-      "headline": "Broward flooding impacts Memorial Regional Hospital in Hollywood",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/news/local/broward-flooding-impacts-memorial-regional-hospital-in-hollywood/3889805/",
-      "date": "2026-11-20T18:03:00.000Z",
-      "cities": [
-        "hollywood"
-      ],
-      "via": "NBC6 Miami"
-    },
-    {
-      "headline": "Fort Lauderdale, Broward County prepare for potential flooding ahead of rainy week",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/weather/stories-weather/fort-lauderdale-broward-county-prepare-flooding/3889549/",
-      "date": "2026-11-20T18:03:00.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "NBC6 Miami"
+      "headline": "Broward schools remain closed today after flooding. When will they open?",
+      "source": "USA Today",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNF8xTjl5RnVqQlpZVzJoWnhveFB3RVphNXFESnFPalpnMGF5bFZYT0xnUUNTdjRCcXJUOTRvQURLV3l1QlNwLWxUR2RnRVY1blFnUUFYdXpwNkZqTElyZkFKdEtTMDhhSWxPWU9nbkJSZ3lhdzBNNm53clhyX0hzakhCUWZQQmVId0pZTXdSUVI4aEp3ZW10UXVibkxuQ0pxN3NfbXZPWEVTbUFqTVRYbXRuQW81eHVYWjJzR19PeEc5Zw?oc=5",
+      "date": "2026-11-20T16:07:00.000Z",
+      "cities": [],
+      "via": "Google News"
     },
     {
       "headline": "Flooding in Broward hits small businesses: a gym in Davie without insurance estimates $200,000 in damages",
@@ -117,8 +135,8 @@
     {
       "headline": "Flooding halts Brightline service between Orlando and West Palm Beach; Miami route normal",
       "source": "WPEC",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPUHBueGt4U2hjc2EyLTQ1bDE2eENYeko1MDFVNjdjaGppVHJxWjBvNi1HLWExRnprV0puUXhBTlpjSUc1MGtyRWRSVi1MdTVwWXhYMVdDQ3NrNmRwaW9CTnVaczJLUmdCX0p3aXBaRmxDeWxLbmYzVjBXU3AwYnZXakU2T0hzV3lPMktxWGJaTFVZLVZfNllhcU5jNTdHaWVyTU9KWEVfWGdKRWtsSE9SR2FrUE8wYm16X3E1YU9ZOWdhMmVldXg0d3hseUIxNWhmN09icjlVTUR6OWF5ZXlvZHAxUS12Q28?oc=5",
-      "date": "2026-11-19T23:28:04.000Z",
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNWWxLV3FkNjh2dlg0ZDM3T1Y2bnQzM0JJSkU4SUJRQ0JlNnBETTFZVnNCcEZCNGV6NEZrNUxVREZRLTU1MExoM0ZSaGh6QTdCUTBLd01UV0g1R0xDOXdZZjY2b1d6VE1Uc1dQUUotX3VPVlhSWUR0WFlIWXBUVzFUdi1aTlUwS2dlaHdSbkh1Qm1zRWhvclRaWVdYSDFiRGx5WmFsakZpY3V3dXo5Zk95UEVDb3J3bmFtTk1CT0gyV0l0bnR5cDVRVXB3OVo0NE9pYUd2TVpXOVRQUmxFaVdoTlNHTWlqYTl2U0NMMkZoRXFpQQ?oc=5",
+      "date": "2026-11-19T23:34:32.000Z",
       "cities": [
         "miami"
       ],
@@ -540,22 +558,6 @@
       "source": "Rolling Out",
       "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5UbTFiRUo1WW50VlJzZkFiRk1OYk5tV0wwaU5LNVd1Q2d1ZjlWRDRqRG9lOVpjN0wwakhUbndMSWVwbktoa2RFdjNZSnFDSVFYQ254TUpDdC10RWtYbnU0aUh4NW9MME9oQXA1VDlUclZvN2lIQ2o5aEpDN3c3Zw?oc=5",
       "date": "2026-11-18T16:22:14.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "More than 14 inches of rain triggers severe flooding across Broward County as additional downpours threaten South Florida",
-      "source": "https://www.fpren.org/",
-      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOZHpoeGlPZ1BsdWdfQkYtbF93T1dYOFVCa25FbElJRzYtMjFyNVFQTnpLMHVzUlpaWnRBaF8xalgzbG1oRzBKRmFQTlE3endTRVR2djBaSXNVcHlVcEhhRHB6cE1JUGhtVkZJeWNDQVctWVlNalk1ZUxCLVVTNVhEOG9qSFpjNWZpYzVCOEN2WndBc0N6TzAzbmVZV2xZRlNNbFE1ZDN2eWJHa25Ud3hEOFNPWmZDUHJUM3VudlNqY29fc29pWExjcXFjb1EwQXFGRUlGZEZCOEdQUEgtcUd5Z0d4cXVkTmVjbVE?oc=5",
-      "date": "2026-11-18T15:57:00.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Broward issues state of emergency amid severe flooding",
-      "source": "Axios",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSEJPREZXenV5blQzMDVLSmY5aTE1TFJNVWZ4NGhnWU1QbDBjRzVJa000d2JFeFlBTXduekRUUVg1R2c3X0g5Zmp2TlJ5cWRBeGJFTGR1RUZvLU1fQm5LX2JualFxQm5QcXNRdEZ3QWF4U201clM0dHpPVG0yVEJiWDVTaFh3ZG5WSDVPczdaVktGRndoOHdFOXY2NENIYjhBSDBYbWlvZ0tTV19QODJqRXFR?oc=5",
-      "date": "2026-11-18T15:41:33.000Z",
       "cities": [],
       "via": "Google News"
     }
