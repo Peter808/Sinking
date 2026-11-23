@@ -1,20 +1,10 @@
 {
   "items": [
     {
-      "headline": "NBC6 Impact: Miami Beach Mayor Steven Meiner on flooding, flock cameras & Vice City",
-      "source": "NBC 6 South Florida",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdlJlVGNORFZ4Y05GOWxiM1ZLc204QzduUmJ2cUd6Q1dRNHp3dlJMeGl6eGFPR1NhR1ZqYjNOU1BTM0Z4WENjRnZ3QWRZQXlXQ0d3TFg5dzdrOUV2VzhHNzBzOThLVFVNR1dqcnZxVWs0RFMyR1V1ZFd3eFd1VDBUNGQ1b2ZaVWI4T3FCeXM5eXkzclF5TXEyYWVzVGc3bzJlOTJmU2VUdW1od3VBWXZXN283Q1dtRVlwNXNfWkJfTG1JcnfSAcsBQVVfeXFMUG8tWU1oeXZYR1YzeHpmTGpSLVNjRFJOYmMwbmJWTm9mckF4V29FREhZV09zSTQzbHVpUkp5MENtTWtFUXF0ZTBUeTZubnNqazVMTkFqVnVnb2M5QkJqbTdmc3BwUGFmOXdMT1BNeW4zdGxENFQ3RkdFSDJ4M2FlV3pVa3ZmWFprcTZBbFE1dzJxUVhLYXYzbWlOaHhNb19KWlRHOTgzM0dPMUxrZ0JNdVE4S1BSVHpqM3l3QzhuYk5LeHF1d2dJZ3ZRU1E?oc=5",
-      "date": "2026-11-22T16:12:29.000Z",
-      "cities": [
-        "miami-beach"
-      ],
-      "via": "Google News"
-    },
-    {
       "headline": "Flooding leaves Fort Lauderdale neighborhoods underwater, Davie businesses facing costly damage",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/weather/stories-weather/flooding-fort-lauderdale-davie-damage/3890702/",
-      "date": "2026-11-22T13:35:28.000Z",
+      "date": "2026-11-23T03:23:48.000Z",
       "cities": [
         "fort-lauderdale"
       ],
@@ -24,7 +14,7 @@
       "headline": "South Florida home sales drop in October, but Miami-Dade and Broward markets show resilience in 2026",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/south-florida-home-sales-drop-in-october-but-miami-dade-and-broward-markets-show-resilience-in-2026/3889373/",
-      "date": "2026-11-22T13:35:28.000Z",
+      "date": "2026-11-23T03:23:48.000Z",
       "cities": [
         "miami"
       ],
@@ -34,7 +24,7 @@
       "headline": "Miami-Dade County Public Schools to be closed on Thursday due to flooding",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/miami-dade-county-public-schools-to-be-closed-on-thursday-due-to-flooding/3890060/",
-      "date": "2026-11-22T13:35:28.000Z",
+      "date": "2026-11-23T03:23:48.000Z",
       "cities": [
         "miami"
       ],
@@ -44,11 +34,21 @@
       "headline": "Broward flooding impacts Memorial Regional Hospital in Hollywood",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/broward-flooding-impacts-memorial-regional-hospital-in-hollywood/3889805/",
-      "date": "2026-11-22T13:35:28.000Z",
+      "date": "2026-11-23T03:23:48.000Z",
       "cities": [
         "hollywood"
       ],
       "via": "NBC6 Miami"
+    },
+    {
+      "headline": "NBC6 Impact: Miami Beach Mayor Steven Meiner on flooding, flock cameras & Vice City",
+      "source": "NBC 6 South Florida",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdlJlVGNORFZ4Y05GOWxiM1ZLc204QzduUmJ2cUd6Q1dRNHp3dlJMeGl6eGFPR1NhR1ZqYjNOU1BTM0Z4WENjRnZ3QWRZQXlXQ0d3TFg5dzdrOUV2VzhHNzBzOThLVFVNR1dqcnZxVWs0RFMyR1V1ZFd3eFd1VDBUNGQ1b2ZaVWI4T3FCeXM5eXkzclF5TXEyYWVzVGc3bzJlOTJmU2VUdW1od3VBWXZXN283Q1dtRVlwNXNfWkJfTG1JcnfSAcsBQVVfeXFMUG8tWU1oeXZYR1YzeHpmTGpSLVNjRFJOYmMwbmJWTm9mckF4V29FREhZV09zSTQzbHVpUkp5MENtTWtFUXF0ZTBUeTZubnNqazVMTkFqVnVnb2M5QkJqbTdmc3BwUGFmOXdMT1BNeW4zdGxENFQ3RkdFSDJ4M2FlV3pVa3ZmWFprcTZBbFE1dzJxUVhLYXYzbWlOaHhNb19KWlRHOTgzM0dPMUxrZ0JNdVE4S1BSVHpqM3l3QzhuYk5LeHF1d2dJZ3ZRU1E?oc=5",
+      "date": "2026-11-22T16:12:29.000Z",
+      "cities": [
+        "miami-beach"
+      ],
+      "via": "Google News"
     },
     {
       "headline": "Fort Lauderdale, Broward County prepare for potential flooding ahead of rainy week",
