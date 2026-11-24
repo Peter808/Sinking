@@ -1,10 +1,20 @@
 {
   "items": [
     {
+      "headline": "Citywide Donation Drive: Flood Cleanup Supplies Needed",
+      "source": "City of Hollywood",
+      "link": "https://www.hollywoodfl.org/CivicAlerts.aspx?aid=1905",
+      "date": "2026-11-24T15:33:00.000Z",
+      "cities": [
+        "hollywood"
+      ],
+      "via": "City of Hollywood"
+    },
+    {
       "headline": "Flooding leaves Fort Lauderdale neighborhoods underwater, Davie businesses facing costly damage",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/weather/stories-weather/flooding-fort-lauderdale-davie-damage/3890702/",
-      "date": "2026-11-23T23:43:11.000Z",
+      "date": "2026-11-24T12:26:56.000Z",
       "cities": [
         "fort-lauderdale"
       ],
@@ -553,14 +563,6 @@
       "date": "2026-11-18T18:43:49.000Z",
       "cities": [],
       "via": "Miami New Times"
-    },
-    {
-      "headline": "The heavy floods in Broward County left more than stalled cars on the road. Chopper6 captured what appeared to be oil flowing through the floodwaters as residents tried to move their cars. #flood #oil #florida #rain #flooding",
-      "source": "Facebook",
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxONjU4TmE5dTNkMnpsSERMRWI0bmYzTHNLcXczcmg3aTlrODhZRDdYbGJacW9KekZPbmdPYXpkOHVTMU1xQ19DSVRKb09nbmstXzgzSk9zMzhNaUNHWGtHb3Zzd0RHaURlSVJjZkQ3Nm9oWjFhUUY4NmtxMl9lM0hFdGJLTF9SNVlJVG81bWc5Vjg4ckpMUU4wUVdFNFZfQ3VUNmVVVTNMcHFVSHdTcnNZUF9DSkhGTk9Pa3U4V2FhOUxDeVlZRk9BNWZDUkowd2NybUgwVlBKVS1tRUhobVBwUA?oc=5",
-      "date": "2026-11-18T18:40:56.000Z",
-      "cities": [],
-      "via": "Google News"
     }
   ]
 }
