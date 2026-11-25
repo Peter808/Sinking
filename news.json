@@ -1,6 +1,26 @@
 {
   "items": [
     {
+      "headline": "Flooding reported on roads in Broward, Miami-Dade as heavy rain continues",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNOW84dzJ3LVNFanFIZnRDYUl1UEpDYkdvQ2t2N0kxNFFGWml0TGhxaEpfR0xTb2NQM2JWdm5HYTlBd2RRZHpMal9HNGduSUxzMjN6SEJuTENST0ZZUTNtSDdHLVB5ZkV6LUhPNkhGRXkwUm9fV1M0X2ZYVWJNUEZNRE1VV0JmTmN4NU1wWlBOODRmUi1FS2RoMmo3eGRvWjI1Sk9udnJaLXhGc19ST1E?oc=5",
+      "date": "2026-11-25T11:20:00.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Miami-Dade preparing for possible flooding due to heavy rain and King Tides",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/miami-dade-preparing-for-possible-flooding-due-to-heavy-rain-and-king-tides/3892605/",
+      "date": "2026-11-25T06:57:10.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
       "headline": "Fort Lauderdale residents brace for even more flooding from king tides, storms",
       "source": "CBS News",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPNGdjalFhVS1JcnpaWFhmRVJlR2p3ZDNsUkt6ZlJPY25CZWQ5a1lBalVaWE1KNUgtWHY3NWhyMFJ2YmM3dVMzbkkwQkVMVUR5cmpDUXpuMTA2emd6U0ZGSTBhemNBcTJsRHpIZTNRdEFYb1VwdGgzd1ZaekVxSk1wY1JrZkI5ZFlNSWlDcy1WYUZjMXBNZGZtMGt2RXlYUXNtUzBjUVZoRmRLZGdtY0h6WXowYnE?oc=5",
@@ -547,24 +567,6 @@
       "source": "NBC 6 South Florida",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQX0ptcFgxYXdlb01GUkZPVFFoa3JacXBhYnFIendSUjhlS3pRZVVEbWVXTXQ2TE1tLUR4XzhwVE9uSks4T1lGbDlmY3Z6MVdPQ2tDR1V2NVV4NDRIM1U1UUpuekVLVTQ3Ul8xSGJBaF9oNG9LQTktSlhWNjBwXzIyaTlvaV91TkdnLVE3RHVnLUNhanhNWWdzYTY3NFJ5aDRPcXhoRWQ1azdWbmtPWnZwejdHeWjSAbwBQVVfeXFMUEVib1RjT3piWmpCZW1ndk9jZEhUNzRLMTFHNFNEdlUzOXgtdlA5WFU5U2pfcUNxWmpfQkRCNjg4WEJkLVpFdVJWem83REw4UmdJMV9sNUJZNFNWbVFFLVZWV0NfbjFwT1VEYlV4ZXo3clZza1pzd1A2ZjdDREFkRnluMGZXUFgzVENybHNDTkFqWklaamE5a1Vsam5hcUI4S2xqTjUyaG5xaGVJVEoxRHZLQXh4SEVYUEpsOVY?oc=5",
       "date": "2026-11-18T20:55:38.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Miami Beach offers $50 tows, free garage parking while city streets flood",
-      "source": "Miami Herald",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNenJSdzBrbFRYN0VIZUJYRjBTVUlnQ3g5OHhnQVVEU3NoejA2dWEwR29XQjE4YXM5bFUxQTduQ3RjYmNQeGx4TzJmdTgxVHBLRzNMdVh4ZDJpY3QweDFpaVVRbmhSQjZaUGFuZ3cyWlRWaU5JamZLYjV2NVpCVElWYThJeXI5bnFKOWpwczlLUDNoWUJYQTROc9IBmAFBVV95cUxQendTVmUxeVdoTFZzZFFXTkFqYXloa3A2cGhpdlIwa3h1T3VxQnYxZEJsV3B2WFhDRTFncDhJb3IzV0pKOUE4d3VnWHVvS3BpanZjbnpzbXd1ZVZQM2tOUzZRVHp5VXk1aS1yQ042N0NWZ0NENVhyOU82Ty0zcmtkbWNHWVgtZGJEeGJoMVZYTFpobXpBQmJBcw?oc=5",
-      "date": "2026-11-18T20:55:09.000Z",
-      "cities": [
-        "miami-beach"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Parking lot near multiple schools including Nova, Broward College inundated in water due to floods",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOZGpzVXhvWlppOElTZVVweTB3aE8wMkdpOUtmYWpWWlliRy1fMERCaTUwbm4xeXpCeTFOMkZaZDRIbWtvdWlaUEVST05GZWFnWlJfMW1YZ3dpX0wtMHc5b0puZW0yRkVSTEluaWZBWmFYTlNwUnFsRm8tN1NMRkJGV19Ya1RuSEtGTFlWOWZJWFNMM3RNSWJjX3Jqa2tXMXJqUUdJUnRmdUFVdjk1YUtCdGlWQkFieEtxZGVzVWNUQ2dLQl9fWWp6amxNR1VIY2c?oc=5",
-      "date": "2026-11-18T20:55:00.000Z",
       "cities": [],
       "via": "Google News"
     }
