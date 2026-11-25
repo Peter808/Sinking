@@ -1,3 +1,26 @@
 {
-  "items": []
+  "items": [
+    {
+      "id": "broward-1240",
+      "org": "Broward County",
+      "title": "County Commission",
+      "level": "county",
+      "cities": [
+        "hallandale-beach",
+        "hollywood",
+        "fort-lauderdale"
+      ],
+      "date": "2026-12-08",
+      "time": "10:00 AM",
+      "start": "2026-12-08T10:00:00-05:00",
+      "location": "Broward County Governmental Center\r\nRoom 422 (Commission Chambers)",
+      "topics": [
+        "A. MOTION TO AWARD multiple open-end contracts to (primary) CTC Disaster Response, Inc., for FEMA Debris Clearing and Removal Services...",
+        "A. MOTION TO APPROVE Grant Agreement No. 27SRP01 between the State of Florida Department of Environmental Protection (FDEP) and Broward..."
+      ],
+      "link": "https://broward.legistar.com/MeetingDetail.aspx?LEGID=1240&GID=728&G=9CC0A88F-9982-4209-A126-7C71741CABC2",
+      "agenda": "https://broward.legistar1.com/broward/meetings/2026/12/1240_A_County_Commission_26-12-08_Regular_Meeting_Agenda.pdf",
+      "source": "Legistar"
+    }
+  ]
 }
