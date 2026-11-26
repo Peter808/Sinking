@@ -1,6 +1,16 @@
 {
   "items": [
     {
+      "headline": "Miami-Dade preparing for possible flooding due to heavy rain and King Tides",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/miami-dade-preparing-for-possible-flooding-due-to-heavy-rain-and-king-tides/3892605/",
+      "date": "2026-11-26T17:42:31.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
       "headline": "South Florida flooding live updates: Broward, Miami-Dade communities see another round ahead of Thanksgiving",
       "source": "CBS News",
       "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcXl4UUl0cWZiSU5xejBZejVxSVRNTGNvTTd3aEFHazR5aTJzd0hfWXo1azUyTVg1eDBjU1p1WEM1WGFCUFRUQUxTdDhfakhyX2tLQllydER3YUNoM0RhSnNmaVNtMFpNdHdVbDVBOXV2cHg4SDJsNGx3ZnJlUEhVY204bnk2WFh2eDhBZ1dkem5IelVYTGg2U2pfWDBKWGVzdXRCcEpkOU96dnVpT2NPSVVZRkdTalJ1dUxYVHREYzZ2MUVPTERTQw?oc=5",
@@ -151,16 +161,6 @@
         "miami"
       ],
       "via": "Google News"
-    },
-    {
-      "headline": "Miami-Dade preparing for possible flooding due to heavy rain and King Tides",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/news/local/miami-dade-preparing-for-possible-flooding-due-to-heavy-rain-and-king-tides/3892605/",
-      "date": "2026-11-25T06:57:10.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "NBC6 Miami"
     },
     {
       "headline": "Fort Lauderdale residents brace for even more flooding from king tides, storms",
