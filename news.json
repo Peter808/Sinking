@@ -1,14 +1,42 @@
 {
   "items": [
     {
-      "headline": "South Florida flooding live updates: Broward, Miami-Dade communities see another round ahead of Thanksgiving",
+      "headline": "Portions of southern Miami-Dade experiencing flooding as drivers take the road for Thanksgiving",
       "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcXl4UUl0cWZiSU5xejBZejVxSVRNTGNvTTd3aEFHazR5aTJzd0hfWXo1azUyTVg1eDBjU1p1WEM1WGFCUFRUQUxTdDhfakhyX2tLQllydER3YUNoM0RhSnNmaVNtMFpNdHdVbDVBOXV2cHg4SDJsNGx3ZnJlUEhVY204bnk2WFh2eDhBZ1dkem5IelVYTGg2U2pfWDBKWGVzdXRCcEpkOU96dnVpT2NPSVVZRkdTalJ1dUxYVHREYzZ2MUVPTERTQw?oc=5",
-      "date": "2026-11-25T21:26:00.000Z",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNUk5uNUs3ZHVwUlFYMTRGRmxVTDYxSUN6a0tobTZsREpvVjd5ZlE4ZDZpRnl4VFg4b3pvMFQ0ekxTZ2piTERobnpYVHo0UzNseHZXYUg3TnduRGc3RmVjQUo1dkNfcTVNV1Z1bDFib0RGeURWdlROSWZKeHFtQjRKT19HSTU2WVAyZFZiS3BURk5XdWVOU2VfeUl3Tk9QVlFVYUNla0ZDTWJzcFRocE1MbWVHUmZIOUg3U29pYkVNMFFWZFlWSXRNSlhTd0s?oc=5",
+      "date": "2026-11-26T00:52:00.000Z",
       "cities": [
         "miami"
       ],
       "via": "Google News"
+    },
+    {
+      "headline": "Fort Lauderdale neighborhoods heavily flooded with pumps hard at work draining the water",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOYS1rT00yaWdiMkxlOUdUUnNkR1EtVzhmZG1HZlVQc1pORnp6UWVpY2xhUnRwVk5Fc1R4MHB6UDNtYVl5RFd4X05ka2VnQUZ1ajhOODRENmJwNHhQMlY2ZjZwMDgzTGlmeFZWZ19POHpaVVZBbkMzZzJXUVEtVGFqSko4UDdJdzNoSThoc3QzV2RLUFJUWkZhWlZFTHpPRkdDR2FUNWl3S1NEdm0zWEx1XzVsTk83VldnMlBDTl9mVDNBTms?oc=5",
+      "date": "2026-11-26T00:42:00.000Z",
+      "cities": [
+        "fort-lauderdale"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "South Florida flooding live updates: Broward, Miami-Dade communities see another round ahead of Thanksgiving",
+      "source": "CBS News",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcXl4UUl0cWZiSU5xejBZejVxSVRNTGNvTTd3aEFHazR5aTJzd0hfWXo1azUyTVg1eDBjU1p1WEM1WGFCUFRUQUxTdDhfakhyX2tLQllydER3YUNoM0RhSnNmaVNtMFpNdHdVbDVBOXV2cHg4SDJsNGx3ZnJlUEhVY204bnk2WFh2eDhBZ1dkem5IelVYTGg2U2pfWDBKWGVzdXRCcEpkOU96dnVpT2NPSVVZRkdTalJ1dUxYVHREYzZ2MUVPTERTQw?oc=5",
+      "date": "2026-11-26T00:11:00.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "More rain brings renewed flooding concerns to Broward communities",
+      "source": "Local10",
+      "link": "https://www.local10.com/news/local/2026/11/25/more-rain-brings-renewed-flooding-concerns-to-broward-communities/",
+      "date": "2026-11-25T22:40:06.000Z",
+      "cities": [],
+      "via": "Local10"
     },
     {
       "headline": "Hollywood Flood Recovery: Assistance and Community Resources Available Now",
@@ -42,13 +70,13 @@
     },
     {
       "headline": "Fort Lauderdale dealing with flooding as heavy rain hits area",
-      "source": "Local10",
-      "link": "https://www.local10.com/news/local/2026/11/25/fort-lauderdale-dealing-with-flooding-as-heavy-rain-hits-area/",
+      "source": "WPLG Local 10",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTXBoUkpWa1lMcjZOeF9kYUFBSGZ1T2pGLXhqRmRpcDlXN0NUNVZKVHNOSUVDeVhMaGhOa2VwU2NsbTB6N2U1LWFGZDBTVWg4QmpfV3BJMjNyTnVtVnJuS2U5TDZkeVRpUXZiZ0NBWW9ISzBITE5CTHNNNGtXRnFDZ3pjTGxDTmRtMmNSdlA5WWUyVGV5YWE4WTdVWDREd2tLSkxIc1MyaW13THZU?oc=5",
       "date": "2026-11-25T17:38:10.000Z",
       "cities": [
         "fort-lauderdale"
       ],
-      "via": "Local10"
+      "via": "Google News"
     },
     {
       "headline": "King tides, heavy rain bring renewed flooding concerns to Broward",
@@ -99,6 +127,16 @@
       "source": "WSVN",
       "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE00TzVDZERqcGFfdlYweXlvLVNMaHJQek1UdUVlYXIwQy03M2x0UFItV25hVFdpRVJDSHBHVDNweExuM0xTNVR5LWV5QzFDSF8yVkVXV21pYkt3RzJKeFVPQ2ctWHlXWkxwaHcwWk14eDFEY2tTOEdvWVRTanQtZw?oc=5",
       "date": "2026-11-25T13:15:18.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "Google News"
+    },
+    {
+      "headline": "Eastern Florida floods: Broward, Miami-Dade roads submerged as torrential rain, severe thunderstorms, isol",
+      "source": "The Economic Times",
+      "link": "https://news.google.com/rss/articles/CBMikwNBVV95cUxOU3JYbGdmbGotSnFpc19NWXpWWGFUZThEQVNiRHU5dDFKRXhVQlBza18weWFiWXgwbExHWE1WMWd5Q2plOWdqcTk2SUZUZVRRZmFLcVFWbVlSdFg3Z3RCLTNIa0J3YmdGdUJWMEZxSUwtYjlxQUtZSVlXZ1lTRzhVdWpoQ3pjTHJUbE9JVnRQd2pfOERYN1RwQWlJS3lFZWpQejVLMnZ4NzJTNDRhZkpNa0VaZGRpSkdkSWRqM2Rfd19VUmpPNnkwcWRzTEYxa0JhdmFqb1NnMlFDNGQybmdESkpVY0lhMlRVNHhnZUF3TTd2T1VaRkUwTjJTNXM0YWdJYUViQVNHT1h3cDhfbTZvWmVvMFU5ZWRsVVIxcDZoaW40MVA0QjZfdnhQUklkSnUtMnpCcGkwNzRNTEdRRmJYU3dWbE42Q1FvRGZoSzIzTGR2MFdrX2VjN3N2eWlTMHNKRW5SenhjNE9RSndrbThWYjlyT2IyWHBsS0F6QzdfR0tBbXI1WkxUT25HQ0l1RXJBQjI00gGYA0FVX3lxTFB6emdxblJIOWxlUnZOQVlhdmtGZjJxU0gxUjQzZmlrVncwRTFWdTdsak5kUEVMSFlXbmlGUURMRGttVUxsMkJkQy1WZlJyZVJTSW5yUVJ5SGJ1MldXNUwtb0I5Qm1pZUpZcUZ1cFhCTEg0MkVIRWFPaGhjbG1WN3UyUFRtRDA5T1I0aDhxaG0ycmZIQkl0YXBlbUdnSzlnVW5ic243SlJKSDZ6eTBJc1FmNkE4N045WGlZRkFwdERpR21JSWZCMlp2MkQ2NU5EVGI3LXBQejVqVmZZRG5NT0FIMDJJRzVBM1YxTjE2N0FRaWJrZUkwVjNFUnlONDRJZWVrQlhVQmNfb0lGZlZWSkE0TW9sblpFWjVXbV9RcmFfbnotWUFQcGZXZHBad2NTVHZVZXd5eVFMdGpvU3pOMmlObG9sLUZzYzhQYW5DUjdUa211ZG16RXRKSEJmU1Rka0t1V2h0OTI1X3RabWJGc1NhaVlHMHB6SU9QYXIyVlp3azJwaUoyWjBvNzhWb1NEeGJ1Zmd2Zzh1Vw?oc=5",
+      "date": "2026-11-25T12:30:49.000Z",
       "cities": [
         "miami"
       ],
@@ -529,44 +567,6 @@
       "date": "2026-11-19T00:10:00.000Z",
       "cities": [
         "miami-beach"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Roads impassible due to flooding at Fort Lauderdale's Melrose Manors",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOb2pvcTBVMExZcHRqblZBTGtBc2k0R0dobFBGM2FtM0dmckdYQzNobHptNU5ZTTU4ZTl1OVl2djIwZ0U5TTdHRnRJcUVvUHg3SnFGMkVJSmdXb1p2N2haeGxhVDJaQlZBWTdSZUowQVpSamUxWFlQUks5WW1xSXVnOGFUTFRTZFZhVGRVVnhsc05FMWJIVllGS2ZWRWQ5cFctOW1sVXBtTQ?oc=5",
-      "date": "2026-11-19T00:06:00.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Broward County declares state of emergency as heavy rainfall triggers flooding",
-      "source": "Caribbean National Weekly",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcGxuRmVfNkROQ3VtV1N3RnV2OVZPcjZxSFg4QkRUd1YwTnRXY2ZHTnZ6T3I4MVZmT0xpanpqQTd4WG5FNVp5OFFQRzNpSjdMdXFwU21JeENrbFNaTEhyeTBXU2JHSVBuLXRIdW5WczBodDJSd1RQTzYyLW9vY3lObkl2RVVwV1pEOHRpVXdvTXhCLU9EdlczZXB6NHAtU3d4aTNFSHYxRUdKZXdHclZnM2plR3F0b1k1Mk9HekxkeHhZQQ?oc=5",
-      "date": "2026-11-18T23:42:59.000Z",
-      "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Massive flooding creates major problem for Fort Lauderdale community",
-      "source": "WPLG Local 10",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOV3g0b2FKTDVYQ1I2YlIyczlhZDExOHl1WjJ4Q1F3RTZraUwwcGJkblh6VTByYnFyMzFpYTB3c2NNTVlvV2s3aVUzRGxQSXNONUw2MzNIbDNFQ3R2YXIyOTAtLTdvSkVkYjgxcm9tMHIyU0NqQXZOVWw3UWNTdUxzU18tQk1rbXlMV2tyakg1amJ4ODBoVi1WRUZsdGJYdTBhTVpfRjhCT2ZVNFVES1haVEhZRkJNQTVRUmc?oc=5",
-      "date": "2026-11-18T23:31:47.000Z",
-      "cities": [
-        "fort-lauderdale"
-      ],
-      "via": "Google News"
-    },
-    {
-      "headline": "Firefighters fight flames in Fort Lauderdale as flooding persists",
-      "source": "NBC 6 South Florida",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUjhOcGRYbUVEQ3RaQng1NXVsUEFXUkx0M2JkS2lLcXBiUy1uZUFuMGhmbG1abGY4N2dkV1Jqc3RIWTg4Q2NxWWdPX05UX3dsd1hMaUZRQTVHT3RJWmNfTUhpRDRnZmR4QXlVZEM2T2JGOXlQazJvOHM3c2VBN3FfTnFiS1pfelB0TkF3TW5aVFdUSV9sMmJfYVU5Qk0tY1pWRlZXSWdoZzk4a0JBM1VkcTVCYXNSdXPSAb8BQVVfeXFMTWlmN1dOeW02UEhTOWZEVHlja2xiX0JjcXpFZUlXMmhSdTJCdTAyUFNBTlNtRHhsaEd0T1Fnd0h3RmsxU2RNUks1LUxla3dZbkgtdG1oMVpFck9meHB0V0YzQ0VXOHRBaXh5SjlYNUFRSGFIVkRHUm96U0JTbVZJeV9ZcENYY0U2aVVKWDZmeWhuRHl1ejVJcC1aUDRISnlYV0YyQXFaM0dVbjF5UVNyY2dQeFg0UVE1SFg1aXNRVnc?oc=5",
-      "date": "2026-11-18T22:46:19.000Z",
-      "cities": [
-        "fort-lauderdale"
       ],
       "via": "Google News"
     }
