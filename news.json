@@ -1,10 +1,18 @@
 {
   "items": [
     {
+      "headline": "Broward, Brevard counties added to flooding disaster declaration",
+      "source": "Florida Phoenix",
+      "link": "https://floridaphoenix.com/2026/11/27/broward-brevard-counties-added-to-flooding-disaster-declaration/",
+      "date": "2026-11-27T22:13:11.000Z",
+      "cities": [],
+      "via": "Florida Phoenix"
+    },
+    {
       "headline": "Miami-Dade preparing for possible flooding due to heavy rain and King Tides",
       "source": "NBC6 Miami",
       "link": "https://www.nbcmiami.com/news/local/miami-dade-preparing-for-possible-flooding-due-to-heavy-rain-and-king-tides/3892605/",
-      "date": "2026-11-27T00:34:48.000Z",
+      "date": "2026-11-27T05:42:17.000Z",
       "cities": [
         "miami"
       ],
@@ -558,16 +566,6 @@
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdThKSWlLTnhlQWh0NWU5Q3JndERxV2JwM1BPR1hZOTlmYWlhQ2VTQUtsdk8xcUhjeVR5Q2JHVnhpbW53YlgtRnNSUEM4UjdqbmZyRHhRSUotV1c0ZTBrOVZGWVliNFJTS0JBRVlnVGx6RjBZVlRjV2RpQ2hsQjkycTFmQVV6OEQ5TmtDU1ZXbE1TT25MbEEzYUFsYVpLRDAtNmhJenJpRW5ZcTFZa1JfUlY3bExlcm5hQlE?oc=5",
       "date": "2026-11-19T00:15:35.000Z",
       "cities": [],
-      "via": "Google News"
-    },
-    {
-      "headline": "Miami Beach feels the impacts of heightened street flooding in touristic areas",
-      "source": "CBS News",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSnF5OElmMVdtd3VJbVZyQXNPbzdCQkdJdlBfM29pdk80cjl5ampzOHMtYm9WOEt4aTdVdjhuZjJuYnowT1ZvWlBGM3dtTUtaOUthSVhHRTgxRHBKSGJCM2hNQncwdjBjYzJ5VVB4dXhtLWJoa2wzQWhxeWFINnB6eFkxSmpnZWlld1NGMU1jYVN0U0d4cUFDNUxnTHlfVU5rUnNZSTU4aGN1UXdGMEhRTWViZDNlQQ?oc=5",
-      "date": "2026-11-19T00:10:00.000Z",
-      "cities": [
-        "miami-beach"
-      ],
       "via": "Google News"
     }
   ]
