@@ -1,22 +1,22 @@
 {
   "items": [
     {
+      "headline": "Miami-Dade preparing for possible flooding due to heavy rain and King Tides",
+      "source": "NBC6 Miami",
+      "link": "https://www.nbcmiami.com/news/local/miami-dade-preparing-for-possible-flooding-due-to-heavy-rain-and-king-tides/3892605/",
+      "date": "2026-11-28T01:58:23.000Z",
+      "cities": [
+        "miami"
+      ],
+      "via": "NBC6 Miami"
+    },
+    {
       "headline": "Broward, Brevard counties added to flooding disaster declaration",
       "source": "Florida Phoenix",
       "link": "https://floridaphoenix.com/2026/11/27/broward-brevard-counties-added-to-flooding-disaster-declaration/",
       "date": "2026-11-27T22:13:11.000Z",
       "cities": [],
       "via": "Florida Phoenix"
-    },
-    {
-      "headline": "Miami-Dade preparing for possible flooding due to heavy rain and King Tides",
-      "source": "NBC6 Miami",
-      "link": "https://www.nbcmiami.com/news/local/miami-dade-preparing-for-possible-flooding-due-to-heavy-rain-and-king-tides/3892605/",
-      "date": "2026-11-27T05:42:17.000Z",
-      "cities": [
-        "miami"
-      ],
-      "via": "NBC6 Miami"
     },
     {
       "headline": "South Florida flooding live updates: Broward, Miami-Dade communities see another round ahead of Thanksgiving",
